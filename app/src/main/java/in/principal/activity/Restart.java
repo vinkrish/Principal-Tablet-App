@@ -15,6 +15,7 @@ public class Restart extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_restart);
+
 		Intent i = getIntent();
 		String s = i.getStringExtra("error");
 		Log.d("error message", s);
