@@ -173,7 +173,7 @@ public class MonthlyReport extends Fragment {
 		new CalledBackLoad().execute();
 	}
 
-	class CalledBackLoad extends AsyncTask<String, String, String>{
+	class CalledBackLoad extends AsyncTask<Void, Void, Void>{
 		protected void onPreExecute(){
 			super.onPreExecute();
 			pDialog.setMessage("Preparing data ...");
@@ -182,7 +182,7 @@ public class MonthlyReport extends Fragment {
 			pDialog.show();
 		}
 		@Override
-		protected String doInBackground(String... params) {
+		protected Void doInBackground(Void... params) {
 			clasList = ClasDao.selectClas(sqliteDatabase);
 			for(Clas c: clasList){
 				classIdList.add(c.getClassId());
@@ -192,8 +192,8 @@ public class MonthlyReport extends Fragment {
 			populateList();
 			return null;
 		}
-		protected void onPostExecute(String s){
-			super.onPostExecute(s);
+		protected void onPostExecute(Void v){
+			super.onPostExecute(v);
 			amrAdapter.notifyDataSetChanged();
 			pDialog.dismiss();
 		}

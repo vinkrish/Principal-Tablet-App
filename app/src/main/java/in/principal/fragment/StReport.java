@@ -69,9 +69,7 @@ public class StReport extends Fragment {
 	private List<String> csDate = new ArrayList<>();
 	private ArrayList<AdapterOverloaded> amrList = new ArrayList<>();
 	private StDash stDashAdapter;
-	private RadioGroup evaluationType;
 	private boolean createFlag = true;
-	private LinearLayout ll1, ll2;
 	private boolean datePicker;
 
 	@Override
@@ -83,11 +81,11 @@ public class StReport extends Fragment {
 		sqliteDatabase = AppGlobal.getSqliteDatabase();
 		ListView lv = (ListView)view.findViewById(R.id.list);
 
-		evaluationType = (RadioGroup)view.findViewById(R.id.evaluationType);
+		RadioGroup evaluationType = (RadioGroup)view.findViewById(R.id.evaluationType);
 		stDashAdapter = new StDash(context, R.layout.st_dash_list, amrList);
 		lv.setAdapter(stDashAdapter);
 
-		ll1 = (LinearLayout)view.findViewById(R.id.datePicker1);
+		LinearLayout ll1 = (LinearLayout)view.findViewById(R.id.datePicker1);
 		ll1.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -99,8 +97,8 @@ public class StReport extends Fragment {
 				newFragment.show(getFragmentManager(), "datePicker");
 			}
 		});
-		
-		ll2 = (LinearLayout)view.findViewById(R.id.datePicker2);
+
+		LinearLayout ll2 = (LinearLayout)view.findViewById(R.id.datePicker2);
 		ll2.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

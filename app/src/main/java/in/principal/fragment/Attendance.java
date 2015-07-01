@@ -111,7 +111,7 @@ public class Attendance extends Fragment {
 		return view;
 	}
 
-	class CalledBackLoad extends AsyncTask<String, String, String>{
+	class CalledBackLoad extends AsyncTask<Void, Void, Void>{
 		protected void onPreExecute(){
 			super.onPreExecute();
 			pDialog.setMessage("Preparing data ...");
@@ -120,14 +120,14 @@ public class Attendance extends Fragment {
 			pDialog.show();
 		}
 		@Override
-		protected String doInBackground(String... params) {
+		protected Void doInBackground(Void... params) {
 			progressList = findClasssAttendance(classIdList, dateSelected);
 			absCountList = findClasAbsentCount(classIdList, dateSelected);
 			populateList();
 			return null;
 		}
-		protected void onPostExecute(String s){
-			super.onPostExecute(s);			
+		protected void onPostExecute(Void v){
+			super.onPostExecute(v);
 			pDialog.dismiss();
 			amrAdapter.notifyDataSetChanged();
 		}

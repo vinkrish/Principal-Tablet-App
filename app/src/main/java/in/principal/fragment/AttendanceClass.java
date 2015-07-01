@@ -157,7 +157,7 @@ public class AttendanceClass extends Fragment {
         return view;
     }
 
-    class CalledBackLoad extends AsyncTask<String, String, String> {
+    class CalledBackLoad extends AsyncTask<Void, Void, Void> {
         protected void onPreExecute() {
             super.onPreExecute();
             pDialog.setMessage("Preparing data ...");
@@ -167,7 +167,7 @@ public class AttendanceClass extends Fragment {
         }
 
         @Override
-        protected String doInBackground(String... params) {
+        protected Void doInBackground(Void... params) {
             secList = SectionDao.selectSection(classId, sqliteDatabase);
             for (Section s : secList) {
                 secIdList.add(s.getSectionId());
@@ -186,8 +186,8 @@ public class AttendanceClass extends Fragment {
             return null;
         }
 
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
+        protected void onPostExecute(Void v) {
+            super.onPostExecute(v);
             pDialog.dismiss();
             classBC.setText("Class " + className);
             classNam.setText(className);

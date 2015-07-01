@@ -2,9 +2,11 @@ package in.principal.fragment;
 
 import in.principal.activity.R;
 import in.principal.adapter.Alert;
+import in.principal.dao.ClasDao;
 import in.principal.dao.SectionDao;
 import in.principal.dao.TempDao;
 import in.principal.sqlite.AdapterOverloaded;
+import in.principal.sqlite.Clas;
 import in.principal.sqlite.Section;
 import in.principal.sqlite.Temp;
 import in.principal.util.AppGlobal;
@@ -55,7 +57,6 @@ public class StDashbord extends Fragment {
     private int secId;
     private int clasId;
     private AlertDialog alertDialog;
-    private ListView lv;
     private SQLiteDatabase sqliteDatabase;
     private List<Section> secList = new ArrayList<>();
     private List<Integer> secIdList = new ArrayList<>();
@@ -71,7 +72,6 @@ public class StDashbord extends Fragment {
     private ArrayList<AdapterOverloaded> amrList = new ArrayList<>();
     private StDash stDashAdapter;
     private TextView todayTV, yesterdayTV;
-    private RadioGroup evaluationType;
     private boolean createFlag = true;
 
     @Override
@@ -81,12 +81,12 @@ public class StDashbord extends Fragment {
         act = AppGlobal.getActivity();
         context = AppGlobal.getContext();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
-        lv = (ListView) view.findViewById(R.id.list);
+        ListView lv = (ListView) view.findViewById(R.id.list);
 
         Temp t = TempDao.selectTemp(sqliteDatabase);
         dateSelected = t.getSelectedDate();
 
-        evaluationType = (RadioGroup) view.findViewById(R.id.evaluationType);
+        RadioGroup evaluationType = (RadioGroup) view.findViewById(R.id.evaluationType);
         todayTV = (TextView) view.findViewById(R.id.todayValue);
         yesterdayTV = (TextView) view.findViewById(R.id.yesterdayValue);
         stDashAdapter = new StDash(context, R.layout.st_dash_list, amrList);
@@ -116,6 +116,12 @@ public class StDashbord extends Fragment {
         secTV = (TextView) view.findViewById(R.id.sectxt);
         clasTV = (TextView) view.findViewById(R.id.clastxt);
         dateTV.setText(dateSelected);
+
+        List<Clas> clasList = ClasDao.selectClas(sqliteDatabase);
+        for(Clas c: clasList){
+            classIdList.add(c.getClassId());
+            classNameList.add(c.getClassName());
+        }
 
         items = classNameList.toArray(new String[classNameList.size()]);
         LinearLayout selecClass = (LinearLayout) view.findViewById(R.id.classPicker);
