@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/breadcrum"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/dark_black"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/dash"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/heading_selector"
+            android:contentDescription="@string/cc"
+            android:onClick="toDashbord"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:src="@drawable/dashboard" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#666363" />
+
+        <Button
+            android:id="@+id/voiceSms"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/button_selector_blue"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/voice_sms"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/dividerup"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#333333" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:gravity="left"
+                android:text="@string/send_voice_sms"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/allStudents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@drawable/button_activated_light_blue"
+                android:text="@string/all_students"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/allTeachers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@drawable/button_activated_light_blue"
+                android:text="@string/all_teachers"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/clas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@drawable/button_activated_light_blue"
+                android:text="@string/clas"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/sec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@drawable/button_activated_light_blue"
+                android:text="@string/section"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/stud"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@drawable/button_activated_light_blue"
+                android:text="@string/student"
+                android:textColor="#FFFFFF" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/heading_selector"
+                    android:enabled="false"
+                    android:text="@string/submit"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/light_black" />
+
+        <FrameLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:id="@+id/allStudentsFrame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="70dp"
+                    android:text="@string/all_students_mes"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/allTeachersFrame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="70dp"
+                    android:text="@string/all_teachers_mes"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/selectionFrame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <EditText
+                    android:id="@+id/classSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="select class"
+                    android:inputType="textMultiLine"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="70dp" />
+                
+                <EditText
+                    android:id="@+id/secSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="select section"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="30dp" />
+
+                <EditText
+                    android:id="@+id/studSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="select student"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="30dp" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/layout/voice_sms.xml -->

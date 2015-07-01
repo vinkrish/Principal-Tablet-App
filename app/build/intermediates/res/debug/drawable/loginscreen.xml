@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <gradient 
+        android:startColor="#34A3ED"
+        android:centerColor="#1795E8"
+        android:endColor="#167EC4"
+        android:type="linear"
+        android:angle="225"/>
+</shape>
+<!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/drawable/loginscreen.xml -->

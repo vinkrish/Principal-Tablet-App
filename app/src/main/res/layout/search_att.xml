@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF" >
+
+    <LinearLayout
+        android:id="@+id/breadcrum"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/dark_black"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/dash"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/heading_selector"
+            android:contentDescription="@string/cc"
+            android:onClick="toDashbord"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:src="@drawable/dashboard" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#666363" />
+
+        <Button
+            android:id="@+id/stButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/dark_black"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/attendance"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/dash_seperator" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/belowbreadcrum"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/breadcrum"
+        android:background="@color/layoutbelowBC"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="0.5"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/studName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/studentname"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/studClasSec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="3dp"
+                android:text="@string/attendinfo"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/studentAttendTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="20dp"
+                android:text="200/210 Days Present"
+                android:textSize="18sp" >
+            </TextView>
+
+            <ProgressBar
+                android:id="@+id/studentAttendanceAvg"
+                style="@style/tallerBarStyle"
+                android:layout_width="190dp"
+                android:layout_height="10dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:focusable="false" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/belowbreadcrum"
+        android:layout_marginLeft="150dp"
+        android:layout_marginRight="150dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/dash2ndnav"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/slipSearch"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:gravity="center"
+            android:text="@string/sliptest" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#8A8889" />
+
+        <TextView
+            android:id="@+id/seSearch"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:gravity="center"
+            android:text="@string/se" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#8A8889" />
+
+        <TextView
+            android:id="@+id/attSearch"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:background="@drawable/right_curve"
+            android:gravity="center"
+            android:text="@string/attendance"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@id/linearLayout1"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" />
+
+    <LinearLayout
+        android:id="@+id/lisview"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/chart"
+        android:background="@color/layoutbelowBC"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.8"
+            android:paddingLeft="15dp"
+            android:text="@string/month"
+            android:textColor="@color/light_black"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="45dp"
+            android:background="#FFFFFF" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.6"
+            android:gravity="center"
+            android:text="@string/noofdays"
+            android:textColor="@color/light_black"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="45dp"
+            android:background="#FFFFFF" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.6"
+            android:gravity="center"
+            android:text="@string/daysabs"
+            android:textColor="@color/light_black"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lisview" >
+    </ListView>
+
+</RelativeLayout>

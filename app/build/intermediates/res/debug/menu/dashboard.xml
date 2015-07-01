@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="in.principal.activity.Dashboard" >
+
+    <item 
+        android:id="@+id/internet_status"
+        android:showAsAction="always"
+        android:title="@string/no_internet"/>
+    <item
+        android:id="@+id/searchId"
+        android:icon="@drawable/ic_action_search"
+        android:showAsAction="always"
+        android:title="@string/action_settings"/>
+    <item
+        android:id="@+id/action_logout"
+        android:icon="@drawable/attendno"
+        android:showAsAction="always"
+        android:title="@string/action_settings"/>
+
+</menu>
+<!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/menu/dashboard.xml -->

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF" >
+
+    <LinearLayout
+        android:id="@+id/breadcrum"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/dark_black"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/dash"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/heading_selector"
+            android:contentDescription="@string/cc"
+            android:onClick="toDashbord"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:src="@drawable/dashboard" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#666363" />
+
+        <Button
+            android:id="@+id/attendanceButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/heading_selector"
+            android:onClick="monthlyReport"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/attendance"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#666363" />
+
+        <Button
+            android:id="@+id/classButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:background="@drawable/heading_selector"
+            android:onClick="monthlyReportClass"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/sectionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_marginLeft="-5dp"
+            android:background="@drawable/button_selector_blue"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+    </LinearLayout>
+    
+    <View
+        android:id="@+id/dividerup"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/breadcrum"
+        android:background="#333333" />
+
+    <LinearLayout
+        android:id="@+id/belowbreadcrum"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/dividerup"
+        android:background="@color/layoutbelowBC"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="0.7"
+            android:gravity="center|left"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/amr"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/aim"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/datePicker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:background="#FFFFFF"
+            android:layout_marginRight="5dp"
+            android:paddingRight="5dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/monthly"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:textSize="20sp" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/downarrow"
+                android:contentDescription="@string/cc" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewbelowbc"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/belowbreadcrum"
+        android:background="@color/border" />
+
+    <LinearLayout
+        android:id="@+id/breadcrum3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/viewbelowbc"
+        android:background="@color/layoutbelowBC"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/selectSection"
+            android:layout_width="170dp"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/clasecName"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/cc"
+                android:paddingRight="5dp"
+                android:src="@drawable/downarrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:background="@color/border" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:gravity="end"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/sectionaverage"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/secAvgProgress"
+                style="@style/tallerBarStyle"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:focusable="false" />
+
+            <TextView
+                android:id="@+id/sectionpercent"
+                android:layout_width="45dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="@color/dark_black"
+                android:focusable="false"
+                android:gravity="center"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewbelowbc3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/breadcrum3"
+        android:background="@color/border" />
+
+    <LinearLayout
+        android:id="@+id/linearlayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewbelowbc3"
+        android:layout_centerInParent="true"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.2"
+                android:gravity="center"
+                android:text="@string/clas"
+                android:textColor="@color/light_black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.75"
+                android:paddingLeft="10dp"
+                android:text="@string/studentname"
+                android:textColor="@color/light_black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+            <TextView
+                android:id="@+id/totalDays"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.25"
+                android:paddingLeft="10dp"
+                android:textColor="@color/light_black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/border" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.6"
+                android:paddingLeft="10dp"
+                android:text="@string/studentaverage"
+                android:textColor="@color/light_black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/border" />
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </ListView>
+    </LinearLayout>
+
+</RelativeLayout>

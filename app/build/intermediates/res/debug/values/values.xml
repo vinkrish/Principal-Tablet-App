@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <array name="nav_drawer_icons">
+        <item>@drawable/dashboard</item>
+        <item>@drawable/attendance</item>
+        <item>@drawable/reports_white</item>
+        <item>@drawable/sliptest_white</item>
+        <item>@drawable/homework_white</item>
+        <item>@drawable/reports_white</item>
+        <item>@drawable/sliptest_white</item>
+    </array>
+    <string-array name="nav_drawer_items">
+        <item>Dashboard</item>
+        <item>Attendance</item>
+        <item>Monthly Report</item>
+        <item>SlipTest</item>
+        <item>Homework</item>
+        <item>Exams</item>
+        <item>Text SMS</item>
+    </string-array>
+    <!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="black">#000000</color>
+    <color name="border">#DCDCE3</color>
+    <color name="class_avg">#1E96D6</color>
+    <color name="dark_black">#323236</color>
+    <color name="dash_border">#8A8889</color>
+    <color name="dash_seperator">#666363</color>
+    <color name="dash_text">#4F4F52</color>
+    <color name="defalt">#E4E1E8</color>
+    <color name="divider">#C9C9C9</color>
+    <color name="drawer_list_background">#17171A</color>
+    <color name="gradient_text">#A4A5AB</color>
+    <color name="green">#41AB15</color>
+    <color name="layoutbelowBC">#EDEFF2</color>
+    <color name="light_black">#4D4F4F</color>
+    <color name="light_blue">#91CDF2</color>
+    <color name="list_background_pressed">#35B835</color>
+    <color name="list_highlighted">#A1C8F0</color>
+    <color name="list_selec">#EDEFF2</color>
+    <color name="list_selection">#66D15A</color>
+    <color name="login_button">#383A3B</color>
+    <color name="orange">#FA7000</color>
+    <color name="red">#AD200A</color>
+    <color name="rep_pre_nxt">#E6E7E8</color>
+    <color name="selected_sub_heading">#7A7D79</color>
+    <color name="text_light">#807A7C</color>
+    <color name="universal">#3E97D6</color>
+    <color name="white">#FFFFFF</color>
+    <!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="slider_height">85dp</dimen>
+    <dimen name="slider_image">40dp</dimen>
+    <dimen name="slider_image_margin">30dp</dimen>
+    <dimen name="slider_text">329dp</dimen>
+    <dimen name="slider_width">370dp</dimen>
+    <dimen name="text_large">22sp</dimen>
+    <dimen name="text_medium">18sp</dimen>
+    <dimen name="text_small">14sp</dimen>
+    <dimen name="text_tiny">12sp</dimen>
+    <dimen name="text_xlarge">25sp</dimen>
+    <dimen name="text_xmedium">20sp</dimen>
+    <dimen name="text_xsmall">16sp</dimen>
+    <!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="absent">Absent</string>
+    <string name="absent_count">Absent Count</string>
+    <string name="absentee">Absentees</string>
+    <string name="action_settings">Settings</string>
+    <string name="activity">Activity</string>
+    <string name="adminLogin">Admin Login</string>
+    <string name="aim">Attendance information for the month</string>
+    <string name="all_students">All Students</string>
+    <string name="all_students_mes">Recorded message will be sent to all students of the school</string>
+    <string name="all_teachers">All Teachers</string>
+    <string name="all_teachers_mes">Recorded message will be sent to all teachers of the school</string>
+    <string name="amr">Monthly Report</string>
+    <string name="app_name">Principal</string>
+    <string name="att_per">Attendance %</string>
+    <string name="attendance">Attendance</string>
+    <string name="attendanceinfo">Attendance information for today</string>
+    <string name="attendinfo">Attendance information</string>
+    <string name="attendoverview">Today\'s Attendance Overview</string>
+    <string name="average">Average (%)</string>
+    <string name="avg">Average</string>
+    <string name="bugs">Touch here to resolve the issue</string>
+    <string name="cc">content description</string>
+    <string name="clas">Class</string>
+    <string name="classaverage">Class Average</string>
+    <string name="classteacher">Class Teacher</string>
+    <string name="clear">Clear</string>
+    <string name="comp_with">Compare with :</string>
+    <string name="compare">Compare</string>
+    <string name="consolidated_report">Consolidated Report</string>
+    <string name="coscholastic">Co-scholastic</string>
+    <string name="coscholastic2">Co-scholastic area</string>
+    <string name="crash">Contact admin to do first time sync.</string>
+    <string name="crash_toast_text">Ooooops ! I crashed, but a report has been sent to my developer to help fix the issue !</string>
+    <string name="creation">Creation Date</string>
+    <string name="custom_name">Custom Name</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="date">Date</string>
+    <string name="days">Days</string>
+    <string name="daysabs">Days Absent</string>
+    <string name="delete">Delete</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="eight">8</string>
+    <string name="exam">Exam</string>
+    <string name="five">5</string>
+    <string name="four">4</string>
+    <string name="go">Go / Reset</string>
+    <string name="good">Good</string>
+    <string name="grade">Grade</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="history">History</string>
+    <string name="homework">Homework</string>
+    <string name="homeworknot">Classes that have not submitted the homework yet</string>
+    <string name="idxcolumn"> # </string>
+    <string name="loa">List of Absentees</string>
+    <string name="longestabsentee">Longest Absentee</string>
+    <string name="max_mark">Max Mark</string>
+    <string name="message">Message</string>
+    <string name="month">Month</string>
+    <string name="monthly">Monthly</string>
+    <string name="monthlyreport">Monthly Report</string>
+    <string name="mustimp">Must Improve</string>
+    <string name="next">Next</string>
+    <string name="nine">9</string>
+    <string name="no_internet">no wifi / internet</string>
+    <string name="noofdays">Days Present</string>
+    <string name="one">1</string>
+    <string name="overview">Overview</string>
+    <string name="password">Password</string>
+    <string name="pending">Pending classes</string>
+    <string name="percentage">Percentage</string>
+    <string name="performance">Performance</string>
+    <string name="play">Play</string>
+    <string name="portions">Portions</string>
+    <string name="presentper">Present</string>
+    <string name="prev">Previous</string>
+    <string name="prev_mes">Previous Messages</string>
+    <string name="prev_rec">Previous Recordings</string>
+    <string name="progreport">Progress Report</string>
+    <string name="record">Start Recording</string>
+    <string name="reeturn">Return</string>
+    <string name="remark">Remark</string>
+    <string name="report">Report</string>
+    <string name="resolving">Resolving Errors</string>
+    <string name="roll">Roll #</string>
+    <string name="score">Score</string>
+    <string name="se">Exams</string>
+    <string name="search">Search</string>
+    <string name="section">Section</string>
+    <string name="sectionaverage">Section Average</string>
+    <string name="sections">Sections</string>
+    <string name="sel_exm">Select exam :</string>
+    <string name="select_classes">Select Multiple Classes</string>
+    <string name="send_sms">Send SMS to:</string>
+    <string name="send_voice_sms">Send Voice SMS to:</string>
+    <string name="server_resolve">Resolving Issues</string>
+    <string name="seven">7</string>
+    <string name="six">6</string>
+    <string name="sliptest">Slip Test</string>
+    <string name="slno">S.No</string>
+    <string name="sms">SMS</string>
+    <string name="stoan">Select the options as need</string>
+    <string name="stop_play">Stop Playing</string>
+    <string name="stop_rec">Stop Recording</string>
+    <string name="streport">SlipTest Report</string>
+    <string name="stud_avg">Student avg / Class avg</string>
+    <string name="student">Student</string>
+    <string name="studentaverage">Student Average</string>
+    <string name="studentname">Student Name</string>
+    <string name="students">Students</string>
+    <string name="sub_teacher">Subject Teacher</string>
+    <string name="subact">Sub Activity</string>
+    <string name="subject">Subject</string>
+    <string name="submission">Submission Date</string>
+    <string name="submit">Submit</string>
+    <string name="taponclass">Tap on a class to know more</string>
+    <string name="teachattend">Teacher Attendance</string>
+    <string name="teacher">Teacher</string>
+    <string name="three">3</string>
+    <string name="title_activity_dashboard">Dashboard</string>
+    <string name="title_activity_lock">LockActivity</string>
+    <string name="title_activity_master__auth">Master_Auth</string>
+    <string name="title_activity_master_authentication">MasterAuthentication</string>
+    <string name="title_activity_process_files">ProcessFiles</string>
+    <string name="title_activity_restart">Restart</string>
+    <string name="title_activity_server_block">ServerBlock</string>
+    <string name="title_activity_syncing">Syncing</string>
+    <string name="to">To</string>
+    <string name="today">Today</string>
+    <string name="today_eval">Today\'s evaluations</string>
+    <string name="total">No of Evaluations</string>
+    <string name="two">2</string>
+    <string name="upload">Upload</string>
+    <string name="username">Username</string>
+    <string name="version">Version-0.1</string>
+    <string name="view_exam">View Exams</string>
+    <string name="view_sub">View Subjects</string>
+    <string name="voice_sms">Voice SMS</string>
+    <string name="week">Week</string>
+    <string name="yesterday_eval">Yesterday\'s evaluations</string>
+    <string name="zero">0</string>
+    <!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/values/themes.xml -->
+    <eat-comment/>
+    <style name="CustomActionBarTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@drawable/ab_bg</item>
+    </style>
+    <!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="spinner_style">
+        <item name="android:background">@drawable/gradient_spinner</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+    <style name="tallerBarStyle" parent="@android:style/Widget.SeekBar">
+        <item name="android:progressDrawable">@android:drawable/progress_horizontal</item>
+        <item name="android:minHeight">20dip</item>
+        <item name="android:maxHeight">20dip</item>
+    </style>
+</resources>

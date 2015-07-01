@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="app_name">Principal</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_master_authentication">MasterAuthentication</string>
+    <string name="title_activity_lock">LockActivity</string>
+    <string name="title_activity_restart">Restart</string>
+    <string name="title_activity_server_block">ServerBlock</string>
+    <string name="title_activity_dashboard">Dashboard</string>
+    <string name="cc">content description</string>
+    <string name="no_internet">no wifi / internet</string>
+
+    <string-array name="nav_drawer_items">
+        <item>Dashboard</item>
+        <item>Attendance</item>
+        <item>Monthly Report</item>
+        <item>SlipTest</item>
+        <item>Homework</item>
+        <item>Exams</item>
+        <item>Text SMS</item>
+    </string-array>
+
+    <array name="nav_drawer_icons">
+        <item>@drawable/dashboard</item>
+        <item>@drawable/attendance</item>
+        <item>@drawable/reports_white</item>
+        <item>@drawable/sliptest_white</item>
+        <item>@drawable/homework_white</item>
+        <item>@drawable/reports_white</item>
+        <item>@drawable/sliptest_white</item>
+    </array>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="title_activity_master__auth">Master_Auth</string>
+    <string name="zero">0</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="clear">Clear</string>
+    <string name="adminLogin">Admin Login</string>
+    <string name="attendance">Attendance</string>
+    <string name="teachattend">Teacher Attendance</string>
+    <string name="amr">Monthly Report</string>
+    <string name="today">Today</string>
+    <string name="monthly">Monthly</string>
+    <string name="monthlyreport">Monthly Report</string>
+    <string name="attendanceinfo">Attendance information for today</string>
+    <string name="aim">Attendance information for the month</string>
+    <string name="attendinfo">Attendance information</string>
+    <string name="attendoverview">Today\'s Attendance Overview</string>
+    <string name="overview">Overview</string>
+    <string name="clas">Class</string>
+    <string name="section">Section</string>
+    <string name="sections">Sections</string>
+    <string name="subject">Subject</string>
+    <string name="sub_teacher">Subject Teacher</string>
+    <string name="teacher">Teacher</string>
+    <string name="all_teachers">All Teachers</string>
+    <string name="student">Student</string>
+    <string name="all_students">All Students</string>
+    <string name="roll">Roll #</string>
+    <string name="longestabsentee">Longest Absentee</string>
+    <string name="classteacher">Class Teacher</string>
+    <string name="classaverage">Class Average</string>
+    <string name="att_per">Attendance %</string>
+    <string name="sectionaverage">Section Average</string>
+    <string name="studentname">Student Name</string>
+    <string name="studentaverage">Student Average</string>
+    <string name="sliptest">Slip Test</string>
+    <string name="slno">S.No</string>
+    <string name="portions">Portions</string>
+    <string name="date">Date</string>
+    <string name="average">Average (%)</string>
+    <string name="stud_avg">Student avg / Class avg</string>
+    <string name="presentper">Present</string>
+    <string name="pending">Pending classes</string>
+    <string name="absentee">Absentees</string>
+    <string name="percentage">Percentage</string>
+    <string name="days">Days</string>
+    <string name="students">Students</string>
+    <string name="homework">Homework</string>
+    <string name="homeworknot">Classes that have not submitted the homework yet</string>
+    <string name="progreport">Progress Report</string>
+    <string name="week">Week</string>
+    <string name="today_eval">Today\'s evaluations</string>
+    <string name="yesterday_eval">Yesterday\'s evaluations</string>
+    <string name="search">Search</string>
+    <string name="max_mark">Max Mark</string>
+    <string name="score">Score</string>
+    <string name="absent_count">Absent Count</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="performance">Performance</string>
+    <string name="se">Exams</string>
+    <string name="exam">Exam</string>
+    <string name="activity">Activity</string>
+    <string name="subact">Sub Activity</string>
+    <string name="taponclass">Tap on a class to know more</string>
+    <string name="good">Good</string>
+    <string name="avg">Average</string>
+    <string name="mustimp">Must Improve</string>
+    <string name="crash_toast_text">Ooooops ! I crashed, but a report has been sent to my developer to help fix the issue !</string>
+    <string name="crash">Contact admin to do first time sync.</string>
+    <string name="month">Month</string>
+    <string name="noofdays">Days Present</string>
+    <string name="total">No of Evaluations</string>
+    <string name="absent">Absent</string>
+    <string name="daysabs">Days Absent</string>
+    <string name="compare">Compare</string>
+    <string name="go">Go / Reset</string>
+    <string name="reeturn">Return</string>
+    <string name="view_exam">View Exams</string>
+    <string name="view_sub">View Subjects</string>
+    <string name="select_classes">Select Multiple Classes</string>
+    <string name="consolidated_report">Consolidated Report</string>
+    <string name="report">Report</string>
+    <string name="next">Next</string>
+    <string name="prev">Previous</string>
+    <string name="comp_with">Compare with :</string>
+    <string name="sel_exm">Select exam :</string>
+    <string name="loa">List of Absentees</string>
+    <string name="creation">Creation Date</string>
+    <string name="submission">Submission Date</string>
+    <string name="streport">SlipTest Report</string>
+    <string name="version">Version-0.1</string>
+    <string name="coscholastic">Co-scholastic</string>
+    <string name="coscholastic2">Co-scholastic area</string>
+    <string name="stoan">Select the options as need</string>
+    <string name="title_activity_syncing">Syncing</string>
+    <string name="resolving">Resolving Errors</string>
+    <string name="bugs">Touch here to resolve the issue</string>
+    <string name="server_resolve">Resolving Issues</string>
+    <string name="voice_sms">Voice SMS</string>
+    <string name="send_voice_sms">Send Voice SMS to:</string>
+    <string name="send_sms">Send SMS to:</string>
+    <string name="sms">SMS</string>
+    <string name="submit">Submit</string>
+    <string name="all_students_mes">Recorded message will be sent to all students of the school</string>
+    <string name="all_teachers_mes">Recorded message will be sent to all teachers of the school</string>
+    <string name="upload">Upload</string>
+    <string name="record">Start Recording</string>
+    <string name="stop_rec">Stop Recording</string>
+    <string name="play">Play</string>
+    <string name="stop_play">Stop Playing</string>
+    <string name="delete">Delete</string>
+    <string name="custom_name">Custom Name</string>
+    <string name="prev_rec">Previous Recordings</string>
+    <string name="message">Message</string>
+    <string name="idxcolumn"> # </string>
+    <string name="remark">Remark</string>
+    <string name="grade">Grade</string>
+    <string name="history">History</string>
+    <string name="to">To</string>
+    <string name="prev_mes">Previous Messages</string>
+    <string name="title_activity_process_files">ProcessFiles</string>
+
+</resources>

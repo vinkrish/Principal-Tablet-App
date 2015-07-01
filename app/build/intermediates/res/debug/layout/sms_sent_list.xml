@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_weight="1"
+        android:paddingLeft="10dp"
+        android:focusable="false"
+        android:textColor="#000000"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/divider" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="0.5"
+        android:focusable="false"
+        android:textColor="#000000"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+   <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/divider" />
+
+    <TextView
+        android:id="@+id/to"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="0.5"
+        android:focusable="false"
+        android:textColor="#000000"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+  
+</LinearLayout><!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/layout/sms_sent_list.xml -->

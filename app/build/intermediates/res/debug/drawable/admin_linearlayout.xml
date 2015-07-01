@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <corners
+        android:radius="40dp">
+    </corners>
+    <solid 
+        android:color="#D7DBD7"/>
+
+</shape>
+<!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/drawable/admin_linearlayout.xml -->

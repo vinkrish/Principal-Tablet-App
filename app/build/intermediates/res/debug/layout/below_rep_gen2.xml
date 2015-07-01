@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/bottom10exam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/layoutbelowBC"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:text="@string/roll"
+            android:textColor="@color/light_black"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="45dp"
+            android:background="#FFFFFF" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.5"
+            android:paddingLeft="10dp"
+            android:text="@string/studentname"
+            android:textColor="@color/light_black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="45dp"
+            android:background="#FFFFFF" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0.4"
+            android:paddingLeft="10dp"
+            android:text="@string/performance"
+            android:textColor="@color/light_black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    
+    <ListView
+        android:id="@+id/lisview2"
+        android:layout_width="match_parent"
+        android:layout_height="500dp">
+    </ListView>
+
+</LinearLayout><!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/layout/below_rep_gen2.xml -->

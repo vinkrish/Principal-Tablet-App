@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/clas1"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:gravity="center"
+        android:textColor="#000000" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/divider" />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0.6"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" >
+
+        <ProgressBar
+            android:id="@+id/avgProgress"
+            style="@style/tallerBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:focusable="false" />
+
+        <TextView
+            android:id="@+id/percent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/divider" />
+
+    <TextView
+        android:id="@+id/clas2"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:gravity="center"
+        android:textColor="#000000" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/divider" />
+
+    <TextView
+        android:id="@+id/studname"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="0.445"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="10dp"
+        android:textColor="#000000" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/divider" />
+
+    <TextView
+        android:id="@+id/days"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="0.15"
+        android:gravity="center"
+        android:textColor="#000000" />
+
+</LinearLayout>

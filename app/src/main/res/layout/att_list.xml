@@ -1,0 +1,77 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/acsmrcsview"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/idx"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0.2"
+        android:focusable="false"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/divider" />
+
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0.8"
+        android:focusable="false"
+        android:paddingLeft="10dp"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/divider" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0.15"
+        android:focusable="false"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/divider" />
+
+    <ProgressBar
+        android:id="@+id/avgProgress"
+        style="@style/tallerBarStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0.5"
+        android:focusable="false"
+        android:paddingLeft="10dp" />
+
+    <TextView
+        android:id="@+id/percent"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:layout_marginRight="5dp"
+        android:layout_weight="0.1"
+        android:background="@color/dark_black"
+        android:gravity="center"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>

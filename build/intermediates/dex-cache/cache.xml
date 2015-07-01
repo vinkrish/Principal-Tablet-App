@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-016b2f99696744ff2753c47740f302e79120105f.jar" />
+    </item>
+    <item
+        jar="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/libs/aws-android-sdk-core-2.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e154f5b66df06dfa421f38c9baaad91c428aeae0">
+        <dex dex="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/build/intermediates/pre-dexed/debug/aws-android-sdk-core-2.2.1-62331370965aaa82c69598137a8138f5620efd2d.jar" />
+    </item>
+    <item
+        jar="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/build/intermediates/pre-dexed/debug/classes-845512eef0c5ea11274b98e6b99eaa433ee70e28.jar" />
+    </item>
+    <item
+        jar="/Users/Vidhya/Downloads/adt-bundle-mac-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-fd593ec8abec247b831efba027176bb4dedc70a9.jar" />
+    </item>
+    <item
+        jar="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/libs/achartengine-1.1.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9932e3fb9fbe54e80873e77f72a99f79e33b3250">
+        <dex dex="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/build/intermediates/pre-dexed/debug/achartengine-1.1.0-269f5fefbf0a5c73522ffdd2f8d872a76b7b8aaa.jar" />
+    </item>
+    <item
+        jar="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/libs/commons-net-3.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="cd0d5510908225f76c5fe5a3f1df4fa44866f81e">
+        <dex dex="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/build/intermediates/pre-dexed/debug/commons-net-3.3-bdb2ed9f0df562a1033878ed461146151809219d.jar" />
+    </item>
+    <item
+        jar="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/libs/aws-android-sdk-s3-2.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="cabafdaebd650e720a5e2d68bfb0de0b35e5209d">
+        <dex dex="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/build/intermediates/pre-dexed/debug/aws-android-sdk-s3-2.2.1-ca6dd332fb2fce771b8e077ce1619650fe2dccbe.jar" />
+    </item>
+
+</items>
