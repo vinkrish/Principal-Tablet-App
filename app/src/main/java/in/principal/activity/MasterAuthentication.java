@@ -1,6 +1,5 @@
 package in.principal.activity;
 
-import in.principal.activity.R;
 import in.principal.adapter.Alert;
 import in.principal.sync.FirstTimeSync;
 import in.principal.util.AnimationUtils;
@@ -38,44 +37,10 @@ public class MasterAuthentication extends BaseActivity {
 		context = AppGlobal.getContext();
 		adminUser = (TextView)findViewById(R.id.adminUserName);
 		adminPass = (TextView)findViewById(R.id.adminPassword);
-		Button clear = (Button)findViewById(R.id.numclear);
 		deviceId = (TextView)findViewById(R.id.deviceId);
 		
 		String android_id = Secure.getString(getBaseContext().getContentResolver(),Secure.ANDROID_ID);
 		deviceId.setText(android_id);
-
-		ConnectivityManager connManager = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
-		NetworkInfo mWifi = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-		if (mWifi!=null && mWifi.isConnected()) {
-		}else{
-			WifiManager wifiManager = (WifiManager)this.getSystemService(Context.WIFI_SERVICE);
-			wifiManager.setWifiEnabled(false);
-			wifiManager.setWifiEnabled(true);
-		}
-
-		adminUser.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				if(adminPass.getText().toString().equalsIgnoreCase("|")){
-					adminPass.setText("");
-					adminPass.setHint("Password");
-				}
-				adminUser.setText("|");
-				tvflag = false;
-			}
-		});
-
-		adminPass.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				if(adminUser.getText().toString().equalsIgnoreCase("|")){
-					adminUser.setText("");
-					adminUser.setHint("Username");
-				}
-				adminPass.setText("|");
-				tvflag = true;
-			}
-		});
 
 		int[] buttonIds = {R.id.num1,R.id.num2,R.id.num3,R.id.num4,R.id.num5,R.id.num6,R.id.num7,R.id.num8,R.id.num9,R.id.num0};
 		for(int i=0; i<10; i++){
@@ -131,25 +96,43 @@ public class MasterAuthentication extends BaseActivity {
 
 			});
 		}
-		clear.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if(tvflag){
-					adminPass.setText("|");
-					if(adminUser.getText().toString().equalsIgnoreCase("|")){
-						adminUser.setText("");
-						adminUser.setHint("Username");
-					}
-				}else{
-					adminUser.setText("|");
-					if(adminPass.getText().toString().equalsIgnoreCase("|")){
-						adminPass.setText("");
-						adminPass.setHint("Password");
-					}
-				}
+        findViewById(R.id.numclear).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (tvflag) {
+                    adminPass.setText("|");
+                    if (adminUser.getText().toString().equalsIgnoreCase("|")) {
+                        adminUser.setText("");
+                        adminUser.setHint("Username");
+                    }
+                } else {
+                    adminUser.setText("|");
+                    if (adminPass.getText().toString().equalsIgnoreCase("|")) {
+                        adminPass.setText("");
+                        adminPass.setHint("Password");
+                    }
+                }
 
-			}
-		});
+            }
+        });
+	}
+
+	public void adminUserClicked(View v){
+		if(adminPass.getText().toString().equalsIgnoreCase("|")){
+			adminPass.setText("");
+			adminPass.setHint("Password");
+		}
+		adminUser.setText("|");
+		tvflag = false;
+	}
+
+	public void adminPassClicked(View v){
+		if(adminUser.getText().toString().equalsIgnoreCase("|")){
+			adminUser.setText("");
+			adminUser.setHint("Username");
+		}
+		adminPass.setText("|");
+		tvflag = true;
 	}
 	
 	private void updateFields(String value){
@@ -207,10 +190,8 @@ public class MasterAuthentication extends BaseActivity {
 			new FirstTimeSync().callFirstTimeSync();
 		}else{
 			Alert alert = new Alert(this);
-			alert.showAlert("Check WiFi");
+			alert.showAlert("Check Internet");
 		}
-	//	Intent intent = new Intent(context, in.principal.adapter.SyncService.class);
-	//	context.stopService(intent);
 	}
 
 	@Override

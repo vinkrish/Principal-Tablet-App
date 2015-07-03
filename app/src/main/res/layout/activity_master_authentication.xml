@@ -1,17 +1,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_micromax" >
-    
-    <TextView 
+    android:background="@drawable/login_micromax">
+
+    <TextView
         android:id="@+id/deviceId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textSize="@dimen/text_xmedium"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:textSize="@dimen/text_xmedium" />
 
     <LinearLayout
         android:id="@+id/ll"
@@ -20,8 +19,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="#66FFFFFF"
-        android:orientation="vertical" >
-    </LinearLayout>
+        android:orientation="vertical"></LinearLayout>
 
     <View
         android:id="@+id/viewlayout"
@@ -39,7 +37,7 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/login_layout"
         android:gravity="center"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/adminUserName"
@@ -48,7 +46,9 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:background="@drawable/login_field"
+            android:clickable="true"
             android:gravity="center"
+            android:onClick="adminUserClicked"
             android:text="@string/username"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"
@@ -60,7 +60,9 @@
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/login_field"
+            android:clickable="true"
             android:gravity="center"
+            android:onClick="adminPassClicked"
             android:text="@string/password"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"

@@ -20,34 +20,31 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.provider.Settings.Secure;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class LoginActivity extends BaseActivity {
-	private int isSync;
 	private SQLiteDatabase sqliteDatabase;
 	private Context context;
 	private boolean tvflag, authflag;
-	private String syncTimed,passwordText;
-	private TextView userName,password,timeSync;
-	private ArrayList<School> auth;
+	private String syncTimed, passwordText;
+	private TextView userName, password;
 	private int length;
 	private String savedId, savedPassword;
+    private SharedPreferences sharedPref;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
+
+        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
 		
 		Intent intent = getIntent();
 		if(intent.getIntExtra("create", 0) == 1){
@@ -58,10 +55,8 @@ public class LoginActivity extends BaseActivity {
 			startService(service);
 		}
 		
-		Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
-		
 		context = AppGlobal.getContext();
-		SharedPreferences sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
+        sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
 
 		SharedPreferences.Editor editor = sharedPref.edit();
 		editor.putInt("boot_sync", 0);
@@ -69,149 +64,142 @@ public class LoginActivity extends BaseActivity {
 
 		int tabletLock = sharedPref.getInt("tablet_lock", 0);
 		if(tabletLock==0){
-			isSync = sharedPref.getInt("is_sync",0);
-			if(isSync==0){
-				sqliteDatabase = AppGlobal.getSqliteDatabase();
-
-				ImageView admin = (ImageView)findViewById(R.id.admin);
-				admin.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						Intent i = new Intent(LoginActivity.this, in.principal.activity.MasterAuthentication.class);
-						startActivity(i);
-						AnimationUtils.activityEnter(LoginActivity.this);
-					}
-				});
-
-				String android_id = Secure.getString(getBaseContext().getContentResolver(),Secure.ANDROID_ID);
-				Log.d("id", android_id);
-				//	ACRA.getErrorReporter().putCustomData("Android_Device_Id", android_id);
-
-				TempDao.updateDeviceId(android_id, sqliteDatabase);
-
-				timeSync = (TextView) findViewById(R.id.syncTime); 
-				userName = (TextView) findViewById(R.id.userName);
-				password = (TextView) findViewById(R.id.password);
-				Button clear = (Button) findViewById(R.id.numclear);
-
-				Temp temp = TempDao.selectTemp(sqliteDatabase);
-				syncTimed = temp.getSyncTime();
-
-				timeSync.setText(syncTimed);
-
-				auth = SchoolDao.selectSchool(sqliteDatabase);
-				for(School school: auth){
-					length = String.valueOf(school.getPrincipalTeacherId()).length();
-					savedId = school.getPrincipalTeacherId()+"";
-					savedPassword = school.getPrincipalTeacherId()+"";
-				}
-
-				userName.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View arg0) {
-						if(password.getText().toString().equalsIgnoreCase("|")){
-							password.setText("");
-							password.setHint("Password");
-						}
-						userName.setText("|");
-						tvflag = false;
-					}
-				});
-
-				password.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View arg0) {
-						if(userName.getText().toString().equalsIgnoreCase("|")){
-							userName.setText("");
-							userName.setHint("Username");
-						}
-						password.setText("|");
-						tvflag = true;
-					}
-				});
-
-				int[] buttonIds = {R.id.num1,R.id.num2,R.id.num3,R.id.num4,R.id.num5,R.id.num6,R.id.num7,R.id.num8,R.id.num9,R.id.num0};
-				for(int i=0; i<10; i++){
-					Button b = (Button)findViewById(buttonIds[i]);
-					b.setOnClickListener(new View.OnClickListener() {
-						@Override
-						public void onClick(View v) {
-
-							if(userName.getText().toString().equals("Username")){
-								userName.setText("");
-							}else if(password.getText().toString().equals("Password") && tvflag){
-								password.setText("");
-							}
-							if(userName.getText().toString().equalsIgnoreCase("|")){
-								userName.setText("");
-								password.setHint("Password");
-							}else if(password.getText().toString().equalsIgnoreCase("|")){
-								passwordText = "";
-								password.setText("");
-							}
-
-							if(v.getId()==R.id.num1){
-								updateFields("1");
-							}
-							if(v.getId()==R.id.num2){
-								updateFields("2");
-							}
-							if(v.getId()==R.id.num3){
-								updateFields("3");
-							}
-							if(v.getId()==R.id.num4){
-								updateFields("4");
-							}
-							if(v.getId()==R.id.num5){
-								updateFields("5");
-							}
-							if(v.getId()==R.id.num6){
-								updateFields("6");
-							}
-							if(v.getId()==R.id.num7){
-								updateFields("7");
-							}
-							if(v.getId()==R.id.num8){
-								updateFields("8");
-							}
-							if(v.getId()==R.id.num9){
-								updateFields("9");
-							}					
-							if(v.getId()==R.id.num0){
-								updateFields("0");
-							}
-						}
-
-					});
-				}
-				clear.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						if(tvflag){
-							password.setText("|");
-							if(userName.getText().toString().equalsIgnoreCase("|")){
-								userName.setText("");
-								userName.setHint("Username");
-							}
-						}else{
-							userName.setText("|");
-							if(password.getText().toString().equalsIgnoreCase("|")){
-								password.setText("");
-								password.setHint("Password");
-							}
-						}
-					}
-				});
-			}
+			initView();
 		}else if(tabletLock==1){
 			Intent i = new Intent(this, in.principal.activity.LockActivity.class);
-			//	i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(i);
 		}else if(tabletLock==2){
 			Intent i = new Intent(this, in.principal.activity.ServerBlock.class);
 			startActivity(i);
 		}
 	}
+
+	private void initView(){
+        int isSync = sharedPref.getInt("is_sync",0);
+        if(isSync==0){
+            sqliteDatabase = AppGlobal.getSqliteDatabase();
+
+            findViewById(R.id.admin).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(LoginActivity.this, in.principal.activity.MasterAuthentication.class);
+                    startActivity(i);
+                    AnimationUtils.activityEnter(LoginActivity.this);
+                }
+            });
+
+            String android_id = Secure.getString(getBaseContext().getContentResolver(),Secure.ANDROID_ID);
+
+            TempDao.updateDeviceId(android_id, sqliteDatabase);
+
+            TextView timeSync = (TextView) findViewById(R.id.syncTime);
+            userName = (TextView) findViewById(R.id.userName);
+            password = (TextView) findViewById(R.id.password);
+
+            Temp temp = TempDao.selectTemp(sqliteDatabase);
+            syncTimed = temp.getSyncTime();
+
+            timeSync.setText(syncTimed);
+
+            ArrayList<School> auth = SchoolDao.selectSchool(sqliteDatabase);
+            for(School school: auth){
+                length = String.valueOf(school.getPrincipalTeacherId()).length();
+                savedId = school.getPrincipalTeacherId()+"";
+                savedPassword = school.getPrincipalTeacherId()+"";
+            }
+
+            int[] buttonIds = {R.id.num1,R.id.num2,R.id.num3,R.id.num4,R.id.num5,R.id.num6,R.id.num7,R.id.num8,R.id.num9,R.id.num0};
+            for(int i=0; i<10; i++){
+                Button b = (Button)findViewById(buttonIds[i]);
+                b.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        if(userName.getText().toString().equals("Username")){
+                            userName.setText("");
+                        }else if(password.getText().toString().equals("Password") && tvflag){
+                            password.setText("");
+                        }
+                        if(userName.getText().toString().equalsIgnoreCase("|")){
+                            userName.setText("");
+                            password.setHint("Password");
+                        }else if(password.getText().toString().equalsIgnoreCase("|")){
+                            passwordText = "";
+                            password.setText("");
+                        }
+
+                        if(v.getId()==R.id.num1){
+                            updateFields("1");
+                        }
+                        if(v.getId()==R.id.num2){
+                            updateFields("2");
+                        }
+                        if(v.getId()==R.id.num3){
+                            updateFields("3");
+                        }
+                        if(v.getId()==R.id.num4){
+                            updateFields("4");
+                        }
+                        if(v.getId()==R.id.num5){
+                            updateFields("5");
+                        }
+                        if(v.getId()==R.id.num6){
+                            updateFields("6");
+                        }
+                        if(v.getId()==R.id.num7){
+                            updateFields("7");
+                        }
+                        if(v.getId()==R.id.num8){
+                            updateFields("8");
+                        }
+                        if(v.getId()==R.id.num9){
+                            updateFields("9");
+                        }
+                        if(v.getId()==R.id.num0){
+                            updateFields("0");
+                        }
+                    }
+
+                });
+            }
+            findViewById(R.id.numclear).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (tvflag) {
+                        password.setText("|");
+                        if (userName.getText().toString().equalsIgnoreCase("|")) {
+                            userName.setText("");
+                            userName.setHint("Username");
+                        }
+                    } else {
+                        userName.setText("|");
+                        if (password.getText().toString().equalsIgnoreCase("|")) {
+                            password.setText("");
+                            password.setHint("Password");
+                        }
+                    }
+                }
+            });
+        }
+	}
+
+    public void usernameClicked(View v){
+        if(password.getText().toString().equalsIgnoreCase("|")){
+            password.setText("");
+            password.setHint("Password");
+        }
+        userName.setText("|");
+        tvflag = false;
+    }
+
+    public void passwordClicked(View v){
+        if(userName.getText().toString().equalsIgnoreCase("|")){
+            userName.setText("");
+            userName.setHint("Username");
+        }
+        password.setText("|");
+        tvflag = true;
+    }
 	
 	private void updateFields(String value){
 		if(tvflag){			
