@@ -401,7 +401,7 @@ public class AttendanceClass extends Fragment {
 
                 String[] items2 = nameList.toArray(new String[nameList.size()]);
                 AlertDialog.Builder builder2 = new AlertDialog.Builder(act);
-                builder2.setTitle("List of Longest Absentees");
+                builder2.setTitle("List of Absentees");
                 builder2.setItems(items2, null);
                 builder2.show();
             }
