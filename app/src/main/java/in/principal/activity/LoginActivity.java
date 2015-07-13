@@ -30,53 +30,53 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class LoginActivity extends BaseActivity {
-	private SQLiteDatabase sqliteDatabase;
-	private Context context;
-	private boolean tvflag, authflag;
-	private String syncTimed, passwordText;
-	private TextView userName, password;
-	private int length;
-	private String savedId, savedPassword;
+    private SQLiteDatabase sqliteDatabase;
+    private Context context;
+    private boolean tvflag, authflag;
+    private String syncTimed, passwordText;
+    private TextView userName, password;
+    private int length;
+    private String savedId, savedPassword;
     private SharedPreferences sharedPref;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_login);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
 
         Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
-		
-		Intent intent = getIntent();
-		if(intent.getIntExtra("create", 0) == 1){
-			new CallFTP().syncFTP();
-		}
-		if(intent.getIntExtra("start_sync", 0) == 1){
-			Intent service = new Intent(this, in.principal.adapter.SyncService.class);
-			startService(service);
-		}
-		
-		context = AppGlobal.getContext();
+
+        Intent intent = getIntent();
+        if (intent.getIntExtra("create", 0) == 1) {
+            new CallFTP().syncFTP();
+        }
+        if (intent.getIntExtra("start_sync", 0) == 1) {
+            Intent service = new Intent(this, in.principal.adapter.SyncService.class);
+            startService(service);
+        }
+
+        context = AppGlobal.getContext();
         sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
 
-		SharedPreferences.Editor editor = sharedPref.edit();
-		editor.putInt("boot_sync", 0);
-		editor.apply();
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt("boot_sync", 0);
+        editor.apply();
 
-		int tabletLock = sharedPref.getInt("tablet_lock", 0);
-		if(tabletLock==0){
-			initView();
-		}else if(tabletLock==1){
-			Intent i = new Intent(this, in.principal.activity.LockActivity.class);
-			startActivity(i);
-		}else if(tabletLock==2){
-			Intent i = new Intent(this, in.principal.activity.ServerBlock.class);
-			startActivity(i);
-		}
-	}
+        int tabletLock = sharedPref.getInt("tablet_lock", 0);
+        if (tabletLock == 0) {
+            initView();
+        } else if (tabletLock == 1) {
+            Intent i = new Intent(this, in.principal.activity.LockActivity.class);
+            startActivity(i);
+        } else if (tabletLock == 2) {
+            Intent i = new Intent(this, in.principal.activity.ServerBlock.class);
+            startActivity(i);
+        }
+    }
 
-	private void initView(){
-        int isSync = sharedPref.getInt("is_sync",0);
-        if(isSync==0){
+    private void initView() {
+        int isSync = sharedPref.getInt("is_sync", 0);
+        if (isSync == 0) {
             sqliteDatabase = AppGlobal.getSqliteDatabase();
 
             findViewById(R.id.admin).setOnClickListener(new View.OnClickListener() {
@@ -88,7 +88,7 @@ public class LoginActivity extends BaseActivity {
                 }
             });
 
-            String android_id = Secure.getString(getBaseContext().getContentResolver(),Secure.ANDROID_ID);
+            String android_id = Secure.getString(getBaseContext().getContentResolver(), Secure.ANDROID_ID);
 
             TempDao.updateDeviceId(android_id, sqliteDatabase);
 
@@ -102,60 +102,60 @@ public class LoginActivity extends BaseActivity {
             timeSync.setText(syncTimed);
 
             ArrayList<School> auth = SchoolDao.selectSchool(sqliteDatabase);
-            for(School school: auth){
+            for (School school : auth) {
                 length = String.valueOf(school.getPrincipalTeacherId()).length();
-                savedId = school.getPrincipalTeacherId()+"";
-                savedPassword = school.getPrincipalTeacherId()+"";
+                savedId = school.getPrincipalTeacherId() + "";
+                savedPassword = school.getPrincipalTeacherId() + "";
             }
 
-            int[] buttonIds = {R.id.num1,R.id.num2,R.id.num3,R.id.num4,R.id.num5,R.id.num6,R.id.num7,R.id.num8,R.id.num9,R.id.num0};
-            for(int i=0; i<10; i++){
-                Button b = (Button)findViewById(buttonIds[i]);
+            int[] buttonIds = {R.id.num1, R.id.num2, R.id.num3, R.id.num4, R.id.num5, R.id.num6, R.id.num7, R.id.num8, R.id.num9, R.id.num0};
+            for (int i = 0; i < 10; i++) {
+                Button b = (Button) findViewById(buttonIds[i]);
                 b.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
-                        if(userName.getText().toString().equals("Username")){
+                        if (userName.getText().toString().equals("Username")) {
                             userName.setText("");
-                        }else if(password.getText().toString().equals("Password") && tvflag){
+                        } else if (password.getText().toString().equals("Password") && tvflag) {
                             password.setText("");
                         }
-                        if(userName.getText().toString().equalsIgnoreCase("|")){
+                        if (userName.getText().toString().equalsIgnoreCase("|")) {
                             userName.setText("");
                             password.setHint("Password");
-                        }else if(password.getText().toString().equalsIgnoreCase("|")){
+                        } else if (password.getText().toString().equalsIgnoreCase("|")) {
                             passwordText = "";
                             password.setText("");
                         }
 
-                        if(v.getId()==R.id.num1){
+                        if (v.getId() == R.id.num1) {
                             updateFields("1");
                         }
-                        if(v.getId()==R.id.num2){
+                        if (v.getId() == R.id.num2) {
                             updateFields("2");
                         }
-                        if(v.getId()==R.id.num3){
+                        if (v.getId() == R.id.num3) {
                             updateFields("3");
                         }
-                        if(v.getId()==R.id.num4){
+                        if (v.getId() == R.id.num4) {
                             updateFields("4");
                         }
-                        if(v.getId()==R.id.num5){
+                        if (v.getId() == R.id.num5) {
                             updateFields("5");
                         }
-                        if(v.getId()==R.id.num6){
+                        if (v.getId() == R.id.num6) {
                             updateFields("6");
                         }
-                        if(v.getId()==R.id.num7){
+                        if (v.getId() == R.id.num7) {
                             updateFields("7");
                         }
-                        if(v.getId()==R.id.num8){
+                        if (v.getId() == R.id.num8) {
                             updateFields("8");
                         }
-                        if(v.getId()==R.id.num9){
+                        if (v.getId() == R.id.num9) {
                             updateFields("9");
                         }
-                        if(v.getId()==R.id.num0){
+                        if (v.getId() == R.id.num0) {
                             updateFields("0");
                         }
                     }
@@ -181,10 +181,10 @@ public class LoginActivity extends BaseActivity {
                 }
             });
         }
-	}
+    }
 
-    public void usernameClicked(View v){
-        if(password.getText().toString().equalsIgnoreCase("|")){
+    public void usernameClicked(View v) {
+        if (password.getText().toString().equalsIgnoreCase("|")) {
             password.setText("");
             password.setHint("Password");
         }
@@ -192,112 +192,112 @@ public class LoginActivity extends BaseActivity {
         tvflag = false;
     }
 
-    public void passwordClicked(View v){
-        if(userName.getText().toString().equalsIgnoreCase("|")){
+    public void passwordClicked(View v) {
+        if (userName.getText().toString().equalsIgnoreCase("|")) {
             userName.setText("");
             userName.setHint("Username");
         }
         password.setText("|");
         tvflag = true;
     }
-	
-	private void updateFields(String value){
-		if(tvflag){			
-			password.setText(new StringBuffer(password.getText()).append("*"));			
-			String sb = passwordText+value;
-			passwordText = sb;
-			if(passwordText.length()==length)
-				authenticate();
-		}else{
-			String s = userName.getText().toString();
-			StringBuffer sb = new StringBuffer(s);
-			sb.append(value);
-			userName.setText(sb);
-			String s2 = userName.getText().toString();
-			if(s2.length()==length)
-				preauthenticate();
-		}
-	}
 
-	private void preauthenticate() {
-		password.setText("|");
-		tvflag = true;
-	}
+    private void updateFields(String value) {
+        if (tvflag) {
+            password.setText(new StringBuffer(password.getText()).append("*"));
+            String sb = passwordText + value;
+            passwordText = sb;
+            if (passwordText.length() == length)
+                authenticate();
+        } else {
+            String s = userName.getText().toString();
+            StringBuffer sb = new StringBuffer(s);
+            sb.append(value);
+            userName.setText(sb);
+            String s2 = userName.getText().toString();
+            if (s2.length() == length)
+                preauthenticate();
+        }
+    }
 
-	private void authenticate() {
-		String s = userName.getText().toString();
-		if(s.isEmpty()){
-			authflag = false;
-		}else{
-			String enteredId = userName.getText().toString();
-			if(enteredId.equals(savedId) && passwordText.equals(savedPassword)){
-				authflag = true;
-				authSuccess();
-			}			
-		}
-		if(!authflag){
-			Alert ad = new Alert(LoginActivity.this);
-			ad.showAlert("User is not Authenticated");
-		}
-		userName.setText("Username");
-		password.setText("Password");
-		tvflag = false;
-	}
+    private void preauthenticate() {
+        password.setText("|");
+        tvflag = true;
+    }
 
-	private void authSuccess() {
-		String csvSplitBy = "-";
-		String line = getToday();
-		String[] data = line.split(csvSplitBy);
-		int year = Integer.parseInt(data[0]);
-		int month = Integer.parseInt(data[1])-1;
-		int day = Integer.parseInt(data[2]);
-		TempDao.setThreeAbsDays(year, month, day, sqliteDatabase);
+    private void authenticate() {
+        String s = userName.getText().toString();
+        if (s.isEmpty()) {
+            authflag = false;
+        } else {
+            String enteredId = userName.getText().toString();
+            if (enteredId.equals(savedId) && passwordText.equals(savedPassword)) {
+                authflag = true;
+                authSuccess();
+            }
+        }
+        if (!authflag) {
+            Alert ad = new Alert(LoginActivity.this);
+            ad.showAlert("User is not Authenticated");
+        }
+        userName.setText("Username");
+        password.setText("Password");
+        tvflag = false;
+    }
 
-		Intent intentt = new Intent(this, in.principal.activity.Dashboard.class);
-		startActivity(intentt);
-		AnimationUtils.activityEnterVertical(LoginActivity.this);
-	}
+    private void authSuccess() {
+        String csvSplitBy = "-";
+        String line = getToday();
+        String[] data = line.split(csvSplitBy);
+        int year = Integer.parseInt(data[0]);
+        int month = Integer.parseInt(data[1]) - 1;
+        int day = Integer.parseInt(data[2]);
+        TempDao.setThreeAbsDays(year, month, day, sqliteDatabase);
 
-	private String getToday() {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-		Date today = new Date();
-		return dateFormat.format(today);
-	}
+        Intent intentt = new Intent(this, in.principal.activity.Dashboard.class);
+        startActivity(intentt);
+        AnimationUtils.activityEnterVertical(LoginActivity.this);
+    }
 
-	@Override
-	protected void onPause(){
-		super.onPause();
-		SharedPreferences sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
-		int is_first_sync = sharedPref.getInt("first_sync",0);
-		int sleepSync = sharedPref.getInt("sleep_sync",0);
-		int tabletLock = sharedPref.getInt("tablet_lock", 0);
-		PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
-		boolean isScreen = pm.isScreenOn();
+    private String getToday() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        Date today = new Date();
+        return dateFormat.format(today);
+    }
 
-		if (NetworkUtils.isNetworkConnected(context) && sleepSync==1 && !isScreen && is_first_sync==0 && tabletLock==0){
-			SharedPreferences.Editor editor = sharedPref.edit();
-			editor.putInt("is_sync", 1);
-			editor.apply();
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SharedPreferences sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
+        int is_first_sync = sharedPref.getInt("first_sync", 0);
+        int sleepSync = sharedPref.getInt("sleep_sync", 0);
+        int tabletLock = sharedPref.getInt("tablet_lock", 0);
+        PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+        boolean isScreen = pm.isScreenOn();
 
-			Intent intent = new Intent(this, in.principal.activity.ProcessFiles.class);
-			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-			startActivity(intent);
-		}
-	}
+        if (NetworkUtils.isNetworkConnected(context) && sleepSync == 1 && !isScreen && is_first_sync == 0 && tabletLock == 0) {
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt("is_sync", 1);
+            editor.apply();
 
-	@Override
-	protected void onResume(){
-		super.onResume();
-	}
+            Intent intent = new Intent(this, in.principal.activity.ProcessFiles.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        }
+    }
 
-	@Override
-	protected void onDestroy(){
-		super.onDestroy();
-	}
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 
-	@Override
-	public void onBackPressed(){
-		/*File sd = Environment.getExternalStorageDirectory();
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    public void onBackPressed() {
+        /*File sd = Environment.getExternalStorageDirectory();
 		File data = Environment.getDataDirectory();
 		FileChannel source=null;
 		FileChannel destination=null;
@@ -315,16 +315,16 @@ public class LoginActivity extends BaseActivity {
 		} catch(IOException e) {
 			e.printStackTrace();
 		}*/
-	}
+    }
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.login, menu);
-		return true;
-	}
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.login, menu);
+        return true;
+    }
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		return super.onOptionsItemSelected(item);
-	}
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
 }

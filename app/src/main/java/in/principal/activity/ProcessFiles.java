@@ -22,6 +22,7 @@ import in.principal.dao.SubActivityDao;
 import in.principal.dao.TempDao;
 import in.principal.sqlite.Temp;
 import in.principal.activity.ProcessFiles;
+import in.principal.sync.FirstTimeSync;
 import in.principal.sync.StringConstant;
 import in.principal.sync.UploadSyncParser;
 import in.principal.util.AppGlobal;
@@ -49,7 +50,7 @@ public class ProcessFiles extends BaseActivity implements StringConstant{
 	private String deviceId;
 	private ProgressBar progressBar;
 	private TextView txtPercentage, txtSync;
-	private boolean isException = false;
+	private boolean isException = false, isFirstTimeSync = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +88,8 @@ public class ProcessFiles extends BaseActivity implements StringConstant{
 			schoolId = t.getSchoolId();
 			deviceId = t.getDeviceId();
 
+            isFirstTimeSync = false;
+
 			ArrayList<String> downFileList = new ArrayList<>();
 			Cursor c1 = sqliteDatabase.rawQuery("select filename from downloadedfile where processed=0", null);
 			c1.moveToFirst();
@@ -106,8 +109,8 @@ public class ProcessFiles extends BaseActivity implements StringConstant{
 				for(String f: downFileList){
 					fileIndex += 1;
 					queryIndex = 0;
-					queryCount = countLines(f);
 					File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), f);
+					queryCount = countLines(f);
 					BufferedReader input =  new BufferedReader(new FileReader(file));
 					try {
 						String line = null;
@@ -141,6 +144,7 @@ public class ProcessFiles extends BaseActivity implements StringConstant{
 				}
 			}catch(IOException e){
 				e.printStackTrace();
+                isFirstTimeSync = true;
 			}
 			Log.d("process_file_res", "...");
 
@@ -155,24 +159,26 @@ public class ProcessFiles extends BaseActivity implements StringConstant{
 			}
 			c2.close();
 
-			Log.d("ack_file_req", "...");
-			if(sb.length()>3){
-				try{
-					JSONObject jsonObject = new JSONObject();
-					jsonObject.put("school", schoolId);
-					jsonObject.put("tab_id", deviceId);
-					jsonObject.put("file_name", "'"+sb.substring(0, sb.length()-3)+"'");
-					jsonReceived = UploadSyncParser.makePostRequest(update_processed_file, jsonObject);
-					if(jsonReceived.getInt(TAG_SUCCESS)==1){
-						sqliteDatabase.execSQL("update downloadedfile set isack=1 where processed=1 and filename in ('"+sb.substring(0, sb.length()-3)+"')");
-					}
-				}catch(JSONException e){
-					e.printStackTrace();
-				}catch (ConnectException e) {
-					e.printStackTrace();
-				}
-			}
-			Log.d("ack_file_res", "...");
+            if(!isFirstTimeSync) {
+                Log.d("ack_file_req", "...");
+                if (sb.length() > 3) {
+                    try {
+                        JSONObject jsonObject = new JSONObject();
+                        jsonObject.put("school", schoolId);
+                        jsonObject.put("tab_id", deviceId);
+                        jsonObject.put("file_name", "'" + sb.substring(0, sb.length() - 3) + "'");
+                        jsonReceived = UploadSyncParser.makePostRequest(update_processed_file, jsonObject);
+                        if (jsonReceived.getInt(TAG_SUCCESS) == 1) {
+                            sqliteDatabase.execSQL("update downloadedfile set isack=1 where processed=1 and filename in ('" + sb.substring(0, sb.length() - 3) + "')");
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (ConnectException e) {
+                        e.printStackTrace();
+                    }
+                }
+                Log.d("ack_file_res", "...");
+            }
 
 			publishProgress("0",0+"","calculating average");
 
@@ -358,7 +364,11 @@ public class ProcessFiles extends BaseActivity implements StringConstant{
 				Intent intent = new Intent(ProcessFiles.this, in.principal.activity.LockActivity.class);
 				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(intent);
-			}else{
+			} else if (isFirstTimeSync){
+                editor.putInt("first_sync", 1);
+                editor.apply();
+                new FirstTimeSync().callFirstTimeSync();
+            } else{
 				Intent intent = new Intent(ProcessFiles.this, in.principal.activity.LoginActivity.class);
 				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(intent);

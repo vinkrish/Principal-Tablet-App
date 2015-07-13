@@ -93,8 +93,8 @@ public class Dashboard extends BaseActivity {
 		Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
 		setContentView(R.layout.activity_dashboard);
 
-		IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_ON);
-		filter.addAction(Intent.ACTION_SCREEN_OFF);
+		/*IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_ON);
+		filter.addAction(Intent.ACTION_SCREEN_OFF);*/
 
 		context = AppGlobal.getContext();
 		sqlHandler = AppGlobal.getSqlDbHelper();
