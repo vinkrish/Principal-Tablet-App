@@ -77,8 +77,8 @@ import android.widget.LinearLayout;
 @SuppressLint("ClickableViewAccessibility")
 public class TextSms extends Fragment implements StringConstant {
     private SQLiteDatabase sqliteDatabase;
-    private Button allStudentsBtn, allTeachersBtn, classBtn, sectionBtn, studentBtn, submitBtn, prevBtn;
-    private FrameLayout allStudentsFrame, allTeachersFrame;
+    private Button allStudentsBtn, allTeachersBtn, classBtn, sectionBtn, studentBtn, submitBtn, allClassTeachersBtn;
+    private FrameLayout allStudentsFrame, allTeachersFrame, allClassTeachersFrame;
     private LinearLayout selectionFrame;
     private EditText classSpinner, sectionSpinner, studentSpinner, textSms;
     private int classId, sectionId, principalId, schoolId;
@@ -120,10 +120,11 @@ public class TextSms extends Fragment implements StringConstant {
         sectionBtn = (Button) view.findViewById(R.id.sec);
         studentBtn = (Button) view.findViewById(R.id.stud);
         submitBtn = (Button) view.findViewById(R.id.submit);
-        prevBtn = (Button) view.findViewById(R.id.prev);
+        allClassTeachersBtn = (Button) view.findViewById(R.id.classTeachers);
 
         allStudentsFrame = (FrameLayout) view.findViewById(R.id.allStudentsFrame);
         allTeachersFrame = (FrameLayout) view.findViewById(R.id.allTeachersFrame);
+        allClassTeachersFrame = (FrameLayout) view.findViewById(R.id.allClassTeachersFrame);
         selectionFrame = (LinearLayout) view.findViewById(R.id.selectionFrame);
 
         classSpinner = (EditText) view.findViewById(R.id.classSpinner);
@@ -167,6 +168,17 @@ public class TextSms extends Fragment implements StringConstant {
                 submitBtn.setEnabled(true);
                 allTeachersFrame.setVisibility(View.VISIBLE);
                 target = 1;
+            }
+        });
+
+        allClassTeachersBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deActivate();
+                v.setActivated(true);
+                submitBtn.setEnabled(true);
+                allClassTeachersFrame.setVisibility(View.VISIBLE);
+                target = 5;
             }
         });
 
@@ -239,13 +251,6 @@ public class TextSms extends Fragment implements StringConstant {
                 } else {
                     new CalledFTPSync().execute();
                 }
-            }
-        });
-
-        prevBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ReplaceFragment.replace(new TextSmsSent(), getFragmentManager());
             }
         });
 
@@ -324,12 +329,14 @@ public class TextSms extends Fragment implements StringConstant {
     private void deActivate() {
         allStudentsBtn.setActivated(false);
         allTeachersBtn.setActivated(false);
+        allClassTeachersBtn.setActivated(false);
         classBtn.setActivated(false);
         sectionBtn.setActivated(false);
         studentBtn.setActivated(false);
         submitBtn.setEnabled(false);
         allStudentsFrame.setVisibility(View.GONE);
         allTeachersFrame.setVisibility(View.GONE);
+        allClassTeachersFrame.setVisibility(View.GONE);
         selectionFrame.setVisibility(View.GONE);
     }
 
@@ -631,7 +638,17 @@ public class TextSms extends Fragment implements StringConstant {
                 c.moveToNext();
             }
             c.close();
-        } else if (target == 2) {
+        } else if(target == 5){
+            messageTo = "All Class Teachers";
+            Cursor c = sqliteDatabase.rawQuery("select Mobile from teacher where TeacherId in (select ClassTeacherId from section)", null);
+            c.moveToFirst();
+            while (!c.isAfterLast()) {
+                idList.add(c.getLong(c.getColumnIndex("Mobile")));
+                c.moveToNext();
+            }
+            c.close();
+        }
+        else if (target == 2) {
             messageTo = "Class";
             Cursor c = sqliteDatabase.rawQuery("select Mobile1 from students where ClassId in (" + ids + ")", null);
             c.moveToFirst();

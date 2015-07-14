@@ -11,6 +11,11 @@ import in.principal.util.AppGlobal;
 import in.principal.util.ExceptionHandler;
 import in.principal.util.NetworkUtils;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -21,6 +26,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.PowerManager;
 import android.provider.Settings.Secure;
 import android.view.Menu;
@@ -28,6 +34,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LoginActivity extends BaseActivity {
     private SQLiteDatabase sqliteDatabase;
@@ -297,7 +304,7 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        /*File sd = Environment.getExternalStorageDirectory();
+        File sd = Environment.getExternalStorageDirectory();
 		File data = Environment.getDataDirectory();
 		FileChannel source=null;
 		FileChannel destination=null;
@@ -314,7 +321,7 @@ public class LoginActivity extends BaseActivity {
 			Toast.makeText(this, "DB Exported!", Toast.LENGTH_LONG).show();
 		} catch(IOException e) {
 			e.printStackTrace();
-		}*/
+		}
     }
 
     @Override

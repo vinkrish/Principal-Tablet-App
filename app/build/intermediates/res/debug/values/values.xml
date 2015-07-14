@@ -74,10 +74,12 @@
     <string name="activity">Activity</string>
     <string name="adminLogin">Admin Login</string>
     <string name="aim">Attendance information for the month</string>
+    <string name="all_class_teacher_mes">Recorded message will be sent to all class teachers</string>
+    <string name="all_class_teachers">All Class Teachers</string>
     <string name="all_students">All Students</string>
-    <string name="all_students_mes">Recorded message will be sent to all students of the school</string>
+    <string name="all_students_mes">Recorded message will be sent to all students.</string>
     <string name="all_teachers">All Teachers</string>
-    <string name="all_teachers_mes">Recorded message will be sent to all teachers of the school</string>
+    <string name="all_teachers_mes">Recorded message will be sent to all teachers.</string>
     <string name="amr">Monthly Report</string>
     <string name="app_name">Principal</string>
     <string name="att_per">Attendance %</string>

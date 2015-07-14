@@ -81,11 +81,6 @@
         <activity android:name="in.principal.activity.BaseActivity" >
         </activity>
 
-        <receiver android:name="in.principal.adapter.WifiConnect" >
-            <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-            </intent-filter>
-        </receiver>
         <receiver android:name="in.principal.adapter.BootSync" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
