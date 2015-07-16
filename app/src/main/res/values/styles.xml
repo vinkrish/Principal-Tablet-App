@@ -30,4 +30,13 @@
         <item name="android:paddingBottom">5dp</item>
     </style>
 
+    <!-- Animation for dialog box -->
+    <style name="DialogSlideAnim" parent="@android:style/Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/DialogSlideAnimation</item>
+    </style>
+    <style name="DialogSlideAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_bottom_middle</item>
+        <item name="android:windowExitAnimation">@anim/slide_middle_bottom</item>
+    </style>
+
 </resources>
