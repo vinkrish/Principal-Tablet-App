@@ -169,4 +169,6 @@
     <string name="prev_mes">Previous Messages</string>
     <string name="title_activity_process_files">ProcessFiles</string>
 
+    <string name="ok">OK</string>
+
 </resources>
