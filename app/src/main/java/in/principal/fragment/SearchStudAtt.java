@@ -46,7 +46,7 @@ public class SearchStudAtt extends Fragment {
 	private Context context;
 	private int studentId, classId, classStrength;
 	private String studentName, className, secName;
-	private static SQLiteDatabase sqliteDatabase;
+	private SQLiteDatabase sqliteDatabase;
 	private JSONObject monObject;
 	private List<String> startDateList = new ArrayList<>();
 	private List<String> endDateList = new ArrayList<>();
@@ -130,21 +130,8 @@ public class SearchStudAtt extends Fragment {
 		attGraph = new AttGraph(context, R.layout.att_graph_list, amrList);
 		lv.setAdapter(attGraph);
 
-		TextView slipTV = (TextView)view.findViewById(R.id.slipSearch);
-		slipTV.setOnClickListener(new View.OnClickListener() {		
-			@Override
-			public void onClick(View v) {
-				ReplaceFragment.replace(new SearchStudST(), getFragmentManager());
-			}
-		});
-
-		TextView seTV = (TextView)view.findViewById(R.id.seSearch);
-		seTV.setOnClickListener(new View.OnClickListener() {		
-			@Override
-			public void onClick(View v) {
-				ReplaceFragment.replace(new SearchStudExam(), getFragmentManager());
-			}
-		});
+        view.findViewById(R.id.slipSearch).setOnClickListener(searchSlipTest);
+        view.findViewById(R.id.seSearch).setOnClickListener(searchExam);
 
 		Temp t = TempDao.selectTemp(sqliteDatabase);
 		studentId = t.getStudentId();
@@ -153,6 +140,31 @@ public class SearchStudAtt extends Fragment {
 
 		return view;
 	}
+
+	private void clearList(){
+		amrList.clear();
+		startDateList.clear();
+		endDateList.clear();
+		intMon.clear();
+		stringMon.clear();
+		stringMonth.clear();
+		absentCnt = 0;
+		noOfDays = 0;
+	}
+
+    private View.OnClickListener searchSlipTest = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            ReplaceFragment.replace(new SearchStudST(), getFragmentManager());
+        }
+    };
+
+    private View.OnClickListener searchExam = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            ReplaceFragment.replace(new SearchStudExam(), getFragmentManager());
+        }
+    };
 
 	class CalledBackLoad extends AsyncTask<String, String, String>{
 		protected void onPreExecute(){
@@ -329,17 +341,6 @@ public class SearchStudAtt extends Fragment {
 				pDialog.dismiss();
 			}
 		}
-	}
-
-	private void clearList(){
-		amrList.clear();
-		startDateList.clear();
-		endDateList.clear();
-		intMon.clear();
-		stringMon.clear();
-		stringMonth.clear();
-		absentCnt = 0;
-		noOfDays = 0;
 	}
 
 	private void studAvg(){

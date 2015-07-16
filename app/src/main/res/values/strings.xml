@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="version">Version - 1.1</string>
+
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="app_name">Principal</string>
@@ -133,7 +135,6 @@
     <string name="creation">Creation Date</string>
     <string name="submission">Submission Date</string>
     <string name="streport">SlipTest Report</string>
-    <string name="version">Version-0.1</string>
     <string name="coscholastic">Co-scholastic</string>
     <string name="coscholastic2">Co-scholastic area</string>
     <string name="stoan">Select the options as need</string>

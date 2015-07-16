@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF" >
+    android:background="#FFFFFF">
 
     <LinearLayout
         android:id="@+id/breadcrum"
@@ -11,7 +11,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:background="@color/dark_black"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/dash"
@@ -55,7 +55,7 @@
         android:background="@color/layoutbelowBC"
         android:baselineAligned="false"
         android:orientation="horizontal"
-        android:paddingLeft="10dp" >
+        android:paddingLeft="10dp">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -63,13 +63,14 @@
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:layout_weight="0.7"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/studName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/studentname"
+                android:textColor="@color/dark_black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -79,6 +80,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="3dp"
                 android:text="@string/attendinfo"
+                android:textColor="@color/dark_black"
                 android:textSize="18sp" />
         </LinearLayout>
 
@@ -88,7 +90,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginRight="5dp"
             android:layout_weight="0.4"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/examName"
@@ -102,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:orientation="horizontal"
-                android:paddingTop="5dp" >
+                android:paddingTop="5dp">
 
                 <ProgressBar
                     android:id="@+id/subAvgProgress"
@@ -130,14 +132,14 @@
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_below="@id/belowbreadcrum"
-        android:layout_marginLeft="150dp"
-        android:layout_marginRight="150dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/dash2ndnav"
         android:gravity="center"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/slipSearch"
@@ -145,7 +147,8 @@
             android:layout_height="match_parent"
             android:layout_weight="0.6"
             android:gravity="center"
-            android:text="@string/sliptest" />
+            android:text="@string/sliptest"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <View
             android:layout_width="1dp"
@@ -160,6 +163,7 @@
             android:background="@color/dark_black"
             android:gravity="center"
             android:text="@string/se"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#FFFFFF"
             android:textStyle="bold" />
 
@@ -174,18 +178,19 @@
             android:layout_height="match_parent"
             android:layout_weight="0.6"
             android:gravity="center"
-            android:text="@string/attendance" />
+            android:text="@string/attendance"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </LinearLayout>
-    
+
     <LinearLayout
         android:id="@+id/lisview"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_below="@id/linearLayout1"
-        android:background="@color/layoutbelowBC"
         android:layout_marginTop="30dp"
-        android:orientation="horizontal" >
+        android:background="@color/layoutbelowBC"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="0dp"
@@ -239,7 +244,6 @@
         android:layout_below="@id/lisview"
         android:layout_gravity="center"
         android:divider="@null"
-        android:dividerHeight="0dp" >
-    </ListView>
+        android:dividerHeight="0dp"></ListView>
 
 </RelativeLayout>

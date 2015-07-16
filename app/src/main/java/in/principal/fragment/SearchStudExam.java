@@ -16,6 +16,7 @@ import in.principal.util.ReplaceFragment;
 import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
@@ -33,7 +34,7 @@ public class SearchStudExam extends Fragment {
 	private SqlDbHelper sqlHandler;
 	private int studentId, sectionId, classId;
 	private String studentName, className, secName;
-	private static SQLiteDatabase sqliteDatabase;
+	private SQLiteDatabase sqliteDatabase;
 	private ArrayList<AdapterOverloaded> amrList = new ArrayList<>();
 	private StudExamAdapter adapter;
 	private List<Integer> examIdList = new ArrayList<>();
@@ -48,14 +49,14 @@ public class SearchStudExam extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState){
 		View view = inflater.inflate(R.layout.search_se_exam, container, false);
-		
+
 		context = AppGlobal.getContext();
 		sqlHandler = AppGlobal.getSqlDbHelper();
 		sqliteDatabase = AppGlobal.getSqliteDatabase();
 		pDialog  = new ProgressDialog(this.getActivity());
-		
+
 		clearList();
-		
+
 		studTV = (TextView)view.findViewById(R.id.studName);
 		clasSecTV = (TextView)view.findViewById(R.id.studClasSec);
 		ListView lv = (ListView)view.findViewById(R.id.list);
@@ -63,37 +64,48 @@ public class SearchStudExam extends Fragment {
 		adapter = new StudExamAdapter(context, R.layout.search_exam_list, amrList);
 		lv.setAdapter(adapter);
 		
-		TextView slipTV = (TextView)view.findViewById(R.id.slipSearch);
-		slipTV.setOnClickListener(new View.OnClickListener() {		
-			@Override
-			public void onClick(View v) {
-				ReplaceFragment.replace(new SearchStudST(), getFragmentManager());
-			}
-		});
-		
-		TextView attTV = (TextView)view.findViewById(R.id.attSearch);
-		attTV.setOnClickListener(new View.OnClickListener() {		
-			@Override
-			public void onClick(View v) {
-				ReplaceFragment.replace(new SearchStudAtt(), getFragmentManager());
-			}
-		});
+		view.findViewById(R.id.slipSearch).setOnClickListener(searchSlipTest);
+        view.findViewById(R.id.attSearch).setOnClickListener(searchAttendance);
 		
 		Temp t = TempDao.selectTemp(sqliteDatabase);
 		studentId = t.getStudentId();
 		
 		new CalledBackLoad().execute();
 
-		lv.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
-				TempDao.updateExamId(examIdList.get(pos), sqliteDatabase);
-				ReplaceFragment.replace(new SearchStudExamSub(), getFragmentManager());
-			}
-		});
+        lv.setOnItemClickListener(clickListItem);
 		
 		return view;
 	}
+
+    private void clearList(){
+        amrList.clear();
+        examIdList.clear();
+        examNameList.clear();
+        avgList1.clear();
+        avgList2.clear();
+    }
+
+	private View.OnClickListener searchSlipTest = new View.OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			ReplaceFragment.replace(new SearchStudST(), getFragmentManager());
+		}
+	};
+
+    private View.OnClickListener searchAttendance = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            ReplaceFragment.replace(new SearchStudAtt(), getFragmentManager());
+        }
+    };
+
+    private OnItemClickListener clickListItem = new OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            TempDao.updateExamId(examIdList.get(position), sqliteDatabase);
+            ReplaceFragment.replace(new SearchStudExamSub(), getFragmentManager());
+        }
+    };
 	
 	class CalledBackLoad extends AsyncTask<String, String, String>{
 		protected void onPreExecute(){
@@ -215,14 +227,6 @@ public class SearchStudExam extends Fragment {
 			adapter.notifyDataSetChanged();
 			pDialog.dismiss();
 		}
-	}
-	
-	private void clearList(){
-		amrList.clear();
-		examIdList.clear();
-		examNameList.clear();
-		avgList1.clear();
-		avgList2.clear();
 	}
 
 }
