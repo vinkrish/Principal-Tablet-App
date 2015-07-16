@@ -136,7 +136,7 @@ public class CompSeSecSub extends Fragment {
 		reeturn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				ReplaceFragment.replaceNoBackStack(new SeSecSub(), getFragmentManager());
+				ReplaceFragment.replace(new SeSecSub(), getFragmentManager());
 			}
 		});
 		Button go = (Button) view.findViewById(R.id.go);
@@ -148,7 +148,7 @@ public class CompSeSecSub extends Fragment {
 					a.showAlert("select min of 2 and max of 3 sections");
 				}else{
 					sqliteDatabase.execSQL("update comp set IsCompare=1");
-					ReplaceFragment.replaceNoBackStack(new CompSeSecSub(), getFragmentManager());
+					ReplaceFragment.replace(new CompSeSecSub(), getFragmentManager());
 				}
 			}
 		});
@@ -285,10 +285,10 @@ public class CompSeSecSub extends Fragment {
 					boolean added = isSecIdPresent(sectionId);
 					if(added){
 						sqlHandler.removeComp(sectionId);
-						ReplaceFragment.replaceNoBackStack(new CompSeSecSub(), getFragmentManager());
+						ReplaceFragment.replace(new CompSeSecSub(), getFragmentManager());
 					}else{
 						sqlHandler.insertComp(sectionId);
-						ReplaceFragment.replaceNoBackStack(new CompSeSecSub(), getFragmentManager());
+						ReplaceFragment.replace(new CompSeSecSub(), getFragmentManager());
 					}
 				}
 			});

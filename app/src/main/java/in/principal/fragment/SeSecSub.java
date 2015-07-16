@@ -256,7 +256,7 @@ public class SeSecSub extends Fragment {
 					t.setSectionId(sectionId);
 					t.setSectionName(secNameList.get(position));
 					TempDao.updateSection(t, sqliteDatabase);
-					ReplaceFragment.replaceNoBackStack(new SeSecSub(), getFragmentManager());
+					ReplaceFragment.replace(new SeSecSub(), getFragmentManager());
 				}
 			});
 			return row;

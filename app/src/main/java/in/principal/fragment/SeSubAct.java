@@ -274,7 +274,7 @@ public class SeSubAct extends Fragment {
                     t.setSectionId(sectionId);
                     t.setSectionName(secNameList.get(position));
                     TempDao.updateSection(t, sqliteDatabase);
-                    ReplaceFragment.replaceNoBackStack(new SeSubAct(), getFragmentManager());
+                    ReplaceFragment.replace(new SeSubAct(), getFragmentManager());
                 }
             });
             return row;

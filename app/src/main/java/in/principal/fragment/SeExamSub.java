@@ -104,7 +104,7 @@ public class SeExamSub extends Fragment {
         compare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ReplaceFragment.replaceNoBackStack(new CompSeExamSub(), getFragmentManager());
+                ReplaceFragment.replace(new CompSeExamSub(), getFragmentManager());
             }
         });
         perfClas.setOnClickListener(new View.OnClickListener() {
@@ -290,7 +290,7 @@ public class SeExamSub extends Fragment {
                     t.setSectionId(sectionId);
                     t.setSectionName(secNameList.get(position));
                     TempDao.updateSection(t, sqliteDatabase);
-                    ReplaceFragment.replaceNoBackStack(new SeExamSub(), getFragmentManager());
+                    ReplaceFragment.replace(new SeExamSub(), getFragmentManager());
                 }
             });
             return row;

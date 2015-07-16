@@ -98,7 +98,7 @@ public class SeClassSec extends Fragment {
 			@Override
 			public void onClick(View v) {
 				sqliteDatabase.execSQL("delete from comp");
-				ReplaceFragment.replaceNoBackStack(new CompSeClassSec(), getFragmentManager());
+				ReplaceFragment.replace(new CompSeClassSec(), getFragmentManager());
 			}
 		});
 
@@ -265,7 +265,7 @@ public class SeClassSec extends Fragment {
 					t.setSectionId(sectionId);
 					t.setSectionName(secNameList.get(position));
 					TempDao.updateSection(t, sqliteDatabase);
-					ReplaceFragment.replaceNoBackStack(new SeClassSec(), getFragmentManager());
+					ReplaceFragment.replace(new SeClassSec(), getFragmentManager());
 				}
 			});
 			return row;

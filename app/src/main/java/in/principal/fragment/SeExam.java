@@ -95,7 +95,7 @@ public class SeExam extends Fragment {
 			@Override
 			public void onClick(View v) {
 				sqliteDatabase.execSQL("delete from comp");
-				ReplaceFragment.replaceNoBackStack(new CompSeExam(), getFragmentManager());
+				ReplaceFragment.replace(new CompSeExam(), getFragmentManager());
 			}
 		});
 
@@ -229,7 +229,7 @@ public class SeExam extends Fragment {
 					t.setSectionId(sectionId);
 					t.setSectionName(secNameList.get(position));
 					TempDao.updateSection(t, sqliteDatabase);
-					ReplaceFragment.replaceNoBackStack(new SeExam(), getFragmentManager());
+					ReplaceFragment.replace(new SeExam(), getFragmentManager());
 				}
 			});
 			return row;
