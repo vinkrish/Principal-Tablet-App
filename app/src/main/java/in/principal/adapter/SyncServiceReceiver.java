@@ -19,26 +19,31 @@ import android.os.PowerManager.WakeLock;
 public class SyncServiceReceiver extends BroadcastReceiver {
 	@SuppressWarnings("deprecation")
 	@Override
-	public void onReceive(Context context, Intent intent) {
+	public void onReceive(final Context context, Intent intent) {
 		SharedPreferences sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
 		int is_first_sync = sharedPref.getInt("first_sync",0);
 		int tabletLock = sharedPref.getInt("tablet_lock", 0);
 		int bootSync = sharedPref.getInt("boot_sync", 0);
-		
-		PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
-		boolean isScreen = powerManager.isScreenOn();
-		WakeLock wakeLock = powerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK
-		                                 | PowerManager.ACQUIRE_CAUSES_WAKEUP, "WakeLock");
-		
-		KeyguardManager km = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
-		boolean screenLocked = km.inKeyguardRestrictedInputMode();
-		
-		if(screenLocked || !isScreen){
-			wakeLock.acquire();
-			long endTime = System.currentTimeMillis() + 5*1000;
-			while (System.currentTimeMillis() < endTime) {}
-			wakeLock.release();
-		}
+
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+				boolean isScreen = powerManager.isScreenOn();
+				WakeLock wakeLock = powerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK
+						| PowerManager.ACQUIRE_CAUSES_WAKEUP, "WakeLock");
+
+				KeyguardManager km = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
+				boolean screenLocked = km.inKeyguardRestrictedInputMode();
+
+				if(screenLocked || !isScreen){
+					wakeLock.acquire();
+					long endTime = System.currentTimeMillis() + 5*1000;
+					while (System.currentTimeMillis() < endTime) {}
+					wakeLock.release();
+				}
+			}
+		}).start();
 		
 		if (NetworkUtils.isNetworkConnected(context) && is_first_sync==0 && tabletLock==0 && bootSync==0){
 			if(AppGlobal.isActive()){

@@ -22,10 +22,8 @@ public class CallFTP implements StringConstant{
 	private SqlDbHelper sqlHandler;
 	private SQLiteDatabase sqliteDatabase;
 	private Context context;
-	private int schoolId, block, batteryLevel;
-	private String deviceId, zipFile;
-	private IntentFilter ifilter;
-	private Intent batteryStatus;
+	private int block;
+	private String zipFile;
 
 	public CallFTP(){
 		context = AppGlobal.getActivity();
@@ -37,10 +35,14 @@ public class CallFTP implements StringConstant{
 		private JSONObject jsonReceived;
 		@Override
 		protected String doInBackground(String... arg0) {
+            IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+			Intent batteryStatus = context.getApplicationContext().registerReceiver(null, ifilter);
+			int batteryLevel = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+
 			JSONObject ack_json = new JSONObject();
 			Temp t = TempDao.selectTemp(sqliteDatabase);
-			schoolId = t.getSchoolId();
-			deviceId = t.getDeviceId();
+			int schoolId = t.getSchoolId();
+			String deviceId = t.getDeviceId();
 			try{
 				ack_json.put("school", schoolId);
 				ack_json.put("tab_id", deviceId);
@@ -79,9 +81,6 @@ public class CallFTP implements StringConstant{
 	}	
 
 	public void syncFTP(){
-		ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-		batteryStatus = context.getApplicationContext().registerReceiver(null, ifilter);
-		batteryLevel = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
 		new CalledFTPSync().execute();
 	}
 
