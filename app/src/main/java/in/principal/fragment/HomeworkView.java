@@ -1,7 +1,6 @@
 package in.principal.fragment;
 
 import in.principal.activity.R;
-import in.principal.adapter.Alert;
 import in.principal.adapter.AsecAdapter;
 import in.principal.dao.HomeworkDao;
 import in.principal.dao.SectionDao;
@@ -11,6 +10,7 @@ import in.principal.sqlite.Section;
 import in.principal.sqlite.SqlDbHelper;
 import in.principal.sqlite.Temp;
 import in.principal.util.AppGlobal;
+import in.principal.util.CommonDialogUtils;
 import in.principal.util.PKGenerator;
 import in.principal.util.ReplaceFragment;
 
@@ -124,8 +124,7 @@ public class HomeworkView extends Fragment {
 					alertDialog.show();
 
 				}else{
-					Alert alert = new Alert(act);
-					alert.showAlert("No homework given to any class for this day.");
+					CommonDialogUtils.displayAlertWhiteDialog(act, "No homework given to any class for this day");
 				}
 			}
 		});
@@ -156,8 +155,7 @@ public class HomeworkView extends Fragment {
 					alertDialog = builder.create();
 					alertDialog.show();
 				}else{
-					Alert alert = new Alert(act);
-					alert.showAlert("No homework given to any section for this day.");
+                    CommonDialogUtils.displayAlertWhiteDialog(act, "No homework given to any section for this day");
 				}
 			}
 		});
@@ -228,18 +226,14 @@ public class HomeworkView extends Fragment {
 				Date d = cal.getTime();
 
 				if(GregorianCalendar.getInstance().get(Calendar.YEAR)<cal.get(Calendar.YEAR)){
-					Alert alert = new Alert(act);
-					alert.showAlert("Selected future date !");
+                    CommonDialogUtils.displayAlertWhiteDialog(act, "Selected future date !");
 				}else if(GregorianCalendar.getInstance().get(Calendar.MONTH)<cal.get(Calendar.MONTH) && GregorianCalendar.getInstance().get(Calendar.YEAR)==cal.get(Calendar.YEAR)){
-					Alert alert = new Alert(act);
-					alert.showAlert("Selected future date !");
+                    CommonDialogUtils.displayAlertWhiteDialog(act, "Selected future date !");
 				}else if(GregorianCalendar.getInstance().get(Calendar.DAY_OF_MONTH)<cal.get(Calendar.DAY_OF_MONTH) && 
 						GregorianCalendar.getInstance().get(Calendar.MONTH)<=cal.get(Calendar.MONTH) && GregorianCalendar.getInstance().get(Calendar.YEAR)==cal.get(Calendar.YEAR)){
-					Alert alert = new Alert(act);
-					alert.showAlert("Selected future date !");
+                    CommonDialogUtils.displayAlertWhiteDialog(act, "Selected future date !");
 				}else if(Calendar.SUNDAY==cal.get(Calendar.DAY_OF_WEEK)){
-					Alert alert = new Alert(act);
-					alert.showAlert("Sundays are not working days.");
+                    CommonDialogUtils.displayAlertWhiteDialog(act, "Sundays are not working days");
 				}else{
 					dateSelected = dateFormat.format(d);
 					TempDao.updateSelectedDate(dateSelected, sqliteDatabase);

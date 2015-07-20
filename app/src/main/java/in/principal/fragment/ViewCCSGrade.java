@@ -1,7 +1,6 @@
 package in.principal.fragment;
 
 import in.principal.activity.R;
-import in.principal.adapter.Alert;
 import in.principal.dao.CceAspectPrimaryDao;
 import in.principal.dao.CceTopicPrimaryDao;
 import in.principal.dao.StudentsDao;
@@ -9,6 +8,7 @@ import in.principal.dao.TempDao;
 import in.principal.sqlite.Students;
 import in.principal.sqlite.Temp;
 import in.principal.util.AppGlobal;
+import in.principal.util.CommonDialogUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -123,8 +123,7 @@ public class ViewCCSGrade extends Fragment {
 				outLoop += 1;
 			}
 		}else{
-			Alert a = new Alert(ViewCCSGrade.this.getActivity());
-			a.showAlert("some student grades are missing, please notify to contact person");
+			CommonDialogUtils.displayAlertWhiteDialog(ViewCCSGrade.this.getActivity(), "some student grades are missing, please notify to contact person");
 		}
 
 		coSchAdapter.notifyDataSetChanged();

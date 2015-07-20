@@ -6,7 +6,6 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 import in.principal.activity.R;
-import in.principal.adapter.Alert;
 import in.principal.adapter.AsecAdapter;
 import in.principal.dao.SectionDao;
 import in.principal.dao.StudentAttendanceDao;
@@ -17,6 +16,7 @@ import in.principal.sqlite.Section;
 import in.principal.sqlite.Students;
 import in.principal.sqlite.Temp;
 import in.principal.util.AppGlobal;
+import in.principal.util.CommonDialogUtils;
 import in.principal.util.ReplaceFragment;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -214,14 +214,13 @@ public class AttendanceSection extends Fragment {
 			if(view.isShown()){
 				Calendar cal = GregorianCalendar.getInstance();
 				cal.set(year,month,day);
-				Alert alert = new Alert(act);
 				if(GregorianCalendar.getInstance().get(Calendar.YEAR)<cal.get(Calendar.YEAR)){
-					alert.showAlert("Selected future date !");
+					CommonDialogUtils.displayAlertWhiteDialog(act, "Selected future date !");
 				}else if(GregorianCalendar.getInstance().get(Calendar.DAY_OF_MONTH)<cal.get(Calendar.DAY_OF_MONTH) && 
 						GregorianCalendar.getInstance().get(Calendar.MONTH)<=cal.get(Calendar.MONTH) && GregorianCalendar.getInstance().get(Calendar.YEAR)==cal.get(Calendar.YEAR)){
-					alert.showAlert("Selected future date !");
+					CommonDialogUtils.displayAlertWhiteDialog(act, "Selected future date !");
 				}else if(Calendar.SUNDAY==cal.get(Calendar.DAY_OF_WEEK)){
-					alert.showAlert("Sundays are not working days.");	
+					CommonDialogUtils.displayAlertWhiteDialog(act, "Sundays are not working days");
 				}else{
 					TempDao.setThreeAbsDays(year, month, day, sqliteDatabase);
 					ReplaceFragment.replace(new AttendanceSection(), getFragmentManager());

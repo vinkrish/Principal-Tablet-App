@@ -1,13 +1,13 @@
 package in.principal.activity;
 
 import in.principal.sqlite.School;
-import in.principal.adapter.Alert;
 import in.principal.dao.SchoolDao;
 import in.principal.dao.TempDao;
 import in.principal.sqlite.Temp;
 import in.principal.sync.CallFTP;
 import in.principal.util.AnimationUtils;
 import in.principal.util.AppGlobal;
+import in.principal.util.CommonDialogUtils;
 import in.principal.util.ExceptionHandler;
 import in.principal.util.NetworkUtils;
 
@@ -243,8 +243,7 @@ public class LoginActivity extends BaseActivity {
             }
         }
         if (!authflag) {
-            Alert ad = new Alert(LoginActivity.this);
-            ad.showAlert("User is not Authenticated");
+            CommonDialogUtils.displayAlertWhiteDialog(LoginActivity.this, "User is not Authenticated");
         }
         userName.setText("Username");
         password.setText("Password");

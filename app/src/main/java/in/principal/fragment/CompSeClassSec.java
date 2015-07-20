@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Set;
 
 import in.principal.activity.R;
-import in.principal.adapter.Alert;
 import in.principal.adapter.CompList1;
 import in.principal.adapter.CompList2;
 import in.principal.dao.ExmAvgDao;
@@ -18,6 +17,7 @@ import in.principal.sqlite.Section;
 import in.principal.sqlite.SqlDbHelper;
 import in.principal.sqlite.Temp;
 import in.principal.util.AppGlobal;
+import in.principal.util.CommonDialogUtils;
 import in.principal.util.ReplaceFragment;
 import android.app.Activity;
 import android.app.Fragment;
@@ -215,8 +215,7 @@ public class CompSeClassSec extends Fragment {
 			@Override
 			public void onClick(View v) {
 				if(noOfSections<2 || noOfSections>3){
-					Alert a = new Alert(act);
-					a.showAlert("select min of 2 and max of 3 sections");
+					CommonDialogUtils.displayAlertWhiteDialog(act, "select min of 2 and max of 3 sections");
 				}else{
 					sqliteDatabase.execSQL("update comp set IsCompare=1");
 					ReplaceFragment.replace(new CompSeClassSec(), getFragmentManager());

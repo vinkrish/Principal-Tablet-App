@@ -1,7 +1,6 @@
 package in.principal.fragment;
 
 import in.principal.activity.R;
-import in.principal.adapter.Alert;
 import in.principal.dao.ClasDao;
 import in.principal.dao.StudentAttendanceDao;
 import in.principal.dao.StudentsDao;
@@ -12,6 +11,7 @@ import in.principal.sqlite.DateTracker;
 import in.principal.sqlite.SqlDbHelper;
 import in.principal.sqlite.Temp;
 import in.principal.util.AppGlobal;
+import in.principal.util.CommonDialogUtils;
 import in.principal.util.DateTrackerModel;
 import in.principal.util.ReplaceFragment;
 
@@ -122,11 +122,9 @@ public class MonthlyReport extends Fragment {
 						int selectedMonth = idx;
 						if(currentYear == firstYear){
 							if(selectedMonth>currentMonth){
-								Alert a = new Alert(act);
-								a.showAlert("Attendance is not yet marked.");
+                                CommonDialogUtils.displayAlertWhiteDialog(act, "Attendance is not yet marked");
 							}else if(selectedMonth<firstMonth){
-								Alert a = new Alert(act);
-								a.showAlert("Attendance is not yet marked.");
+                                CommonDialogUtils.displayAlertWhiteDialog(act, "Attendance is not yet marked");
 							}else if(selectedMonth==firstMonth){
 								DateTracker dt = DateTrackerModel.getDateTracker1(firstDay, currentDay, selectedMonth, currentYear);
 								sqlHandler.updateDateTracker(dt);
@@ -142,8 +140,7 @@ public class MonthlyReport extends Fragment {
 							}
 						}else{
 							if(selectedMonth>currentMonth){
-								Alert a = new Alert(act);
-								a.showAlert("Attendance is not yet marked.");
+                                CommonDialogUtils.displayAlertWhiteDialog(act, "Attendance is not yet marked");
 							}else{
 								DateTracker dt = DateTrackerModel.getDateTracker(selectedMonth, lastYear);
 								sqlHandler.updateDateTracker(dt);

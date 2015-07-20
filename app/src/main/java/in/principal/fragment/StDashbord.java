@@ -1,7 +1,6 @@
 package in.principal.fragment;
 
 import in.principal.activity.R;
-import in.principal.adapter.Alert;
 import in.principal.dao.ClasDao;
 import in.principal.dao.SectionDao;
 import in.principal.dao.TempDao;
@@ -10,6 +9,7 @@ import in.principal.sqlite.Clas;
 import in.principal.sqlite.Section;
 import in.principal.sqlite.Temp;
 import in.principal.util.AppGlobal;
+import in.principal.util.CommonDialogUtils;
 import in.principal.util.PKGenerator;
 import in.principal.util.ReplaceFragment;
 
@@ -157,8 +157,7 @@ public class StDashbord extends Fragment {
                     alertDialog = builder.create();
                     alertDialog.show();
                 } else {
-                    Alert alert = new Alert(act);
-                    alert.showAlert("No sliptest for this class on this day.");
+                    CommonDialogUtils.displayAlertWhiteDialog(act, "No sliptest for this class on this day.");
                 }
             }
         });
@@ -187,11 +186,9 @@ public class StDashbord extends Fragment {
                     alertDialog = builder.create();
                     alertDialog.show();
                 } else if (clasTV.getText().equals("Class")) {
-                    Alert alert = new Alert(act);
-                    alert.showAlert("Please select class first.");
+                    CommonDialogUtils.displayAlertWhiteDialog(act, "Please select class first");
                 } else {
-                    Alert alert = new Alert(act);
-                    alert.showAlert("No sliptest for this section on this day.");
+                    CommonDialogUtils.displayAlertWhiteDialog(act, "No sliptest for this section on this day");
                 }
             }
         });
@@ -423,16 +420,15 @@ public class StDashbord extends Fragment {
                 Calendar cal = GregorianCalendar.getInstance();
                 cal.set(year, month, day);
                 Date d = cal.getTime();
-                Alert alert = new Alert(act);
                 if (GregorianCalendar.getInstance().get(Calendar.YEAR) < cal.get(Calendar.YEAR)) {
-                    alert.showAlert("Selected future date !");
+                    CommonDialogUtils.displayAlertWhiteDialog(act, "Selected future date !");
                 } else if (GregorianCalendar.getInstance().get(Calendar.MONTH) < cal.get(Calendar.MONTH) && GregorianCalendar.getInstance().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
-                    alert.showAlert("Selected future date !");
+                    CommonDialogUtils.displayAlertWhiteDialog(act, "Selected future date !");
                 } else if (GregorianCalendar.getInstance().get(Calendar.DAY_OF_MONTH) < cal.get(Calendar.DAY_OF_MONTH) &&
                         GregorianCalendar.getInstance().get(Calendar.MONTH) <= cal.get(Calendar.MONTH) && GregorianCalendar.getInstance().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
-                    alert.showAlert("Selected future date !");
+                    CommonDialogUtils.displayAlertWhiteDialog(act, "Selected future date !");
                 } else if (Calendar.SUNDAY == cal.get(Calendar.DAY_OF_WEEK)) {
-                    alert.showAlert("Sundays are not working days.");
+                    CommonDialogUtils.displayAlertWhiteDialog(act, "Sundays are not working days");
                 } else {
                     dateSelected = dateFormat.format(d);
                     TempDao.updateSelectedDate(dateSelected, sqliteDatabase);

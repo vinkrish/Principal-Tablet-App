@@ -4,15 +4,14 @@ import in.principal.adapter.NavDrawerListAdapter;
 import in.principal.model.NavDrawerItem;
 import in.principal.sqlite.SqlDbHelper;
 import in.principal.util.AnimationUtils;
+import in.principal.util.CommonDialogUtils;
 import in.principal.util.DateTrackerModel;
 import in.principal.util.ExceptionHandler;
 import in.principal.util.NetworkUtils;
 import in.principal.util.ReplaceFragment;
-import in.principal.activity.R;
 import in.principal.util.AppGlobal;
 import in.principal.dao.TempDao;
 import in.principal.fragment.SearchStudST;
-import in.principal.adapter.Alert;
 import in.principal.dao.StudentAttendanceDao;
 import in.principal.fragment.Attendance;
 import in.principal.fragment.AttendanceClass;
@@ -30,7 +29,6 @@ import in.principal.fragment.SeSecSub;
 import in.principal.fragment.StDashbord;
 import in.principal.fragment.StructuredExam;
 import in.principal.fragment.TextSms;
-import in.principal.fragment.VoiceSms;
 import in.principal.sqlite.DateTracker;
 
 import java.text.SimpleDateFormat;
@@ -49,22 +47,17 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.os.PowerManager;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -324,8 +317,7 @@ public class Dashboard extends BaseActivity {
 			if(NetworkUtils.isNetworkConnected(context)){
 				ReplaceFragment.replace(new TextSms(), getFragmentManager());
 			}else{
-				Alert a = new Alert(this);
-				a.showAlert("check internet connection");
+				CommonDialogUtils.displayAlertWhiteDialog(this, "Check Internet Connection");
 			}
 		}
 		mDrawerList.setItemChecked(position, true);

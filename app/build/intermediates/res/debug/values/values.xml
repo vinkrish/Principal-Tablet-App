@@ -33,6 +33,7 @@
     <color name="divider">#C9C9C9</color>
     <color name="drawer_list_background">#17171A</color>
     <color name="gradient_text">#A4A5AB</color>
+    <color name="gray_light">#C0C0C0</color>
     <color name="green">#41AB15</color>
     <color name="layoutbelowBC">#EDEFF2</color>
     <color name="light_black">#4D4F4F</color>
@@ -135,6 +136,7 @@
     <string name="nine">9</string>
     <string name="no_internet">no wifi / internet</string>
     <string name="noofdays">Days Present</string>
+    <string name="ok">OK</string>
     <string name="one">1</string>
     <string name="overview">Overview</string>
     <string name="password">Password</string>
@@ -227,6 +229,17 @@
     <style name="CustomActionBarTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/MyActionBar</item>
     </style>
+    <!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="DialogSlideAnim" parent="@android:style/Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/DialogSlideAnimation</item>
+    </style>
+    <style name="DialogSlideAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_bottom_middle</item>
+        <item name="android:windowExitAnimation">@anim/slide_middle_bottom</item>
+    </style>
+    <!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/values/themes.xml -->
+    <eat-comment/>
     <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@drawable/ab_bg</item>
     </style>

@@ -26,7 +26,6 @@ import com.amazonaws.services.s3.model.ProgressEvent;
 import com.amazonaws.services.s3.model.ProgressListener;
 
 import in.principal.activity.R;
-import in.principal.adapter.Alert;
 import in.principal.dao.ClasDao;
 import in.principal.dao.SchoolDao;
 import in.principal.dao.SectionDao;
@@ -41,6 +40,7 @@ import in.principal.sqlite.Temp;
 import in.principal.sync.StringConstant;
 import in.principal.sync.UploadSyncParser;
 import in.principal.util.AppGlobal;
+import in.principal.util.CommonDialogUtils;
 import in.principal.util.Constants;
 import in.principal.util.PKGenerator;
 import in.principal.util.ReplaceFragment;
@@ -56,7 +56,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -246,8 +245,7 @@ public class TextSms extends Fragment implements StringConstant {
             public void onClick(View v) {
                 idList.clear();
                 if (textSms.getText().toString().equals("")) {
-                    Alert a = new Alert(TextSms.this.getActivity());
-                    a.showAlert("Please enter message to deliver");
+                    CommonDialogUtils.displayAlertWhiteDialog(TextSms.this.getActivity(), "Please enter message to deliver");
                 } else {
                     new CalledFTPSync().execute();
                 }

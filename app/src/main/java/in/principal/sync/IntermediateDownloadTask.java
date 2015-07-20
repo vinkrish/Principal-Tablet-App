@@ -107,8 +107,7 @@ public class IntermediateDownloadTask extends AsyncTask<String, String, String> 
         super.onPostExecute(s);
         SharedPreferences sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        /*PowerManager pm = (PowerManager) appContext.getSystemService(Context.POWER_SERVICE);
-		boolean isScreen = pm.isScreenOn();*/
+
         KeyguardManager km = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
         boolean screenLocked = km.inKeyguardRestrictedInputMode();
         Log.d("screenLokced", screenLocked + "");

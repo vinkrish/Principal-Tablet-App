@@ -62,6 +62,7 @@ public class SlipTestProgress {
 			editor.putInt("first_sync", 0);
 			editor.putInt("sleep_sync", 0);
 			editor.apply();
+
 			TempDao.updateSyncComplete(sqliteDatabase);
 			int schoolId = SchoolDao.getSchoolId(sqliteDatabase);
 			sqlHandler.deleteLocked(sqliteDatabase);
