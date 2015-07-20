@@ -37,185 +37,190 @@ import android.util.Log;
 
 @SuppressWarnings("deprecation")
 public class IntermediateDownloadTask extends AsyncTask<String, String, String> implements StringConstant {
-	private TransferManager mTransferManager;
-	private String fileName;
-	private Context context;
-	private boolean downloadCompleted;
-	private SQLiteDatabase sqliteDatabase;
-	private JSONObject jsonReceived;
-	private String deviceId, zipFile;
-	private int schoolId;
+    private TransferManager mTransferManager;
+    private String fileName;
+    private Context context;
+    private boolean downloadCompleted, exception;
+    private SQLiteDatabase sqliteDatabase;
+    private JSONObject jsonReceived;
+    private String deviceId, zipFile;
+    private int schoolId;
 
-	public IntermediateDownloadTask(Context context, String fileName){
-		this.context = context;
-		zipFile = fileName;
-		sqliteDatabase = AppGlobal.getSqliteDatabase();
-		Temp t = TempDao.selectTemp(sqliteDatabase);
-		deviceId = t.getDeviceId();
-		schoolId = t.getSchoolId();
-		this.fileName = "download/"+schoolId+"/zipped_folder/"+fileName;
-	}
+    public IntermediateDownloadTask(Context context, String fileName) {
+        this.context = context;
+        zipFile = fileName;
+        sqliteDatabase = AppGlobal.getSqliteDatabase();
+        Temp t = TempDao.selectTemp(sqliteDatabase);
+        deviceId = t.getDeviceId();
+        schoolId = t.getSchoolId();
+        this.fileName = "download/" + schoolId + "/zipped_folder/" + fileName;
+    }
 
-	@Override
-	protected String doInBackground(String... params) {
-		downloadCompleted = false;
-		mTransferManager = new TransferManager(Util.getCredProvider(context));
-				
-		DownloadModel model = new DownloadModel(context, fileName, mTransferManager);
-		model.download();
+    @Override
+    protected String doInBackground(String... params) {
+        exception = false;
+        downloadCompleted = false;
+        mTransferManager = new TransferManager(Util.getCredProvider(context));
 
-		Log.d("Download_file_req", "2");
+        DownloadModel model = new DownloadModel(context, fileName, mTransferManager);
+        model.download();
 
-		while(!downloadCompleted){
-			Log.d("watiting", "...");
-		}
-		
-		Log.d("update", "passed");
+        while (!downloadCompleted) {
+            Log.d("watiting", "...");
+        }
 
-		unZipIt(zipFile);
+        if (!exception) {
+            unZipIt(zipFile);
 
-		StringBuffer sb = new StringBuffer();
-		Cursor c = sqliteDatabase.rawQuery("select filename from downloadedfile where downloaded=0", null);
-		c.moveToFirst();
-		while(!c.isAfterLast()){
-			sb.append(c.getString(c.getColumnIndex("filename"))).append("','");
-			c.moveToNext();
-		}
-		c.close();
-		
-		Log.d("sb", sb+"");
+            StringBuffer sb = new StringBuffer();
+            Cursor c = sqliteDatabase.rawQuery("select filename from downloadedfile where downloaded=0", null);
+            c.moveToFirst();
+            while (!c.isAfterLast()) {
+                sb.append(c.getString(c.getColumnIndex("filename"))).append("','");
+                c.moveToNext();
+            }
+            c.close();
 
-		if(sb.length()>3){
-			sqliteDatabase.execSQL("update downloadedfile set downloaded=1 where filename in('"+sb.substring(0, sb.length()-3)+"')");
-			try{
-				JSONObject jsonObject = new JSONObject();
-				jsonObject.put("school", schoolId);
-				jsonObject.put("tab_id", deviceId);
-				jsonObject.put("file_name", "'"+sb.substring(0, sb.length()-3)+"'");
-				jsonReceived = UploadSyncParser.makePostRequest(update_downloaded_file, jsonObject);
-				Log.d("update", "downloaded_file");
-				if(jsonReceived.getInt(TAG_SUCCESS)==1){}
-			}catch(JSONException e){
-				e.printStackTrace();
-			}catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		return null;
-	}
-	
-	protected void onPostExecute(String s){
-		super.onPostExecute(s);
-		SharedPreferences sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
-		SharedPreferences.Editor editor = sharedPref.edit();
-		/*PowerManager pm = (PowerManager) appContext.getSystemService(Context.POWER_SERVICE);
+            if (sb.length() > 3) {
+                sqliteDatabase.execSQL("update downloadedfile set downloaded=1 where filename in('" + sb.substring(0, sb.length() - 3) + "')");
+                try {
+                    JSONObject jsonObject = new JSONObject();
+                    jsonObject.put("school", schoolId);
+                    jsonObject.put("tab_id", deviceId);
+                    jsonObject.put("file_name", "'" + sb.substring(0, sb.length() - 3) + "'");
+                    jsonReceived = UploadSyncParser.makePostRequest(update_downloaded_file, jsonObject);
+                    Log.d("update", "downloaded_file");
+                    if (jsonReceived.getInt(TAG_SUCCESS) == 1) {
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return null;
+    }
+
+    protected void onPostExecute(String s) {
+        super.onPostExecute(s);
+        SharedPreferences sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        /*PowerManager pm = (PowerManager) appContext.getSystemService(Context.POWER_SERVICE);
 		boolean isScreen = pm.isScreenOn();*/
-		KeyguardManager km = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
-		boolean screenLocked = km.inKeyguardRestrictedInputMode();
-		Log.d("screenLokced",screenLocked+"");
-		if(screenLocked){
-			editor.putInt("is_sync", 1);
-			editor.apply();
-			Intent intent = new Intent(context, in.principal.activity.ProcessFiles.class);
-			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-			context.startActivity(intent);
-		}else{
-			editor.putInt("sleep_sync", 1);
-			editor.apply();
-		}
-	}
+        KeyguardManager km = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
+        boolean screenLocked = km.inKeyguardRestrictedInputMode();
+        Log.d("screenLokced", screenLocked + "");
+        if (screenLocked) {
+            editor.putInt("is_sync", 1);
+            editor.apply();
+            Intent intent = new Intent(context, in.principal.activity.ProcessFiles.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            context.startActivity(intent);
+        } else {
+            editor.putInt("sleep_sync", 1);
+            editor.apply();
+        }
+    }
 
-	public class DownloadModel extends TransferModel {
-		private Download mDownload;
-		private ProgressListener mListener;
-		private String mKey;
-		private Status mStatus;
+    public class DownloadModel extends TransferModel {
+        private Download mDownload;
+        private ProgressListener mListener;
+        private String mKey;
+        private Status mStatus;
 
-		public DownloadModel(Context context, String key, TransferManager manager) {
-			super(context, Uri.parse(key), manager);
-			mKey = key;
-			mStatus = Status.IN_PROGRESS;
-			mListener = new ProgressListener() {
-				@Override
-				public void progressChanged(ProgressEvent event) {
-					if (event.getEventCode() == ProgressEvent.COMPLETED_EVENT_CODE) {
-						Log.d("downloading", "completed");
-						mStatus = Status.COMPLETED;
-						downloadCompleted = true;
-					}
-				}
-			};
-		}
+        public DownloadModel(Context context, String key, TransferManager manager) {
+            super(context, Uri.parse(key), manager);
+            mKey = key;
+            mStatus = Status.IN_PROGRESS;
+            mListener = new ProgressListener() {
+                @Override
+                public void progressChanged(ProgressEvent event) {
+                    if (event.getEventCode() == ProgressEvent.COMPLETED_EVENT_CODE) {
+                        Log.d("downloading", "completed");
+                        mStatus = Status.COMPLETED;
+                        downloadCompleted = true;
+                    }
+                }
+            };
+        }
 
-		@Override
-		public Status getStatus() {
-			return mStatus;
-		}
+        @Override
+        public Status getStatus() {
+            return mStatus;
+        }
 
-		@Override
-		public Transfer getTransfer() {
-			return mDownload;
-		}
+        @Override
+        public Transfer getTransfer() {
+            return mDownload;
+        }
 
-		public void download() {
-			mStatus = Status.IN_PROGRESS;
-			File file = new File(
-					Environment.getExternalStoragePublicDirectory(
-							Environment.DIRECTORY_DOWNLOADS),
-							getFileName());
+        public void download() {
+            try {
+                mStatus = Status.IN_PROGRESS;
+                File file = new File(
+                        Environment.getExternalStoragePublicDirectory(
+                                Environment.DIRECTORY_DOWNLOADS),
+                        getFileName());
 
-			mDownload = getTransferManager().download(
-					Constants.BUCKET_NAME.toLowerCase(Locale.US), mKey, file);
-			if (mListener != null) {
-				mDownload.addProgressListener(mListener);
-			}
-		}
+                mDownload = getTransferManager().download(
+                        Constants.BUCKET_NAME.toLowerCase(Locale.US), mKey, file);
+                if (mListener != null) {
+                    mDownload.addProgressListener(mListener);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                downloadCompleted = true;
+                exception = true;
+            }
+        }
 
-		@Override
-		public void abort() {
-		}
+        @Override
+        public void abort() {
+        }
 
-		@Override
-		public void pause() {
-		}
+        @Override
+        public void pause() {
+        }
 
-		@Override
-		public void resume() {
-		}
-	}
+        @Override
+        public void resume() {
+        }
+    }
 
-	public void unZipIt(String zipFile){
-		byte[] buffer = new byte[1024];
-		File dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath());
-		try{
-			if(!dir.exists()){
-				dir.mkdir();
-			}
+    public void unZipIt(String zipFile) {
+        byte[] buffer = new byte[1024];
+        File dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath());
+        try {
+            if (!dir.exists()) {
+                dir.mkdir();
+            }
 
-			ZipInputStream zis = new ZipInputStream(new FileInputStream(new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), zipFile)));
-			ZipEntry ze = zis.getNextEntry();
+            ZipInputStream zis = new ZipInputStream(new FileInputStream(new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), zipFile)));
+            ZipEntry ze = zis.getNextEntry();
 
-			while(ze!=null){
-				String fileName = ze.getName();
-				File newFile = new File(dir + File.separator + fileName);
-				new File(newFile.getParent()).mkdirs();
-				FileOutputStream fos = new FileOutputStream(newFile);             
-				int len;
-				while ((len = zis.read(buffer)) > 0) {
-					fos.write(buffer, 0, len);
-				}
-				fos.close();   
-				ze = zis.getNextEntry();
-			}
-			zis.closeEntry();
-			zis.close();
+            while (ze != null) {
+                String fileName = ze.getName();
+                File newFile = new File(dir + File.separator + fileName);
+                new File(newFile.getParent()).mkdirs();
+                FileOutputStream fos = new FileOutputStream(newFile);
+                int len;
+                while ((len = zis.read(buffer)) > 0) {
+                    fos.write(buffer, 0, len);
+                }
+                fos.close();
+                ze = zis.getNextEntry();
+            }
+            zis.closeEntry();
+            zis.close();
 
-			File zip = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), zipFile);
-			zip.delete();
+            File zip = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), zipFile);
+            zip.delete();
 
-		}catch(IOException ex){
-			ex.printStackTrace(); 
-		}
-	}
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
 
 }
