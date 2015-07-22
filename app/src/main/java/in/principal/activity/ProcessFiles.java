@@ -22,6 +22,7 @@ import in.principal.dao.SubActivityDao;
 import in.principal.dao.TempDao;
 import in.principal.sqlite.Temp;
 import in.principal.activity.ProcessFiles;
+import in.principal.sync.CallFTP;
 import in.principal.sync.FirstTimeSync;
 import in.principal.sync.StringConstant;
 import in.principal.sync.UploadSyncParser;
@@ -355,7 +356,7 @@ public class ProcessFiles extends BaseActivity implements StringConstant{
 
 			SharedPreferences sharedPref = ProcessFiles.this.getSharedPreferences("db_access", Context.MODE_PRIVATE);
 			SharedPreferences.Editor editor = sharedPref.edit();
-			//	editor.putInt("tablet_lock", 0);
+			int apkUpdate = sharedPref.getInt("apk_update", 0);
 			editor.putInt("is_sync", 0);
 			editor.putInt("sleep_sync", 0);
 			editor.apply();
@@ -368,7 +369,9 @@ public class ProcessFiles extends BaseActivity implements StringConstant{
                 editor.putInt("first_sync", 1);
                 editor.apply();
                 new FirstTimeSync().callFirstTimeSync();
-            } else{
+            } else if(apkUpdate == 1) {
+                new CallFTP().syncFTP();
+            } else {
 				Intent intent = new Intent(ProcessFiles.this, in.principal.activity.LoginActivity.class);
 				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(intent);

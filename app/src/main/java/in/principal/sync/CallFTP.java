@@ -24,6 +24,7 @@ public class CallFTP implements StringConstant{
 	private Context context;
 	private int block;
 	private String zipFile;
+	private SharedPreferences sharedPref;
 
 	public CallFTP(){
 		context = AppGlobal.getActivity();
@@ -35,6 +36,8 @@ public class CallFTP implements StringConstant{
 		private JSONObject jsonReceived;
 		@Override
 		protected String doInBackground(String... arg0) {
+			sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
+
             IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
 			Intent batteryStatus = context.getApplicationContext().registerReceiver(null, ifilter);
 			int batteryLevel = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
@@ -53,6 +56,14 @@ public class CallFTP implements StringConstant{
 				block = jsonReceived.getInt(TAG_SUCCESS);
 				zipFile = jsonReceived.getString("folder_name");
 				String s = jsonReceived .getString("files");
+				String apkName = sharedPref.getString("apk_name", "teacher");
+				String updatedApkname = jsonReceived.getString("apk_name");
+				if(!apkName.equals(updatedApkname)){
+					SharedPreferences.Editor editor = sharedPref.edit();
+					editor.putInt("apk_update", 1);
+					editor.putString("apk_name", updatedApkname);
+					editor.apply();
+				}
 				String[] sArray = s.split(",");
 				for(String split: sArray){
 					TempDao.updateSyncTimer(sqliteDatabase);
@@ -69,13 +80,19 @@ public class CallFTP implements StringConstant{
 
 		protected void onPostExecute(String s){
 			super.onPostExecute(s);
-			SharedPreferences sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
+			int apkUpdate = sharedPref.getInt("apk_update", 0);
 			SharedPreferences.Editor editor = sharedPref.edit();
 			if(block!=2 && zipFile!=""){
 				new IntermediateDownloadTask(context, zipFile).execute();
 			}else if(block==2){
 				editor.putInt("tablet_lock", 2);
 				editor.apply();
+			}else if(apkUpdate == 1){
+				editor.putInt("apk_update", 2);
+				editor.apply();
+				Intent intent = new Intent(context, in.principal.activity.UpdateApk.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				context.startActivity(intent);
 			}
 		}
 	}	

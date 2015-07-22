@@ -9,6 +9,7 @@
     <color name="dark_black">#323236</color>
     <color name="light_black">#4D4F4F</color>
     <color name="gray_light">#C0C0C0</color>
+    <color name="update_background">#DFE0DC</color>
     
     <color name="orange">#FA7000</color>
     <color name="defalt">#E4E1E8</color>

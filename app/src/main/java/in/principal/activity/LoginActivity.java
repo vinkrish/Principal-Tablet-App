@@ -243,7 +243,7 @@ public class LoginActivity extends BaseActivity {
             }
         }
         if (!authflag) {
-            CommonDialogUtils.displayAlertWhiteDialog(LoginActivity.this, "User is not Authenticated");
+            CommonDialogUtils.displayAlertWhiteDialog(this, "User is not Authenticated");
         }
         userName.setText("Username");
         password.setText("Password");

@@ -170,5 +170,10 @@
     <string name="title_activity_process_files">ProcessFiles</string>
 
     <string name="ok">OK</string>
+    <string name="title_activity_update_apk">UpdateApk</string>
+
+    <string name="update_apk">A new version of application is available, please click the update button to confirm and continue.</string>
+    <string name="update_apk_wifi">*tab should be in wifi zone.</string>
+    <string name="update_apk_button">Update the application</string>
 
 </resources>

@@ -31,53 +31,54 @@
         android:largeHeap="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="in.principal.activity.LoginActivity"
+            android:name=".LoginActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="in.principal.activity.MasterAuthentication"
+            android:name=".MasterAuthentication"
             android:label="@string/title_activity_master_authentication"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
         </activity>
         <activity
-            android:name="in.principal.activity.LockActivity"
+            android:name=".LockActivity"
             android:label="@string/title_activity_lock"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
         </activity>
         <activity
-            android:name="in.principal.activity.Restart"
+            android:name=".Restart"
             android:label="@string/title_activity_restart"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
         </activity>
         <activity
-            android:name="in.principal.activity.ServerBlock"
+            android:name=".ServerBlock"
             android:label="@string/title_activity_server_block"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
         </activity>
         <activity
-            android:name="in.principal.activity.Dashboard"
+            android:name=".Dashboard"
             android:label="@string/title_activity_dashboard"
             android:screenOrientation="portrait"
             android:theme="@style/CustomActionBarTheme"
             android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
-            android:name="in.principal.activity.ProcessFiles"
+            android:name=".ProcessFiles"
             android:label="@string/title_activity_process_files"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
         </activity>
-        <activity android:name="in.principal.activity.BaseActivity" >
+        <activity android:name=".BaseActivity" >
         </activity>
 
         <receiver android:name="in.principal.adapter.BootSync" >
@@ -93,6 +94,13 @@
 
         <receiver android:name="in.principal.adapter.SyncServiceReceiver" >
         </receiver>
+
+        <activity
+            android:name=".UpdateApk"
+            android:label="@string/title_activity_update_apk"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
