@@ -54,16 +54,13 @@ public class CallFTP implements StringConstant{
 				jsonReceived = UploadSyncParser.makePostRequest(ask_for_download_file, ack_json);
 				Log.d("get_file_res", "1");
 				block = jsonReceived.getInt(TAG_SUCCESS);
-				zipFile = jsonReceived.getString("folder_name");
-				String s = jsonReceived .getString("files");
-				String apkName = sharedPref.getString("apk_name", "teacher");
-				String updatedApkname = jsonReceived.getString("apk_name");
-				if(!apkName.equals(updatedApkname)){
+				if(jsonReceived.getInt("update") == 1){
 					SharedPreferences.Editor editor = sharedPref.edit();
 					editor.putInt("apk_update", 1);
-					editor.putString("apk_name", updatedApkname);
 					editor.apply();
 				}
+				zipFile = jsonReceived.getString("folder_name");
+				String s = jsonReceived .getString("files");
 				String[] sArray = s.split(",");
 				for(String split: sArray){
 					TempDao.updateSyncTimer(sqliteDatabase);
@@ -80,15 +77,15 @@ public class CallFTP implements StringConstant{
 
 		protected void onPostExecute(String s){
 			super.onPostExecute(s);
-			int apkUpdate = sharedPref.getInt("apk_update", 0);
+			int updateApk = sharedPref.getInt("update_apk", 0);
 			SharedPreferences.Editor editor = sharedPref.edit();
 			if(block!=2 && zipFile!=""){
 				new IntermediateDownloadTask(context, zipFile).execute();
 			}else if(block==2){
 				editor.putInt("tablet_lock", 2);
 				editor.apply();
-			}else if(apkUpdate == 1){
-				editor.putInt("apk_update", 2);
+			}else if(updateApk == 1){
+				editor.putInt("update_apk", 2);
 				editor.apply();
 				Intent intent = new Intent(context, in.principal.activity.UpdateApk.class);
 				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);

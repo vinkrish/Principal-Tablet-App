@@ -29,6 +29,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.PowerManager;
 import android.provider.Settings.Secure;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -67,6 +68,7 @@ public class LoginActivity extends BaseActivity {
 
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt("boot_sync", 0);
+        editor.putString("saved_version", "v1.2");
         editor.apply();
 
         int tabletLock = sharedPref.getInt("tablet_lock", 0);
@@ -77,6 +79,12 @@ public class LoginActivity extends BaseActivity {
             startActivity(i);
         } else if (tabletLock == 2) {
             Intent i = new Intent(this, in.principal.activity.ServerBlock.class);
+            startActivity(i);
+        }
+
+        int apkUpdate = sharedPref.getInt("apk_update", 0);
+        if(apkUpdate == 1){
+            Intent i = new Intent(this, in.principal.activity.UpdateApk.class);
             startActivity(i);
         }
     }

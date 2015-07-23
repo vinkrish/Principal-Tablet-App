@@ -50,8 +50,9 @@ public class DownloadModelTask extends AsyncTask<String, String, String> impleme
 	private ProgressDialog pDialog;
 	private SQLiteDatabase sqliteDatabase;
 	private JSONObject jsonReceived;
-	private String deviceId, zipFile;
+	private String deviceId, zipFile, savedVersion;
 	private int schoolId, block;
+	private SharedPreferences sp;
 
 	public DownloadModelTask(Context context, String fileName){
 		zipFile = fileName;
@@ -82,6 +83,9 @@ public class DownloadModelTask extends AsyncTask<String, String, String> impleme
 		mTransferManager = new TransferManager(Util.getCredProvider(context));
 		sqliteDatabase = AppGlobal.getSqliteDatabase();
 
+		sp = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
+		savedVersion = sp.getString("saved_version", "0");
+
 		publishProgress("75");
 		Temp t = TempDao.selectTemp(sqliteDatabase);
 		deviceId = t.getDeviceId();
@@ -89,8 +93,7 @@ public class DownloadModelTask extends AsyncTask<String, String, String> impleme
 
 		DownloadModel model = new DownloadModel(context, fileName, mTransferManager);
 		model.download();
-		// long endTime = System.currentTimeMillis() + 200*1000;
-		// System.currentTimeMillis() < endTime
+
 		while(!downloadCompleted){
 			Log.d("watiting", "...");
 		}
@@ -99,7 +102,7 @@ public class DownloadModelTask extends AsyncTask<String, String, String> impleme
 
 			unZipIt(zipFile);
 
-			ArrayList<String> downFileList2 = new ArrayList<String>();
+			ArrayList<String> downFileList2 = new ArrayList<>();
 			Cursor c3 = sqliteDatabase.rawQuery("select filename from downloadedfile where processed=0", null);
 			c3.moveToFirst();
 			while(!c3.isAfterLast()){
@@ -110,8 +113,6 @@ public class DownloadModelTask extends AsyncTask<String, String, String> impleme
 
 			Log.d("process_file_req", "...");
 
-			//	int fileCount = downFileList2.size();
-			//	int fileIndex = 0;
 			int queryCount = 0;
 			int queryIndex = 0;
 			for(String f: downFileList2){
@@ -131,7 +132,6 @@ public class DownloadModelTask extends AsyncTask<String, String, String> impleme
 					e.printStackTrace();
 				}
 
-				//	fileIndex += 1;
 				queryIndex = 0;
 				try {
 					queryCount = countLines(f);
@@ -182,7 +182,7 @@ public class DownloadModelTask extends AsyncTask<String, String, String> impleme
 
 			publishProgress("100",100+"","acknowledge processes file");
 
-			ArrayList<String> isAckList = new ArrayList<String>();
+			ArrayList<String> isAckList = new ArrayList<>();
 			Cursor c4 = sqliteDatabase.rawQuery("select filename from downloadedfile where processed=1 and isack=0", null);
 			c4.moveToFirst();
 			while(!c4.isAfterLast()){
@@ -199,6 +199,7 @@ public class DownloadModelTask extends AsyncTask<String, String, String> impleme
 						jsonObject.put("school", schoolId);
 						jsonObject.put("tab_id", deviceId);
 						jsonObject.put("file_name", "'"+s+"'");
+                        jsonObject.put("version", savedVersion);
 						jsonReceived = FirstTimeSyncParser.makePostRequest(update_processed_file, jsonObject);
 						if(jsonReceived.getInt(TAG_SUCCESS)==1){
 							sqliteDatabase.execSQL("update downloadedfile set isack=1 where processed=1 and filename='"+s+"'");
@@ -217,7 +218,7 @@ public class DownloadModelTask extends AsyncTask<String, String, String> impleme
 	protected void onPostExecute(String s){
 		super.onPostExecute(s);			
 		pDialog.dismiss();
-		SharedPreferences sp = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
+
 		int tabletLock = sp.getInt("tablet_lock", 0);
 		if(tabletLock==1 || block==2){
 			SharedPreferences.Editor editr = sp.edit();

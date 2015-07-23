@@ -94,6 +94,13 @@
 
         <receiver android:name="in.principal.adapter.SyncServiceReceiver" >
         </receiver>
+
+        <activity
+            android:name="in.principal.activity.UpdateApk"
+            android:label="@string/title_activity_update_apk"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

@@ -49,6 +49,7 @@
     <color name="selected_sub_heading">#7A7D79</color>
     <color name="text_light">#807A7C</color>
     <color name="universal">#3E97D6</color>
+    <color name="update_background">#DFE0DC</color>
     <color name="white">#FFFFFF</color>
     <!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
@@ -198,14 +199,18 @@
     <string name="title_activity_restart">Restart</string>
     <string name="title_activity_server_block">ServerBlock</string>
     <string name="title_activity_syncing">Syncing</string>
+    <string name="title_activity_update_apk">UpdateApk</string>
     <string name="to">To</string>
     <string name="today">Today</string>
     <string name="today_eval">Today\'s evaluations</string>
     <string name="total">No of Evaluations</string>
     <string name="two">2</string>
+    <string name="update_apk">A new version of application is available, please click the update button to confirm and continue.</string>
+    <string name="update_apk_button">Update the application</string>
+    <string name="update_apk_wifi">*tab should be in wifi zone.</string>
     <string name="upload">Upload</string>
     <string name="username">Username</string>
-    <string name="version">Version - 1.1</string>
+    <string name="version">Version - 1.2</string>
     <string name="view_exam">View Exams</string>
     <string name="view_sub">View Subjects</string>
     <string name="voice_sms">Voice SMS</string>
