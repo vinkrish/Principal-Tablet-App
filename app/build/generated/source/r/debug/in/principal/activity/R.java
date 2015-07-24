@@ -557,12 +557,14 @@ public final class R {
         public static final int st_list=0x7f030068;
         public static final int st_report=0x7f030069;
         public static final int st_search_list=0x7f03006a;
-        public static final int sync=0x7f03006b;
-        public static final int text_sms=0x7f03006c;
-        public static final int text_sms_sent=0x7f03006d;
-        public static final int upload_voice_sms=0x7f03006e;
-        public static final int voice_sms=0x7f03006f;
-        public static final int white_ok_popup_dialog=0x7f030070;
+        public static final int stud_clas_sec=0x7f03006b;
+        public static final int student_list=0x7f03006c;
+        public static final int sync=0x7f03006d;
+        public static final int text_sms=0x7f03006e;
+        public static final int text_sms_sent=0x7f03006f;
+        public static final int upload_voice_sms=0x7f030070;
+        public static final int voice_sms=0x7f030071;
+        public static final int white_ok_popup_dialog=0x7f030072;
     }
     public static final class menu {
         public static final int dashboard=0x7f0b0000;

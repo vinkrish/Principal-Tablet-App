@@ -9,6 +9,7 @@
         <item>@drawable/sliptest_white</item>
         <item>@drawable/homework_white</item>
         <item>@drawable/reports_white</item>
+        <item>@drawable/attendance</item>
         <item>@drawable/sliptest_white</item>
     </array>
     <string-array name="nav_drawer_items">
@@ -18,6 +19,7 @@
         <item>SlipTest</item>
         <item>Homework</item>
         <item>Exams</item>
+        <item>Students</item>
         <item>Text SMS</item>
     </string-array>
     <!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/values/color.xml -->
