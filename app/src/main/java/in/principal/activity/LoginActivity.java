@@ -10,6 +10,7 @@ import in.principal.util.AppGlobal;
 import in.principal.util.CommonDialogUtils;
 import in.principal.util.ExceptionHandler;
 import in.principal.util.NetworkUtils;
+import in.principal.util.SharedPreferenceUtil;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -58,18 +59,11 @@ public class LoginActivity extends BaseActivity {
         if (intent.getIntExtra("create", 0) == 1) {
             new CallFTP().syncFTP();
         }
-        if (intent.getIntExtra("start_sync", 0) == 1) {
-            Intent service = new Intent(this, in.principal.adapter.SyncService.class);
-            startService(service);
-        }
 
         context = AppGlobal.getContext();
         sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
 
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt("boot_sync", 0);
-        editor.putString("saved_version", "v1.2");
-        editor.apply();
+        SharedPreferenceUtil.updateSavedVersion(this);
 
         int tabletLock = sharedPref.getInt("tablet_lock", 0);
         if (tabletLock == 0) {
@@ -86,6 +80,13 @@ public class LoginActivity extends BaseActivity {
         if(apkUpdate == 1){
             Intent i = new Intent(this, in.principal.activity.UpdateApk.class);
             startActivity(i);
+        }
+
+        int bootSync = sharedPref.getInt("boot_sync", 0);
+        if(bootSync == 1){
+            Intent service = new Intent(this, in.principal.adapter.SyncService.class);
+            startService(service);
+            SharedPreferenceUtil.updateBootSync(this, 0);
         }
     }
 

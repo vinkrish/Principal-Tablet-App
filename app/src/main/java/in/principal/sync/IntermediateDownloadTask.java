@@ -5,6 +5,7 @@ import in.principal.model.TransferModel;
 import in.principal.sqlite.Temp;
 import in.principal.util.AppGlobal;
 import in.principal.util.Constants;
+import in.principal.util.SharedPreferenceUtil;
 import in.principal.util.Util;
 
 import java.io.File;
@@ -105,21 +106,17 @@ public class IntermediateDownloadTask extends AsyncTask<String, String, String> 
 
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
-        SharedPreferences sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
 
         KeyguardManager km = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
         boolean screenLocked = km.inKeyguardRestrictedInputMode();
-        Log.d("screenLokced", screenLocked + "");
+
         if (screenLocked) {
-            editor.putInt("is_sync", 1);
-            editor.apply();
+            SharedPreferenceUtil.updateIsSync(context, 1);
             Intent intent = new Intent(context, in.principal.activity.ProcessFiles.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             context.startActivity(intent);
         } else {
-            editor.putInt("sleep_sync", 1);
-            editor.apply();
+            SharedPreferenceUtil.updateSleepSync(context, 1);
         }
     }
 

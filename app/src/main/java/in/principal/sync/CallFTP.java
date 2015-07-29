@@ -4,6 +4,7 @@ import in.principal.dao.TempDao;
 import in.principal.sqlite.SqlDbHelper;
 import in.principal.sqlite.Temp;
 import in.principal.util.AppGlobal;
+import in.principal.util.SharedPreferenceUtil;
 
 import java.io.IOException;
 import org.json.JSONException;
@@ -24,7 +25,6 @@ public class CallFTP implements StringConstant{
 	private Context context;
 	private int block;
 	private String zipFile;
-	private SharedPreferences sharedPref;
 
 	public CallFTP(){
 		context = AppGlobal.getActivity();
@@ -36,7 +36,6 @@ public class CallFTP implements StringConstant{
 		private JSONObject jsonReceived;
 		@Override
 		protected String doInBackground(String... arg0) {
-			sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
 
             IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
 			Intent batteryStatus = context.getApplicationContext().registerReceiver(null, ifilter);
@@ -55,9 +54,7 @@ public class CallFTP implements StringConstant{
 				Log.d("get_file_res", "1");
 				block = jsonReceived.getInt(TAG_SUCCESS);
 				if(jsonReceived.getInt("update") == 1){
-					SharedPreferences.Editor editor = sharedPref.edit();
-					editor.putInt("apk_update", 1);
-					editor.apply();
+					SharedPreferenceUtil.updateApkUpdate(context, 1);
 				}
 				zipFile = jsonReceived.getString("folder_name");
 				String s = jsonReceived .getString("files");
@@ -77,16 +74,13 @@ public class CallFTP implements StringConstant{
 
 		protected void onPostExecute(String s){
 			super.onPostExecute(s);
-			int updateApk = sharedPref.getInt("update_apk", 0);
-			SharedPreferences.Editor editor = sharedPref.edit();
+			int updateApk = SharedPreferenceUtil.getUpdateApk(context);
 			if(block!=2 && zipFile!=""){
 				new IntermediateDownloadTask(context, zipFile).execute();
 			}else if(block==2){
-				editor.putInt("tablet_lock", 2);
-				editor.apply();
+				SharedPreferenceUtil.updateTabletLock(context, 2);
 			}else if(updateApk == 1){
-				editor.putInt("update_apk", 2);
-				editor.apply();
+				SharedPreferenceUtil.updateApk(context, 2);
 				Intent intent = new Intent(context, in.principal.activity.UpdateApk.class);
 				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				context.startActivity(intent);

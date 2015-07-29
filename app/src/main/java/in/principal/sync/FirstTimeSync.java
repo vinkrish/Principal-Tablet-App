@@ -4,6 +4,8 @@ import in.principal.dao.TempDao;
 import in.principal.sqlite.SqlDbHelper;
 import in.principal.sqlite.Temp;
 import in.principal.util.AppGlobal;
+import in.principal.util.SharedPreferenceUtil;
+
 import java.io.IOException;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -60,10 +62,9 @@ public class FirstTimeSync implements StringConstant{
 			JSONObject ack_json = new JSONObject();
 			try{
 				ack_json.put("tab_id", deviceId);
-				Log.d("get_first_files_req", "1");
+
 				JSONObject jsonReceived = FirstTimeSyncParser.makePostRequest(request_first_time_sync, ack_json);
 				block = jsonReceived.getInt(TAG_SUCCESS);
-				Log.d("get_first_files_res", "1");
 
 				publishProgress("25");
 
@@ -83,10 +84,7 @@ public class FirstTimeSync implements StringConstant{
 			}
 			
 			if(block==1){
-				SharedPreferences sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
-				SharedPreferences.Editor editor = sharedPref.edit();
-				editor.putInt("tablet_lock", 0);
-				editor.apply();
+				SharedPreferenceUtil.updateTabletLock(context, 0);
 				sqlHandler.deleteTable("locked", sqliteDatabase);
 			}
 

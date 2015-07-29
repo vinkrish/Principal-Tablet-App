@@ -73,7 +73,7 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
         sqliteDatabase = AppGlobal.getSqliteDatabase();
 
         sharedPref = getSharedPreferences("db_access", Context.MODE_PRIVATE);
-        savedVersion = sharedPref.getString("saved_version", "0");
+        savedVersion = sharedPref.getString("saved_version", "v1.2");
 
         new ProcessedFiles().execute();
     }

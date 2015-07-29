@@ -2,6 +2,8 @@ package in.principal.activity;
 
 import in.principal.activity.R;
 import in.principal.sync.FirstTimeSync;
+import in.principal.util.SharedPreferenceUtil;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -27,10 +29,7 @@ public class ServerBlock extends BaseActivity {
 	}
 	
 	public void resolveClicked(View view){
-		SharedPreferences sharedPref = this.getSharedPreferences("db_access", Context.MODE_PRIVATE);
-		SharedPreferences.Editor editor = sharedPref.edit();
-		editor.putInt("first_sync", 1);
-		editor.apply();
+		SharedPreferenceUtil.updateFirstSync(this, 1);
 		
 		new FirstTimeSync().callFirstTimeSync();
 	}
@@ -38,10 +37,7 @@ public class ServerBlock extends BaseActivity {
 	@Override
 	protected void onDestroy(){
 		super.onDestroy();
-		SharedPreferences sp = this.getSharedPreferences("db_access", Context.MODE_PRIVATE);
-		SharedPreferences.Editor editor = sp.edit();
-		editor.putInt("first_sync", 0);
-		editor.apply();
+		SharedPreferenceUtil.updateFirstSync(this, 0);
 	}
 
 	@Override

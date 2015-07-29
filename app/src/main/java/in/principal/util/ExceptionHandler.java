@@ -45,8 +45,6 @@ public class ExceptionHandler implements UncaughtExceptionHandler {
 		Intent intent = new Intent(myContext, Restart.class);
 		intent.putExtra("error", errorReport.toString());
 		myContext.startActivity(intent);
-	//	Intent intent = new Intent(myContext, in.principal.MainActivity.class);
-	//	myContext.startActivity(intent);
 
 		android.os.Process.killProcess(android.os.Process.myPid());
 		System.exit(10);

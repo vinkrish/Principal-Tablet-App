@@ -10,9 +10,9 @@ import android.database.sqlite.SQLiteDatabase;
 
 public class StudentsDao {
 	
-	public static ArrayList<Students> selectStudents(int sectionid, SQLiteDatabase sqliteDatabase){
-		Cursor c = sqliteDatabase.rawQuery("select * from students where SectionId="+sectionid+" group by RollNoInClass", null);
-		ArrayList<Students> sList = new ArrayList<Students>();
+	public static ArrayList<Students> selectStudents(int sectionId, SQLiteDatabase sqliteDatabase){
+		Cursor c = sqliteDatabase.rawQuery("select * from students where SectionId="+sectionId+" group by RollNoInClass", null);
+		ArrayList<Students> sList = new ArrayList<>();
 		c.moveToFirst();
 		while(!c.isAfterLast()){
 			Students stud = new Students();

@@ -50,7 +50,6 @@ public class UpdateApk extends BaseActivity {
 
         sharedPref = getSharedPreferences("db_access", Context.MODE_PRIVATE);
         int updateApk = sharedPref.getInt("update_apk", 0);
-
         if (updateApk == 2) {
             new ApkDownloadTask(this.getApplicationContext(), "principal.zip").execute();
         }
