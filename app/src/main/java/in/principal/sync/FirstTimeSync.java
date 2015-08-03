@@ -62,7 +62,6 @@ public class FirstTimeSync implements StringConstant{
 			JSONObject ack_json = new JSONObject();
 			try{
 				ack_json.put("tab_id", deviceId);
-
 				JSONObject jsonReceived = FirstTimeSyncParser.makePostRequest(request_first_time_sync, ack_json);
 				block = jsonReceived.getInt(TAG_SUCCESS);
 

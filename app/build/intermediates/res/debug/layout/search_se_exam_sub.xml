@@ -28,18 +28,34 @@
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="#666363" />
+            android:background="@color/dash_seperator" />
 
         <Button
-            android:id="@+id/stButton"
+            android:id="@+id/examButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/dark_black"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="@string/se"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFFFFF" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/dash_seperator" />
+
+        <Button
+            android:id="@+id/examSubButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/dark_black"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/se"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFFFFF" />
 
         <View
             android:layout_width="1dp"
@@ -92,19 +108,11 @@
             android:layout_weight="0.4"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/examName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="18sp" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:paddingTop="5dp">
+                android:orientation="horizontal">
 
                 <ProgressBar
                     android:id="@+id/subAvgProgress"

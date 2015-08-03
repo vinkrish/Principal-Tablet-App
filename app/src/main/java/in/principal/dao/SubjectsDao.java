@@ -12,7 +12,7 @@ public class SubjectsDao {
 	
 	public static List<Subjects> selectSubjects(SQLiteDatabase sqliteDatabase){
 		Cursor c = sqliteDatabase.rawQuery("select * from subjects", null);
-		List<Subjects> sList = new ArrayList<Subjects>();
+		List<Subjects> sList = new ArrayList<>();
 		c.moveToFirst();
 		while(!c.isAfterLast()){
 			Subjects sub = new Subjects();

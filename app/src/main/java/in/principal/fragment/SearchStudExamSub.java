@@ -6,6 +6,7 @@ import java.util.List;
 import in.principal.activity.R;
 import in.principal.adapter.StudExamSubAdapter;
 import in.principal.dao.ActivitiDao;
+import in.principal.dao.ExamsDao;
 import in.principal.dao.ExmAvgDao;
 import in.principal.dao.TempDao;
 import in.principal.sqlite.Activiti;
@@ -25,6 +26,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -34,9 +36,9 @@ public class SearchStudExamSub extends Fragment {
 	private Context context;
 	private SqlDbHelper sqlHandler;
 	private int studentId, sectionId, examId, progress;
-	private String studentName, className, secName;
+	private String studentName, className, secName, examName;
 	private SQLiteDatabase sqliteDatabase;
-	private ArrayList<AdapterOverloaded> amrList = new ArrayList<>();;
+	private ArrayList<AdapterOverloaded> amrList = new ArrayList<>();
 	private StudExamSubAdapter adapter;
 	private List<Activiti> activitiList = new ArrayList<>();
 	private List<Integer>isSubGotActList = new ArrayList<>();
@@ -44,6 +46,7 @@ public class SearchStudExamSub extends Fragment {
 	private TextView studTV, clasSecTV, percentTV;
 	private List<Integer> subIdList = new ArrayList<>();
 	private ProgressBar pb;
+	private Button examBut;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,7 +58,8 @@ public class SearchStudExamSub extends Fragment {
 		pDialog  = new ProgressDialog(this.getActivity());
 		
 		clearList();
-		
+
+        examBut = (Button)view.findViewById(R.id.examSubButton);
 		pb = (ProgressBar)view.findViewById(R.id.subAvgProgress);
 		percentTV = (TextView)view.findViewById(R.id.percent);
 		ListView lv = (ListView)view.findViewById(R.id.list);
@@ -67,6 +71,7 @@ public class SearchStudExamSub extends Fragment {
 
         view.findViewById(R.id.slipSearch).setOnClickListener(searchSlipTest);
         view.findViewById(R.id.seSearch).setOnClickListener(searchExam);
+        view.findViewById(R.id.examButton).setOnClickListener(searchExam);
         view.findViewById(R.id.attSearch).setOnClickListener(searchAttendance);
 
 		Temp t = TempDao.selectTemp(sqliteDatabase);
@@ -130,6 +135,8 @@ public class SearchStudExamSub extends Fragment {
 		}
 		@Override
 		protected String doInBackground(String... params) {
+            examName = ExamsDao.selectExamName(examId, sqliteDatabase);
+
 			Cursor c = sqliteDatabase.rawQuery("select A.Name, A.ClassId, A.SectionId, B.ClassName, C.SectionName from students A, class B, section C where"+
 					" A.StudentId="+studentId+" and A.ClassId=B.ClassId and A.SectionId=C.SectionId group by A.StudentId", null);
 			c.moveToFirst();
@@ -223,7 +230,8 @@ public class SearchStudExamSub extends Fragment {
 
 		protected void onPostExecute(String s){
 			super.onPostExecute(s);
-			percentTV.setText(progress+"/%");
+            examBut.setText(examName);
+			percentTV.setText(progress+"%");
 			if(progress>=75){
 				pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_green));
 			}else if(progress>=50){
