@@ -56,6 +56,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -104,6 +105,13 @@ public class Dashboard extends BaseActivity {
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
+
+        findViewById(R.id.expand_drawer).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                open();
+            }
+        });
 
         navDrawerItems = new ArrayList<>();
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(0, -1)));
@@ -155,6 +163,13 @@ public class Dashboard extends BaseActivity {
             invalidateOptionsMenu();
         }
     };
+
+    public void open() {
+        if(mDrawerLayout.isDrawerOpen(GravityCompat.START))
+            mDrawerLayout.closeDrawer(Gravity.LEFT);
+        else
+            mDrawerLayout.openDrawer(Gravity.LEFT);
+    }
 
     @Override
     protected void onDestroy() {
@@ -231,7 +246,7 @@ public class Dashboard extends BaseActivity {
                 }
                 c.close();
 
-                ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, studNameList);
+                ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, studNameList);
                 final AutoCompleteTextView textView2 = (AutoCompleteTextView) view.findViewById(R.id.autoCompleteTextView2);
                 textView2.setAdapter(adapter2);
 
