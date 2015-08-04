@@ -31,3 +31,6 @@ Thumbs.db
 #.idea/workspace.xml - remove # and delete .idea if it better suit your needs.
 .gradle
 build/
+
+# Removes StringConstant where ip addresses are located
+app/src/main/java/in/principal/sync/StringConstant.java
