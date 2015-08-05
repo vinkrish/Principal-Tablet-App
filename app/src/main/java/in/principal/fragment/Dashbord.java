@@ -60,7 +60,7 @@ public class Dashbord extends Fragment {
 	private static int totalStrength, presentStrength, totalPresent, totalAbsent;
 	private DashAdapt1 dashAdapt1;
 	private DashAdapt2 dashAdapt2;
-	private ArrayList<AdapterOverloaded> amrList1 = new ArrayList<AdapterOverloaded>(), amrList2 = new ArrayList<AdapterOverloaded>();
+	private ArrayList<AdapterOverloaded> amrList1 = new ArrayList<>(), amrList2 = new ArrayList<>();
 	private List<Clas> clasList = new ArrayList<>();
 	private List<Integer> classIdList = new ArrayList<>();
 	private List<String> classNameList = new ArrayList<>();
