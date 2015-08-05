@@ -8,6 +8,7 @@ import in.principal.adapter.StudActAdapter;
 import in.principal.dao.ActivitiDao;
 import in.principal.dao.ExamsDao;
 import in.principal.dao.SubActivityDao;
+import in.principal.dao.SubActivityMarkDao;
 import in.principal.dao.SubjectsDao;
 import in.principal.dao.TempDao;
 import in.principal.sqlite.Activiti;
@@ -25,6 +26,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -76,6 +78,8 @@ public class SearchStudAct extends Fragment {
 		subjectId = t.getSubjectId();
 		
 		new CalledBackLoad().execute();
+
+		lv.setOnItemClickListener(clickListItem);
 		
 		return view;
 	}
@@ -116,6 +120,17 @@ public class SearchStudAct extends Fragment {
 			ReplaceFragment.replace(new SearchStudAtt(), getFragmentManager());
 		}
 	};
+
+	private AdapterView.OnItemClickListener clickListItem = new AdapterView.OnItemClickListener() {
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+			TempDao.updateActivityId(actIdList.get(position), sqliteDatabase);
+            int cache = SubActivityDao.isThereSubAct(actIdList.get(position), sqliteDatabase);
+            if(cache == 1) {
+                ReplaceFragment.replace(new SearchStudSubAct(), getFragmentManager());
+            }
+		}
+	};
 	
 	class CalledBackLoad extends AsyncTask<String, String, String>{
 		protected void onPreExecute(){
@@ -143,10 +158,27 @@ public class SearchStudAct extends Fragment {
 			c.close();
 			
 			activitiList = ActivitiDao.selectActiviti(examId,subjectId,sectionId,sqliteDatabase);
+            List<Integer> subActList = new ArrayList<>();
+            int subActAvg = 0;
+            int overallSubActAvg = 0;
 			for(Activiti act: activitiList){
 				int cache = SubActivityDao.isThereSubAct(act.getActivityId(), sqliteDatabase);
 				if(cache==1){
-					avgList1.add(0);
+                    subActList.clear();
+                    subActAvg = 0;
+                    Cursor c3 = sqliteDatabase.rawQuery("select SubActivityId from subactivity where ActivityId=" + act.getActivityId(), null);
+                    c3.moveToFirst();
+                    while (!c3.isAfterLast()) {
+                        subActList.add(c3.getInt(c3.getColumnIndex("SubActivityId")));
+                        c3.moveToNext();
+                    }
+                    c3.close();
+
+                    for (Integer actId : subActList) {
+                        subActAvg += SubActivityMarkDao.getStudSubActAvg(studentId, actId, sqliteDatabase);
+                    }
+                    overallSubActAvg = subActAvg / subActList.size();
+                    avgList1.add(overallSubActAvg);
 				}else{
 					avgList1.add(ActivitiDao.getStudActAvg(studentId	, act.getActivityId(), sqliteDatabase));
 				}
