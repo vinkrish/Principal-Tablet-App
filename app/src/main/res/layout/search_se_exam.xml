@@ -139,13 +139,20 @@
 
     </LinearLayout>
 
+    <View
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/linearLayout1"
+        android:layout_marginTop="30dp"
+        android:background="@color/divider" />
+
     <LinearLayout
         android:id="@+id/lisview"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:layout_below="@id/linearLayout1"
+        android:layout_below="@id/top"
         android:layout_centerInParent="true"
-        android:layout_marginTop="30dp"
         android:background="@color/layoutbelowBC"
         android:orientation="horizontal">
 
@@ -164,7 +171,7 @@
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="#FFFFFF" />
+            android:background="@color/divider" />
 
         <TextView
             android:layout_width="0dp"
@@ -180,10 +187,17 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <View
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/lisview"
+        android:background="@color/divider" />
+
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lisview"></ListView>
+        android:layout_below="@id/bottom"></ListView>
 
 </RelativeLayout>

@@ -8,6 +8,7 @@ import in.principal.adapter.StudExamSubAdapter;
 import in.principal.dao.ActivitiDao;
 import in.principal.dao.ExamsDao;
 import in.principal.dao.ExmAvgDao;
+import in.principal.dao.MarksDao;
 import in.principal.dao.TempDao;
 import in.principal.sqlite.Activiti;
 import in.principal.sqlite.AdapterOverloaded;
@@ -35,7 +36,6 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class SearchStudExamSub extends Fragment {
     private Context context;
-    private SqlDbHelper sqlHandler;
     private int studentId, sectionId, examId, progress;
     private String studentName, className, secName, examName;
     private SQLiteDatabase sqliteDatabase;
@@ -46,6 +46,7 @@ public class SearchStudExamSub extends Fragment {
     private ProgressDialog pDialog;
     private TextView studTV, clasSecTV, percentTV;
     private List<Integer> subIdList = new ArrayList<>();
+    private List<String> scoreList = new ArrayList<>();
     private ProgressBar pb;
     private Button examBut;
 
@@ -54,7 +55,6 @@ public class SearchStudExamSub extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.search_se_exam_sub, container, false);
         context = AppGlobal.getContext();
-        sqlHandler = AppGlobal.getSqlDbHelper();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
         pDialog = new ProgressDialog(this.getActivity());
 
@@ -91,6 +91,7 @@ public class SearchStudExamSub extends Fragment {
         amrList.clear();
         activitiList.clear();
         subIdList.clear();
+        scoreList.clear();
     }
 
     private View.OnClickListener searchSlipTest = new View.OnClickListener() {
@@ -202,10 +203,16 @@ public class SearchStudExamSub extends Fragment {
                         len++;
                     }
                     progressList1.add(overallActAvg);
+                    scoreList.add(" ");
                 } else {
-                    avg = sqlHandler.getStudExamAvg(studentId, sub, examId);
+                    avg = MarksDao.getStudExamAvg(studentId, sub, examId, sqliteDatabase);
                     if (avg != 0) {
                         len++;
+                        int score = MarksDao.getStudExamMark(studentId, sub, examId, sqliteDatabase);
+                        int maxScore = MarksDao.getExamMaxMark(sub, examId, sqliteDatabase);
+                        scoreList.add(score + "/" + maxScore);
+                    } else {
+                        scoreList.add("-");
                     }
                     progressList1.add(avg);
                 }
@@ -224,7 +231,7 @@ public class SearchStudExamSub extends Fragment {
             }
 
             for (int i = 0; i < subIdList.size(); i++) {
-                amrList.add(new AdapterOverloaded(subNameList.get(i), teacherNameList.get(i), progressList1.get(i), progressList2.get(i)));
+                amrList.add(new AdapterOverloaded(subNameList.get(i), teacherNameList.get(i), scoreList.get(i), progressList1.get(i), progressList2.get(i)));
             }
             return null;
         }

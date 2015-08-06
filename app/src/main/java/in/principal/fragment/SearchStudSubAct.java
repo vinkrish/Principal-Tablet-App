@@ -44,6 +44,7 @@ public class SearchStudSubAct extends Fragment{
     private List<Integer> avgList2 = new ArrayList<>();
     private List<SubActivity> subActList = new ArrayList<>();
     private ArrayList<AdapterOverloaded> amrList = new ArrayList<>();
+    private List<String> scoreList = new ArrayList<>();
     private StudActAdapter adapter;
     private ListView lv;
     private ProgressDialog pDialog;
@@ -96,6 +97,7 @@ public class SearchStudSubAct extends Fragment{
         avgList2.clear();
         subActNameList.clear();
         amrList.clear();
+        scoreList.clear();
     }
 
     private View.OnClickListener searchSlipTest = new View.OnClickListener() {
@@ -161,7 +163,15 @@ public class SearchStudSubAct extends Fragment{
 
             subActList = SubActivityDao.selectSubActivity(activityId, sqliteDatabase);
             for (SubActivity subact : subActList) {
-                avgList1.add(SubActivityMarkDao.getStudSubActAvg(studentId, subact.getSubActivityId(), sqliteDatabase));
+                int avg = SubActivityMarkDao.getStudSubActAvg(studentId, subact.getSubActivityId(), sqliteDatabase);
+                avgList1.add(avg);
+                if(avg == 0){
+                    scoreList.add("-");
+                }else{
+                    int score = SubActivityMarkDao.getStudSubActMark(studentId,subact.getSubActivityId(), sqliteDatabase);
+                    float maxScore = SubActivityDao.getSubActMaxMark(subact.getSubActivityId(), sqliteDatabase);
+                    scoreList.add(score+"/"+maxScore);
+                }
             }
             for (SubActivity at : subActList) {
                 subActNameList.add(at.getSubActivityName());
@@ -172,9 +182,9 @@ public class SearchStudSubAct extends Fragment{
 
             for (int i = 0; i < subActIdList.size(); i++) {
                 try {
-                    amrList.add(new AdapterOverloaded(subActNameList.get(i), avgList1.get(i), avgList2.get(i)));
+                    amrList.add(new AdapterOverloaded(subActNameList.get(i), scoreList.get(i), avgList1.get(i), avgList2.get(i)));
                 } catch (IndexOutOfBoundsException e) {
-                    amrList.add(new AdapterOverloaded(subActNameList.get(i), 0, 0));
+                    amrList.add(new AdapterOverloaded(subActNameList.get(i), "", 0, 0));
                 }
             }
             return null;

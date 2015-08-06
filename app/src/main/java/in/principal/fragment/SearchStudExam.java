@@ -7,6 +7,7 @@ import in.principal.activity.R;
 import in.principal.adapter.StudExamAdapter;
 import in.principal.dao.ActivitiDao;
 import in.principal.dao.ExmAvgDao;
+import in.principal.dao.MarksDao;
 import in.principal.dao.TempDao;
 import in.principal.sqlite.AdapterOverloaded;
 import in.principal.sqlite.SqlDbHelper;
@@ -188,7 +189,7 @@ public class SearchStudExam extends Fragment {
 						}
 						progressList1.add(overallActAvg);
 					}else{
-						avg = sqlHandler.getStudExamAvg(studentId, sub, id);
+						avg = MarksDao.getStudExamAvg(studentId, sub, id, sqliteDatabase);
 						if(avg!=0){
 							len++;
 						}

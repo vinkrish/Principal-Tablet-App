@@ -17,12 +17,12 @@ public class AdapterOverloaded {
 		this.int3 = int3;
 	}
 	
-	public AdapterOverloaded(int int1, String text1, String text2, int int2, int int3){
+	public AdapterOverloaded(String text1, String text2, String text3, int int1, int int2){
 		this.int1 = int1;
 		this.int2 = int2;
-		this.int3 = int3;
 		this.text1 = text1;
 		this.text2 = text2;
+		this.text3 = text3;
 	}
 	
 	public AdapterOverloaded(String txt1, String txt2, String txt3){

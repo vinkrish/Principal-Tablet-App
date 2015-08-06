@@ -10,6 +10,18 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 
 public class ActivitiDao {
+
+	public static float getActivityMaxMark(int activityId, SQLiteDatabase sqliteDatabase){
+		float maxMark = 0;
+		Cursor c = sqliteDatabase.rawQuery("select MaximumMark from activity where ActivityId="+activityId, null);
+		c.moveToFirst();
+		while(!c.isAfterLast()){
+			maxMark = c.getFloat(c.getColumnIndex("MaximumMark"));
+			c.moveToNext();
+		}
+		c.close();
+		return maxMark;
+	}
 	
 	public static void updateActivityAvg(SQLiteDatabase sqliteDatabase){
 		String sql = "SELECT A.ActivityId, (AVG(Mark)/A.MaximumMark)*360 as Average FROM activity A, activitymark B, Students C WHERE B.StudentId=C.StudentId and A.ActivityId = B.ActivityId and " +

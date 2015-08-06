@@ -191,12 +191,19 @@
 
     </LinearLayout>
 
+    <View
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/linearLayout1"
+        android:layout_marginTop="30dp"
+        android:background="@color/divider" />
+
     <LinearLayout
         android:id="@+id/lisview"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:layout_below="@id/linearLayout1"
-        android:layout_marginTop="30dp"
+        android:layout_below="@id/top"
         android:background="@color/layoutbelowBC"
         android:orientation="horizontal">
 
@@ -204,7 +211,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_weight="0.3"
+            android:layout_weight="0.38"
             android:paddingLeft="10dp"
             android:text="@string/subject"
             android:textColor="@color/light_black"
@@ -213,14 +220,14 @@
 
         <View
             android:layout_width="1dp"
-            android:layout_height="45dp"
-            android:background="#FFFFFF" />
+            android:layout_height="match_parent"
+            android:background="@color/divider" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_weight="0.45"
+            android:layout_weight="0.32"
             android:paddingLeft="10dp"
             android:text="@string/teacher"
             android:textColor="@color/light_black"
@@ -229,15 +236,15 @@
 
         <View
             android:layout_width="1dp"
-            android:layout_height="45dp"
-            android:background="#FFFFFF" />
+            android:layout_height="match_parent"
+            android:background="@color/divider" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="5dp"
-            android:layout_weight="0.4"
+            android:layout_weight="0.53"
             android:paddingLeft="10dp"
             android:text="@string/stud_avg"
             android:textColor="@color/light_black"
@@ -245,11 +252,18 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <View
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/lisview"
+        android:background="@color/divider" />
+
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lisview"
+        android:layout_below="@id/bottom"
         android:layout_gravity="center"
         android:divider="@null"
         android:dividerHeight="0dp"></ListView>

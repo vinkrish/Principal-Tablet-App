@@ -188,11 +188,18 @@
         </GridView>
     </FrameLayout>
 
+    <View
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/fl"
+        android:background="@color/divider" />
+
     <LinearLayout
         android:id="@+id/lisview"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:layout_below="@id/fl"
+        android:layout_below="@id/top"
         android:background="@color/layoutbelowBC"
         android:orientation="horizontal" >
 
@@ -223,8 +230,8 @@
 
         <View
             android:layout_width="1dp"
-            android:layout_height="45dp"
-            android:background="#FFFFFF" />
+            android:layout_height="match_parent"
+            android:background="@color/divider" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -254,8 +261,8 @@
 
         <View
             android:layout_width="1dp"
-            android:layout_height="45dp"
-            android:background="#FFFFFF" />
+            android:layout_height="match_parent"
+            android:background="@color/divider" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -284,8 +291,8 @@
 
         <View
             android:layout_width="1dp"
-            android:layout_height="45dp"
-            android:background="#FFFFFF" />
+            android:layout_height="match_parent"
+            android:background="@color/divider" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -315,11 +322,18 @@
         </LinearLayout>
     </LinearLayout>
 
+    <View
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/lisview"
+        android:background="@color/divider" />
+
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lisview" >
+        android:layout_below="@id/bottom" >
     </ListView>
 
 </RelativeLayout>

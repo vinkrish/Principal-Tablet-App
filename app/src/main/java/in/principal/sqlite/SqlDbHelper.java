@@ -236,20 +236,6 @@ public class SqlDbHelper extends SQLiteOpenHelper implements SqlConstant {
 		sqliteDatabase.execSQL("delete from comp where SecId="+secId);
 	}
 
-	public int getStudExamAvg(int studentId, int subjectId, int examId){
-		sqliteDatabase = dbHelper.getWritableDatabase();
-		int i = 0;
-		Cursor c = sqliteDatabase.rawQuery("select (AVG(A.Mark)/B.MaximumMark)*100 as avg from marks A, subjectexams B where A.ExamId=B.ExamId and A.StudentId="+studentId+" and" +
-				" A.SubjectId=B.SubjectId and A.SubjectId="+subjectId+" and A.ExamId="+examId, null);
-		c.moveToFirst();
-		while(!c.isAfterLast()){
-			i = c.getInt(c.getColumnIndex("avg"));
-			c.moveToNext();
-		}
-		c.close();
-		return i;
-	}
-
 	public int getHighestGrade(int classId){
 		sqliteDatabase = dbHelper.getWritableDatabase();
 		int i = 0;

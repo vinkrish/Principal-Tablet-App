@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF" >
+    android:background="#FFFFFF">
 
     <LinearLayout
         android:id="@+id/breadcrum"
@@ -11,7 +11,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:background="@color/dark_black"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/dash"
@@ -53,17 +53,24 @@
         android:text="@string/se"
         android:textSize="21sp" />
 
+    <View
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/setext"
+        android:background="@color/divider" />
+
     <TextView
         android:id="@+id/taptext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/setext"
+        android:layout_below="@id/bottom"
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="@string/taponclass"
         android:textColor="@color/light_black"
         android:textSize="20sp" />
-    
+
     <GridView
         android:id="@+id/gridView"
         android:layout_width="match_parent"
@@ -76,7 +83,6 @@
         android:gravity="center"
         android:horizontalSpacing="20dp"
         android:numColumns="3"
-        android:verticalSpacing="40dp" >
-    </GridView>
+        android:verticalSpacing="40dp"></GridView>
 
 </RelativeLayout>

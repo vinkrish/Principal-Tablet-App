@@ -49,7 +49,6 @@ public class RepGpaDiff extends ArrayAdapter<ReportSub> {
             holder.txt1 = (TextView) row.findViewById(R.id.txt1);
             holder.txt2 = (TextView) row.findViewById(R.id.txt2);
             holder.txt3 = (TextView) row.findViewById(R.id.txt3);
-            holder.int1 = (TextView) row.findViewById(R.id.int1);
             holder.pb = (ProgressBar) row.findViewById(R.id.avgProgress);
             row.setTag(holder);
         } else {

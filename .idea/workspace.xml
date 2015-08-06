@@ -34,7 +34,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dd412a1-fe86-408d-97d5-a54291544eea" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/rep_4_gpa.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/rep_4_gpa_diff.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/rep_5_gpa.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/rep_5_gpa_diff.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/rep_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/rep_6_diff.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/rep_6_gpa.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/rep_6_gpa_diff.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/rep_7_gpa.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/rep_gpa_diff.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/rep_4_gpa.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/rep_4_gpa_diff.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/rep_5_gpa.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/rep_5_gpa_diff.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/rep_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/rep_6_diff.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/rep_6_gpa.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/rep_6_gpa_diff.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/rep_7_gpa.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/rep_gpa_diff.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/dao/ActivitiDao.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/dao/ActivitiDao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/dao/ActivityMarkDao.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/dao/ActivityMarkDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/sqlite/AdapterOverloaded.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/sqlite/AdapterOverloaded.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/AmrAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/AmrAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/AsecAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/AsecAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/AssAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/AssAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/AttGraph.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/AttGraph.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/Attendance$CustomAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/Attendance$CustomAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/Attendance.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/Attendance.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/AttendanceClass$CustomAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/AttendanceClass$CustomAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/AttendanceClass.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/AttendanceClass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/AttendanceSection.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/AttendanceSection.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/AttendanceStudent.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/AttendanceStudent.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/CoScholastic$ExpandListAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/CoScholastic$ExpandListAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/CoScholastic.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/CoScholastic.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/CompList1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/CompList1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/CompList2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/CompList2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/CompSeClassSec$CircleAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/CompSeClassSec$CircleAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/CompSeClassSec.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/CompSeClassSec.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/CompSeExam$CircleAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/CompSeExam$CircleAdapter.class" />
@@ -45,11 +81,38 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/CompSeSecSub.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/CompSeSecSub.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/CompSeSubAct$CircleAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/CompSeSubAct$CircleAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/CompSeSubAct.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/CompSeSubAct.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/CustomAlertAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/CustomAlertAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/DashAdapt1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/DashAdapt1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/DashAdapt2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/DashAdapt2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/DashAttendance.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/DashAttendance.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/Dashboard.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/Dashboard.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/Dashbord$CircleAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/Dashbord$CircleAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/Dashbord.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/Dashbord.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/HomeworkView.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/HomeworkView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/HwClasSec.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/HwClasSec.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/LockActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/LockActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/LoginActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/LoginActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/LoginActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/LoginActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/dao/MarksDao.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/dao/MarksDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/MasterAuthentication$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/MasterAuthentication$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/MasterAuthentication.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/MasterAuthentication.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/MonthlyReport$MonthlyAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/MonthlyReport$MonthlyAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/MonthlyReport.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/MonthlyReport.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/MonthlyReportClass$MonthlyAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/MonthlyReportClass$MonthlyAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/MonthlyReportClass.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/MonthlyReportClass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/MonthlyReportSection.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/MonthlyReportSection.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/MonthlyReportStud.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/MonthlyReportStud.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/NavDrawerListAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/NavDrawerListAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/PerfClass$CircleAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/PerfClass$CircleAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/PerfClass.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/PerfClass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/PerfST$CircleAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/PerfST$CircleAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/PerfST$CircleAdapter2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/PerfST$CircleAdapter2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/PerfST.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/PerfST.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/PerfSecSub.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/PerfSecSub.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/PerfStAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/PerfStAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/PerfStStud.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/PerfStStud.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/Performance$CircleAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/Performance$CircleAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/Performance.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/Performance.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/ProcessFiles.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/ProcessFiles.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/R$id.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/R$layout.class" />
@@ -57,8 +120,15 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/R$string.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/R$style.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/R.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/RecordedVoiceSms.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/RecordedVoiceSms.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/RepGenComp.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/RepGenComp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/RepGpaDiff$RecordHolder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/RepGpaDiff$RecordHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/RepGpaDiff.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/RepGpaDiff.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/util/ReplaceFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/util/ReplaceFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/ReportGeneration.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/ReportGeneration.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeActStud$CircleAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeActStud$CircleAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeActStud$CircleAdapter2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeActStud$CircleAdapter2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeActStud.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeActStud.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeActSubAct$CircleAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeActSubAct$CircleAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeActSubAct.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeActSubAct.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeClassSec$CircleAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeClassSec$CircleAdapter.class" />
@@ -71,18 +141,37 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeSecSub.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeSecSub.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeSubAct$CircleAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeSubAct$CircleAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeSubAct.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeSubAct.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeSubActStud$CircleAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeSubActStud$CircleAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeSubActStud$CircleAdapter2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeSubActStud$CircleAdapter2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeSubActStud.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeSubActStud.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeSubStud$CircleAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeSubStud$CircleAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeSubStud$CircleAdapter2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeSubStud$CircleAdapter2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeSubStud.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SeSubStud.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/SearchStAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/SearchStAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudAct$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudAct$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudAct$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudAct$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudAct$CalledBackLoad.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudAct$CalledBackLoad.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudAct.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudAct.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudAtt.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudAtt.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudExam$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudExam$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudExam$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudExam$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudExam$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudExam$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudExam$CalledBackLoad.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudExam$CalledBackLoad.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudExam.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudExam.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudExamSub$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudExamSub$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudExamSub$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudExamSub$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudExamSub$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudExamSub$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudExamSub$CalledBackLoad.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudExamSub$CalledBackLoad.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudExamSub.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudExamSub.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudST.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudST.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudSTSub$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudSTSub$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudSTSub$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudSTSub$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudSTSub$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudSTSub$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudSTSub$CalledBackLoad.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudSTSub$CalledBackLoad.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudSTSub.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/SearchStudSTSub.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/ServerBlock.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/activity/ServerBlock.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/sqlite/SqlDbHelper.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/sqlite/SqlDbHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/SssAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/SssAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/StDashbord$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/StDashbord$6.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/StDashbord$StDash.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/StDashbord$StDash.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/StDashbord.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/StDashbord.class" />
@@ -91,11 +180,22 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/StReport.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/StReport.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/StSearchAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/StSearchAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/StSecSub.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/StSecSub.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/StructuredExam$CircleAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/StructuredExam$CircleAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/StructuredExam.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/StructuredExam.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/StudActAdapter$RecordHolder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/StudActAdapter$RecordHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/StudActAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/StudActAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/StudExamAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/StudExamAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/StudExamSubAdapter$RecordHolder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/StudExamSubAdapter$RecordHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/StudExamSubAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/adapter/StudExamSubAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/dao/SubActivityDao.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/dao/SubActivityDao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/dao/SubActivityMarkDao.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/dao/SubActivityMarkDao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/TextSms.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/TextSms.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/TextSmsSent$TextSmsAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/TextSmsSent$TextSmsAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/TextSmsSent.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/TextSmsSent.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/UploadVoiceSms.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/UploadVoiceSms.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/ViewCCSGrade$CoSchAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/ViewCCSGrade$CoSchAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/ViewCCSGrade.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/ViewCCSGrade.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/VoiceSms$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/VoiceSms$6.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/VoiceSms.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/principal/fragment/VoiceSms.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
@@ -105,10 +205,94 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/resources/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/resources/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/Dashbord.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/Dashbord.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/dao/ActivitiDao.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/dao/ActivitiDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/dao/ActivityMarkDao.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/dao/ActivityMarkDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/sqlite/AdapterOverloaded.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/sqlite/AdapterOverloaded.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeSubAct.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeSubAct.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/dao/MarksDao.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/dao/MarksDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/in/principal/activity/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/in/principal/activity/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/RepGpaDiff.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/RepGpaDiff.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudAct.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudAct.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudExam.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudExam.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudExamSub.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudExamSub.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudSTSub.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudSTSub.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudSubAct.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudSubAct.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/sqlite/SqlDbHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/sqlite/SqlDbHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/StudActAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/StudActAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/StudExamSubAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/StudExamSubAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/dao/SubActivityDao.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/dao/SubActivityDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/dao/SubActivityMarkDao.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/dao/SubActivityMarkDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/act_sub_stud.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/act_sub_stud.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_sub_stud.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_sub_stud.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/attendance_student.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/attendance_student.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/attendance_student.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/attendance_student.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/comp_act_secsub.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/comp_act_secsub.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/comp_act_secsub.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/comp_act_secsub.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/comp_se_class.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/comp_se_class.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/comp_se_class.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/comp_se_class.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/comp_se_exam.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/comp_se_exam.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/comp_se_exam.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/comp_se_exam.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/comp_se_examsub.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/comp_se_examsub.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/comp_se_examsub.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/comp_se_examsub.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/comp_se_secsub.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/comp_se_secsub.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/comp_se_secsub.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/comp_se_secsub.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/homework.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/homework.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/homework.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/homework.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/hw_clas_sec.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/hw_clas_sec.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/hw_clas_sec.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/hw_clas_sec.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeResources/debug/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeResources/debug/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/monthly_report_stud.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/monthly_report_stud.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/monthly_report_stud.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/monthly_report_stud.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/perf_class.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/perf_class.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/perf_class.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/perf_class.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/perf_sec_sub.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/perf_sec_sub.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/perf_sec_sub.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/perf_sec_sub.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/perf_st.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/perf_st.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/perf_st.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/perf_st.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/perf_st_stud.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/perf_st_stud.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/perf_st_stud.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/perf_st_stud.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/se.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/se.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/se.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/se.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/se_act.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/se_act.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/se_act.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/se_act.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/se_class.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/se_class.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/se_class.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/se_class.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/se_exam.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/se_exam.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/se_exam.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/se_exam.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/se_exam_sub.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/se_exam_sub.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/se_exam_sub.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/se_exam_sub.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/se_sec_sub.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/se_sec_sub.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/se_sec_sub.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/se_sec_sub.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/se_sub_stud.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/se_sub_stud.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/se_sub_stud.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/se_sub_stud.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/se_subact.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/se_subact.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/se_subact.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/se_subact.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/search_act_list.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/search_act_list.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/search_act_list.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/search_act_list.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/search_att.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/search_att.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/search_att.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/search_att.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/search_exam_list.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/search_exam_list.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/search_exam_list.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/search_exam_list.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/search_exam_sub_list.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/search_exam_sub_list.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/search_exam_sub_list.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/search_exam_sub_list.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/search_se_act.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/search_se_act.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/search_se_act.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/search_se_act.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/search_se_exam.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/search_se_exam.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/search_se_exam.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/search_se_exam.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/search_se_exam_sub.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/search_se_exam_sub.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/search_se_exam_sub.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/search_se_exam_sub.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/search_se_subact.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/search_se_subact.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/search_st.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/search_st.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/search_st.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/search_st.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/search_st_sub.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/search_st_sub.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/search_st_sub.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/search_st_sub.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/st_dashbord.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/st_dashbord.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/st_dashbord.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/st_dashbord.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/st_report.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/st_report.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/st_report.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/st_report.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/stud_clas_sec.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/stud_clas_sec.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/student_list.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/student_list.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Principal.iws" />
@@ -129,7 +313,64 @@
     <favorites_list name="Principal" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="SearchStudExamSub.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudExamSub.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="56" column="41" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search_exam_sub_list.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/search_exam_sub_list.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5316456">
+              <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search_se_exam_sub.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/search_se_exam_sub.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.137931">
+              <caret line="213" column="39" selection-start-line="213" selection-start-column="39" selection-end-line="213" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudExamSubAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/adapter/StudExamSubAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchStudExam.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudExam.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="191" column="88" selection-start-line="191" selection-start-column="88" selection-end-line="191" selection-end-column="88" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -1472,57 +1713,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeExam.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeExamSub.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeSecSub.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeSubAct.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/HomeworkView.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/HwClasSec.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/MonthlyReport.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/MonthlyReportClass.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/MonthlyReportSection.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StDashbord.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StReport.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/TextSms.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/ViewCCSGrade.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/color.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_update_apk.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/student_list.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/asec_list.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/stud_clas_sec.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StudentList.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StudentClassSec.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/dao/StudentsDao.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/util/ExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/activity/ProcessFiles.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/activity/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/BootSync.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/sync/CallFTP.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/sync/DownloadModelTask.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/SyncServiceReceiver.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/util/SharedPreferenceUtil.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/sync/IntermediateDownloadTask.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/activity/ServerBlock.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/activity/UpdateApk.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/activity/MasterAuthentication.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/activity/LockActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/util/Constants.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/sync/FirstTimeSync.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/dao/SubjectsDao.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/search_se_exam_sub.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/search_se_act.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/action_bar.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/activity/Dashboard.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/sync/StringConstant.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/search_se_subact.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/dao/SubActivityMarkDao.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudSTSub.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/StudExamSubAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/StudActAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/dao/ActivitiDao.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/principal/dao/ActivityMarkDao.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudSubAct.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/dao/SubActivityDao.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/dao/SubActivityMarkDao.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudAct.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudSubAct.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/search_act_list.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/search_se_subact.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/search_att.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/search_se_act.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/search_se_exam.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/search_st_sub.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/search_st.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/st_report.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/st_dashbord.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/stud_clas_sec.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/student_list.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/act_sub_stud.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/attendance_student.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/homework.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/hw_clas_sec.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/monthly_report_stud.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/perf_class.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/perf_sec_sub.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/perf_st.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/perf_st_stud.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/se.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/se_act.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/se_class.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/se_exam.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/se_exam_sub.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/se_sec_sub.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/se_sub_stud.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/se_subact.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/comp_act_secsub.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/comp_se_class.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/comp_se_exam.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/comp_se_examsub.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/comp_se_secsub.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeSubAct.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/RepGpaDiff.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/sqlite/SqlDbHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/dao/MarksDao.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudExam.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/sqlite/AdapterOverloaded.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudExamSub.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/Dashbord.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/search_exam_sub_list.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/search_se_exam_sub.xml" />
       </list>
     </option>
   </component>
@@ -1557,121 +1798,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="AndroidView">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Principal" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Principal" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Principal" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Principal" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Principal" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="principal" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Principal" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="principal" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fragment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Principal" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="principal" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adapter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1784,8 +1910,159 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Principal" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Principal" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Principal" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Principal" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Principal" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="principal" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Principal" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="principal" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sqlite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Principal" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="principal" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fragment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Principal" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="principal" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adapter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Principal" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manifests" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2136,17 +2413,24 @@
       <option name="project" value="LOCAL" />
       <updated>1438759546249</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="before adding score field in search student">
+      <created>1438765908644</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1438765908644</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3773087" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -2161,13 +2445,12 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32849604" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3773087" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -2195,303 +2478,571 @@
     <MESSAGE value="logo opens navigation drawer" />
     <MESSAGE value="updated gitignore for protecting ip address" />
     <MESSAGE value="subactivity added fro search student profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="subactivity added fro search student profile" />
+    <MESSAGE value="before adding score field in search student" />
+    <option name="LAST_COMMIT_MESSAGE" value="before adding score field in search student" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StudentList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="137" column="46" selection-start-line="137" selection-start-column="46" selection-end-line="137" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/stud_clas_sec.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/section_grid.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/st_list.xml">
+      <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/asec_list.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6847361">
-          <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/adapter/AsecAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08219178">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/color.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65753424">
-          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/dao/StudentsDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.369863">
-          <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StudentClassSec.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4245283">
-          <caret line="46" column="25" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/sync/UploadError.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14150943">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3602015">
-          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/sync/ExamProgress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/activity/ProcessFiles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.035377357">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/util/CustomSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/sync/CallFTP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/sync/DownloadModelTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.495283">
-          <caret line="54" column="32" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/adapter/BootSync.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31839624">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/sync/IntermediateDownloadTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7429245">
-          <caret line="107" column="31" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/sync/SlipTestProgress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14150943">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/activity/UpdateApk.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5306604">
-          <caret line="51" column="59" selection-start-line="51" selection-start-column="59" selection-end-line="51" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/activity/MasterAuthentication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.9457548">
-          <caret line="210" column="54" selection-start-line="210" selection-start-column="54" selection-end-line="210" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/activity/ServerBlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.990566">
-          <caret line="39" column="52" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/util/ExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1674528">
-          <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/activity/Restart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04481132">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/activity/LockActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.351415">
-          <caret line="156" column="54" selection-start-line="156" selection-start-column="54" selection-end-line="156" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/adapter/SyncServiceReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7334906">
-          <caret line="67" column="61" selection-start-line="67" selection-start-column="61" selection-end-line="67" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/util/SharedPreferenceUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6367925">
-          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/util/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20547946">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/sync/FirstTimeSyncParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3490566">
-          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/sync/FirstTimeSync.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5660377">
-          <caret line="64" column="71" selection-start-line="64" selection-start-column="71" selection-end-line="64" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/dao/SubjectsDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.009433962">
-          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/search_se_exam_sub.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.122681886">
-          <caret line="116" column="28" selection-start-line="116" selection-start-column="28" selection-end-line="116" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/action_bar.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14978603">
-          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/sync/StringConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04109589">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/activity/Dashboard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8630137">
-          <caret line="42" column="38" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/activity/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.04109589">
-          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/search_se_act.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.137931">
-          <caret line="8" column="39" selection-start-line="0" selection-start-column="0" selection-end-line="221" selection-end-column="17" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/dao/SubActivityMarkDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.369863">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/search_se_subact.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/st_dashbord.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="286" column="50" selection-start-line="286" selection-start-column="50" selection-end-line="286" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/st_report.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="228" column="49" selection-start-line="228" selection-start-column="49" selection-end-line="228" selection-end-column="49" />
+          <folding>
+            <element signature="e#893#913#0" expanded="true" />
+            <element signature="e#1596#1614#0" expanded="true" />
+            <element signature="e#2261#2279#0" expanded="true" />
+            <element signature="e#4142#4154#0" expanded="true" />
+            <element signature="e#5200#5212#0" expanded="true" />
+            <element signature="e#5940#5954#0" expanded="true" />
+            <element signature="e#6345#6357#0" expanded="true" />
+            <element signature="e#7086#7103#0" expanded="true" />
+            <element signature="e#7494#7506#0" expanded="true" />
+            <element signature="e#8142#8160#0" expanded="true" />
+            <element signature="e#8421#8441#0" expanded="true" />
+            <element signature="e#9280#9294#0" expanded="true" />
+            <element signature="e#9876#9893#0" expanded="true" />
+            <element signature="e#10511#10525#0" expanded="true" />
+            <element signature="e#11108#11126#0" expanded="true" />
+            <element signature="e#11760#11777#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/stud_clas_sec.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="137" column="50" selection-start-line="137" selection-start-column="50" selection-end-line="137" selection-end-column="50" />
+          <folding>
+            <element signature="e#842#854#0" expanded="true" />
+            <element signature="e#1521#1539#0" expanded="true" />
+            <element signature="e#3166#3184#0" expanded="true" />
+            <element signature="e#4567#4581#0" expanded="true" />
+            <element signature="e#5127#5144#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/student_list.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.4664764">
-          <caret line="81" column="47" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.56776035">
+          <caret line="59" column="40" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
+          <folding>
+            <element signature="e#841#853#0" expanded="true" />
+            <element signature="e#1493#1511#0" expanded="true" />
+            <element signature="e#1938#1956#0" expanded="true" />
+            <element signature="e#2479#2499#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/sync.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/text_sms.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/text_sms_sent.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/upload_voice_sms.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/act_sub_stud.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="328" column="41" selection-start-line="328" selection-start-column="41" selection-end-line="328" selection-end-column="41" />
+          <folding>
+            <element signature="e#843#855#0" expanded="true" />
+            <element signature="e#1522#1534#0" expanded="true" />
+            <element signature="e#7621#7635#0" expanded="true" />
+            <element signature="e#7990#8002#0" expanded="true" />
+            <element signature="e#8709#8730#0" expanded="true" />
+            <element signature="e#9085#9097#0" expanded="true" />
+            <element signature="e#10178#10190#0" expanded="true" />
+            <element signature="e#10988#11005#0" expanded="true" />
+            <element signature="e#11359#11371#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_dashboard.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/attendance.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/attendance_class.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/attendance_section.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/attendance_student.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46504992">
+          <caret line="157" column="33" selection-start-line="157" selection-start-column="33" selection-end-line="157" selection-end-column="33" />
+          <folding>
+            <element signature="e#841#853#0" expanded="true" />
+            <element signature="e#1542#1562#0" expanded="true" />
+            <element signature="e#3783#3804#0" expanded="true" />
+            <element signature="e#4046#4066#0" expanded="true" />
+            <element signature="e#6106#6121#0" expanded="true" />
+            <element signature="e#6665#6683#0" expanded="true" />
+            <element signature="e#7227#7244#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/co_sch_grade.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/coscholastic.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/homework.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3152639">
+          <caret line="203" column="50" selection-start-line="203" selection-start-column="50" selection-end-line="203" selection-end-column="50" />
+          <folding>
+            <element signature="e#841#853#0" expanded="true" />
+            <element signature="e#1491#1509#0" expanded="true" />
+            <element signature="e#2148#2166#0" expanded="true" />
+            <element signature="e#3485#3497#0" expanded="true" />
+            <element signature="e#4225#4239#0" expanded="true" />
+            <element signature="e#4594#4606#0" expanded="true" />
+            <element signature="e#5335#5352#0" expanded="true" />
+            <element signature="e#5707#5719#0" expanded="true" />
+            <element signature="e#6084#6105#0" expanded="true" />
+            <element signature="e#7125#7139#0" expanded="true" />
+            <element signature="e#7780#7802#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/hw_clas_sec.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2296719">
+          <caret line="190" column="33" selection-start-line="190" selection-start-column="33" selection-end-line="190" selection-end-column="33" />
+          <folding>
+            <element signature="e#841#853#0" expanded="true" />
+            <element signature="e#1530#1548#0" expanded="true" />
+            <element signature="e#3130#3148#0" expanded="true" />
+            <element signature="e#4467#4479#0" expanded="true" />
+            <element signature="e#5532#5544#0" expanded="true" />
+            <element signature="e#6598#6610#0" expanded="true" />
+            <element signature="e#7413#7430#0" expanded="true" />
+            <element signature="e#8020#8038#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/monthly_report.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/monthly_report_stud.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3366619">
+          <caret line="152" column="39" selection-start-line="152" selection-start-column="39" selection-end-line="152" selection-end-column="39" />
+          <folding>
+            <element signature="e#841#853#0" expanded="true" />
+            <element signature="e#1539#1559#0" expanded="true" />
+            <element signature="e#3735#3756#0" expanded="true" />
+            <element signature="e#3998#4018#0" expanded="true" />
+            <element signature="e#6054#6069#0" expanded="true" />
+            <element signature="e#6605#6623#0" expanded="true" />
+            <element signature="e#7159#7176#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/monthly_report_sec.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/perf_class.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="111" column="42" selection-start-line="111" selection-start-column="42" selection-end-line="111" selection-end-column="42" />
+          <folding>
+            <element signature="e#841#853#0" expanded="true" />
+            <element signature="e#1526#1547#0" expanded="true" />
+            <element signature="e#3176#3194#0" expanded="true" />
+            <element signature="e#4569#4586#0" expanded="true" />
+            <element signature="e#5133#5154#0" expanded="true" />
+            <element signature="e#5745#5762#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/perf_sec_sub.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4436519">
+          <caret line="141" column="46" selection-start-line="141" selection-start-column="46" selection-end-line="141" selection-end-column="46" />
+          <folding>
+            <element signature="e#841#853#0" expanded="true" />
+            <element signature="e#1526#1547#0" expanded="true" />
+            <element signature="e#5598#5612#0" expanded="true" />
+            <element signature="e#6158#6176#0" expanded="true" />
+            <element signature="e#6723#6737#0" expanded="true" />
+            <element signature="e#7328#7345#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/perf_st.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3580599">
+          <caret line="180" column="18" selection-start-line="180" selection-start-column="18" selection-end-line="180" selection-end-column="18" />
+          <folding>
+            <element signature="e#849#861#0" expanded="true" />
+            <element signature="e#1526#1547#0" expanded="true" />
+            <element signature="e#3079#3097#0" expanded="true" />
+            <element signature="e#7332#7346#0" expanded="true" />
+            <element signature="e#7701#7713#0" expanded="true" />
+            <element signature="e#8419#8440#0" expanded="true" />
+            <element signature="e#8795#8807#0" expanded="true" />
+            <element signature="e#9887#9899#0" expanded="true" />
+            <element signature="e#10696#10713#0" expanded="true" />
+            <element signature="e#11067#11079#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/perf_st_stud.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="256" column="41" selection-start-line="256" selection-start-column="41" selection-end-line="256" selection-end-column="41" />
+          <folding>
+            <element signature="e#851#863#0" expanded="true" />
+            <element signature="e#1528#1549#0" expanded="true" />
+            <element signature="e#3200#3218#0" expanded="true" />
+            <element signature="e#6970#6984#0" expanded="true" />
+            <element signature="e#7536#7554#0" expanded="true" />
+            <element signature="e#8098#8113#0" expanded="true" />
+            <element signature="e#8711#8728#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/report_gen.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/se.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2253923">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <element signature="e#841#853#0" expanded="true" />
+            <element signature="e#1493#1505#0" expanded="true" />
+            <element signature="e#1932#1944#0" expanded="true" />
+            <element signature="e#2467#2487#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/se_act.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65763193">
+          <caret line="222" column="0" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
+          <folding>
+            <element signature="e#843#855#0" expanded="true" />
+            <element signature="e#1522#1534#0" expanded="true" />
+            <element signature="e#6781#6799#0" expanded="true" />
+            <element signature="e#7425#7442#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/se_class.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37945792">
+          <caret line="158" column="35" selection-start-line="158" selection-start-column="35" selection-end-line="158" selection-end-column="35" />
+          <folding>
+            <element signature="e#841#853#0" expanded="true" />
+            <element signature="e#1520#1532#0" expanded="true" />
+            <element signature="e#3159#3177#0" expanded="true" />
+            <element signature="e#4569#4591#0" expanded="true" />
+            <element signature="e#5087#5106#0" expanded="true" />
+            <element signature="e#5557#5574#0" expanded="true" />
+            <element signature="e#6384#6401#0" expanded="true" />
+            <element signature="e#6948#6965#0" expanded="true" />
+            <element signature="e#7556#7573#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/se_exam.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="207" column="41" selection-start-line="207" selection-start-column="41" selection-end-line="207" selection-end-column="41" />
+          <folding>
+            <element signature="e#843#855#0" expanded="true" />
+            <element signature="e#1522#1534#0" expanded="true" />
+            <element signature="e#3165#3183#0" expanded="true" />
+            <element signature="e#4582#4604#0" expanded="true" />
+            <element signature="e#5100#5118#0" expanded="true" />
+            <element signature="e#5569#5586#0" expanded="true" />
+            <element signature="e#6478#6492#0" expanded="true" />
+            <element signature="e#7118#7135#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/se_exam_sub.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14407988">
+          <caret line="167" column="43" selection-start-line="167" selection-start-column="43" selection-end-line="167" selection-end-column="43" />
+          <folding>
+            <element signature="e#841#853#0" expanded="true" />
+            <element signature="e#1534#1546#0" expanded="true" />
+            <element signature="e#5737#5753#0" expanded="true" />
+            <element signature="e#6212#6229#0" expanded="true" />
+            <element signature="e#7039#7056#0" expanded="true" />
+            <element signature="e#7603#7620#0" expanded="true" />
+            <element signature="e#8211#8228#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/se_sec_sub.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="226" column="40" selection-start-line="226" selection-start-column="40" selection-end-line="226" selection-end-column="40" />
+          <folding>
+            <element signature="e#843#855#0" expanded="true" />
+            <element signature="e#1522#1534#0" expanded="true" />
+            <element signature="e#5901#5918#0" expanded="true" />
+            <element signature="e#6786#6800#0" expanded="true" />
+            <element signature="e#7426#7443#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/se_sub_stud.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="184" column="31" selection-start-line="184" selection-start-column="31" selection-end-line="184" selection-end-column="31" />
+          <folding>
+            <element signature="e#841#853#0" expanded="true" />
+            <element signature="e#1520#1532#0" expanded="true" />
+            <element signature="e#7209#7223#0" expanded="true" />
+            <element signature="e#7578#7590#0" expanded="true" />
+            <element signature="e#8296#8317#0" expanded="true" />
+            <element signature="e#8672#8684#0" expanded="true" />
+            <element signature="e#9764#9776#0" expanded="true" />
+            <element signature="e#10573#10590#0" expanded="true" />
+            <element signature="e#10944#10956#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/se_subact.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4436519">
+          <caret line="189" column="0" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
+          <folding>
+            <element signature="e#841#853#0" expanded="true" />
+            <element signature="e#1520#1532#0" expanded="true" />
+            <element signature="e#7317#7333#0" expanded="true" />
+            <element signature="e#7959#7976#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/search_se_subact.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.75862">
+          <caret line="233" column="19" selection-start-line="233" selection-start-column="19" selection-end-line="233" selection-end-column="19" />
           <folding>
             <element signature="e#841#853#0" expanded="true" />
             <element signature="e#1480#1492#0" expanded="true" />
@@ -2503,133 +3054,187 @@
             <element signature="e#5660#5678#0" expanded="true" />
             <element signature="e#6200#6212#0" expanded="true" />
             <element signature="e#6761#6781#0" expanded="true" />
-            <element signature="e#7543#7561#0" expanded="true" />
-            <element signature="e#8180#8198#0" expanded="true" />
+            <element signature="e#7750#7768#0" expanded="true" />
+            <element signature="e#8395#8413#0" expanded="true" />
           </folding>
         </state>
       </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/dao/ActivityMarkDao.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/comp_se_exam.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.369863">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        <state vertical-scroll-proportion="6.526391">
+          <caret line="305" column="43" selection-start-line="305" selection-start-column="43" selection-end-line="305" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="e#841#853#0" expanded="true" />
+            <element signature="e#1520#1532#0" expanded="true" />
+            <element signature="e#3159#3177#0" expanded="true" />
+            <element signature="e#4334#4358#0" expanded="true" />
+            <element signature="e#4882#4891#0" expanded="true" />
+            <element signature="e#5343#5352#0" expanded="true" />
+            <element signature="e#6351#6365#0" expanded="true" />
+            <element signature="e#8717#8731#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/comp_se_examsub.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.077033">
+          <caret line="284" column="42" selection-start-line="284" selection-start-column="42" selection-end-line="284" selection-end-column="42" />
+          <folding>
+            <element signature="e#841#853#0" expanded="true" />
+            <element signature="e#1520#1532#0" expanded="true" />
+            <element signature="e#3929#3953#0" expanded="true" />
+            <element signature="e#4434#4446#0" expanded="true" />
+            <element signature="e#4890#4907#0" expanded="true" />
+            <element signature="e#5946#5963#0" expanded="true" />
+            <element signature="e#8315#8332#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/comp_se_secsub.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="292" column="9" selection-start-line="292" selection-start-column="9" selection-end-line="292" selection-end-column="9" />
+          <folding>
+            <element signature="e#841#853#0" expanded="true" />
+            <element signature="e#1520#1532#0" expanded="true" />
+            <element signature="e#3967#3991#0" expanded="true" />
+            <element signature="e#4472#4484#0" expanded="true" />
+            <element signature="e#4928#4945#0" expanded="true" />
+            <element signature="e#5984#5998#0" expanded="true" />
+            <element signature="e#8350#8364#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/comp_se_class.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2838801">
+          <caret line="60" column="39" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/comp_act_secsub.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="93" column="9" selection-start-line="93" selection-start-column="9" selection-end-line="93" selection-end-column="9" />
+          <folding>
+            <element signature="e#832#844#0" expanded="true" />
+            <element signature="e#1502#1514#0" expanded="true" />
+            <element signature="e#4190#4214#0" expanded="true" />
+            <element signature="e#4695#4707#0" expanded="true" />
+            <element signature="e#5151#5168#0" expanded="true" />
+            <element signature="e#6207#6225#0" expanded="true" />
+            <element signature="e#8577#8595#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeSubAct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.06849315">
+          <caret line="66" column="53" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/adapter/RepGpaDiff.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0625">
+          <caret line="50" column="65" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/dao/MarksDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2027027">
+          <caret line="7" column="110" selection-start-line="7" selection-start-column="110" selection-end-line="7" selection-end-column="110" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/sqlite/SqlDbHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.641892">
+          <caret line="177" column="57" selection-start-line="177" selection-start-column="57" selection-end-line="177" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudExam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="191" column="88" selection-start-line="191" selection-start-column="88" selection-end-line="191" selection-end-column="88" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/sqlite/AdapterOverloaded.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudSubAct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="157" column="31" selection-start-line="157" selection-start-column="31" selection-end-line="157" selection-end-column="31" />
-          <folding>
-            <element signature="e#3728#3907#0" expanded="false" />
-            <element signature="e#3906#3907#0" expanded="false" />
-            <element signature="e#3956#4137#0" expanded="false" />
-            <element signature="e#4136#4137#0" expanded="false" />
-            <element signature="e#4189#4373#0" expanded="false" />
-            <element signature="e#4372#4373#0" expanded="false" />
-            <element signature="e#4425#4605#0" expanded="false" />
-            <element signature="e#4604#4605#0" expanded="false" />
-            <element signature="e#4660#4840#0" expanded="false" />
-            <element signature="e#4839#4840#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudAct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="166" column="39" selection-start-line="166" selection-start-column="39" selection-end-line="166" selection-end-column="39" />
-          <folding>
-            <element signature="e#4243#4681#0" expanded="false" />
-            <element signature="e#4680#4681#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudExamSub.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.6886792">
-          <caret line="118" column="90" selection-start-line="118" selection-start-column="90" selection-end-line="118" selection-end-column="90" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/adapter/Capitalize.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.070754714">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/adapter/StudExamAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14150943">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.7429245">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/adapter/StudExamSubAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.8490566">
+        <state vertical-scroll-proportion="0.0">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/adapter/DashAdapt1.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudExamSub.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.5660377">
-          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="41" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/Dashbord.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/search_se_exam_sub.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31839624">
-          <caret line="62" column="96" selection-start-line="62" selection-start-column="96" selection-end-line="62" selection-end-column="96" />
+        <state vertical-scroll-proportion="-8.137931">
+          <caret line="213" column="39" selection-start-line="213" selection-start-column="39" selection-end-line="213" selection-end-column="39" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dashbord.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/search_exam_sub_list.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.683544">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5316456">
+          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/adapter/StudActAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14150943">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/blue_circle.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
   </component>
