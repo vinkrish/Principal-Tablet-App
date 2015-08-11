@@ -36,6 +36,7 @@ import in.principal.sqlite.Temp;
 import in.principal.sync.StringConstant;
 import in.principal.util.AppGlobal;
 import in.principal.util.Constants;
+import in.principal.util.NetworkUtils;
 import in.principal.util.Util;
 
 public class UpdateApk extends BaseActivity {
@@ -49,20 +50,15 @@ public class UpdateApk extends BaseActivity {
         pDialog = new ProgressDialog(this);
 
         sharedPref = getSharedPreferences("db_access", Context.MODE_PRIVATE);
-        int updateApk = sharedPref.getInt("update_apk", 0);
-        if (updateApk == 2) {
-            new ApkDownloadTask(this.getApplicationContext(), "principal.zip").execute();
-        }
-
     }
 
     public void updateClicked(View v){
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt("update_apk", 1);
         editor.putInt("is_sync", 1);
         editor.apply();
-        Intent intent = new Intent(this, ProcessFiles.class);
-        startActivity(intent);
+        if(NetworkUtils.isNetworkConnected(UpdateApk.this)){
+            new ApkDownloadTask(this.getApplicationContext(), "principal.zip").execute();
+        }
     }
 
     @SuppressWarnings("deprecation")
@@ -113,7 +109,6 @@ public class UpdateApk extends BaseActivity {
             if(!exception){
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putInt("apk_update", 0);
-                editor.putInt("update_apk", 0);
                 editor.apply();
 
                 Intent i = new Intent(Intent.ACTION_VIEW);

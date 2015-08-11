@@ -189,6 +189,7 @@
     <string name="subject">Subject</string>
     <string name="submission">Submission Date</string>
     <string name="submit">Submit</string>
+    <string name="syncme">sync the data</string>
     <string name="taponclass">Tap on a class to know more</string>
     <string name="teachattend">Teacher Attendance</string>
     <string name="teacher">Teacher</string>
@@ -212,7 +213,7 @@
     <string name="update_apk_wifi">*tab should be in wifi zone.</string>
     <string name="upload">Upload</string>
     <string name="username">Username</string>
-    <string name="version">Version - 1.2</string>
+    <string name="version">Version - 1.1</string>
     <string name="view_exam">View Exams</string>
     <string name="view_sub">View Subjects</string>
     <string name="voice_sms">Voice SMS</string>

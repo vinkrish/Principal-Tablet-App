@@ -77,8 +77,13 @@ public class LoginActivity extends BaseActivity {
         }
 
         int apkUpdate = sharedPref.getInt("apk_update", 0);
+        int newlyUpdated = sharedPref.getInt("newly_updated", 0);
         if(apkUpdate == 1){
             Intent i = new Intent(this, in.principal.activity.UpdateApk.class);
+            startActivity(i);
+            AnimationUtils.activityEnter(this);
+        }else if(newlyUpdated == 1){
+            Intent i = new Intent(this, in.principal.activity.MasterAuthentication.class);
             startActivity(i);
         }
 

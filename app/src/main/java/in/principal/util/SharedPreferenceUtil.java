@@ -15,13 +15,13 @@ public class SharedPreferenceUtil {
     public static void updateSavedVersion(Context context){
         SharedPreferences sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString("saved_version", "v1.2");
+        editor.putString("saved_version", "v1.1");
         editor.apply();
     }
 
     public static String getSavedVersion(Context context){
         SharedPreferences sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
-        return sharedPref.getString("saved_version", "v1.2");
+        return sharedPref.getString("saved_version", "v1.1");
     }
 
     public static void updateSleepSync(Context context, int i){
@@ -56,19 +56,8 @@ public class SharedPreferenceUtil {
         SharedPreferences sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt("apk_update", i);
+        editor.putInt("newly_updated", 1);
         editor.apply();
-    }
-
-    public static void updateApk(Context context, int i){
-        SharedPreferences sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt("update_apk", i);
-        editor.apply();
-    }
-
-    public static int getUpdateApk(Context context){
-        SharedPreferences sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
-        return sharedPref.getInt("update_apk", 0);
     }
 
     public static int getTabletLock(Context context){

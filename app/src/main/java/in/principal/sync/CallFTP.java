@@ -74,16 +74,10 @@ public class CallFTP implements StringConstant{
 
 		protected void onPostExecute(String s){
 			super.onPostExecute(s);
-			int updateApk = SharedPreferenceUtil.getUpdateApk(context);
 			if(block!=2 && zipFile!=""){
 				new IntermediateDownloadTask(context, zipFile).execute();
 			}else if(block==2){
 				SharedPreferenceUtil.updateTabletLock(context, 2);
-			}else if(updateApk == 1){
-				SharedPreferenceUtil.updateApk(context, 2);
-				Intent intent = new Intent(context, in.principal.activity.UpdateApk.class);
-				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				context.startActivity(intent);
 			}
 		}
 	}	

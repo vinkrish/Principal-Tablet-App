@@ -73,7 +73,7 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
         sqliteDatabase = AppGlobal.getSqliteDatabase();
 
         sharedPref = getSharedPreferences("db_access", Context.MODE_PRIVATE);
-        savedVersion = sharedPref.getString("saved_version", "v1.2");
+        savedVersion = sharedPref.getString("saved_version", "v1.1");
 
         new ProcessedFiles().execute();
     }
@@ -362,7 +362,6 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
             super.onPostExecute(s);
 
             SharedPreferences.Editor editor = sharedPref.edit();
-            int apkUpdate = sharedPref.getInt("apk_update", 0);
             editor.putInt("is_sync", 0);
             editor.putInt("sleep_sync", 0);
             editor.apply();
@@ -375,8 +374,6 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
                 editor.putInt("first_sync", 1);
                 editor.apply();
                 new FirstTimeSync().callFirstTimeSync();
-            } else if (apkUpdate == 1) {
-                new CallFTP().syncFTP();
             } else {
                 Intent intent = new Intent(ProcessFiles.this, in.principal.activity.LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
