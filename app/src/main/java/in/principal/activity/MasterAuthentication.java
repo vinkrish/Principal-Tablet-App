@@ -29,18 +29,20 @@ public class MasterAuthentication extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        setContentView(R.layout.activity_master_authentication);
-
         context = AppGlobal.getContext();
 
+        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+        setContentView(R.layout.activity_master_authentication);
         sharedPref = this.getSharedPreferences("db_access", Context.MODE_PRIVATE);
+
+        init();
+
         int newlyUpdated = sharedPref.getInt("newly_updated", 0);
         if (newlyUpdated == 1) {
             authSuccess();
-        } else
-            init();
+        }
     }
 
     private void init(){

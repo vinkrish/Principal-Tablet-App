@@ -5,6 +5,7 @@ import java.net.ConnectException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.concurrent.locks.Lock;
 
 import in.principal.sqlite.Temp;
 import in.principal.activity.R;
@@ -142,6 +143,8 @@ public class LockActivity extends BaseActivity implements StringConstant {
                 butSend.setVisibility(View.GONE);
                 butRefresh.setVisibility(View.VISIBLE);
                 sqliteDatabase.execSQL("update locked set IsSent=1");
+                SharedPreferenceUtil.updateFirstSync(LockActivity.this, 1);
+                new FirstTimeSync().callFirstTimeSync();
             }
         }
     }

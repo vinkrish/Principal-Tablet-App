@@ -10,6 +10,7 @@ import java.io.IOException;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.KeyguardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -74,11 +75,19 @@ public class CallFTP implements StringConstant{
 
 		protected void onPostExecute(String s){
 			super.onPostExecute(s);
+			KeyguardManager km = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
+			boolean screenLocked = km.inKeyguardRestrictedInputMode();
 			if(block!=2 && zipFile!=""){
 				new IntermediateDownloadTask(context, zipFile).execute();
 			}else if(block==2){
 				SharedPreferenceUtil.updateTabletLock(context, 2);
-			}
+			} else if(screenLocked){
+                Intent i = new Intent(context, in.principal.activity.ProcessFiles.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                context.startActivity(i);
+            } else {
+                SharedPreferenceUtil.updateSleepSync(context, 1);
+            }
 		}
 	}	
 

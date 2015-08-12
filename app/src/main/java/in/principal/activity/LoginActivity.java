@@ -1,5 +1,6 @@
 package in.principal.activity;
 
+import in.principal.dao.TeacherDao;
 import in.principal.sqlite.School;
 import in.principal.dao.SchoolDao;
 import in.principal.dao.TempDao;
@@ -74,6 +75,12 @@ public class LoginActivity extends BaseActivity {
         } else if (tabletLock == 2) {
             Intent i = new Intent(this, in.principal.activity.ServerBlock.class);
             startActivity(i);
+        }
+
+        if(!TeacherDao.isTeacherPresent(sqliteDatabase)){
+            SharedPreferences.Editor editr = sharedPref.edit();
+            editr.putInt("newly_updated", 1);
+            editr.apply();
         }
 
         int apkUpdate = sharedPref.getInt("apk_update", 0);

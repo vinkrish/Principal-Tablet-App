@@ -93,7 +93,7 @@
     <string name="attendoverview">Today\'s Attendance Overview</string>
     <string name="average">Average (%)</string>
     <string name="avg">Average</string>
-    <string name="bugs">Touch here to resolve the issue</string>
+    <string name="bugs">Touch here to sync</string>
     <string name="cc">content description</string>
     <string name="clas">Class</string>
     <string name="classaverage">Class Average</string>
@@ -169,7 +169,7 @@
     <string name="select_classes">Select Multiple Classes</string>
     <string name="send_sms">Send SMS to:</string>
     <string name="send_voice_sms">Send Voice SMS to:</string>
-    <string name="server_resolve">Resolving Issues</string>
+    <string name="server_resolve">Tab is in Sync</string>
     <string name="seven">7</string>
     <string name="six">6</string>
     <string name="sliptest">Slip Test</string>
@@ -213,7 +213,7 @@
     <string name="update_apk_wifi">*tab should be in wifi zone.</string>
     <string name="upload">Upload</string>
     <string name="username">Username</string>
-    <string name="version">Version - 1.1</string>
+    <string name="version">Version - 1.2</string>
     <string name="view_exam">View Exams</string>
     <string name="view_sub">View Subjects</string>
     <string name="voice_sms">Voice SMS</string>

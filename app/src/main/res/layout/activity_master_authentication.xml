@@ -211,4 +211,15 @@
         android:textColor="#FFFFFF"
         android:textSize="25sp" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_above="@id/centerll"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/divider"
+        android:typeface="sans"
+        android:textSize="50sp"
+        android:text="Admin"/>
+
 </RelativeLayout>

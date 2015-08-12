@@ -36,7 +36,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class SearchStudExamSub extends Fragment {
     private Context context;
-    private int studentId, sectionId, examId, progress;
+    private int studentId, sectionId, examId;
     private String studentName, className, secName, examName;
     private SQLiteDatabase sqliteDatabase;
     private ArrayList<AdapterOverloaded> amrList = new ArrayList<>();
@@ -44,10 +44,9 @@ public class SearchStudExamSub extends Fragment {
     private List<Activiti> activitiList = new ArrayList<>();
     private List<Integer> isSubGotActList = new ArrayList<>();
     private ProgressDialog pDialog;
-    private TextView studTV, clasSecTV, percentTV;
+    private TextView studTV, clasSecTV;
     private List<Integer> subIdList = new ArrayList<>();
     private List<String> scoreList = new ArrayList<>();
-    private ProgressBar pb;
     private Button examBut;
 
     @Override
@@ -61,8 +60,6 @@ public class SearchStudExamSub extends Fragment {
         clearList();
 
         examBut = (Button) view.findViewById(R.id.examSubButton);
-        pb = (ProgressBar) view.findViewById(R.id.subAvgProgress);
-        percentTV = (TextView) view.findViewById(R.id.percent);
         ListView lv = (ListView) view.findViewById(R.id.list);
         studTV = (TextView) view.findViewById(R.id.studName);
         clasSecTV = (TextView) view.findViewById(R.id.studClasSec);
@@ -178,8 +175,6 @@ public class SearchStudExamSub extends Fragment {
             }
 
             List<Integer> actList = new ArrayList<>();
-            int average = 0;
-            int len = 0;
             int actAvg = 0;
             int overallActAvg = 0;
             for (Integer sub : subIdList) {
@@ -199,15 +194,11 @@ public class SearchStudExamSub extends Fragment {
                         actAvg += ActivitiDao.getStudActAvg(studentId, actId, sqliteDatabase);
                     }
                     overallActAvg = actAvg / actList.size();
-                    if (overallActAvg != 0) {
-                        len++;
-                    }
                     progressList1.add(overallActAvg);
                     scoreList.add(" ");
                 } else {
                     avg = MarksDao.getStudExamAvg(studentId, sub, examId, sqliteDatabase);
                     if (avg != 0) {
-                        len++;
                         int score = MarksDao.getStudExamMark(studentId, sub, examId, sqliteDatabase);
                         int maxScore = MarksDao.getExamMaxMark(sub, examId, sqliteDatabase);
                         scoreList.add(score + "/" + maxScore);
@@ -217,14 +208,6 @@ public class SearchStudExamSub extends Fragment {
                     progressList1.add(avg);
                 }
             }
-
-            for (Integer i : progressList1) {
-                average += i;
-            }
-            if (len == 0) {
-                len = 1;
-            }
-            progress = average / len;
 
             for (Integer subId : subIdList) {
                 progressList2.add(ExmAvgDao.selectSeAvg2(sectionId, subId, examId, sqliteDatabase));
@@ -239,15 +222,6 @@ public class SearchStudExamSub extends Fragment {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             examBut.setText(examName);
-            percentTV.setText(progress + "%");
-            if (progress >= 75) {
-                pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_green));
-            } else if (progress >= 50) {
-                pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_orange));
-            } else {
-                pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_red));
-            }
-            pb.setProgress(progress);
             studTV.setText(studentName);
             clasSecTV.setText(className + " - " + secName);
             adapter.notifyDataSetChanged();
