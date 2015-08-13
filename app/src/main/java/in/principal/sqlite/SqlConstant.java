@@ -173,9 +173,9 @@ public interface SqlConstant {
 			"TopicId INTEGER, AspectId INTEGER, Grade INTEGER, Description TEXT, DateTimeRecordInserted DATETIME)";
 	
 	public static String CCEGRADE_TRIGGER = "CREATE TRIGGER before_ccegrade BEFORE INSERT ON ccecoscholasticgrade " +
-			"WHEN ((SELECT count() FROM ccecoscholasticgrade WHERE ccecoscholacticgrade.Term=New.Term AND ccecoscholasticgrade.AspectId=NEW.AspectId AND ccecoscholasticgrade.StudentId=NEW.StudentId) > 0) " +
+			"WHEN ((SELECT count() FROM ccecoscholasticgrade WHERE ccecoscholasticgrade.Term=New.Term AND ccecoscholasticgrade.AspectId=NEW.AspectId AND ccecoscholasticgrade.StudentId=NEW.StudentId) > 0) " +
 			"BEGIN " +
-			"DELETE FROM ccecoscholasticgrade WHERE ccecoscholacticgrade.Term=New.Term AND ccecoscholasticgrade.AspectId=NEW.AspectId AND ccecoscholasticgrade.StudentId=NEW.StudentId; " +
+			"DELETE FROM ccecoscholasticgrade WHERE ccecoscholasticgrade.Term=New.Term AND ccecoscholasticgrade.AspectId=NEW.AspectId AND ccecoscholasticgrade.StudentId=NEW.StudentId; " +
 			"END";
 	
 	public static String CREATE_DOWNLOADED_FILE = "CREATE TABLE downloadedfile(id INTEGER PRIMARY KEY, filename TEXT UNIQUE, downloaded INTEGER DEFAULT 0, processed INTEGER DEFAULT 0, isack INT DEFAULT 0)";
