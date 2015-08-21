@@ -165,7 +165,7 @@ public class Dashboard extends BaseActivity {
     };
 
     public void open() {
-        if(mDrawerLayout.isDrawerOpen(GravityCompat.START))
+        if (mDrawerLayout.isDrawerOpen(GravityCompat.START))
             mDrawerLayout.closeDrawer(Gravity.LEFT);
         else
             mDrawerLayout.openDrawer(Gravity.LEFT);
@@ -366,8 +366,8 @@ public class Dashboard extends BaseActivity {
         ReplaceFragment.clearBackStack(getFragmentManager());
         ReplaceFragment.replace(new Dashbord(), getFragmentManager());
         //	getFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-		/*int backStackCount = getFragmentManager().getBackStackEntryCount();
-		for (int i = 0; i < backStackCount; i++) {
+        /*int backStackCount = getFragmentManager().getBackStackEntryCount();
+        for (int i = 0; i < backStackCount; i++) {
 		    int backStackId = getFragmentManager().getBackStackEntryAt(i).getId();
 		    fragmentManager.popBackStack(backStackId, FragmentManager.POP_BACK_STACK_INCLUSIVE);
 

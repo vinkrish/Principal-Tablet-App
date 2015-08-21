@@ -2,6 +2,7 @@ package in.principal.dao;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 public class SubActivityMarkDao {
 
@@ -28,6 +29,27 @@ public class SubActivityMarkDao {
         }
         c.close();
         return i;
+    }
+
+    public static int isThereSubActMark(int subActId, int subjectId, SQLiteDatabase sqliteDatabase){
+        int isThere = 0;
+        Cursor c = sqliteDatabase.rawQuery("select * from subactivitymark where SubActivityId="+subActId+" and SubjectId="+subjectId+" LIMIT 1", null);
+        if(c.getCount()>0){
+            isThere = 1;
+        }
+        c.close();
+        return isThere;
+    }
+
+    public static int isThereSubActGrade(int subActId, int subjectId, SQLiteDatabase sqliteDatabase){
+        int isThere = 0;
+        String sql = "select * from subactivitygrade where SubActivityId="+subActId+" and SubjectId="+subjectId+" LIMIT 1";
+        Cursor c = sqliteDatabase.rawQuery(sql, null);
+        if(c.getCount()>0){
+            isThere = 1;
+        }
+        c.close();
+        return isThere;
     }
 
 }

@@ -4,9 +4,11 @@ import in.principal.activity.R;
 import in.principal.adapter.AssAdapter;
 import in.principal.adapter.Capitalize;
 import in.principal.dao.ActivitiDao;
+import in.principal.dao.ActivityMarkDao;
 import in.principal.dao.ExamsDao;
 import in.principal.dao.SectionDao;
 import in.principal.dao.SubActivityDao;
+import in.principal.dao.SubActivityMarkDao;
 import in.principal.dao.SubjectsDao;
 import in.principal.dao.TeacherDao;
 import in.principal.dao.TempDao;
@@ -19,7 +21,9 @@ import in.principal.util.AppGlobal;
 import in.principal.util.ReplaceFragment;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -45,12 +49,13 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Toast;
 
 public class SeActSubAct extends Fragment {
     private Context context;
     private SQLiteDatabase sqliteDatabase;
     private String secName;
-    private int sectionId, activityId;
+    private int sectionId, activityId, subjectId;
     private List<Section> secList = new ArrayList<>();
     private static List<Integer> secIdList = new ArrayList<>();
     private List<Integer> subActIdList = new ArrayList<>();
@@ -62,6 +67,8 @@ public class SeActSubAct extends Fragment {
     private AssAdapter amrAdapter;
     private CircleAdapter cA;
     private ArrayList<Circle> circleArrayGrid = new ArrayList<>();
+    final Map<Object, Object> mi1 = new HashMap<>();
+    final Map<Object, Object> mi2 = new HashMap<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -71,7 +78,7 @@ public class SeActSubAct extends Fragment {
         sqliteDatabase = AppGlobal.getSqliteDatabase();
 
         Temp t = TempDao.selectTemp(sqliteDatabase);
-        int subjectId = t.getSubjectId();
+        subjectId = t.getSubjectId();
         int classId = t.getClassId();
         sectionId = t.getSectionId();
         String className = t.getClassName();
@@ -113,11 +120,10 @@ public class SeActSubAct extends Fragment {
 
         Button SeActBut = (Button) view.findViewById(R.id.seAct);
         String activiti = ActivitiDao.selectActivityName(activityId, sqliteDatabase);
-        if (activiti.length() > 20) {
+        if (activiti.length() > 20)
             SeActBut.setText(activiti.substring(0, 21));
-        } else {
+        else
             SeActBut.setText(activiti);
-        }
 
         TextView subj = (TextView) view.findViewById(R.id.subinfo);
         subj.setText(SubjectsDao.getSubjectName(subjectId, sqliteDatabase));
@@ -137,7 +143,6 @@ public class SeActSubAct extends Fragment {
         TextView pecent = (TextView) view.findViewById(R.id.percent);
         pecent.setText(progres + "%");
 
-        //	isItComparable();
         updateView();
         updateListView();
 
@@ -145,7 +150,13 @@ public class SeActSubAct extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
                 TempDao.updateSubActivityId(subActIdList.get(pos), sqliteDatabase);
-                ReplaceFragment.replace(new SeSubActStud(), getFragmentManager());
+                Boolean b1 = (Boolean) mi1.get(subActIdList.get(pos));
+                Boolean b2 = (Boolean) mi2.get(subActIdList.get(pos));
+                if (b1 != null && b1)
+                    ReplaceFragment.replace(new SeSubActStud(), getFragmentManager());
+                else if(b2 != null && b2)
+                    ReplaceFragment.replace(new SeSubActStudGrade(), getFragmentManager());
+                else Toast.makeText(context, "Data not entered", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -194,6 +205,10 @@ public class SeActSubAct extends Fragment {
             subActIdList.add(at.getSubActivityId());
             int i = (int) (((double) at.getSubActivityAvg() / (double) 360) * 100);
             avgList.add(i);
+            int markEntry = SubActivityMarkDao.isThereSubActMark(at.getSubActivityId(), subjectId, sqliteDatabase);
+            if (markEntry == 1) mi1.put(at.getSubActivityId(), true);
+            int gradeEntry = SubActivityMarkDao.isThereSubActGrade(at.getSubActivityId(), subjectId, sqliteDatabase);
+            if (gradeEntry == 1) mi2.put(at.getSubActivityId(), true);
         }
 
         for (int i = 0; i < subActIdList.size(); i++) {
@@ -218,7 +233,7 @@ public class SeActSubAct extends Fragment {
             this.context = context;
             this.layoutResourceId = layoutResourceId;
             this.data = gridArray;
-            inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
 
         @Override

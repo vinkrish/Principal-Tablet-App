@@ -67,7 +67,7 @@ public class IntermediateDownloadTask extends AsyncTask<String, String, String> 
         model.download();
 
         while (!downloadCompleted) {
-            Log.d("watiting", "...");
+            Log.d("downloading", "...");
         }
 
         if (!exception) {

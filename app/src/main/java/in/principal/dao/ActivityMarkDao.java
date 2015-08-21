@@ -30,4 +30,24 @@ public class ActivityMarkDao {
         return i;
     }
 
+    public static int isThereActMark(int actId, int subjectId, SQLiteDatabase sqliteDatabase){
+        int isThere = 0;
+        Cursor c = sqliteDatabase.rawQuery("select * from activitymark where ActivityId="+actId+" and SubjectId="+subjectId+" LIMIT 1", null);
+        if(c.getCount()>0){
+            isThere = 1;
+        }
+        c.close();
+        return isThere;
+    }
+
+    public static int isThereActGrade(int actId, int subjectId, SQLiteDatabase sqliteDatabase){
+        int isThere = 0;
+        Cursor c = sqliteDatabase.rawQuery("select * from activitygrade where ActivityId="+actId+" and SubjectId="+subjectId+" LIMIT 1", null);
+        if(c.getCount()>0){
+            isThere = 1;
+        }
+        c.close();
+        return isThere;
+    }
+
 }

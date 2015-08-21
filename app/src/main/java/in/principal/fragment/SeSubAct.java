@@ -4,6 +4,7 @@ import in.principal.activity.R;
 import in.principal.adapter.AssAdapter;
 import in.principal.adapter.Capitalize;
 import in.principal.dao.ActivitiDao;
+import in.principal.dao.ActivityMarkDao;
 import in.principal.dao.ExamsDao;
 import in.principal.dao.ExmAvgDao;
 import in.principal.dao.SectionDao;
@@ -13,6 +14,7 @@ import in.principal.dao.TeacherDao;
 import in.principal.dao.TempDao;
 import in.principal.model.Circle;
 import in.principal.sqlite.Activiti;
+import in.principal.sqlite.ActivityMark;
 import in.principal.sqlite.AdapterOverloaded;
 import in.principal.sqlite.Section;
 import in.principal.sqlite.SubActivity;
@@ -21,7 +23,9 @@ import in.principal.util.AppGlobal;
 import in.principal.util.ReplaceFragment;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -33,6 +37,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +52,7 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Toast;
 
 public class SeSubAct extends Fragment {
     private Context context;
@@ -60,7 +66,8 @@ public class SeSubAct extends Fragment {
     private List<Integer> avgList = new ArrayList<>();
     private List<Activiti> activitiList = new ArrayList<>();
     private List<AdapterOverloaded> amrList = new ArrayList<>();
-    ;
+    private final Map<Object,Object> mi1 = new HashMap<>();
+    private final Map<Object,Object> mi2 = new HashMap<>();
     private AssAdapter amrAdapter;
     private List<SubActivity> subActivitiList = new ArrayList<>();
     private CircleAdapter cA;
@@ -153,7 +160,13 @@ public class SeSubAct extends Fragment {
                 if (subActivitiList.size() != 0) {
                     ReplaceFragment.replace(new SeActSubAct(), getFragmentManager());
                 } else {
-                    ReplaceFragment.replace(new SeActStud(), getFragmentManager());
+                    Boolean b1 = (Boolean)mi1.get(actIdList.get(pos));
+                    Boolean b2 = (Boolean)mi2.get(actIdList.get(pos));
+                    if(b1!=null && b1)
+                        ReplaceFragment.replace(new SeActStud(), getFragmentManager());
+                    else if(b2!=null && b2)
+                        ReplaceFragment.replace(new SeActStudGrade(), getFragmentManager());
+                    else Toast.makeText(context, "Data not entered", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -210,6 +223,10 @@ public class SeSubAct extends Fragment {
             actIdList.add(at.getActivityId());
             int i = (int) (((double) at.getActivityAvg() / (double) 360) * 100);
             avgList.add(i);
+            int markEntry = ActivityMarkDao.isThereActMark(at.getActivityId(), subjectId, sqliteDatabase);
+            if(markEntry == 1) mi1.put(at.getActivityId(), true);
+            int gradeEntry = ActivityMarkDao.isThereActGrade(at.getActivityId(), subjectId, sqliteDatabase);
+            if(gradeEntry ==  1) mi2.put(at.getActivityId(), true);
         }
 
         for (int i = 0; i < actIdList.size(); i++) {

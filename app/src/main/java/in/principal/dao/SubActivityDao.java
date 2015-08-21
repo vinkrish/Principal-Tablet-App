@@ -122,7 +122,7 @@ public class SubActivityDao {
 
 	public static List<SubActivity> selectSubActivity(int activityId, SQLiteDatabase sqliteDatabase){
 		Cursor c = sqliteDatabase.rawQuery("select * from subactivity where ActivityId="+activityId, null);
-		List<SubActivity> aList = new ArrayList<SubActivity>();
+		List<SubActivity> aList = new ArrayList<>();
 		c.moveToFirst();
 		while(!c.isAfterLast()){
 			SubActivity a = new SubActivity();

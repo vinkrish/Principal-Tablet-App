@@ -40,8 +40,10 @@ public class SqlDbHelper extends SQLiteOpenHelper implements SqlConstant {
         db.execSQL(CREATE_TEMP);
         db.execSQL(CREATE_ACTIVITY);
         db.execSQL(CREATE_ACTIVITY_MARK);
+        db.execSQL(CREATE_ACTIVITY_GRADE);
         db.execSQL(CREATE_SUB_ACTIVITY);
         db.execSQL(CREATE_SUB_ACTIVITY_MARK);
+        db.execSQL(CREATE_SUB_ACTIVITY_GRADE);
         db.execSQL(CREATE_DOWNLOADED_FILE);
         db.execSQL(CREATE_PORTION);
         db.execSQL(CREATE_SLIPTEST);
@@ -69,7 +71,9 @@ public class SqlDbHelper extends SQLiteOpenHelper implements SqlConstant {
         db.execSQL(HOMEWORK_TRIGGER);
         db.execSQL(MARKS_TRIGGER);
         db.execSQL(ACTIVITYMARK_TRIGGER);
+        db.execSQL(ACTIVITYGRADE_TRIGGER);
         db.execSQL(SUBACTMARK_TRIGGER);
+        db.execSQL(SUBACTGRADE_TRIGGER);
         db.execSQL(CREATE_CCE_STUDENT_PROFILE);
         db.execSQL(VOICE_CALL);
         db.execSQL(TEXT_SMS);
@@ -91,8 +95,10 @@ public class SqlDbHelper extends SQLiteOpenHelper implements SqlConstant {
         db.execSQL("DROP TABLE IF EXISTS temp");
         db.execSQL("DROP TABLE IF EXISTS activity");
         db.execSQL("DROP TABLE IF EXISTS activitymark");
+        db.execSQL("DROP TABLE IF EXISTS activitygrade");
         db.execSQL("DROP TABLE IF EXISTS subactivity");
         db.execSQL("DROP TABLE IF EXISTS subactivitymark");
+        db.execSQL("DROP TABLE IF EXISTS subactivitygrade");
         db.execSQL("DROP TABLE IF EXISTS downloadedfile");
         db.execSQL("DROP TABLE IF EXISTS portion");
         db.execSQL("DROP TABLE IF EXISTS sliptest");
@@ -302,6 +308,7 @@ public class SqlDbHelper extends SQLiteOpenHelper implements SqlConstant {
         sqliteDatabase.delete("downloadedfile", null, null);
         sqliteDatabase.delete("activity", null, null);
         sqliteDatabase.delete("activitymark", null, null);
+        sqliteDatabase.delete("activitygrade", null, null);
         sqliteDatabase.delete("cceaspectprimary", null, null);
         sqliteDatabase.delete("ccecoscholastic", null, null);
         sqliteDatabase.delete("ccecoscholasticgrade", null, null);
@@ -319,6 +326,7 @@ public class SqlDbHelper extends SQLiteOpenHelper implements SqlConstant {
         sqliteDatabase.delete("students", null, null);
         sqliteDatabase.delete("subactivity", null, null);
         sqliteDatabase.delete("subactivitymark", null, null);
+        sqliteDatabase.delete("subactivitygrade", null, null);
         sqliteDatabase.delete("subjectexams", null, null);
         sqliteDatabase.delete("subjects", null, null);
         sqliteDatabase.delete("subjectteacher", null, null);

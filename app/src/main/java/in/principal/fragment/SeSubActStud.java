@@ -66,7 +66,7 @@ public class SeSubActStud extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState){
-		View view = inflater.inflate(R.layout.act_sub_stud, container, false);
+		View view = inflater.inflate(R.layout.act_stud, container, false);
 		context = AppGlobal.getContext();
 		sqliteDatabase = AppGlobal.getSqliteDatabase();
 		
@@ -160,13 +160,6 @@ public class SeSubActStud extends Fragment {
 		pb.setProgress(progres);
 		TextView pecent = (TextView)view.findViewById(R.id.percent);
 		pecent.setText(progres+"%");
-
-		lv.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
-				
-			}
-		});
 		
 		populateListView();
 		
@@ -235,7 +228,6 @@ public class SeSubActStud extends Fragment {
 	}
 	
 	private void populateListView(){
-		sqliteDatabase = SqlDbHelper.getInstance(context).getWritableDatabase();
 		Cursor c = sqliteDatabase.rawQuery("select A.StudentId, A.RollNoInClass, A.Name, B.Mark, C.MaximumMark, case B.Mark when '-1' then 0 " +
 				"else (CAST (B.Mark as float)/CAST (C.MaximumMark as float))*100 end as avg from students A, subactivitymark B, subactivity C where " +
 				"A.StudentId=B.StudentId and B.SubActivityId="+subActivityId+" and B.SubActivityId=C.SubActivityId order by A.RollNoInClass", null);
@@ -278,7 +270,6 @@ public class SeSubActStud extends Fragment {
 	}
 	
 	private void sortRollNo(){
-		sqliteDatabase = SqlDbHelper.getInstance(context).getWritableDatabase();
 		Cursor c1 = sqliteDatabase.rawQuery("select A.StudentId, A.RollNoInClass, A.Name, B.Mark, C.MaximumMark, case B.Mark when '-1' then 0 " +
 				"else (CAST (B.Mark as float)/CAST (C.MaximumMark as float))*100 end as avg from students A, subactivitymark B, subactivity C where " +
 				"A.StudentId=B.StudentId and B.SubActivityId="+subActivityId+" and B.SubActivityId=C.SubActivityId order by A.RollNoInClass", null);
@@ -298,7 +289,6 @@ public class SeSubActStud extends Fragment {
 	}
 	
 	private void sortName(){
-		sqliteDatabase = SqlDbHelper.getInstance(context).getWritableDatabase();
 		Cursor c1 = sqliteDatabase.rawQuery("select A.StudentId, A.RollNoInClass, A.Name, B.Mark, C.MaximumMark, case B.Mark when '-1' then 0 " +
 				"else (CAST (B.Mark as float)/CAST (C.MaximumMark as float))*100 end as avg from students A, subactivitymark B, subactivity C where " +
 				"A.StudentId=B.StudentId and B.SubActivityId="+subActivityId+" and B.SubActivityId=C.SubActivityId order by A.Name", null);
@@ -318,7 +308,6 @@ public class SeSubActStud extends Fragment {
 	}
 	
 	private void sortAvg(){
-		sqliteDatabase = SqlDbHelper.getInstance(context).getWritableDatabase();
 		Cursor c;
 		if(ascDescFlag){
 			ascDescFlag = false;

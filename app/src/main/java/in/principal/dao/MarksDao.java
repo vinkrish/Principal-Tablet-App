@@ -42,4 +42,26 @@ public class MarksDao {
         return i;
     }
 
+    public static int isThereExamMark(int examId, int sectionId, int subjectId, SQLiteDatabase sqliteDatabase){
+        int isThere = 0;
+        Cursor c = sqliteDatabase.rawQuery("SELECT A.Mark from marks A, students B where A.ExamId="+examId+" and A.StudentId=B.StudentId and B.SectionId="+sectionId
+                +" and A.SubjectId="+subjectId+" and A.Mark!=0", null);
+        if(c.getCount()>0){
+            isThere = 1;
+        }
+        c.close();
+        return isThere;
+    }
+
+    public static int isThereExamGrade(int examId, int sectionId, int subjectId, SQLiteDatabase sqliteDatabase){
+        int isThere = 0;
+        Cursor c = sqliteDatabase.rawQuery("SELECT A.Grade from marks A, students B where A.ExamId="+examId+" and A.StudentId=B.StudentId and B.SectionId="+sectionId
+                +" and A.SubjectId="+subjectId+" LIMIT 1", null);
+        if(c.getCount()>0){
+            isThere = 1;
+        }
+        c.close();
+        return isThere;
+    }
+
 }

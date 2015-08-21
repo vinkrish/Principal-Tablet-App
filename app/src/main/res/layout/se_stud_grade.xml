@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:id="@+id/breadcrum"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/dark_black"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/dash"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/heading_selector"
+            android:contentDescription="@string/cc"
+            android:onClick="toDashbord"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:src="@drawable/dashboard" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#666363" />
+
+        <Button
+            android:id="@+id/seButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/heading_selector"
+            android:onClick="se"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/se"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#666363" />
+
+        <Button
+            android:id="@+id/seClass"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/heading_selector"
+            android:onClick="SeClass"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#666363" />
+
+        <Button
+            android:id="@+id/seSec"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/heading_selector"
+            android:onClick="SeSecSub"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/se"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/button_selector_blue"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/dividerup"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/breadcrum"
+        android:background="#333333" />
+
+    <LinearLayout
+        android:id="@+id/belowbreadcrum"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/dividerup"
+        android:background="@color/layoutbelowBC"
+        android:baselineAligned="false"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:id="@+id/subinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="21sp" />
+
+        <TextView
+            android:id="@+id/teacherinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewbelowbc"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/belowbreadcrum"
+        android:background="@color/border" />
+
+
+    <View
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/viewbelowbc"
+        android:background="@color/divider" />
+
+    <LinearLayout
+        android:id="@+id/lisview"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/top"
+        android:background="@color/layoutbelowBC"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/roll_no"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:text="@string/slno"
+            android:textColor="@color/light_black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/divider" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:gravity="left|center"
+            android:paddingLeft="10dp"
+            android:text="@string/studentname"
+            android:textColor="@color/light_black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/divider" />
+
+        <TextView
+            android:id="@+id/grade"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.15"
+            android:gravity="center"
+            android:text="@string/grade"
+            android:textColor="@color/light_black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/lisview"
+        android:background="@color/divider" />
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bottom"></ListView>
+
+</RelativeLayout>
