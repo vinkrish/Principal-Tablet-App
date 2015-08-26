@@ -35,7 +35,7 @@ public class StudentAttendanceDao {
 
 	public static List<Integer> selectStudentAbsent(String date,int secId, SQLiteDatabase sqliteDatabase){
 		Cursor c = sqliteDatabase.rawQuery("select * from studentattendance where DateAttendance='"+date+"' and SectionId="+secId+" and TypeOfLeave!='NA'", null);
-		List<Integer> sList = new ArrayList<Integer>();
+		List<Integer> sList = new ArrayList<>();
 		c.moveToFirst();
 		while(!c.isAfterLast()){
 			sList.add(c.getInt(c.getColumnIndex("StudentId")));
@@ -72,7 +72,7 @@ public class StudentAttendanceDao {
 	}
 
 	public static List<String> clasAbsenteeCnt(List<Integer> classIdList, String today, String yesterday, String otherday, SQLiteDatabase sqliteDatabase){
-		List<String> absenteeCntList = new ArrayList<String>();
+		List<String> absenteeCntList = new ArrayList<>();
 		for(Integer classId: classIdList){
 			String sql = "select A.StudentId,B.Name, count(*) as absentee_cnt from studentattendance A,students B where A.DateAttendance in ('"+today+"','"+yesterday+"','"+otherday+"')"+
 					" and A.ClassId="+classId+" and A.StudentId!=0 and A.StudentId=B.StudentId group by A.StudentId order by absentee_cnt desc";
@@ -99,7 +99,7 @@ public class StudentAttendanceDao {
 	}
 
 	public static List<String> secAbsenteeCnt(List<Integer> secIdList, String today, String yesterday, String otherday, SQLiteDatabase sqliteDatabase){
-		List<String> absenteeCntList = new ArrayList<String>();
+		List<String> absenteeCntList = new ArrayList<>();
 		for(Integer secId: secIdList){
 			String sql = "select A.StudentId,B.Name, count(*) as absentee_cnt from studentattendance A,students B where A.DateAttendance in ('"+today+"','"+yesterday+"','"+otherday+"')"+
 					" and A.SectionId="+secId+" and A.StudentId!=0 and A.StudentId=B.StudentId group by A.StudentId order by absentee_cnt desc ";
@@ -126,7 +126,7 @@ public class StudentAttendanceDao {
 	}
 
 	public static List<Integer> studMonthlyAttendance(List<String>startDate, List<String>endDate, int studId, SQLiteDatabase sqliteDatabase){
-		List<Integer> absList = new ArrayList<Integer>();
+		List<Integer> absList = new ArrayList<>();
 		for(int i=0; i<startDate.size(); i++){
 			absList.add(StudentAttendanceDao.studMontAbsCnt(startDate.get(i), endDate.get(i), studId, sqliteDatabase));
 		}
@@ -201,51 +201,10 @@ public class StudentAttendanceDao {
 		return cnt;
 	}
 
-	public static List<String> selClasMontAbs(String startDate, String endDate, int classId, SQLiteDatabase sqliteDatabase){
-		List<String> studNameList = new ArrayList<String>();
-		List<Integer> studIdList = new ArrayList<Integer>();
-		String sql = "SELECT StudentId,count(StudentId) as count FROM studentattendance where DateAttendance<='"+endDate+"' and DateAttendance>='"+startDate+"' and"+
-				" ClassId="+classId+" group by StudentId order by count(StudentId) desc";
-		Cursor c = sqliteDatabase.rawQuery(sql, null);
-		c.moveToFirst();
-		if(c.getCount()>0){
-			int count = 0;
-			while(!c.isAfterLast()){
-				if(c.getInt(c.getColumnIndex("count")) >= count){
-					count = c.getInt(c.getColumnIndex("count"));
-					studIdList.add(c.getInt(c.getColumnIndex("StudentId")));
-					c.moveToNext();
-				}else{
-					c.moveToLast();
-					c.moveToNext();
-				}
-			}
-		}else{
-			studIdList.add(0);
-		}
-		c.close();
-
-		for(Integer studId: studIdList){
-			String sql1 = "select Name from Students where StudentId="+studId;
-			Cursor c1 = sqliteDatabase.rawQuery(sql1, null);
-			if(c1.getCount()>0){
-				c1.moveToFirst();
-				while(!c1.isAfterLast()){
-					studNameList.add(c1.getString(c1.getColumnIndex("Name")));
-					c1.moveToNext();
-				}
-			}else{
-				studNameList.add("NA");
-			}
-			c1.close();
-		}
-		return studNameList;
-	}
-
 	public static String clasMontAbsentee(String startDate, String endDate, int classId, double noOfDays, SQLiteDatabase sqliteDatabase){
-		List<Integer> studIdList = new ArrayList<Integer>();
-		List<Integer> countList = new ArrayList<Integer>();
-		List<Integer> perCountList = new ArrayList<Integer>();
+		List<Integer> studIdList = new ArrayList<>();
+		List<Integer> countList = new ArrayList<>();
+		List<Integer> perCountList = new ArrayList<>();
 		String nameCount = "";
 		String s = "";
 		boolean flag = false;

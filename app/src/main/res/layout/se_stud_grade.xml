@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/heading_selector"
-            android:onClick="SeClass"
+            android:onClick="seClass"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:textColor="#FFFFFF"

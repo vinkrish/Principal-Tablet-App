@@ -127,7 +127,6 @@ public class TextSms extends Fragment implements StringConstant {
         selectionFrame = (LinearLayout) view.findViewById(R.id.selectionFrame);
 
         classSpinner = (EditText) view.findViewById(R.id.classSpinner);
-        ;
         sectionSpinner = (EditText) view.findViewById(R.id.secSpinner);
         studentSpinner = (EditText) view.findViewById(R.id.studSpinner);
         textSms = (EditText) view.findViewById(R.id.textSms);
@@ -252,7 +251,7 @@ public class TextSms extends Fragment implements StringConstant {
             }
         });
 
-        classSpinner.setOnClickListener(new View.OnClickListener() {
+        /*classSpinner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
@@ -260,25 +259,7 @@ public class TextSms extends Fragment implements StringConstant {
                 classDialog.show(ft, "dialog");
             }
         });
-
-        sectionSpinner.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                SectionDialog secFragment = new SectionDialog();
-                secFragment.show(ft, "sectionDialog");
-            }
-        });
-
-        studentSpinner.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                StudentDialog studFragment = new StudentDialog();
-                studFragment.show(ft, "studentdialog");
-            }
-        });
-
+        */
         return view;
     }
 
@@ -295,6 +276,9 @@ public class TextSms extends Fragment implements StringConstant {
 
     private OnTouchListener classTouch = new OnTouchListener() {
         public boolean onTouch(View v, MotionEvent event) {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                showClassDialog();
+            }
             int inType = classSpinner.getInputType();
             classSpinner.setInputType(InputType.TYPE_NULL);
             classSpinner.onTouchEvent(event);
@@ -305,6 +289,9 @@ public class TextSms extends Fragment implements StringConstant {
 
     private OnTouchListener sectionTouch = new OnTouchListener() {
         public boolean onTouch(View v, MotionEvent event) {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                showSectionDialog();
+            }
             int inType = sectionSpinner.getInputType();
             sectionSpinner.setInputType(InputType.TYPE_NULL);
             sectionSpinner.onTouchEvent(event);
@@ -316,6 +303,9 @@ public class TextSms extends Fragment implements StringConstant {
 
     private OnTouchListener studentTouch = new OnTouchListener() {
         public boolean onTouch(View v, MotionEvent event) {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                showStudentDialog();
+            }
             int inType = studentSpinner.getInputType();
             studentSpinner.setInputType(InputType.TYPE_NULL);
             studentSpinner.onTouchEvent(event);
@@ -338,22 +328,28 @@ public class TextSms extends Fragment implements StringConstant {
         selectionFrame.setVisibility(View.GONE);
     }
 
-    public class ClassDialog extends DialogFragment {
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            AlertDialog.Builder classBuilder = new AlertDialog.Builder(getActivity());
-            classBuilder.setTitle("Classes")
-                    .setMultiChoiceItems(classNameList.toArray(new CharSequence[classIdList.size()]), classSelections, new ClassSelectionClickHandler())
-                    .setPositiveButton("OK", new ClassButtonClickHandler())
-                    .create();
-            Dialog d = classBuilder.create();
-            return d;
-        }
+    public void showClassDialog() {
+        new AlertDialog.Builder(getActivity())
+                .setTitle("Classes")
+                .setCancelable(false)
+                .setMultiChoiceItems(classNameList.toArray(new CharSequence[classIdList.size()]), classSelections, new ClassSelectionClickHandler())
+                .setPositiveButton("OK", new ClassButtonClickHandler())
+                .show();
     }
 
     public class ClassSelectionClickHandler implements DialogInterface.OnMultiChoiceClickListener {
         public void onClick(DialogInterface dialog, int clicked, boolean selected) {
-            Log.d("i", classNameList.get(clicked) + " selected: " + selected);
+            if(sectionSpinner.isShown()){
+                for(int i=0; i<classSelections.length; i++){
+                    classSelections[i] = false;
+                }
+                dialog.dismiss();
+                classSelections[clicked] = true;
+                showClassDialog();
+            }else {
+                if (selected) classSelections[clicked] = true;
+                else classSelections[clicked] = false;
+            }
         }
     }
 
@@ -420,20 +416,28 @@ public class TextSms extends Fragment implements StringConstant {
         }
     }
 
-    public class SectionDialog extends DialogFragment {
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            return new AlertDialog.Builder(getActivity())
-                    .setTitle("Sections")
-                    .setMultiChoiceItems(secNameList.toArray(new CharSequence[secIdList.size()]), sectionSelections, new SectionSelectionClickHandler())
-                    .setPositiveButton("OK", new SectionButtonClickHandler())
-                    .create();
-        }
+    public void showSectionDialog() {
+        new AlertDialog.Builder(getActivity())
+                .setTitle("Sections")
+                .setCancelable(false)
+                .setMultiChoiceItems(secNameList.toArray(new CharSequence[secIdList.size()]), sectionSelections, new SectionSelectionClickHandler())
+                .setPositiveButton("OK", new SectionButtonClickHandler())
+                .show();
     }
 
     public class SectionSelectionClickHandler implements DialogInterface.OnMultiChoiceClickListener {
         public void onClick(DialogInterface dialog, int clicked, boolean selected) {
-            Log.d("i", secNameList.get(clicked) + " selected: " + selected);
+            if(studentSpinner.isShown()){
+                for(int i=0; i<sectionSelections.length; i++){
+                    sectionSelections[i] = false;
+                }
+                dialog.dismiss();
+                sectionSelections[clicked] = true;
+                showSectionDialog();
+            }else{
+                if (selected) sectionSelections[clicked] = true;
+                else sectionSelections[clicked] = false;
+            }
         }
     }
 
@@ -495,20 +499,19 @@ public class TextSms extends Fragment implements StringConstant {
         }
     }
 
-    public class StudentDialog extends DialogFragment {
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            return new AlertDialog.Builder(getActivity())
-                    .setTitle("Students")
-                    .setMultiChoiceItems(studNameList.toArray(new CharSequence[studIdList.size()]), studentSelections, new StudentSelectionClickHandler())
-                    .setPositiveButton("OK", new StudentButtonClickHandler())
-                    .create();
-        }
+    public void showStudentDialog() {
+        new AlertDialog.Builder(getActivity())
+                .setTitle("Students")
+                .setCancelable(false)
+                .setMultiChoiceItems(studNameList.toArray(new CharSequence[studIdList.size()]), studentSelections, new StudentSelectionClickHandler())
+                .setPositiveButton("OK", new StudentButtonClickHandler())
+                .show();
     }
 
     public class StudentSelectionClickHandler implements DialogInterface.OnMultiChoiceClickListener {
         public void onClick(DialogInterface dialog, int clicked, boolean selected) {
-            Log.d("i", studNameList.get(clicked) + " selected: " + selected);
+            if (selected) studentSelections[clicked] = true;
+            else studentSelections[clicked] = false;
         }
     }
 
@@ -636,7 +639,7 @@ public class TextSms extends Fragment implements StringConstant {
                 c.moveToNext();
             }
             c.close();
-        } else if(target == 5){
+        } else if (target == 5) {
             messageTo = "All Class Teachers";
             Cursor c = sqliteDatabase.rawQuery("select Mobile from teacher where TeacherId in (select ClassTeacherId from section)", null);
             c.moveToFirst();
@@ -645,8 +648,7 @@ public class TextSms extends Fragment implements StringConstant {
                 c.moveToNext();
             }
             c.close();
-        }
-        else if (target == 2) {
+        } else if (target == 2) {
             messageTo = "Class";
             Cursor c = sqliteDatabase.rawQuery("select Mobile1 from students where ClassId in (" + ids + ")", null);
             c.moveToFirst();
