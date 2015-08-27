@@ -48,7 +48,7 @@ import android.widget.TextView;
 public class ProcessFiles extends BaseActivity implements StringConstant {
     private SqlDbHelper sqlHandler;
     private SQLiteDatabase sqliteDatabase;
-    private int schoolId;
+    private int schoolId, manualSync;
     private String deviceId, savedVersion;
     private ProgressBar progressBar;
     private TextView txtPercentage, txtSync;
@@ -367,14 +367,21 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
             editor.apply();
 
             if (isException) {
+                editor.putInt("manual_sync", 0);
+                editor.apply();
                 Intent intent = new Intent(ProcessFiles.this, in.principal.activity.LockActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             } else if (isFirstTimeSync) {
+                editor.putInt("manual_sync", 0);
                 editor.putInt("first_sync", 1);
                 editor.apply();
                 new FirstTimeSync().callFirstTimeSync();
+            } else if (manualSync == 1) {
+                new CallFTP().syncFTP();
             } else {
+                editor.putInt("manual_sync", 0);
+                editor.apply();
                 Intent intent = new Intent(ProcessFiles.this, in.principal.activity.LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);

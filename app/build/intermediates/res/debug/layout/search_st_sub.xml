@@ -48,13 +48,19 @@
 
         <Button
             android:id="@+id/stSub"
-            android:layout_width="250dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
             android:background="@color/dark_black"
             android:gravity="left|center"
             android:textColor="#FFFFFF"
-            android:textSize="22sp" />
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/dash_seperator" />
     </LinearLayout>
 
     <LinearLayout

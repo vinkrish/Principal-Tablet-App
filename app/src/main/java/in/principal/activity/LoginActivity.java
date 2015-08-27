@@ -31,7 +31,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.PowerManager;
 import android.provider.Settings.Secure;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -142,7 +141,6 @@ public class LoginActivity extends BaseActivity {
                 b.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
                         if (userName.getText().toString().equals("Username")) {
                             userName.setText("");
                         } else if (password.getText().toString().equals("Password") && tvflag) {
@@ -156,38 +154,17 @@ public class LoginActivity extends BaseActivity {
                             password.setText("");
                         }
 
-                        if (v.getId() == R.id.num1) {
-                            updateFields("1");
-                        }
-                        if (v.getId() == R.id.num2) {
-                            updateFields("2");
-                        }
-                        if (v.getId() == R.id.num3) {
-                            updateFields("3");
-                        }
-                        if (v.getId() == R.id.num4) {
-                            updateFields("4");
-                        }
-                        if (v.getId() == R.id.num5) {
-                            updateFields("5");
-                        }
-                        if (v.getId() == R.id.num6) {
-                            updateFields("6");
-                        }
-                        if (v.getId() == R.id.num7) {
-                            updateFields("7");
-                        }
-                        if (v.getId() == R.id.num8) {
-                            updateFields("8");
-                        }
-                        if (v.getId() == R.id.num9) {
-                            updateFields("9");
-                        }
-                        if (v.getId() == R.id.num0) {
-                            updateFields("0");
-                        }
+                        if (v.getId() == R.id.num1) updateFields("1");
+                        else if (v.getId() == R.id.num2) updateFields("2");
+                        else if (v.getId() == R.id.num3) updateFields("3");
+                        else if (v.getId() == R.id.num4) updateFields("4");
+                        else if (v.getId() == R.id.num5) updateFields("5");
+                        else if (v.getId() == R.id.num6) updateFields("6");
+                        else if (v.getId() == R.id.num7) updateFields("7");
+                        else if (v.getId() == R.id.num8) updateFields("8");
+                        else if (v.getId() == R.id.num9) updateFields("9");
+                        else if (v.getId() == R.id.num0) updateFields("0");
                     }
-
                 });
             }
             findViewById(R.id.numclear).setOnClickListener(new View.OnClickListener() {
@@ -208,6 +185,19 @@ public class LoginActivity extends BaseActivity {
                     }
                 }
             });
+        }
+    }
+
+    public void syncClicked(View v){
+        if(NetworkUtils.isNetworkConnected(context)){
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt("manual_sync", 1);
+            editor.putInt("is_sync", 1);
+            editor.apply();
+            Intent intent = new Intent(this, ProcessFiles.class);
+            startActivity(intent);
+        }else{
+            CommonDialogUtils.displayAlertWhiteDialog(this, "Please check the internet connection");
         }
     }
 

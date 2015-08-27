@@ -339,12 +339,14 @@ public class TextSms extends Fragment implements StringConstant {
 
     public class ClassSelectionClickHandler implements DialogInterface.OnMultiChoiceClickListener {
         public void onClick(DialogInterface dialog, int clicked, boolean selected) {
+            boolean b = false;
+            if(selected) b = true;
             if(sectionSpinner.isShown()){
                 for(int i=0; i<classSelections.length; i++){
                     classSelections[i] = false;
                 }
                 dialog.dismiss();
-                classSelections[clicked] = true;
+                classSelections[clicked] = b;
                 showClassDialog();
             }else {
                 if (selected) classSelections[clicked] = true;
@@ -427,12 +429,14 @@ public class TextSms extends Fragment implements StringConstant {
 
     public class SectionSelectionClickHandler implements DialogInterface.OnMultiChoiceClickListener {
         public void onClick(DialogInterface dialog, int clicked, boolean selected) {
+            boolean b = false;
+            if(selected) b = true;
             if(studentSpinner.isShown()){
                 for(int i=0; i<sectionSelections.length; i++){
                     sectionSelections[i] = false;
                 }
                 dialog.dismiss();
-                sectionSelections[clicked] = true;
+                sectionSelections[clicked] = b;
                 showSectionDialog();
             }else{
                 if (selected) sectionSelections[clicked] = true;

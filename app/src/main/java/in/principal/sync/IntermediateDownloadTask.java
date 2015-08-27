@@ -106,11 +106,16 @@ public class IntermediateDownloadTask extends AsyncTask<String, String, String> 
 
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
-
+        int manualSync = SharedPreferenceUtil.getManualSync(context);
         KeyguardManager km = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
         boolean screenLocked = km.inKeyguardRestrictedInputMode();
 
-        if (screenLocked) {
+        if (manualSync == 1) {
+            SharedPreferenceUtil.updateManualSync(context, 2);
+            Intent intent = new Intent(context, in.principal.activity.ProcessFiles.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            context.startActivity(intent);
+        } else if (screenLocked) {
             SharedPreferenceUtil.updateIsSync(context, 1);
             Intent intent = new Intent(context, in.principal.activity.ProcessFiles.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);

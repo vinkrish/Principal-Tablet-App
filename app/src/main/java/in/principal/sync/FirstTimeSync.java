@@ -89,11 +89,9 @@ public class FirstTimeSync implements StringConstant{
 
 			if(block!=2){
 				publishProgress("50");
-
 				sqliteDatabase.execSQL("DROP TABLE IF EXISTS sliptestmark_"+schoolId);
 				sqliteDatabase.execSQL("CREATE TABLE sliptestmark_"+schoolId+"(SchoolId INTEGER, ClassId INTEGER, SectionId INTEGER, SubjectId INTEGER, NewSubjectId INTEGER," +
 						" SlipTestId INTEGER, StudentId INTEGER, Mark TEXT, DateTimeRecordInserted DATETIME, PRIMARY KEY(SlipTestId, StudentId))");
-				
 			}
 			return null;
 		}

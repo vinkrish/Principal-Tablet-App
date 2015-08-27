@@ -116,13 +116,13 @@
                 android:id="@+id/stinfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="21sp" />
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/teacherinfo"
+                android:id="@+id/subject_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="17sp" />
+                android:textSize="18sp" />
         </LinearLayout>
 
         <ProgressBar

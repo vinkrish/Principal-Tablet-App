@@ -62,6 +62,7 @@ public class SearchStudSTSub extends Fragment {
         pb = (ProgressBar) view.findViewById(R.id.subAvgProgress);
         pecent = (TextView) view.findViewById(R.id.percent);
 
+        view.findViewById(R.id.stButton).setOnClickListener(searchSlipTest);
         view.findViewById(R.id.slipSearch).setOnClickListener(searchSlipTest);
         view.findViewById(R.id.seSearch).setOnClickListener(searchExam);
         view.findViewById(R.id.attSearch).setOnClickListener(searchAttendance);
@@ -147,9 +148,8 @@ public class SearchStudSTSub extends Fragment {
             }
             c2.close();
 
-            for (int i = 0; i < stNameList.size(); i++) {
+            for (int i = 0; i < stNameList.size(); i++)
                 amrList.add(new AdapterOverloaded(stNameList.get(i), dateList.get(i), i + 1, maxMarkList.get(i), markList.get(i)));
-            }
 
             Cursor c3 = sqliteDatabase.rawQuery("select C.SubjectId, AVG((CAST (B.Mark as float)/CAST (C.MaximumMark as float))*100) as avg from sliptestmark_" + schoolId + " B," +
                     " sliptest C where B.SlipTestId=C.SlipTestId and B.StudentId=" + studentId + " and B.SubjectId=C.SubjectId and C.SubjectId=" + subjectId + " group by C.SubjectId", null);
@@ -166,13 +166,13 @@ public class SearchStudSTSub extends Fragment {
             super.onPostExecute(s);
             studTV.setText(studentName);
             clasSecTV.setText(className + " - " + secName);
-            if (progres >= 75) {
+            if (progres >= 75)
                 pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_green));
-            } else if (progres >= 50) {
+            else if (progres >= 50)
                 pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_orange));
-            } else {
+            else
                 pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_red));
-            }
+
             pb.setProgress(progres);
             pecent.setText(progres + "%");
             searchAdapter.notifyDataSetChanged();
