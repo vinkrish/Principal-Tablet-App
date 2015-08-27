@@ -197,7 +197,7 @@ public class SqlDbHelper extends SQLiteOpenHelper implements SqlConstant {
         sqliteDatabase.execSQL("delete from teacher where TeacherId=0");
     }
 
-    public void initStAvg(int classId, int sectionId, int subjectId, int avg) {
+    public void initStAvg(int classId, int sectionId, int subjectId, double avg) {
         sqliteDatabase = dbHelper.getWritableDatabase();
         String sql = "insert into stavg(ClassId, SectionId, SubjectId, SlipTestAvg) values(" + classId + "," + sectionId + "," +
                 subjectId + "," + avg + ")";

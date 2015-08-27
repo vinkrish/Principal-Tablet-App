@@ -36,9 +36,9 @@ public class StAvgDao {
 		c.moveToFirst();
 		int avg = 0;
 		while(!c.isAfterLast()){
-			int a = c.getInt(c.getColumnIndex("SlipTestAvg"));
+			double a = c.getDouble(c.getColumnIndex("SlipTestAvg"));
 			if(a!=0){
-				avg = (int)(((double)a/(360.0))*100);
+				avg = (int)((a/(360.0))*100);
 			}
 			c.moveToNext();
 		}
@@ -46,7 +46,7 @@ public class StAvgDao {
 		return avg;
 	}
 	
-	public static void updateSlipTestAvg(int sectionId, int subjectId, int avg, int schoolId, SQLiteDatabase sqliteDatabase){
+	public static void updateSlipTestAvg(int sectionId, int subjectId, double avg, SQLiteDatabase sqliteDatabase){
 		String sql = "update stavg set SlipTestAvg="+avg+" where SectionId="+sectionId+" and SubjectId="+subjectId;
 		sqliteDatabase.execSQL(sql);
 	}

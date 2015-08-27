@@ -165,7 +165,7 @@ public interface SqlConstant {
     public static String CREATE_EXMAVG = "CREATE TABLE exmavg(ClassId INTEGER, SectionId INTEGER, SubjectId INTEGER, ExamId INTEGER, ExamAvg REAL DEFAULT 0, CompleteEntry INTEGER DEFAULT 0," +
             "PRIMARY KEY(SectionId, SubjectId, ExamId))";
 
-    public static String CREATE_STAVG = "CREATE TABLE stavg(ClassId INTEGER, SectionId INTEGER, SubjectId INTEGER, SlipTestAvg INTEGER DEFAULT 0, PRIMARY KEY(SectionId, SubjectId))";
+    public static String CREATE_STAVG = "CREATE TABLE stavg(ClassId INTEGER, SectionId INTEGER, SubjectId INTEGER, SlipTestAvg REAL DEFAULT 0, PRIMARY KEY(SectionId, SubjectId))";
 
     public static String CREATE_DATE_TRACKER = "CREATE TABLE datetracker(id INTEGER PRIMARY KEY, FirstDate TEXT, LastDate TEXT, NoOfDays INTEGER, SelectedMonth INTEGER)";
 

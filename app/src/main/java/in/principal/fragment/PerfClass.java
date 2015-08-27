@@ -150,13 +150,11 @@ public class PerfClass extends Fragment {
 		}
 		c.close();
 
-		for(Integer subId: subIdList){
+		for(Integer subId: subIdList)
 			progressList.add(StAvgDao.selectStAvg(sectionId, subId, sqliteDatabase));
-		}
 
-		for(int i=0; i<subIdList.size(); i++){
+		for(int i=0; i<subIdList.size(); i++)
 			amrList.add(new AdapterOverloaded(subNameList.get(i),teacherNameList.get(i),progressList.get(i)));
-		}
 
 		amrAdapter.notifyDataSetChanged();
 	}
@@ -179,10 +177,8 @@ public class PerfClass extends Fragment {
 		public View getView(final int position, View convertView, ViewGroup parent) {
 			View row = convertView;
 			RecordHolder holder;
-
 			if(row == null){
 				row = inflater.inflate(layoutResourceId, parent, false);
-
 				holder = new RecordHolder();
 				holder.secTxtBlack = (TextView) row.findViewById(R.id.sectionBlack);
 				holder.secTxtWhite = (TextView) row.findViewById(R.id.sectionWhite);
@@ -266,25 +262,8 @@ public class PerfClass extends Fragment {
 				}
 				canvas.drawArc (rectF, 0, 360, false, defaultPaint);
 				canvas.drawArc (rectF, 270, Float.parseFloat(localInt+""), false, p);
-				if(selected){
-					//	canvas.drawCircle(50, 50, 35, circlePaint);
-				}
 			}
 		}
-
-	}
-
-	public void viewClickListener(int position){
-		for(int i=0; i<circleArrayGrid.size(); i++){
-			Circle c = circleArrayGrid.get(position);
-			if(position==i){
-				c.setSelected(true);
-			}else{
-				c.setSelected(false);
-			}
-			circleArrayGrid.set(position, c);
-		}
-		cA.notifyDataSetChanged();
 	}
 
 }

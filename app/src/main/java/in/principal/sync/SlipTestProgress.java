@@ -28,7 +28,7 @@ public class SlipTestProgress {
     }
 
     class CalledStProgress extends AsyncTask<String, String, String> {
-        private int avg;
+        private double avg;
 
         protected void onPreExecute() {
             super.onPreExecute();
@@ -46,7 +46,7 @@ public class SlipTestProgress {
 
             List<SubjectTeacher> stList = SubjectTeachersDao.selectSubjectTeacher(sqliteDatabase);
             for (SubjectTeacher st : stList) {
-                avg = SlipTesttDao.findSlipTestPercentage(st.getSectionId(), st.getSubjectId(), st.getSchoolId(), sqliteDatabase);
+                avg = SlipTesttDao.findSlipTestPercentage(st.getSectionId(), st.getSubjectId(), sqliteDatabase);
                 sqlHandler.initStAvg(st.getClassId(), st.getSectionId(), st.getSubjectId(), avg);
             }
             return null;

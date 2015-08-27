@@ -73,6 +73,7 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
         sqliteDatabase = AppGlobal.getSqliteDatabase();
 
         sharedPref = getSharedPreferences("db_access", Context.MODE_PRIVATE);
+        manualSync = sharedPref.getInt("manual_sync", 0);
         savedVersion = sharedPref.getString("saved_version", "v1.2");
 
         new ProcessedFiles().execute();
@@ -331,8 +332,8 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
             }
             c9.close();
             for (int i = 0, j = subjectIdList.size(); i < j; i++) {
-                int updatedSTAvg = SlipTesttDao.findSlipTestPercentage(sectionIdList.get(i), subjectIdList.get(i), schoolId, sqliteDatabase);
-                StAvgDao.updateSlipTestAvg(sectionIdList.get(i), subjectIdList.get(i), updatedSTAvg, schoolId, sqliteDatabase);
+                double updatedSTAvg = SlipTesttDao.findSlipTestPercentage(sectionIdList.get(i), subjectIdList.get(i), sqliteDatabase);
+                StAvgDao.updateSlipTestAvg(sectionIdList.get(i), subjectIdList.get(i), updatedSTAvg, sqliteDatabase);
             }
             subjectIdList.clear();
             sectionIdList.clear();
@@ -347,8 +348,8 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
             }
             c10.close();
             for (int i = 0, j = subjectIdList.size(); i < j; i++) {
-                int updatedSTAvg = SlipTesttDao.findSlipTestPercentage(sectionIdList.get(i), subjectIdList.get(i), schoolId, sqliteDatabase);
-                StAvgDao.updateSlipTestAvg(sectionIdList.get(i), subjectIdList.get(i), updatedSTAvg, schoolId, sqliteDatabase);
+                double updatedSTAvg = SlipTesttDao.findSlipTestPercentage(sectionIdList.get(i), subjectIdList.get(i), sqliteDatabase);
+                StAvgDao.updateSlipTestAvg(sectionIdList.get(i), subjectIdList.get(i), updatedSTAvg, sqliteDatabase);
             }
             subjectIdList.clear();
             sectionIdList.clear();

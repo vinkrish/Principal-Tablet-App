@@ -90,13 +90,11 @@ public class UpdateApk extends BaseActivity {
             DownloadModel model = new DownloadModel(context, fileName, mTransferManager);
             model.download();
 
-            while (!downloadCompleted) {
+            while (!downloadCompleted)
                 Log.d("download", "...");
-            }
 
-            if(!exception){
+            if(!exception)
                 unZipIt("principal.zip");
-            }
 
             return null;
         }
@@ -172,16 +170,13 @@ public class UpdateApk extends BaseActivity {
             }
 
             @Override
-            public void abort() {
-            }
+            public void abort() {}
 
             @Override
-            public void pause() {
-            }
+            public void pause() {}
 
             @Override
-            public void resume() {
-            }
+            public void resume() {}
         }
 
     }
