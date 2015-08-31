@@ -219,4 +219,4 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/bottom"></ListView>
 
-</RelativeLayout><!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/layout/attendance_student.xml -->
+</RelativeLayout><!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/layout/attendance_student.xml -->

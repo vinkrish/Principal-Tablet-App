@@ -2,4 +2,4 @@
 <translate xmlns:android="http://schemas.android.com/apk/res/android"
     android:fromYDelta="-95%" 
     android:toYDelta="0%"
-    android:duration="300"/><!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/anim/slide_top_middle_full.xml -->
+    android:duration="300"/><!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/anim/slide_top_middle_full.xml -->

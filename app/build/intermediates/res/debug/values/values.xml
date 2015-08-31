@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <array name="nav_drawer_icons">
         <item>@drawable/dashboard</item>
@@ -22,7 +22,7 @@
         <item>Students</item>
         <item>Text SMS</item>
     </string-array>
-    <!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/values/color.xml -->
+    <!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="black">#000000</color>
     <color name="border">#DCDCE3</color>
@@ -53,7 +53,7 @@
     <color name="universal">#3E97D6</color>
     <color name="update_background">#DFE0DC</color>
     <color name="white">#FFFFFF</color>
-    <!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
@@ -69,7 +69,7 @@
     <dimen name="text_xlarge">25sp</dimen>
     <dimen name="text_xmedium">20sp</dimen>
     <dimen name="text_xsmall">16sp</dimen>
-    <!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="absent">Absent</string>
     <string name="absent_count">Absent Count</string>
@@ -220,7 +220,7 @@
     <string name="week">Week</string>
     <string name="yesterday_eval">Yesterday\'s evaluations</string>
     <string name="zero">0</string>
-    <!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
@@ -232,12 +232,12 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-    <!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/values/themes.xml -->
+    <!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/values/themes.xml -->
     <eat-comment/>
     <style name="CustomActionBarTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/MyActionBar</item>
     </style>
-    <!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="DialogSlideAnim" parent="@android:style/Theme.Dialog">
         <item name="android:windowAnimationStyle">@style/DialogSlideAnimation</item>
@@ -246,12 +246,12 @@
         <item name="android:windowEnterAnimation">@anim/slide_bottom_middle</item>
         <item name="android:windowExitAnimation">@anim/slide_middle_bottom</item>
     </style>
-    <!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/values/themes.xml -->
+    <!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/values/themes.xml -->
     <eat-comment/>
     <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@drawable/ab_bg</item>
     </style>
-    <!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="spinner_style">
         <item name="android:background">@drawable/gradient_spinner</item>

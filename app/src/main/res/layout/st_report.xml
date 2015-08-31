@@ -37,6 +37,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/heading_selector"
             android:gravity="center"
+            android:onClick="toStDashbord"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="@string/sliptest"

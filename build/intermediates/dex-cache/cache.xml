@@ -2,53 +2,53 @@
 <items version="2" >
 
     <item
-        jar="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jar="/Users/vinkrish/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-016b2f99696744ff2753c47740f302e79120105f.jar" />
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.1-fd2e6f38d95a67a288d97b620dcd051a57a64d04.jar" />
     </item>
     <item
-        jar="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/libs/aws-android-sdk-core-2.2.1.jar"
+        jar="/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="e154f5b66df06dfa421f38c9baaad91c428aeae0">
-        <dex dex="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/build/intermediates/pre-dexed/debug/aws-android-sdk-core-2.2.1-62331370965aaa82c69598137a8138f5620efd2d.jar" />
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/build/intermediates/pre-dexed/debug/classes-0e29994e9d00a01d45701e58a7ec2486f2316783.jar" />
     </item>
     <item
-        jar="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/build/intermediates/pre-dexed/debug/classes-845512eef0c5ea11274b98e6b99eaa433ee70e28.jar" />
-    </item>
-    <item
-        jar="/Users/Vidhya/Downloads/adt-bundle-mac-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-fd593ec8abec247b831efba027176bb4dedc70a9.jar" />
-    </item>
-    <item
-        jar="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/libs/achartengine-1.1.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="9932e3fb9fbe54e80873e77f72a99f79e33b3250">
-        <dex dex="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/build/intermediates/pre-dexed/debug/achartengine-1.1.0-269f5fefbf0a5c73522ffdd2f8d872a76b7b8aaa.jar" />
-    </item>
-    <item
-        jar="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/libs/commons-net-3.3.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="cd0d5510908225f76c5fe5a3f1df4fa44866f81e">
-        <dex dex="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/build/intermediates/pre-dexed/debug/commons-net-3.3-bdb2ed9f0df562a1033878ed461146151809219d.jar" />
-    </item>
-    <item
-        jar="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/libs/aws-android-sdk-s3-2.2.1.jar"
+        jar="/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/libs/aws-android-sdk-s3-2.2.1.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="cabafdaebd650e720a5e2d68bfb0de0b35e5209d">
-        <dex dex="/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/build/intermediates/pre-dexed/debug/aws-android-sdk-s3-2.2.1-ca6dd332fb2fce771b8e077ce1619650fe2dccbe.jar" />
+        <dex dex="/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/build/intermediates/pre-dexed/debug/aws-android-sdk-s3-2.2.1-d191026e60389536c99d3b9992d5ea5420a18f37.jar" />
+    </item>
+    <item
+        jar="/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/libs/achartengine-1.1.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9932e3fb9fbe54e80873e77f72a99f79e33b3250">
+        <dex dex="/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/build/intermediates/pre-dexed/debug/achartengine-1.1.0-f4d47b0f9040b11aad7b57931fc4c00eb10fa180.jar" />
+    </item>
+    <item
+        jar="/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/libs/commons-net-3.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="cd0d5510908225f76c5fe5a3f1df4fa44866f81e">
+        <dex dex="/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/build/intermediates/pre-dexed/debug/commons-net-3.3-805fff87057097a001ba55d2c5b41fb6a84b7f2b.jar" />
+    </item>
+    <item
+        jar="/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/libs/aws-android-sdk-core-2.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e154f5b66df06dfa421f38c9baaad91c428aeae0">
+        <dex dex="/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/build/intermediates/pre-dexed/debug/aws-android-sdk-core-2.2.1-91009caf2f18f4c24886e5d1850a73fad0c8eba4.jar" />
+    </item>
+    <item
+        jar="/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-74babdc5be2e119334a82193f431c25608c6ab52.jar" />
     </item>
 
 </items>

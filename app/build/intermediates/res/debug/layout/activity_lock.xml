@@ -28,4 +28,4 @@
         android:onClick="refreshClicked"
         android:visibility="invisible" />
 
-</RelativeLayout><!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/layout/activity_lock.xml -->
+</RelativeLayout><!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/layout/activity_lock.xml -->

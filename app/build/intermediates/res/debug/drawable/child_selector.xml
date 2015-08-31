@@ -3,4 +3,4 @@
     <item android:state_pressed="true" android:drawable="@color/universal"></item>
     <item android:drawable="@drawable/spinner_bg"></item>
 </selector>
-<!-- From: file:/Users/Vidhya/Desktop/AndroidStudioProjects/Principal/app/src/main/res/drawable/child_selector.xml -->
+<!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/drawable/child_selector.xml -->
