@@ -36,3 +36,6 @@ Thumbs.db
 
 # Removes StringConstant where ip addresses are located
 app/src/main/java/in/principal/sync/StringConstant.java
+
+# Removes Constant where amazon s3 credentials are stored
+app/src/main/java/in/principal/util/Constants.java
