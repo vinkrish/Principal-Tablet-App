@@ -103,14 +103,6 @@ public class Dashbord extends Fragment {
 			classIdList.add(c.getClassId());
 			classNameList.add(c.getClassName());
 		}
-
-		view.findViewById(R.id.sliptests).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				TempDao.updateSelectedDate(getToday(), sqliteDatabase);
-				ReplaceFragment.replace(new StDashbord(), getFragmentManager());
-			}
-		});
 		
 		dashAdapt1 = new DashAdapt1(context, R.layout.dash_list1, amrList1);
 		lv1.setAdapter(dashAdapt1);
@@ -125,7 +117,6 @@ public class Dashbord extends Fragment {
 		lv1.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
-				
 				Temp t = new Temp();
 				t.setClassId(classIdList.get(pos));
 				t.setClassName(classNameList.get(pos));

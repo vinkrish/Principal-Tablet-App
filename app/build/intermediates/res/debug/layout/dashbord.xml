@@ -2,14 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF" >
+    android:background="#FFFFFF">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/dark_black"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/attendance"
@@ -20,8 +20,8 @@
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="@string/attendance"
-            android:textColor="#FFFFFF"
             android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFFFFF"
             android:textStyle="bold" />
 
         <View
@@ -34,12 +34,14 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/heading_selector"
+            android:clickable="true"
             android:gravity="center"
+            android:onClick="toStDashbord"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="@string/sliptest"
-            android:textColor="@color/selected_sub_heading"
             android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/selected_sub_heading"
             android:textStyle="bold" />
 
         <View
@@ -47,7 +49,7 @@
             android:layout_height="match_parent"
             android:background="@color/border" />
     </LinearLayout>
-    
+
     <View
         android:id="@+id/dividerup"
         android:layout_width="match_parent"
@@ -66,8 +68,8 @@
         android:background="@color/layoutbelowBC"
         android:gravity="left|center_vertical"
         android:paddingLeft="10dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/attendoverview" />
+        android:text="@string/attendoverview"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <View
         android:id="@+id/overviewMargin"
@@ -84,8 +86,7 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
         android:gravity="center"
-        android:numColumns="2" >
-    </GridView>
+        android:numColumns="2"></GridView>
 
     <View
         android:id="@+id/dividerOverview"
@@ -100,7 +101,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/dividerOverview"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="0dip"
@@ -143,13 +144,13 @@
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_below="@+id/viewMargin4"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="0dp"
@@ -157,8 +158,8 @@
                 android:layout_weight="0.25"
                 android:background="@color/layoutbelowBC"
                 android:gravity="center"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/clas" />
+                android:text="@string/clas"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <View
                 android:layout_width="1dp"
@@ -172,8 +173,8 @@
                 android:background="@color/layoutbelowBC"
                 android:gravity="left|center_vertical"
                 android:paddingLeft="10dp"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/percentage" />
+                android:text="@string/percentage"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <View
                 android:layout_width="1dp"
@@ -185,7 +186,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="0dp"
@@ -193,8 +194,8 @@
                 android:layout_weight="0.2"
                 android:background="@color/layoutbelowBC"
                 android:gravity="center"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/clas" />
+                android:text="@string/clas"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <View
                 android:layout_width="1dp"
@@ -208,8 +209,8 @@
                 android:background="@color/layoutbelowBC"
                 android:gravity="left|center_vertical"
                 android:paddingLeft="10dp"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/studentname" />
+                android:text="@string/studentname"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
 
         </LinearLayout>
     </LinearLayout>
@@ -226,7 +227,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/viewMargin5"
         android:baselineAligned="false"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <ListView
             android:id="@+id/list1"
@@ -234,8 +235,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:paddingBottom="1dp"
-            android:paddingLeft="1dp" >
-        </ListView>
+            android:paddingLeft="1dp"></ListView>
 
         <ListView
             android:id="@+id/list2"
@@ -243,8 +243,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:paddingBottom="1dp"
-            android:paddingRight="1dp" >
-        </ListView>
+            android:paddingRight="1dp"></ListView>
     </LinearLayout>
 
 </RelativeLayout><!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/layout/dashbord.xml -->

@@ -374,7 +374,14 @@ public class Dashboard extends BaseActivity {
 		}*/
     }
 
+    private String getToday() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        Date today = new Date();
+        return dateFormat.format(today);
+    }
+
     public void toStDashbord(View v) {
+        TempDao.updateSelectedDate(getToday(), sqliteDatabase);
         ReplaceFragment.replace(new StDashbord(), getFragmentManager());
     }
 
