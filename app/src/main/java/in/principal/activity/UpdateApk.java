@@ -42,6 +42,7 @@ import in.principal.util.Util;
 public class UpdateApk extends BaseActivity {
     private SharedPreferences sharedPref;
     private ProgressDialog pDialog;
+    private String apkFolder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +51,14 @@ public class UpdateApk extends BaseActivity {
         pDialog = new ProgressDialog(this);
 
         sharedPref = getSharedPreferences("db_access", Context.MODE_PRIVATE);
+        apkFolder = sharedPref.getString("apk_folder", "v1.2");
     }
 
     public void updateClicked(View v){
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt("is_sync", 1);
         editor.apply();
+
         if(NetworkUtils.isNetworkConnected(UpdateApk.this)){
             new ApkDownloadTask(this.getApplicationContext(), "principal.zip").execute();
         }
@@ -70,7 +73,7 @@ public class UpdateApk extends BaseActivity {
 
         public ApkDownloadTask(Context context, String fName) {
             this.context = context;
-            this.fileName = "download/" + fName;
+            this.fileName = "download/"+apkFolder +"/"+ fName;
         }
 
         protected void onPreExecute() {

@@ -45,11 +45,12 @@ public class SharedPreferenceUtil {
         editor.apply();
     }
 
-    public static void updateApkUpdate(Context context, int i){
+    public static void updateApkUpdate(Context context, int i, String folder){
         SharedPreferences sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt("apk_update", i);
         editor.putInt("newly_updated", 1);
+        editor.putString("apk_folder", folder);
         editor.apply();
     }
 
