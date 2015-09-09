@@ -698,7 +698,9 @@ public class TextSms extends Fragment implements StringConstant {
             file.createNewFile();
             BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
             for (Long id : idList) {
-                writer.write("insert into queue_transaction(SchoolId, Phone, Message, UserId, Role) values(" + schoolId + ",'" + id + "','" + textSms.getText().toString().replaceAll("\n", "-") + "'," + principalId + ", 'Principal');");
+                writer.write("insert into queue_transaction(SchoolId, Phone, Message, UserId, Role) values(" +
+                        schoolId + ",'" + id + "','" + textSms.getText().toString().replaceAll("\n", "-").replace("'", "\\'").replace("\"", "\\\"") +
+                        "'," + principalId + ", 'Principal');");
                 writer.newLine();
             }
             writer.close();

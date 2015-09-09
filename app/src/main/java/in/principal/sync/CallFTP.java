@@ -30,7 +30,7 @@ public class CallFTP implements StringConstant {
     private SharedPreferences sharedPref;
 
     public CallFTP() {
-        context = AppGlobal.getActivity();
+        context = AppGlobal.getContext();
         sqlHandler = AppGlobal.getSqlDbHelper();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
     }
@@ -96,10 +96,9 @@ public class CallFTP implements StringConstant {
                 Intent intent = new Intent(context, in.principal.activity.LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
-            }
-            else if (screenLocked) {
+            } else if (screenLocked) {
                 Intent i = new Intent(context, in.principal.activity.ProcessFiles.class);
-                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(i);
             } else {
                 SharedPreferenceUtil.updateSleepSync(context, 1);

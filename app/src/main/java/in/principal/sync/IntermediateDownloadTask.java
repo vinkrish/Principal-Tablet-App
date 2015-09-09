@@ -89,9 +89,8 @@ public class IntermediateDownloadTask extends AsyncTask<String, String, String> 
                     jsonObject.put("tab_id", deviceId);
                     jsonObject.put("file_name", "'" + sb.substring(0, sb.length() - 3) + "'");
                     jsonReceived = UploadSyncParser.makePostRequest(update_downloaded_file, jsonObject);
-                    Log.d("update", "downloaded_file");
-                    if (jsonReceived.getInt(TAG_SUCCESS) == 1) {
-                    }
+                    if (jsonReceived.getInt(TAG_SUCCESS) == 1)
+                        Log.d("update", "downloaded_file");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
@@ -112,12 +111,12 @@ public class IntermediateDownloadTask extends AsyncTask<String, String, String> 
         if (manualSync == 1) {
             SharedPreferenceUtil.updateManualSync(context, 2);
             Intent intent = new Intent(context, in.principal.activity.ProcessFiles.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         } else if (screenLocked) {
             SharedPreferenceUtil.updateIsSync(context, 1);
             Intent intent = new Intent(context, in.principal.activity.ProcessFiles.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         } else {
             SharedPreferenceUtil.updateSleepSync(context, 1);

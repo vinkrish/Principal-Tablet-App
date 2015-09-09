@@ -47,6 +47,7 @@ import android.widget.TextView;
 
 public class ProcessFiles extends BaseActivity implements StringConstant {
     private SqlDbHelper sqlHandler;
+    private Context context;
     private SQLiteDatabase sqliteDatabase;
     private int schoolId, manualSync;
     private String deviceId, savedVersion;
@@ -71,6 +72,7 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
 
         sqlHandler = AppGlobal.getSqlDbHelper();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
+        context = AppGlobal.getContext();
 
         sharedPref = getSharedPreferences("db_access", Context.MODE_PRIVATE);
         manualSync = sharedPref.getInt("manual_sync", 0);
@@ -228,7 +230,7 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
             examIdList.clear();
             subjectIdList.clear();
 
-            publishProgress("25", 25 + "", "calculating average");
+            publishProgress("20", 20 + "", "calculating average");
 
             Cursor c5 = sqliteDatabase.rawQuery("select distinct ExamId,ActivityId,SubjectId from avgtrack " +
                     "where Type=0 and SubActivityId=0 and SectionId=0 and ExamId!=0 and ActivityId!=0 and SubjectId!=0", null);
@@ -270,7 +272,7 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
             activityIdList.clear();
             subjectIdList.clear();
 
-            publishProgress("50", 50 + "", "calculating average");
+            publishProgress("40", 40 + "", "calculating average");
 
             Cursor c7 = sqliteDatabase.rawQuery("select distinct ExamId,ActivityId,SubActivityId,SubjectId from avgtrack " +
                     "where Type=0 and SectionId=0 and ExamId!=0 and ActivityId!=0 and SubActivityId!=0 and SubjectId!=0", null);
@@ -320,7 +322,7 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
             subActIdList.clear();
             subjectIdList.clear();
 
-            publishProgress("75", 75 + "", "calculating average");
+            publishProgress("60", 60 + "", "calculating average");
 
             Cursor c9 = sqliteDatabase.rawQuery("select distinct SubjectId,SectionId from avgtrack " +
                     "where Type=0 and ExamId=0 and ActivityId=0 and SubActivityId=0 and SubjectId!=0 and SectionId!=0", null);
@@ -354,6 +356,8 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
             subjectIdList.clear();
             sectionIdList.clear();
 
+            publishProgress("80", 80 + "", "calculating average");
+
             sqlHandler.deleteTable("avgtrack", sqliteDatabase);
 
             return null;
@@ -370,8 +374,8 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
             if (isException) {
                 editor.putInt("manual_sync", 0);
                 editor.apply();
-                Intent intent = new Intent(ProcessFiles.this, in.principal.activity.LockActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                Intent intent = new Intent(context, in.principal.activity.LockActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             } else if (isFirstTimeSync) {
                 editor.putInt("manual_sync", 0);
@@ -383,8 +387,8 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
             } else {
                 editor.putInt("manual_sync", 0);
                 editor.apply();
-                Intent intent = new Intent(ProcessFiles.this, in.principal.activity.LoginActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                Intent intent = new Intent(context, in.principal.activity.LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
         }

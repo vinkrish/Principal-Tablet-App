@@ -11,7 +11,7 @@ public class ExmAvgDao {
 	
 	public static void insertExmAvg(SQLiteDatabase sqliteDatabase){
 		String sql = "SELECT A.ExamId, A.SubjectId, B.ClassId, B.SectionId, (AVG(Mark)/C.MaximumMark)*360 as Average FROM marks A, students B, subjectexams C WHERE" +
-				" A.StudentId = B.StudentId and C.ExamId=A.ExamId and C.SubjectId=A.SubjectId and A.Mark!='0' and A.Mark!='-1' GROUP BY A.ExamId, A.SubjectId, B.SectionId";
+				" A.StudentId = B.StudentId and C.ExamId=A.ExamId and C.SubjectId=A.SubjectId and A.Mark!='-1' GROUP BY A.ExamId, A.SubjectId, B.SectionId";
 		Cursor c = sqliteDatabase.rawQuery(sql,null);
 		String sql2 = "insert into exmavg (ClassId,SectionId,SubjectId,ExamId,ExamAvg) Values(?,?,?,?,?)";
 		sqliteDatabase.beginTransaction();
@@ -77,7 +77,7 @@ public class ExmAvgDao {
 
 	public static void insertExmActAvg(SQLiteDatabase sqliteDatabase){
 		String sql_query = "Select AB.ExamId,AB.ClassId,AB.SectionId,AB.SubjectId,AVG(B)*360 as Average from (SELECT A.ExamId,B.ClassId,B.SectionId,A.ActivityId,A.SubjectId,C.MaximumMark," +
-				"AVG(mark)/C.MaximumMark B FROM activitymark A,students B,activity C WHERE A.StudentId=B.StudentId and A.ActivityId=C.ActivityId and A.Mark!='0' and A.Mark!='-1' " +
+				"AVG(mark)/C.MaximumMark B FROM activitymark A,students B,activity C WHERE A.StudentId=B.StudentId and A.ActivityId=C.ActivityId and A.Mark!='-1' " +
 				"group by A.ExamId,A.ActivityId,A.SubjectId,B.SectionId) AB group by AB.ExamId,AB.SectionId,AB.SubjectId";
 		Cursor c = sqliteDatabase.rawQuery(sql_query,null);
 		c.moveToFirst();
@@ -100,7 +100,7 @@ public class ExmAvgDao {
 	public static void insertExmSubActAvg(SQLiteDatabase sqliteDatabase){
 		String sql_query = "Select AB.ExamId,AB.ClassId,AB.SectionId,AB.SubjectId,AVG(B)*360 as Average from " +
 				"(SELECT A.ExamId,B.ClassId,B.SectionId,A.SubActivityId,A.SubjectId,C.MaximumMark,AVG(mark)/C.MaximumMark B FROM " +
-				"subactivitymark A,students B,subactivity C WHERE A.StudentId=B.StudentId and A.SubActivityId=C.SubActivityId and A.Mark!='0' and A.Mark!='-1' " +
+				"subactivitymark A,students B,subactivity C WHERE A.StudentId=B.StudentId and A.SubActivityId=C.SubActivityId and A.Mark!='-1' " +
 				"group by A.ExamId,A.SubActivityId,A.SubjectId) AB group by AB.ExamId,AB.SectionId,AB.SubjectId";
 		Cursor c = sqliteDatabase.rawQuery(sql_query,null);
 		c.moveToFirst();
