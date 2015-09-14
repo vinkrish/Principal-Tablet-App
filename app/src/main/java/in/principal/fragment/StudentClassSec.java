@@ -36,6 +36,9 @@ import in.principal.sqlite.Temp;
 import in.principal.util.AppGlobal;
 import in.principal.util.ReplaceFragment;
 
+/**
+ * Created by vinkrish.
+ */
 public class StudentClassSec extends Fragment {
     private Context context;
     private int sectionId;
@@ -126,14 +129,14 @@ public class StudentClassSec extends Fragment {
 
     private void updateListView() {
         List<Students> studentList = StudentsDao.selectStudents(sectionId, sqliteDatabase);
-        for(Students s: studentList){
+        for (Students s : studentList) {
             studIDList.add(s.getStudentId());
             studentIdList.add(s.getRollNoInClass());
             studentNameList.add(s.getName());
         }
         amrList.clear();
-        for(int i=0; i<studentList.size(); i++){
-            amrList.add(new AdapterOverloaded(studentIdList.get(i)+"",studentNameList.get(i)));
+        for (int i = 0; i < studentList.size(); i++) {
+            amrList.add(new AdapterOverloaded(studentIdList.get(i) + "", studentNameList.get(i)));
         }
     }
 
@@ -158,14 +161,11 @@ public class StudentClassSec extends Fragment {
 
             if (row == null) {
                 row = inflater.inflate(layoutResourceId, parent, false);
-
                 holder = new RecordHolder();
                 holder.secTxtBlack = (TextView) row.findViewById(R.id.sectionBlack);
                 holder.secTxtWhite = (TextView) row.findViewById(R.id.sectionWhite);
                 row.setTag(holder);
-            } else {
-                holder = (RecordHolder) row.getTag();
-            }
+            } else holder = (RecordHolder) row.getTag();
 
             FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
             FrameLayout fl = (FrameLayout) row.findViewById(R.id.fl);

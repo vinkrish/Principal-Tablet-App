@@ -21,6 +21,10 @@ import android.os.AsyncTask;
 import android.os.BatteryManager;
 import android.util.Log;
 
+/**
+ * Created by vinkrish.
+ */
+
 public class CallFTP implements StringConstant {
     private SqlDbHelper sqlHandler;
     private SQLiteDatabase sqliteDatabase;

@@ -38,6 +38,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Created by vinkrish.
+ */
+
 public class LoginActivity extends BaseActivity {
     private SQLiteDatabase sqliteDatabase;
     private Context context;
@@ -56,9 +60,8 @@ public class LoginActivity extends BaseActivity {
         Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
 
         Intent intent = getIntent();
-        if (intent.getIntExtra("create", 0) == 1) {
+        if (intent.getIntExtra("create", 0) == 1)
             new CallFTP().syncFTP();
-        }
 
         context = AppGlobal.getContext();
         sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
@@ -76,7 +79,7 @@ public class LoginActivity extends BaseActivity {
             startActivity(i);
         }
 
-        if(!TeacherDao.isTeacherPresent(sqliteDatabase)){
+        if (!TeacherDao.isTeacherPresent(sqliteDatabase)) {
             SharedPreferences.Editor editr = sharedPref.edit();
             editr.putInt("newly_updated", 1);
             editr.apply();
@@ -84,17 +87,17 @@ public class LoginActivity extends BaseActivity {
 
         int apkUpdate = sharedPref.getInt("apk_update", 0);
         int newlyUpdated = sharedPref.getInt("newly_updated", 0);
-        if(apkUpdate == 1){
+        if (apkUpdate == 1) {
             Intent i = new Intent(this, in.principal.activity.UpdateApk.class);
             startActivity(i);
             AnimationUtils.activityEnter(this);
-        }else if(newlyUpdated == 1){
+        } else if (newlyUpdated == 1) {
             Intent i = new Intent(this, in.principal.activity.MasterAuthentication.class);
             startActivity(i);
         }
 
         int bootSync = sharedPref.getInt("boot_sync", 0);
-        if(bootSync == 1){
+        if (bootSync == 1) {
             Intent service = new Intent(this, in.principal.adapter.SyncService.class);
             startService(service);
             SharedPreferenceUtil.updateBootSync(this, 0);
@@ -188,15 +191,15 @@ public class LoginActivity extends BaseActivity {
         }
     }
 
-    public void syncClicked(View v){
-        if(NetworkUtils.isNetworkConnected(context)){
+    public void syncClicked(View v) {
+        if (NetworkUtils.isNetworkConnected(context)) {
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putInt("manual_sync", 1);
             editor.putInt("is_sync", 1);
             editor.apply();
             Intent intent = new Intent(this, ProcessFiles.class);
             startActivity(intent);
-        }else{
+        } else {
             CommonDialogUtils.displayAlertWhiteDialog(this, "Please check the internet connection");
         }
     }
@@ -315,23 +318,23 @@ public class LoginActivity extends BaseActivity {
     @Override
     public void onBackPressed() {
         File sd = Environment.getExternalStorageDirectory();
-		File data = Environment.getDataDirectory();
-		FileChannel source=null;
-		FileChannel destination=null;
-		String currentDBPath = "/data/"+ "in.principal.activity" +"/databases/principal.db";
-		String backupDBPath = "principal";
-		File currentDB = new File(data, currentDBPath);
-		File backupDB = new File(sd, backupDBPath);
-		try {
-			source = new FileInputStream(currentDB).getChannel();
-			destination = new FileOutputStream(backupDB).getChannel();
-			destination.transferFrom(source, 0, source.size());
-			source.close();
-			destination.close();
-			Toast.makeText(this, "DB Exported!", Toast.LENGTH_LONG).show();
-		} catch(IOException e) {
-			e.printStackTrace();
-		}
+        File data = Environment.getDataDirectory();
+        FileChannel source = null;
+        FileChannel destination = null;
+        String currentDBPath = "/data/" + "in.principal.activity" + "/databases/principal.db";
+        String backupDBPath = "principal";
+        File currentDB = new File(data, currentDBPath);
+        File backupDB = new File(sd, backupDBPath);
+        try {
+            source = new FileInputStream(currentDB).getChannel();
+            destination = new FileOutputStream(backupDB).getChannel();
+            destination.transferFrom(source, 0, source.size());
+            source.close();
+            destination.close();
+            Toast.makeText(this, "DB Exported!", Toast.LENGTH_LONG).show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

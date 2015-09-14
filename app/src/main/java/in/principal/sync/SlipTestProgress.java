@@ -17,6 +17,10 @@ import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 
+/**
+ * Created by vinkrish.
+ */
+
 public class SlipTestProgress {
     private Context context;
     private SqlDbHelper sqlHandler;

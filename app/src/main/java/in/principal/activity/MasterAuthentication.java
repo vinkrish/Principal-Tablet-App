@@ -19,6 +19,10 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ * Created by vinkrish.
+ */
+
 public class MasterAuthentication extends BaseActivity {
     private TextView adminUser, adminPass, deviceId;
     private boolean tvflag, authflag;
@@ -45,7 +49,7 @@ public class MasterAuthentication extends BaseActivity {
         }
     }
 
-    private void init(){
+    private void init() {
         adminUser = (TextView) findViewById(R.id.adminUserName);
         adminPass = (TextView) findViewById(R.id.adminPassword);
         deviceId = (TextView) findViewById(R.id.deviceId);
@@ -56,7 +60,7 @@ public class MasterAuthentication extends BaseActivity {
         initializeButton();
     }
 
-    private void initializeButton(){
+    private void initializeButton() {
         int[] buttonIds = {R.id.num1, R.id.num2, R.id.num3, R.id.num4, R.id.num5, R.id.num6, R.id.num7, R.id.num8, R.id.num9, R.id.num0};
         for (int i = 0; i < 10; i++) {
             Button b = (Button) findViewById(buttonIds[i]);

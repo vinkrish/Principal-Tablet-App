@@ -50,6 +50,10 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+/**
+ * Created by vinkrish.
+ */
+
 @SuppressLint("UseSparseArrays")
 public class AttendanceClass extends Fragment {
     private Context context;
@@ -307,7 +311,8 @@ public class AttendanceClass extends Fragment {
                 if (GregorianCalendar.getInstance().get(Calendar.YEAR) < cal.get(Calendar.YEAR)) {
                     CommonDialogUtils.displayAlertWhiteDialog(act, "Selected future date !");
                 } else if (GregorianCalendar.getInstance().get(Calendar.DAY_OF_MONTH) < cal.get(Calendar.DAY_OF_MONTH) &&
-                        GregorianCalendar.getInstance().get(Calendar.MONTH) <= cal.get(Calendar.MONTH) && GregorianCalendar.getInstance().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
+                        GregorianCalendar.getInstance().get(Calendar.MONTH) <= cal.get(Calendar.MONTH)
+                        && GregorianCalendar.getInstance().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
                     CommonDialogUtils.displayAlertWhiteDialog(act, "Selected future date !");
                 } else if (Calendar.SUNDAY == cal.get(Calendar.DAY_OF_WEEK)) {
                     CommonDialogUtils.displayAlertWhiteDialog(act, "Sundays are not working days");
@@ -330,7 +335,7 @@ public class AttendanceClass extends Fragment {
             this.context = context;
             this.resource = resource;
             this.data = listArray;
-            inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
 
         @Override
@@ -348,9 +353,7 @@ public class AttendanceClass extends Fragment {
                 holder.pb = (ProgressBar) row.findViewById(R.id.avgProgress);
                 holder.percentage = (TextView) row.findViewById(R.id.percent);
                 row.setTag(holder);
-            } else {
-                holder = (RecordHolder) row.getTag();
-            }
+            } else holder = (RecordHolder) row.getTag();
 
             if (position % 2 == 0) {
                 row.setBackgroundResource(R.drawable.list_selector1);

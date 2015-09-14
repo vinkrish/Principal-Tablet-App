@@ -12,7 +12,11 @@ import java.util.ArrayList;
 import in.principal.activity.R;
 import in.principal.sqlite.AdapterOverloaded;
 
-public class GradeAdapter extends ArrayAdapter<AdapterOverloaded>{
+/**
+ * Created by vinkrish.
+ */
+
+public class GradeAdapter extends ArrayAdapter<AdapterOverloaded> {
     private int resource;
     private ArrayList<AdapterOverloaded> data = new ArrayList<>();
     private LayoutInflater inflater = null;
@@ -21,7 +25,7 @@ public class GradeAdapter extends ArrayAdapter<AdapterOverloaded>{
         super(context, resource, listArray);
         this.resource = resource;
         this.data = listArray;
-        inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
@@ -29,18 +33,17 @@ public class GradeAdapter extends ArrayAdapter<AdapterOverloaded>{
         View row = convertView;
         RecordHolder holder;
 
-        if (row == null){
+        if (row == null) {
             row = inflater.inflate(resource, parent, false);
             holder = new RecordHolder();
             holder.text1 = (TextView) row.findViewById(R.id.txt1);
             holder.text2 = (TextView) row.findViewById(R.id.txt2);
             holder.text3 = (TextView) row.findViewById(R.id.txt3);
             row.setTag(holder);
-        }else{
-            holder = (RecordHolder) row.getTag();
-        }
+        } else holder = (RecordHolder) row.getTag();
 
-        if(position % 2 == 0)
+
+        if (position % 2 == 0)
             row.setBackgroundResource(R.drawable.list_selector1);
         else
             row.setBackgroundResource(R.drawable.list_selector2);
@@ -53,7 +56,7 @@ public class GradeAdapter extends ArrayAdapter<AdapterOverloaded>{
         return row;
     }
 
-    public static class RecordHolder{
+    public static class RecordHolder {
         public TextView text1;
         public TextView text2;
         public TextView text3;

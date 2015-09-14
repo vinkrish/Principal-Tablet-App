@@ -33,6 +33,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+/**
+ * Created by vinkrish.
+ */
 public class SearchStudAct extends Fragment {
     private Context context;
     private int studentId, sectionId, examId, subjectId;
@@ -188,12 +191,12 @@ public class SearchStudAct extends Fragment {
                 } else {
                     int avg = ActivitiDao.getStudActAvg(studentId, act.getActivityId(), sqliteDatabase);
                     avgList1.add(avg);
-                    if(avg == 0){
+                    if (avg == 0) {
                         scoreList.add("-");
-                    }else{
+                    } else {
                         int score = ActivityMarkDao.getStudActMark(studentId, act.getActivityId(), sqliteDatabase);
                         float maxScore = ActivitiDao.getActivityMaxMark(act.getActivityId(), sqliteDatabase);
-                        scoreList.add(score+"/"+maxScore);
+                        scoreList.add(score + "/" + maxScore);
                     }
                 }
             }

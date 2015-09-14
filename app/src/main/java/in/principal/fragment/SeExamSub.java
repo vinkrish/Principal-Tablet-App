@@ -43,6 +43,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
+/**
+ * Created by vinkrish.
+ */
 public class SeExamSub extends Fragment {
     private Context context;
     private int sectionId, examId;
@@ -249,7 +252,7 @@ public class SeExamSub extends Fragment {
             this.context = context;
             this.layoutResourceId = layoutResourceId;
             this.data = gridArray;
-            inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
 
         @Override

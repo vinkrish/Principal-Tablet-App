@@ -42,6 +42,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
+/**
+ * Created by vinkrish.
+ */
 public class PerfST extends Fragment {
     private Context context;
     private SQLiteDatabase sqliteDatabase;
@@ -422,12 +425,14 @@ public class PerfST extends Fragment {
         int layoutResourceId;
         ArrayList<DashObject> data = new ArrayList<>();
         protected ListView mListView;
+        private LayoutInflater inflater = null;
 
         public CircleAdapter2(Context context, int layoutResourceId, ArrayList<DashObject> gridArray) {
             super(context, layoutResourceId, gridArray);
             this.context = context;
             this.layoutResourceId = layoutResourceId;
             this.data = gridArray;
+            inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
 
         @Override
@@ -435,7 +440,6 @@ public class PerfST extends Fragment {
             View row = convertView;
             RecordHolder holder;
             if (row == null) {
-                LayoutInflater inflater = (LayoutInflater) context.getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 row = inflater.inflate(layoutResourceId, parent, false);
 
                 holder = new RecordHolder();

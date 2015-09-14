@@ -39,6 +39,10 @@ import in.principal.util.Constants;
 import in.principal.util.NetworkUtils;
 import in.principal.util.Util;
 
+/**
+ * Created by vinkrish.
+ */
+
 public class UpdateApk extends BaseActivity {
     private SharedPreferences sharedPref;
     private ProgressDialog pDialog;
@@ -54,14 +58,13 @@ public class UpdateApk extends BaseActivity {
         apkFolder = sharedPref.getString("apk_folder", "v1.2");
     }
 
-    public void updateClicked(View v){
+    public void updateClicked(View v) {
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt("is_sync", 1);
         editor.apply();
 
-        if(NetworkUtils.isNetworkConnected(UpdateApk.this)){
+        if (NetworkUtils.isNetworkConnected(UpdateApk.this))
             new ApkDownloadTask(this.getApplicationContext(), "principal.zip").execute();
-        }
     }
 
     @SuppressWarnings("deprecation")
@@ -73,7 +76,7 @@ public class UpdateApk extends BaseActivity {
 
         public ApkDownloadTask(Context context, String fName) {
             this.context = context;
-            this.fileName = "download/"+apkFolder +"/"+ fName;
+            this.fileName = "download/" + apkFolder + "/" + fName;
         }
 
         protected void onPreExecute() {
@@ -96,7 +99,7 @@ public class UpdateApk extends BaseActivity {
             while (!downloadCompleted)
                 Log.d("download", "...");
 
-            if(!exception)
+            if (!exception)
                 unZipIt("principal.zip");
 
             return null;
@@ -107,7 +110,7 @@ public class UpdateApk extends BaseActivity {
             super.onPostExecute(s);
             pDialog.dismiss();
 
-            if(!exception){
+            if (!exception) {
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putInt("apk_update", 0);
                 editor.apply();
@@ -173,13 +176,16 @@ public class UpdateApk extends BaseActivity {
             }
 
             @Override
-            public void abort() {}
+            public void abort() {
+            }
 
             @Override
-            public void pause() {}
+            public void pause() {
+            }
 
             @Override
-            public void resume() {}
+            public void resume() {
+            }
         }
 
     }
@@ -218,7 +224,7 @@ public class UpdateApk extends BaseActivity {
     }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
 
     }
 

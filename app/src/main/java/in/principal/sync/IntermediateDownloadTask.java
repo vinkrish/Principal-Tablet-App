@@ -35,6 +35,10 @@ import android.os.AsyncTask;
 import android.os.Environment;
 import android.util.Log;
 
+/**
+ * Created by vinkrish.
+ */
+
 @SuppressWarnings("deprecation")
 public class IntermediateDownloadTask extends AsyncTask<String, String, String> implements StringConstant {
     private TransferManager mTransferManager;

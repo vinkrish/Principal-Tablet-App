@@ -28,7 +28,10 @@ import in.principal.sqlite.Temp;
 import in.principal.util.AppGlobal;
 import in.principal.util.ReplaceFragment;
 
-public class SeSubActStudGrade extends Fragment{
+/**
+ * Created by vinkrish.
+ */
+public class SeSubActStudGrade extends Fragment {
     private Context context;
     private int subActivityId;
     private SQLiteDatabase sqliteDatabase;
@@ -52,18 +55,18 @@ public class SeSubActStudGrade extends Fragment{
         //	sectionId = t.getSectionId();
         String className = t.getClassName();
         String secName = t.getSectionName();
-        int teacherId= t.getTeacherId();
+        int teacherId = t.getTeacherId();
         int examId = t.getExamId();
         //	activityId = t.getActivityId();
         subActivityId = t.getSubActivityId();
 
         String examName = ExamsDao.selectExamName(examId, sqliteDatabase);
 
-        Button perfClas = (Button)view.findViewById(R.id.seClass);
-        perfClas.setText("Class "+className);
-        Button perfSe = (Button)view.findViewById(R.id.seSec);
-        perfSe.setText("Section "+secName);
-        Button SeBut = (Button)view.findViewById(R.id.se);
+        Button perfClas = (Button) view.findViewById(R.id.seClass);
+        perfClas.setText("Class " + className);
+        Button perfSe = (Button) view.findViewById(R.id.seSec);
+        perfSe.setText("Section " + secName);
+        Button SeBut = (Button) view.findViewById(R.id.se);
         SeBut.setText(examName);
         SeBut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,17 +75,16 @@ public class SeSubActStudGrade extends Fragment{
             }
         });
 
-        Button SeSubActBut = (Button)view.findViewById(R.id.seActSubAct);
+        Button SeSubActBut = (Button) view.findViewById(R.id.seActSubAct);
         String subact = SubActivityDao.selectSubActivityName(subActivityId, sqliteDatabase);
-        if(subact.length()>20){
-            SeSubActBut.setText(subact.substring(0, 21));
-        }else{
-            SeSubActBut.setText(subact);
-        }
-        TextView subj = (TextView)view.findViewById(R.id.subinfo);
+
+        if (subact.length() > 20) SeSubActBut.setText(subact.substring(0, 21));
+        else SeSubActBut.setText(subact);
+
+        TextView subj = (TextView) view.findViewById(R.id.subinfo);
         subj.setText(SubjectsDao.getSubjectName(subjectId, sqliteDatabase));
 
-        TextView teacher = (TextView)view.findViewById(R.id.teacherinfo);
+        TextView teacher = (TextView) view.findViewById(R.id.teacherinfo);
         teacher.setText(Capitalize.capitalThis(TeacherDao.getTeacherName(teacherId, sqliteDatabase)));
 
         populateListView();
@@ -90,11 +92,11 @@ public class SeSubActStudGrade extends Fragment{
         return view;
     }
 
-    private void populateListView(){
+    private void populateListView() {
         Cursor c = sqliteDatabase.rawQuery("select A.StudentId, A.RollNoInClass, A.Name, B.Grade from students A, subactivitygrade B, subactivity C where " +
-                "A.StudentId=B.StudentId and B.SubActivityId="+subActivityId+" and B.SubActivityId=C.SubActivityId order by A.RollNoInClass", null);
+                "A.StudentId=B.StudentId and B.SubActivityId=" + subActivityId + " and B.SubActivityId=C.SubActivityId order by A.RollNoInClass", null);
         c.moveToFirst();
-        while(!c.isAfterLast()){
+        while (!c.isAfterLast()) {
             rollNoList.add(c.getInt(c.getColumnIndex("RollNoInClass")));
             nameList.add(c.getString(c.getColumnIndex("Name")));
             gradeList.add(c.getString(c.getColumnIndex("Grade")));

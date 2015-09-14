@@ -35,6 +35,10 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
+/**
+ * Created by vinkrish.
+ */
+
 public class LockActivity extends BaseActivity implements StringConstant {
     private ProgressDialog pDialog;
     private Button butSend, butRefresh;
@@ -86,7 +90,7 @@ public class LockActivity extends BaseActivity implements StringConstant {
     }
 
     public void sendClicked(View view) {
-        if(NetworkUtils.isNetworkConnected(LockActivity.this)){
+        if (NetworkUtils.isNetworkConnected(LockActivity.this)) {
             new SendLocked().execute();
         }
     }

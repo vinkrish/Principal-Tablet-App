@@ -11,13 +11,17 @@ import android.widget.TextView;
 
 import in.principal.activity.R;
 
+/**
+ * Created by vinkrish.
+ */
+
 public class CommonDialogUtils {
     public static Dialog displayAlertWhiteDialog(Activity activity, String dialogBody) {
         final Dialog dialog = new Dialog(activity, R.style.DialogSlideAnim);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.white_ok_popup_dialog);
-        if(dialogBody != null)
+        if (dialogBody != null)
             ((TextView) dialog.findViewById(R.id.alertText)).setText(dialogBody);
         ((Button) dialog.findViewById(R.id.ok_button)).setOnClickListener(new View.OnClickListener() {
 

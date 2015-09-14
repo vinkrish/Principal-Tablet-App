@@ -40,6 +40,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
+/**
+ * Created by vinkrish.
+ */
 public class SeSubStud extends Fragment {
     private Context context;
     private int subjectId, sectionId, teacherId, examId, good, averag, improve, maximumMark;
@@ -231,13 +234,9 @@ public class SeSubStud extends Fragment {
         scoreTv.setText("Score (" + maximumMark + ")");
 
         for (Integer i : progressList) {
-            if (i >= 75) {
-                good += 1;
-            } else if (i >= 50) {
-                averag += 1;
-            } else {
-                improve += 1;
-            }
+            if (i >= 75) good += 1;
+            else if (i >= 50) averag += 1;
+            else improve += 1;
         }
 
         dashArrayGrid1.add(new DashObject(0, "", ""));
@@ -430,15 +429,11 @@ public class SeSubStud extends Fragment {
 
             if (row == null) {
                 row = inflater.inflate(layoutResourceId, parent, false);
-
                 holder = new RecordHolder();
                 holder.outOf = (TextView) row.findViewById(R.id.text1);
                 holder.str = (TextView) row.findViewById(R.id.text2);
                 row.setTag(holder);
-
-            } else {
-                holder = (RecordHolder) row.getTag();
-            }
+            } else holder = (RecordHolder) row.getTag();
 
             DashObject gridItem = data.get(position);
             holder.outOf.setText(gridItem.getOutOf());

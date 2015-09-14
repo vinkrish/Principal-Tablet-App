@@ -17,6 +17,10 @@ import android.net.NetworkInfo;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 
+/**
+ * Created by vinkrish.
+ */
+
 public class SyncServiceReceiver extends BroadcastReceiver {
     @SuppressWarnings("deprecation")
     @Override

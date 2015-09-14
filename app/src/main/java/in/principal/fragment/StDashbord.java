@@ -47,6 +47,9 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
+/**
+ * Created by vinkrish.
+ */
 public class StDashbord extends Fragment {
     private Context context;
     private Activity act;
@@ -118,7 +121,7 @@ public class StDashbord extends Fragment {
         dateTV.setText(dateSelected);
 
         List<Clas> clasList = ClasDao.selectClas(sqliteDatabase);
-        for(Clas c: clasList){
+        for (Clas c : clasList) {
             classIdList.add(c.getClassId());
             classNameList.add(c.getClassName());
         }
@@ -467,7 +470,6 @@ public class StDashbord extends Fragment {
 
             if (row == null) {
                 row = inflater.inflate(resource, parent, false);
-
                 holder = new RecordHolder();
                 holder.tv1 = (TextView) row.findViewById(R.id.li_txt1);
                 holder.tv2 = (TextView) row.findViewById(R.id.li_txt2);
@@ -476,14 +478,12 @@ public class StDashbord extends Fragment {
                 holder.pb = (ProgressBar) row.findViewById(R.id.avgProgress);
                 holder.percentage = (TextView) row.findViewById(R.id.percent);
                 row.setTag(holder);
-            } else {
-                holder = (RecordHolder) row.getTag();
-            }
-            if (position % 2 == 0) {
+            } else holder = (RecordHolder) row.getTag();
+
+            if (position % 2 == 0)
                 row.setBackgroundResource(R.drawable.list_selector1);
-            } else {
+            else
                 row.setBackgroundResource(R.drawable.list_selector2);
-            }
 
             AdapterOverloaded listItem = data.get(position);
             holder.tv1.setText(listItem.getText1());

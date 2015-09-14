@@ -37,158 +37,160 @@ import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+/**
+ * Created by vinkrish.
+ */
 public class Performance extends Fragment {
-	private Context context;
-	private SQLiteDatabase sqliteDatabase;
-	private List<Clas> clasList = new ArrayList<>();
-	private static List<Integer> classIdList = new ArrayList<>();
-	private List<String> classNameList = new ArrayList<>();
-	List<LayoutParams> lp = new ArrayList<>();
-	final Map<Object,Object> m = new HashMap<>();
-	private ArrayList<CircleObject> circleArrayGrid = new ArrayList<>();
-	private CircleAdapter cA;
+    private Context context;
+    private SQLiteDatabase sqliteDatabase;
+    private List<Clas> clasList = new ArrayList<>();
+    private static List<Integer> classIdList = new ArrayList<>();
+    private List<String> classNameList = new ArrayList<>();
+    List<LayoutParams> lp = new ArrayList<>();
+    final Map<Object, Object> m = new HashMap<>();
+    private ArrayList<CircleObject> circleArrayGrid = new ArrayList<>();
+    private CircleAdapter cA;
 
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState){
-		View view = inflater.inflate(R.layout.performance, container, false);
-		context = AppGlobal.getContext();
-		sqliteDatabase = AppGlobal.getSqliteDatabase();
-		GridView gridView = (GridView) view.findViewById(R.id.gridView);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.performance, container, false);
+        context = AppGlobal.getContext();
+        sqliteDatabase = AppGlobal.getSqliteDatabase();
+        GridView gridView = (GridView) view.findViewById(R.id.gridView);
 
-		clearList();
+        clearList();
 
-		clasList = ClasDao.selectClas(sqliteDatabase);
-		for(Clas c: clasList){
-			classIdList.add(c.getClassId());
-			classNameList.add(c.getClassName());
-			int avg = StAvgDao.stClassAvg(c.getClassId(), sqliteDatabase);
-			circleArrayGrid.add(new CircleObject(avg, PKGenerator.trim(0, 6, c.getClassName())));
-		}
-		cA = new CircleAdapter(context, R.layout.circle_grid, circleArrayGrid);
-		gridView.setAdapter(cA);
-		
-		return view;
-	}
+        clasList = ClasDao.selectClas(sqliteDatabase);
+        for (Clas c : clasList) {
+            classIdList.add(c.getClassId());
+            classNameList.add(c.getClassName());
+            int avg = StAvgDao.stClassAvg(c.getClassId(), sqliteDatabase);
+            circleArrayGrid.add(new CircleObject(avg, PKGenerator.trim(0, 6, c.getClassName())));
+        }
+        cA = new CircleAdapter(context, R.layout.circle_grid, circleArrayGrid);
+        gridView.setAdapter(cA);
 
-	private void clearList(){
-		circleArrayGrid.clear();
-		clasList.clear();
-		classIdList.clear();
-		classNameList.clear();
-		lp.clear();
-	}
-	
-	public class CircleAdapter extends ArrayAdapter<CircleObject> {
-		Context context;
-		int layoutResourceId;
-		ArrayList<CircleObject>	data = new ArrayList<>();
-		protected ListView mListView;
+        return view;
+    }
 
-		public CircleAdapter(Context context, int layoutResourceId,ArrayList<CircleObject> gridArray) {
-			super(context, layoutResourceId, gridArray);
-			this.context = context;
-			this.layoutResourceId = layoutResourceId;
-			this.data = gridArray;
-		}
+    private void clearList() {
+        circleArrayGrid.clear();
+        clasList.clear();
+        classIdList.clear();
+        classNameList.clear();
+        lp.clear();
+    }
 
-		@Override
-		public View getView(final int position, View convertView, ViewGroup parent) {
-			View row = convertView;
-			RecordHolder holder;
+    public class CircleAdapter extends ArrayAdapter<CircleObject> {
+        Context context;
+        int layoutResourceId;
+        ArrayList<CircleObject> data = new ArrayList<>();
+        protected ListView mListView;
+        private LayoutInflater inflater = null;
 
-			if (row == null) {
-				LayoutInflater inflater = (LayoutInflater)context.getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-				row = inflater.inflate(layoutResourceId, parent, false);
+        public CircleAdapter(Context context, int layoutResourceId, ArrayList<CircleObject> gridArray) {
+            super(context, layoutResourceId, gridArray);
+            this.context = context;
+            this.layoutResourceId = layoutResourceId;
+            this.data = gridArray;
+            inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        }
 
-				holder = new RecordHolder();
-				holder.clasTxt = (TextView) row.findViewById(R.id.clas);
-				row.setTag(holder);
+        @Override
+        public View getView(final int position, View convertView, ViewGroup parent) {
+            View row = convertView;
+            RecordHolder holder;
 
-			} else {
-				holder = (RecordHolder) row.getTag();
-			}
-			
-			FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-			FrameLayout fl = (FrameLayout)row.findViewById(R.id.fl);
+            if (row == null) {
+                row = inflater.inflate(layoutResourceId, parent, false);
 
-			CircleObject gridItem = data.get(position);
-			holder.clasTxt.setText(gridItem.getClas());
-			SampleView sV = new SampleView(context, gridItem.getProgressInt());
-			fl.addView(sV,layoutParams);
-			
-			sV.setOnClickListener(new OnClickListener() {	
-				@Override
-				public void onClick(View v) {
-					viewClickListener(position);
-				}
-			});
-			return row;
-		}
+                holder = new RecordHolder();
+                holder.clasTxt = (TextView) row.findViewById(R.id.clas);
+                row.setTag(holder);
+            } else holder = (RecordHolder) row.getTag();
 
-		public class RecordHolder {
-			TextView clasTxt;
-		}
+            FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+            FrameLayout fl = (FrameLayout) row.findViewById(R.id.fl);
 
-		private class SampleView extends View {
-			Paint p,defaultPaint;
-			RectF rectF;
-			int localInt;
-			public SampleView(Context context, int i) {
-				super(context);
-				setFocusable(true);
-				localInt = i;
-				init();
-			}
+            CircleObject gridItem = data.get(position);
+            holder.clasTxt.setText(gridItem.getClas());
+            SampleView sV = new SampleView(context, gridItem.getProgressInt());
+            fl.addView(sV, layoutParams);
 
-			public void init(){
-				p = new Paint();
-				defaultPaint = new Paint();
-				defaultPaint.setAntiAlias(true);
-				defaultPaint.setStyle(Paint.Style.STROKE); 
-				defaultPaint.setStrokeWidth(9);
-				Resources res = getResources();
-				int defalt = res.getColor(R.color.defalt);
-				defaultPaint.setColor(defalt);
-				rectF = new RectF(10, 10, 110, 110);
-			}
+            sV.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    viewClickListener(position);
+                }
+            });
+            return row;
+        }
 
-			@Override
-			protected void onDraw(Canvas canvas) {
-				p.setAntiAlias(true);
-				p.setStyle(Paint.Style.STROKE); 
-				p.setStrokeWidth(9);
+        public class RecordHolder {
+            TextView clasTxt;
+        }
 
-				if(localInt>=270){
-					p.setColor(getResources().getColor(R.color.green));
-				}else if(localInt>=180){
-					p.setColor(getResources().getColor(R.color.orange));
-				}else if(localInt>0){
-					p.setColor(getResources().getColor(R.color.red));
-				}
-				canvas.drawArc (rectF, 0, 360, false, defaultPaint);
-				canvas.drawArc (rectF, 270, Float.parseFloat(localInt+""), false, p);
-			}
+        private class SampleView extends View {
+            Paint p, defaultPaint;
+            RectF rectF;
+            int localInt;
 
-		}
+            public SampleView(Context context, int i) {
+                super(context);
+                setFocusable(true);
+                localInt = i;
+                init();
+            }
 
-	}
-	
-	public void viewClickListener(int position){
-		Clas c = clasList.get(position);
-		Temp t = new Temp();
-		t.setClassId(c.getClassId());
-		t.setClassName(c.getClassName());
-		TempDao.updateClass(t, sqliteDatabase);
-		List<Section> secList = SectionDao.selectSection(c.getClassId(), sqliteDatabase);
-		for(Section s: secList){
-			Temp t2 = new Temp();
-			t2.setSectionId(s.getSectionId());
-			t2.setSectionName(s.getSectionName());
-			TempDao.updateSection(t2, sqliteDatabase);
-			break;
-		}
-		ReplaceFragment.replace(new PerfClass(), getFragmentManager());
-	}
+            public void init() {
+                p = new Paint();
+                defaultPaint = new Paint();
+                defaultPaint.setAntiAlias(true);
+                defaultPaint.setStyle(Paint.Style.STROKE);
+                defaultPaint.setStrokeWidth(9);
+                Resources res = getResources();
+                int defalt = res.getColor(R.color.defalt);
+                defaultPaint.setColor(defalt);
+                rectF = new RectF(10, 10, 110, 110);
+            }
+
+            @Override
+            protected void onDraw(Canvas canvas) {
+                p.setAntiAlias(true);
+                p.setStyle(Paint.Style.STROKE);
+                p.setStrokeWidth(9);
+
+                if (localInt >= 270) {
+                    p.setColor(getResources().getColor(R.color.green));
+                } else if (localInt >= 180) {
+                    p.setColor(getResources().getColor(R.color.orange));
+                } else if (localInt > 0) {
+                    p.setColor(getResources().getColor(R.color.red));
+                }
+                canvas.drawArc(rectF, 0, 360, false, defaultPaint);
+                canvas.drawArc(rectF, 270, Float.parseFloat(localInt + ""), false, p);
+            }
+
+        }
+
+    }
+
+    public void viewClickListener(int position) {
+        Clas c = clasList.get(position);
+        Temp t = new Temp();
+        t.setClassId(c.getClassId());
+        t.setClassName(c.getClassName());
+        TempDao.updateClass(t, sqliteDatabase);
+        List<Section> secList = SectionDao.selectSection(c.getClassId(), sqliteDatabase);
+        for (Section s : secList) {
+            Temp t2 = new Temp();
+            t2.setSectionId(s.getSectionId());
+            t2.setSectionName(s.getSectionName());
+            TempDao.updateSection(t2, sqliteDatabase);
+            break;
+        }
+        ReplaceFragment.replace(new PerfClass(), getFragmentManager());
+    }
 
 }

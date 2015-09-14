@@ -72,6 +72,10 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
+/**
+ * Created by vinkrish.
+ */
+
 @SuppressWarnings("deprecation")
 @SuppressLint("ClickableViewAccessibility")
 public class TextSms extends Fragment implements StringConstant {
@@ -340,15 +344,15 @@ public class TextSms extends Fragment implements StringConstant {
     public class ClassSelectionClickHandler implements DialogInterface.OnMultiChoiceClickListener {
         public void onClick(DialogInterface dialog, int clicked, boolean selected) {
             boolean b = false;
-            if(selected) b = true;
-            if(sectionSpinner.isShown()){
-                for(int i=0; i<classSelections.length; i++){
+            if (selected) b = true;
+            if (sectionSpinner.isShown()) {
+                for (int i = 0; i < classSelections.length; i++) {
                     classSelections[i] = false;
                 }
                 dialog.dismiss();
                 classSelections[clicked] = b;
                 showClassDialog();
-            }else {
+            } else {
                 if (selected) classSelections[clicked] = true;
                 else classSelections[clicked] = false;
             }
@@ -430,15 +434,15 @@ public class TextSms extends Fragment implements StringConstant {
     public class SectionSelectionClickHandler implements DialogInterface.OnMultiChoiceClickListener {
         public void onClick(DialogInterface dialog, int clicked, boolean selected) {
             boolean b = false;
-            if(selected) b = true;
-            if(studentSpinner.isShown()){
-                for(int i=0; i<sectionSelections.length; i++){
+            if (selected) b = true;
+            if (studentSpinner.isShown()) {
+                for (int i = 0; i < sectionSelections.length; i++) {
                     sectionSelections[i] = false;
                 }
                 dialog.dismiss();
                 sectionSelections[clicked] = b;
                 showSectionDialog();
-            }else{
+            } else {
                 if (selected) sectionSelections[clicked] = true;
                 else sectionSelections[clicked] = false;
             }

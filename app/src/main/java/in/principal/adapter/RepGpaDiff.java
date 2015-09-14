@@ -18,6 +18,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+/**
+ * Created by vinkrish.
+ */
+
 public class RepGpaDiff extends ArrayAdapter<ReportSub> {
     int resource;
     Context context;
@@ -51,9 +55,8 @@ public class RepGpaDiff extends ArrayAdapter<ReportSub> {
             holder.txt3 = (TextView) row.findViewById(R.id.txt3);
             holder.pb = (ProgressBar) row.findViewById(R.id.avgProgress);
             row.setTag(holder);
-        } else {
+        } else
             holder = (RecordHolder) row.getTag();
-        }
 
         if (position % 2 == 0) {
             row.setBackgroundColor(Color.rgb(255, 255, 255));

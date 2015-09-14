@@ -54,6 +54,9 @@ import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Toast;
 
+/**
+ * Created by vinkrish.
+ */
 public class SeSubAct extends Fragment {
     private Context context;
     private SQLiteDatabase sqliteDatabase;
@@ -66,8 +69,8 @@ public class SeSubAct extends Fragment {
     private List<Integer> avgList = new ArrayList<>();
     private List<Activiti> activitiList = new ArrayList<>();
     private List<AdapterOverloaded> amrList = new ArrayList<>();
-    private final Map<Object,Object> mi1 = new HashMap<>();
-    private final Map<Object,Object> mi2 = new HashMap<>();
+    private final Map<Object, Object> mi1 = new HashMap<>();
+    private final Map<Object, Object> mi2 = new HashMap<>();
     private AssAdapter amrAdapter;
     private List<SubActivity> subActivitiList = new ArrayList<>();
     private CircleAdapter cA;
@@ -160,11 +163,11 @@ public class SeSubAct extends Fragment {
                 if (subActivitiList.size() != 0) {
                     ReplaceFragment.replace(new SeActSubAct(), getFragmentManager());
                 } else {
-                    Boolean b1 = (Boolean)mi1.get(actIdList.get(pos));
-                    Boolean b2 = (Boolean)mi2.get(actIdList.get(pos));
-                    if(b1!=null && b1)
+                    Boolean b1 = (Boolean) mi1.get(actIdList.get(pos));
+                    Boolean b2 = (Boolean) mi2.get(actIdList.get(pos));
+                    if (b1 != null && b1)
                         ReplaceFragment.replace(new SeActStud(), getFragmentManager());
-                    else if(b2!=null && b2)
+                    else if (b2 != null && b2)
                         ReplaceFragment.replace(new SeActStudGrade(), getFragmentManager());
                     else Toast.makeText(context, "Data not entered", Toast.LENGTH_SHORT).show();
                 }
@@ -224,9 +227,9 @@ public class SeSubAct extends Fragment {
             int i = (int) (((double) at.getActivityAvg() / (double) 360) * 100);
             avgList.add(i);
             int markEntry = ActivityMarkDao.isThereActMark(at.getActivityId(), subjectId, sqliteDatabase);
-            if(markEntry == 1) mi1.put(at.getActivityId(), true);
+            if (markEntry == 1) mi1.put(at.getActivityId(), true);
             int gradeEntry = ActivityMarkDao.isThereActGrade(at.getActivityId(), subjectId, sqliteDatabase);
-            if(gradeEntry ==  1) mi2.put(at.getActivityId(), true);
+            if (gradeEntry == 1) mi2.put(at.getActivityId(), true);
         }
 
         for (int i = 0; i < actIdList.size(); i++) {
@@ -250,7 +253,7 @@ public class SeSubAct extends Fragment {
             this.context = context;
             this.layoutResourceId = layoutResourceId;
             this.data = gridArray;
-            inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
 
         @Override
@@ -260,14 +263,11 @@ public class SeSubAct extends Fragment {
 
             if (row == null) {
                 row = inflater.inflate(layoutResourceId, parent, false);
-
                 holder = new RecordHolder();
                 holder.secTxtBlack = (TextView) row.findViewById(R.id.sectionBlack);
                 holder.secTxtWhite = (TextView) row.findViewById(R.id.sectionWhite);
                 row.setTag(holder);
-            } else {
-                holder = (RecordHolder) row.getTag();
-            }
+            } else holder = (RecordHolder) row.getTag();
 
             FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
             FrameLayout fl = (FrameLayout) row.findViewById(R.id.fl);

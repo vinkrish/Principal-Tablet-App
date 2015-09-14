@@ -31,9 +31,10 @@ import in.principal.sqlite.Temp;
 import in.principal.util.AppGlobal;
 import in.principal.util.ReplaceFragment;
 
-
-public class SearchStudSubAct extends Fragment{
-
+/**
+ * Created by vinkrish.
+ */
+public class SearchStudSubAct extends Fragment {
     private Context context;
     private int studentId, examId, subjectId, activityId;
     private String studentName, className, secName, examName, subjectName, activityName;
@@ -64,7 +65,7 @@ public class SearchStudSubAct extends Fragment{
 
         examBut = (Button) view.findViewById(R.id.examSubButton);
         subBut = (Button) view.findViewById(R.id.examSubActButton);
-        actBut = (Button)view.findViewById(R.id.examSubActiButton);
+        actBut = (Button) view.findViewById(R.id.examSubActiButton);
         studTV = (TextView) view.findViewById(R.id.studName);
         clasSecTV = (TextView) view.findViewById(R.id.studClasSec);
 
@@ -165,12 +166,12 @@ public class SearchStudSubAct extends Fragment{
             for (SubActivity subact : subActList) {
                 int avg = SubActivityMarkDao.getStudSubActAvg(studentId, subact.getSubActivityId(), sqliteDatabase);
                 avgList1.add(avg);
-                if(avg == 0){
+                if (avg == 0) {
                     scoreList.add("-");
-                }else{
-                    int score = SubActivityMarkDao.getStudSubActMark(studentId,subact.getSubActivityId(), sqliteDatabase);
+                } else {
+                    int score = SubActivityMarkDao.getStudSubActMark(studentId, subact.getSubActivityId(), sqliteDatabase);
                     float maxScore = SubActivityDao.getSubActMaxMark(subact.getSubActivityId(), sqliteDatabase);
-                    scoreList.add(score+"/"+maxScore);
+                    scoreList.add(score + "/" + maxScore);
                 }
             }
             for (SubActivity at : subActList) {
@@ -201,7 +202,6 @@ public class SearchStudSubAct extends Fragment{
             pDialog.dismiss();
         }
     }
-
 
 
 }

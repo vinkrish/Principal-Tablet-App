@@ -51,6 +51,9 @@ import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Toast;
 
+/**
+ * Created by vinkrish.
+ */
 public class SeActSubAct extends Fragment {
     private Context context;
     private SQLiteDatabase sqliteDatabase;
@@ -154,7 +157,7 @@ public class SeActSubAct extends Fragment {
                 Boolean b2 = (Boolean) mi2.get(subActIdList.get(pos));
                 if (b1 != null && b1)
                     ReplaceFragment.replace(new SeSubActStud(), getFragmentManager());
-                else if(b2 != null && b2)
+                else if (b2 != null && b2)
                     ReplaceFragment.replace(new SeSubActStudGrade(), getFragmentManager());
                 else Toast.makeText(context, "Data not entered", Toast.LENGTH_SHORT).show();
             }
@@ -243,14 +246,11 @@ public class SeActSubAct extends Fragment {
 
             if (row == null) {
                 row = inflater.inflate(layoutResourceId, parent, false);
-
                 holder = new RecordHolder();
                 holder.secTxtBlack = (TextView) row.findViewById(R.id.sectionBlack);
                 holder.secTxtWhite = (TextView) row.findViewById(R.id.sectionWhite);
                 row.setTag(holder);
-            } else {
-                holder = (RecordHolder) row.getTag();
-            }
+            } else holder = (RecordHolder) row.getTag();
 
             FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
             FrameLayout fl = (FrameLayout) row.findViewById(R.id.fl);
