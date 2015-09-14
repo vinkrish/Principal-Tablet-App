@@ -71,6 +71,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 /**
  * Created by vinkrish.
@@ -81,9 +82,11 @@ import android.widget.LinearLayout;
 public class TextSms extends Fragment implements StringConstant {
     private SQLiteDatabase sqliteDatabase;
     private Button allStudentsBtn, allTeachersBtn, classBtn, sectionBtn, studentBtn, submitBtn, allClassTeachersBtn;
-    private FrameLayout allStudentsFrame, allTeachersFrame, allClassTeachersFrame;
+    private Button allMaleStudBtn, allFemaleStudBtn, allMaleTeacherBtn, allFemaleTeacherBtn;
+    private FrameLayout studentTeacherFrame;
     private LinearLayout selectionFrame;
     private EditText classSpinner, sectionSpinner, studentSpinner, textSms;
+    private TextView studentTeacherContext;
     private int classId, sectionId, principalId, schoolId;
     private ArrayList<Clas> clasList;
     private ArrayList<Section> secList;
@@ -99,7 +102,7 @@ public class TextSms extends Fragment implements StringConstant {
     protected boolean[] sectionSelections;
     protected boolean[] studentSelections;
 
-    private String ids, zipName, deviceId, messageTo;
+    private String ids, zipName, deviceId;
     private int target;
     private ProgressDialog progressBar;
 
@@ -117,17 +120,20 @@ public class TextSms extends Fragment implements StringConstant {
         appContext = AppGlobal.getContext();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
 
+        studentTeacherContext = (TextView) view.findViewById(R.id.stud_teacher_context);
         allStudentsBtn = (Button) view.findViewById(R.id.allStudents);
+        allMaleStudBtn = (Button) view.findViewById(R.id.all_male_students);
+        allFemaleStudBtn = (Button) view.findViewById(R.id.all_female_students);
         allTeachersBtn = (Button) view.findViewById(R.id.allTeachers);
+        allMaleTeacherBtn = (Button) view.findViewById(R.id.all_male_teachers);
+        allFemaleTeacherBtn = (Button) view.findViewById(R.id.all_female_teachers);
         classBtn = (Button) view.findViewById(R.id.clas);
         sectionBtn = (Button) view.findViewById(R.id.sec);
         studentBtn = (Button) view.findViewById(R.id.stud);
         submitBtn = (Button) view.findViewById(R.id.submit);
         allClassTeachersBtn = (Button) view.findViewById(R.id.classTeachers);
 
-        allStudentsFrame = (FrameLayout) view.findViewById(R.id.allStudentsFrame);
-        allTeachersFrame = (FrameLayout) view.findViewById(R.id.allTeachersFrame);
-        allClassTeachersFrame = (FrameLayout) view.findViewById(R.id.allClassTeachersFrame);
+        studentTeacherFrame = (FrameLayout) view.findViewById(R.id.studentTeacherFrame);
         selectionFrame = (LinearLayout) view.findViewById(R.id.selectionFrame);
 
         classSpinner = (EditText) view.findViewById(R.id.classSpinner);
@@ -157,8 +163,33 @@ public class TextSms extends Fragment implements StringConstant {
                 deActivate();
                 v.setActivated(true);
                 submitBtn.setEnabled(true);
-                allStudentsFrame.setVisibility(View.VISIBLE);
+                studentTeacherFrame.setVisibility(View.VISIBLE);
+                studentTeacherContext.setText(getResources().getText(R.string.all_students_mes));
                 target = 0;
+            }
+        });
+
+        allMaleStudBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deActivate();
+                v.setActivated(true);
+                submitBtn.setEnabled(true);
+                studentTeacherFrame.setVisibility(View.VISIBLE);
+                studentTeacherContext.setText(getResources().getText(R.string.all_male_stud_mes));
+                target = 6;
+            }
+        });
+
+        allFemaleStudBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deActivate();
+                v.setActivated(true);
+                submitBtn.setEnabled(true);
+                studentTeacherFrame.setVisibility(View.VISIBLE);
+                studentTeacherContext.setText(getResources().getText(R.string.all_female_stud_mes));
+                target = 7;
             }
         });
 
@@ -168,8 +199,33 @@ public class TextSms extends Fragment implements StringConstant {
                 deActivate();
                 v.setActivated(true);
                 submitBtn.setEnabled(true);
-                allTeachersFrame.setVisibility(View.VISIBLE);
+                studentTeacherFrame.setVisibility(View.VISIBLE);
+                studentTeacherContext.setText(getResources().getText(R.string.all_teachers_mes));
                 target = 1;
+            }
+        });
+
+        allMaleTeacherBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deActivate();
+                v.setActivated(true);
+                submitBtn.setEnabled(true);
+                studentTeacherFrame.setVisibility(View.VISIBLE);
+                studentTeacherContext.setText(getResources().getText(R.string.all_male_teachers_mes));
+                target = 8;
+            }
+        });
+
+        allFemaleTeacherBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deActivate();
+                v.setActivated(true);
+                submitBtn.setEnabled(true);
+                studentTeacherFrame.setVisibility(View.VISIBLE);
+                studentTeacherContext.setText(getResources().getText(R.string.all_female_teachers_mes));
+                target = 9;
             }
         });
 
@@ -179,7 +235,8 @@ public class TextSms extends Fragment implements StringConstant {
                 deActivate();
                 v.setActivated(true);
                 submitBtn.setEnabled(true);
-                allClassTeachersFrame.setVisibility(View.VISIBLE);
+                studentTeacherFrame.setVisibility(View.VISIBLE);
+                studentTeacherContext.setText(getResources().getText(R.string.all_class_teacher_mes));
                 target = 5;
             }
         });
@@ -326,9 +383,7 @@ public class TextSms extends Fragment implements StringConstant {
         sectionBtn.setActivated(false);
         studentBtn.setActivated(false);
         submitBtn.setEnabled(false);
-        allStudentsFrame.setVisibility(View.GONE);
-        allTeachersFrame.setVisibility(View.GONE);
-        allClassTeachersFrame.setVisibility(View.GONE);
+        studentTeacherFrame.setVisibility(View.GONE);
         selectionFrame.setVisibility(View.GONE);
     }
 
@@ -629,61 +684,100 @@ public class TextSms extends Fragment implements StringConstant {
     }
 
     private void prepareIds() {
-        if (target == 0) {
-            messageTo = "All Students";
-            Cursor c = sqliteDatabase.rawQuery("select Mobile1 from students", null);
-            c.moveToFirst();
-            while (!c.isAfterLast()) {
-                idList.add(c.getLong(c.getColumnIndex("Mobile1")));
-                c.moveToNext();
-            }
-            c.close();
-        } else if (target == 1) {
-            messageTo = "All Teachers";
-            Cursor c = sqliteDatabase.rawQuery("select Mobile from teacher", null);
-            c.moveToFirst();
-            while (!c.isAfterLast()) {
-                idList.add(c.getLong(c.getColumnIndex("Mobile")));
-                c.moveToNext();
-            }
-            c.close();
-        } else if (target == 5) {
-            messageTo = "All Class Teachers";
-            Cursor c = sqliteDatabase.rawQuery("select Mobile from teacher where TeacherId in (select ClassTeacherId from section)", null);
-            c.moveToFirst();
-            while (!c.isAfterLast()) {
-                idList.add(c.getLong(c.getColumnIndex("Mobile")));
-                c.moveToNext();
-            }
-            c.close();
-        } else if (target == 2) {
-            messageTo = "Class";
-            Cursor c = sqliteDatabase.rawQuery("select Mobile1 from students where ClassId in (" + ids + ")", null);
-            c.moveToFirst();
-            while (!c.isAfterLast()) {
-                idList.add(c.getLong(c.getColumnIndex("Mobile1")));
-                c.moveToNext();
-            }
-            c.close();
-        } else if (target == 3) {
-            messageTo = "Section";
-            Cursor c = sqliteDatabase.rawQuery("select Mobile1 from students where SectionId in (" + ids + ")", null);
-            c.moveToFirst();
-            while (!c.isAfterLast()) {
-                idList.add(c.getLong(c.getColumnIndex("Mobile1")));
-                c.moveToNext();
-            }
-            c.close();
-        } else if (target == 4) {
-            messageTo = "Student";
-
-            Cursor c = sqliteDatabase.rawQuery("select Mobile1 from students where StudentId in (" + ids + ")", null);
-            c.moveToFirst();
-            while (!c.isAfterLast()) {
-                idList.add(c.getLong(c.getColumnIndex("Mobile1")));
-                c.moveToNext();
-            }
-            c.close();
+        Cursor c;
+        switch(target) {
+            case 0:
+                c = sqliteDatabase.rawQuery("select Mobile1 from students", null);
+                c.moveToFirst();
+                while (!c.isAfterLast()) {
+                    idList.add(c.getLong(c.getColumnIndex("Mobile1")));
+                    c.moveToNext();
+                }
+                c.close();
+                break;
+            case 1:
+                c = sqliteDatabase.rawQuery("select Mobile from teacher", null);
+                c.moveToFirst();
+                while (!c.isAfterLast()) {
+                    idList.add(c.getLong(c.getColumnIndex("Mobile")));
+                    c.moveToNext();
+                }
+                c.close();
+                break;
+            case 2:
+                c = sqliteDatabase.rawQuery("select Mobile1 from students where ClassId in (" + ids + ")", null);
+                c.moveToFirst();
+                while (!c.isAfterLast()) {
+                    idList.add(c.getLong(c.getColumnIndex("Mobile1")));
+                    c.moveToNext();
+                }
+                c.close();
+                break;
+            case 3:
+                c = sqliteDatabase.rawQuery("select Mobile1 from students where SectionId in (" + ids + ")", null);
+                c.moveToFirst();
+                while (!c.isAfterLast()) {
+                    idList.add(c.getLong(c.getColumnIndex("Mobile1")));
+                    c.moveToNext();
+                }
+                c.close();
+                break;
+            case 4:
+                c = sqliteDatabase.rawQuery("select Mobile1 from students where StudentId in (" + ids + ")", null);
+                c.moveToFirst();
+                while (!c.isAfterLast()) {
+                    idList.add(c.getLong(c.getColumnIndex("Mobile1")));
+                    c.moveToNext();
+                }
+                c.close();
+                break;
+            case 5:
+                c = sqliteDatabase.rawQuery("select Mobile from teacher where TeacherId in (select ClassTeacherId from section)", null);
+                c.moveToFirst();
+                while (!c.isAfterLast()) {
+                    idList.add(c.getLong(c.getColumnIndex("Mobile")));
+                    c.moveToNext();
+                }
+                c.close();
+                break;
+            case 6:
+                c = sqliteDatabase.rawQuery("select Mobile1 from students where Gender = 'M'", null);
+                c.moveToFirst();
+                while (!c.isAfterLast()) {
+                    idList.add(c.getLong(c.getColumnIndex("Mobile1")));
+                    c.moveToNext();
+                }
+                c.close();
+                break;
+            case 7:
+                c = sqliteDatabase.rawQuery("select Mobile1 from students where Gender = 'F'", null);
+                c.moveToFirst();
+                while (!c.isAfterLast()) {
+                    idList.add(c.getLong(c.getColumnIndex("Mobile1")));
+                    c.moveToNext();
+                }
+                c.close();
+                break;
+            case 8:
+                c = sqliteDatabase.rawQuery("select Mobile from teacher where Gender = 'M'", null);
+                c.moveToFirst();
+                while (!c.isAfterLast()) {
+                    idList.add(c.getLong(c.getColumnIndex("Mobile")));
+                    c.moveToNext();
+                }
+                c.close();
+                break;
+            case 9:
+                c = sqliteDatabase.rawQuery("select Mobile from teacher where Gender = 'F'", null);
+                c.moveToFirst();
+                while (!c.isAfterLast()) {
+                    idList.add(c.getLong(c.getColumnIndex("Mobile")));
+                    c.moveToNext();
+                }
+                c.close();
+                break;
+            default:
+                break;
         }
     }
 

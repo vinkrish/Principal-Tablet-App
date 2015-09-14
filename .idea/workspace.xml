@@ -34,117 +34,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dd412a1-fe86-408d-97d5-a54291544eea" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/PerformerSort.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/ActivityProgress.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/ActivityProgress.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/AmrAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/AmrAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/util/AnimationUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/util/AnimationUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/util/AppGlobal.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/util/AppGlobal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/AsecAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/AsecAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/AssAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/AssAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/AttGraph.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/AttGraph.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/Attendance.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/Attendance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/AttendanceClass.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/AttendanceClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/AttendanceSection.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/AttendanceSection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/AttendanceStudent.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/AttendanceStudent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/activity/BaseActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/activity/BaseActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/BootSync.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/BootSync.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/CallFTP.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/CallFTP.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/Capitalize.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/Capitalize.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CoScholastic.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CoScholastic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/util/CommonDialogUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/util/CommonDialogUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/CompList1.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/CompList1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/CompList2.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/CompList2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeClassSec.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeClassSec.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeExam.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeExam.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeExamSub.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeExamSub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeSecSub.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeSecSub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeSubAct.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeSubAct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/CustomAlertAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/CustomAlertAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/util/CustomSort.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/util/CustomSort.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/DashAdapt1.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/DashAdapt1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/DashAdapt2.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/DashAdapt2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/DashAttendance.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/DashAttendance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/activity/Dashboard.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/activity/Dashboard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/Dashbord.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/Dashbord.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/util/DateTrackerModel.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/util/DateTrackerModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/DownloadModelTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/DownloadModelTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/ExamProgress.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/ExamProgress.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/util/ExceptionHandler.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/util/ExceptionHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/FirstTimeSync.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/FirstTimeSync.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/FirstTimeSyncParser.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/FirstTimeSyncParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/GradeAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/GradeAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/HomeworkView.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/HomeworkView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/HwClasSec.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/HwClasSec.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/IntermediateDownloadTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/IntermediateDownloadTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/activity/LockActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/activity/LockActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/activity/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/activity/LoginActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/activity/MasterAuthentication.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/activity/MasterAuthentication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/MonthlyReport.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/MonthlyReport.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/MonthlyReportClass.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/MonthlyReportClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/MonthlyReportSection.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/MonthlyReportSection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/MonthlyReportStud.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/MonthlyReportStud.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/NavDrawerListAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/NavDrawerListAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/util/NetworkUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/util/NetworkUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/util/PKGenerator.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/util/PKGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/PerfClass.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/PerfClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/PerfST.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/PerfST.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/PerfSecSub.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/PerfSecSub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/PerfStAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/PerfStAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/PerfStStud.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/PerfStStud.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/Performance.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/Performance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/activity/ProcessFiles.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/activity/ProcessFiles.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/RecordedVoiceSms.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/RecordedVoiceSms.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/RepGenComp.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/RepGenComp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/RepGpaDiff.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/RepGpaDiff.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/util/ReplaceFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/util/ReplaceFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/ReportGeneration.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/ReportGeneration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/activity/Restart.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/activity/Restart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeActStud.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeActStud.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeActStudGrade.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeActStudGrade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeActSubAct.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeActSubAct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeClassSec.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeClassSec.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeExam.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeExam.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeExamSub.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeExamSub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeSecSub.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeSecSub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeSubAct.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeSubAct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeSubActStud.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeSubActStud.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeSubActStudGrade.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeSubActStudGrade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeSubStud.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeSubStud.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeSubStudGrade.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeSubStudGrade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/SearchStAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/SearchStAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudAct.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudAct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudAtt.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudAtt.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudExam.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudExam.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudExamSub.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudExamSub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudST.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudST.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudSTSub.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudSTSub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudSubAct.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SearchStudSubAct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/activity/ServerBlock.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/activity/ServerBlock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/util/SharedPreferenceUtil.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/util/SharedPreferenceUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/SlipTestProgress.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/SlipTestProgress.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/SssAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/SssAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StDashbord.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StDashbord.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StReport.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StReport.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/StSearchAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/StSearchAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/StSecSub.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/StSecSub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StructuredExam.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StructuredExam.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/StudActAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/StudActAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/StudExamAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/StudExamAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/StudExamSubAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/StudExamSubAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StudentClassSec.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StudentClassSec.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StudentList.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StudentList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/SubActivityProgress.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/SubActivityProgress.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/SyncService.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/SyncService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/SyncServiceReceiver.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/adapter/SyncServiceReceiver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/TextSms.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/TextSms.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/TextSmsSent.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/TextSmsSent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/activity/UpdateApk.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/activity/UpdateApk.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/UploadError.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/UploadError.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/UploadSyncParser.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/sync/UploadSyncParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/UploadVoiceSms.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/UploadVoiceSms.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/util/Util.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/util/Util.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/ViewCCSGrade.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/ViewCCSGrade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/VoiceSms.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/VoiceSms.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/text_sms.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/text_sms.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Principal.iws" />
@@ -173,104 +65,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SeSubStud.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeSubStud.java">
+      <file leaf-file-name="TextSms.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/TextSms.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="430" column="72" selection-start-line="430" selection-start-column="72" selection-end-line="430" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SeSubStudGrade.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/SeSubStudGrade.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="3" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StDashbord.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StDashbord.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="482" column="34" selection-start-line="482" selection-start-column="34" selection-end-line="482" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StudentClassSec.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StudentClassSec.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="153" column="12" selection-start-line="153" selection-start-column="12" selection-end-line="153" selection-end-column="98" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StructuredExam.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StructuredExam.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="92" column="72" selection-start-line="92" selection-start-column="72" selection-end-line="92" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TextSmsSent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/TextSmsSent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="84" column="64" selection-start-line="84" selection-start-column="64" selection-end-line="84" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StReport.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StReport.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="28" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UploadVoiceSms.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/UploadVoiceSms.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="64" column="3" selection-start-line="64" selection-start-column="3" selection-end-line="64" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.4526749">
+              <caret line="661" column="43" selection-start-line="661" selection-start-column="43" selection-end-line="661" selection-end-column="43" />
               <folding>
-                <element signature="e#2066#2098#0" expanded="true" />
+                <element signature="e#6230#6649#0" expanded="true" />
+                <element signature="e#6546#6595#0" expanded="true" />
+                <element signature="e#6648#6649#0" expanded="true" />
+                <element signature="e#6695#7115#0" expanded="true" />
+                <element signature="e#7011#7061#0" expanded="true" />
+                <element signature="e#7114#7115#0" expanded="true" />
+                <element signature="e#7163#7585#0" expanded="true" />
+                <element signature="e#7479#7531#0" expanded="true" />
+                <element signature="e#7584#7585#0" expanded="true" />
+                <element signature="e#7631#8050#0" expanded="true" />
+                <element signature="e#7947#7996#0" expanded="true" />
+                <element signature="e#8049#8050#0" expanded="true" />
+                <element signature="e#8099#8523#0" expanded="true" />
+                <element signature="e#8415#8469#0" expanded="true" />
+                <element signature="e#8522#8523#0" expanded="true" />
+                <element signature="e#8574#9000#0" expanded="true" />
+                <element signature="e#8890#8946#0" expanded="true" />
+                <element signature="e#8999#9000#0" expanded="true" />
+                <element signature="e#9367#9421#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ViewCCSGrade.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/ViewCCSGrade.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="3" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VoiceSms.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/VoiceSms.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12345679">
-              <caret line="269" column="38" selection-start-line="269" selection-start-column="38" selection-end-line="269" selection-end-column="38" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -1718,8 +1538,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/AttendanceStudent.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeClassSec.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeExamSub.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeExam.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeSecSub.java" />
@@ -1763,12 +1581,14 @@
         <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StudentClassSec.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StructuredExam.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StudentList.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/TextSms.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/TextSmsSent.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StReport.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/UploadVoiceSms.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/ViewCCSGrade.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/VoiceSms.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/text_sms.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/principal/fragment/TextSms.java" />
       </list>
     </option>
   </component>
@@ -1826,6 +1646,38 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Principal" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Principal" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2442,7 +2294,13 @@
       <option name="project" value="LOCAL" />
       <updated>1441808057068</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="generating Created by ${USER} on old files - prior to Android Studio">
+      <created>1442219594289</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1442219594289</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2451,6 +2309,7 @@
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3989432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2471,7 +2330,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37648612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2482,7 +2340,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixing error in alert dialog with animation" />
     <MESSAGE value="wakelock in SyncServiceReceiver is handled by different thread." />
     <MESSAGE value="amazon s3 unable to resolve host exception added" />
     <MESSAGE value="alert with animation replaces simple alert dialog" />
@@ -2507,7 +2364,8 @@
     <MESSAGE value="dependencies updated from Yosemite clone" />
     <MESSAGE value="apk download redirected to folder with appropriate released version" />
     <MESSAGE value="at v1.2 release, retain escape character in text sms" />
-    <option name="LAST_COMMIT_MESSAGE" value="at v1.2 release, retain escape character in text sms" />
+    <MESSAGE value="generating Created by ${USER} on old files - prior to Android Studio" />
+    <option name="LAST_COMMIT_MESSAGE" value="generating Created by ${USER} on old files - prior to Android Studio" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2516,22 +2374,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/AttendanceClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="337" column="12" selection-start-line="337" selection-start-column="12" selection-end-line="337" selection-end-column="98" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeClassSec.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="317" column="12" selection-start-line="317" selection-start-column="12" selection-end-line="317" selection-end-column="98" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/CompSeExamSub.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2561,7 +2403,7 @@
         <state vertical-scroll-proportion="-5.4609056">
           <caret line="44" column="42" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
           <folding>
-            <element signature="e#1407#1434#0" expanded="true" />
+            <element signature="e#1407#1434#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2854,14 +2696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/TextSms.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="76" column="3" selection-start-line="76" selection-start-column="3" selection-end-line="76" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/StudentList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.4814815">
@@ -2907,7 +2741,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="64" column="3" selection-start-line="64" selection-start-column="3" selection-end-line="64" selection-end-column="3" />
           <folding>
-            <element signature="e#2066#2098#0" expanded="true" />
+            <element signature="e#2066#2098#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2925,6 +2759,69 @@
         <state vertical-scroll-proportion="0.12345679">
           <caret line="269" column="38" selection-start-line="269" selection-start-column="38" selection-end-line="269" selection-end-column="38" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.7222223">
+          <caret line="75" column="49" selection-start-line="75" selection-start-column="49" selection-end-line="75" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/text_sms.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8471429">
+          <caret line="121" column="20" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="20" />
+          <folding>
+            <element signature="e#912#924#0" expanded="true" />
+            <element signature="e#1626#1639#0" expanded="true" />
+            <element signature="e#3085#3103#0" expanded="true" />
+            <element signature="e#3619#3641#0" expanded="true" />
+            <element signature="e#4080#4107#0" expanded="true" />
+            <element signature="e#4548#4577#0" expanded="true" />
+            <element signature="e#5010#5032#0" expanded="true" />
+            <element signature="e#5471#5498#0" expanded="true" />
+            <element signature="e#5939#5968#0" expanded="true" />
+            <element signature="e#6403#6431#0" expanded="true" />
+            <element signature="e#6862#6876#0" expanded="true" />
+            <element signature="e#7301#7318#0" expanded="true" />
+            <element signature="e#7744#7761#0" expanded="true" />
+            <element signature="e#8187#8205#0" expanded="true" />
+            <element signature="e#8776#8792#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/principal/fragment/TextSms.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4526749">
+          <caret line="661" column="43" selection-start-line="661" selection-start-column="43" selection-end-line="661" selection-end-column="43" />
+          <folding>
+            <element signature="e#6230#6649#0" expanded="true" />
+            <element signature="e#6546#6595#0" expanded="true" />
+            <element signature="e#6648#6649#0" expanded="true" />
+            <element signature="e#6695#7115#0" expanded="true" />
+            <element signature="e#7011#7061#0" expanded="true" />
+            <element signature="e#7114#7115#0" expanded="true" />
+            <element signature="e#7163#7585#0" expanded="true" />
+            <element signature="e#7479#7531#0" expanded="true" />
+            <element signature="e#7584#7585#0" expanded="true" />
+            <element signature="e#7631#8050#0" expanded="true" />
+            <element signature="e#7947#7996#0" expanded="true" />
+            <element signature="e#8049#8050#0" expanded="true" />
+            <element signature="e#8099#8523#0" expanded="true" />
+            <element signature="e#8415#8469#0" expanded="true" />
+            <element signature="e#8522#8523#0" expanded="true" />
+            <element signature="e#8574#9000#0" expanded="true" />
+            <element signature="e#8890#8946#0" expanded="true" />
+            <element signature="e#8999#9000#0" expanded="true" />
+            <element signature="e#9367#9421#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
