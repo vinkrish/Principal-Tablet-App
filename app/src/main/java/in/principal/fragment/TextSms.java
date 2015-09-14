@@ -377,7 +377,11 @@ public class TextSms extends Fragment implements StringConstant {
 
     private void deActivate() {
         allStudentsBtn.setActivated(false);
+        allMaleStudBtn.setActivated(false);
+        allFemaleStudBtn.setActivated(false);
         allTeachersBtn.setActivated(false);
+        allMaleTeacherBtn.setActivated(false);
+        allFemaleTeacherBtn.setActivated(false);
         allClassTeachersBtn.setActivated(false);
         classBtn.setActivated(false);
         sectionBtn.setActivated(false);

@@ -80,6 +80,14 @@
     <string name="aim">Attendance information for the month</string>
     <string name="all_class_teacher_mes">Recorded message will be sent to all class teachers</string>
     <string name="all_class_teachers">All Class Teachers</string>
+    <string name="all_female_stud_mes">Recorded message will be sent to all female students.</string>
+    <string name="all_female_students">All Female Students</string>
+    <string name="all_female_teachers">All Female Teachers</string>
+    <string name="all_female_teachers_mes">Recorded message will be sent to all female teachers.</string>
+    <string name="all_male_stud_mes">Recorded message will be sent to all male students.</string>
+    <string name="all_male_students">All Male Students</string>
+    <string name="all_male_teachers">All Male Teachers</string>
+    <string name="all_male_teachers_mes">Recorded message will be sent to all male teachers.</string>
     <string name="all_students">All Students</string>
     <string name="all_students_mes">Recorded message will be sent to all students.</string>
     <string name="all_teachers">All Teachers</string>
@@ -213,7 +221,7 @@
     <string name="update_apk_wifi">*tab should be in wifi zone.</string>
     <string name="upload">Upload</string>
     <string name="username">Username</string>
-    <string name="version">Version - 1.2</string>
+    <string name="version">Version - 1.3</string>
     <string name="view_exam">View Exams</string>
     <string name="view_sub">View Subjects</string>
     <string name="voice_sms">Voice SMS</string>

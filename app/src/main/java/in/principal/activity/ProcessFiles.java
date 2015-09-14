@@ -80,7 +80,7 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
 
         sharedPref = getSharedPreferences("db_access", Context.MODE_PRIVATE);
         manualSync = sharedPref.getInt("manual_sync", 0);
-        savedVersion = sharedPref.getString("saved_version", "v1.2");
+        savedVersion = sharedPref.getString("saved_version", "v1.3");
 
         new ProcessedFiles().execute();
     }

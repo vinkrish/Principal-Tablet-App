@@ -55,7 +55,7 @@ public class UpdateApk extends BaseActivity {
         pDialog = new ProgressDialog(this);
 
         sharedPref = getSharedPreferences("db_access", Context.MODE_PRIVATE);
-        apkFolder = sharedPref.getString("apk_folder", "v1.2");
+        apkFolder = sharedPref.getString("apk_folder", "v1.3");
     }
 
     public void updateClicked(View v) {
