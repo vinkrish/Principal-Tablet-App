@@ -38,6 +38,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -260,10 +261,9 @@ public class CompSeSecSub extends Fragment {
 
             if (row == null) {
                 row = inflater.inflate(layoutResourceId, parent, false);
-
                 holder = new RecordHolder();
                 holder.secTxtBlack = (TextView) row.findViewById(R.id.sectionBlack);
-                holder.secTxtWhite = (TextView) row.findViewById(R.id.sectionWhite);
+                holder.ll = (LinearLayout) row.findViewById(R.id.sec_grid);
                 row.setTag(holder);
             } else holder = (RecordHolder) row.getTag();
 
@@ -272,16 +272,13 @@ public class CompSeSecSub extends Fragment {
 
             Circle gridItem = data.get(position);
             SampleView sV = new SampleView(context, gridItem.getProgressInt(), gridItem.isSelected());
+            holder.secTxtBlack.setText(gridItem.getSec());
             if (gridItem.isSelected()) {
-                holder.secTxtBlack.setVisibility(View.GONE);
-                holder.secTxtWhite.setText(gridItem.getSec());
-            } else {
-                holder.secTxtWhite.setVisibility(View.GONE);
-                holder.secTxtBlack.setText(gridItem.getSec());
+                holder.ll.setActivated(true);
             }
             fl.addView(sV, layoutParams);
 
-            sV.setOnClickListener(new OnClickListener() {
+            holder.ll.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     int sectionId = secIdList.get(position);
@@ -300,7 +297,7 @@ public class CompSeSecSub extends Fragment {
 
         public class RecordHolder {
             TextView secTxtBlack;
-            TextView secTxtWhite;
+            LinearLayout ll;
         }
 
         private class SampleView extends View {
@@ -329,7 +326,7 @@ public class CompSeSecSub extends Fragment {
                 Resources res = getResources();
                 int defalt = res.getColor(R.color.defalt);
                 defaultPaint.setColor(defalt);
-                rectF = new RectF(10, 10, 90, 90);
+                rectF = new RectF(10, 15, 80, 85);
             }
 
             @Override
@@ -337,7 +334,6 @@ public class CompSeSecSub extends Fragment {
                 p.setAntiAlias(true);
                 p.setStyle(Paint.Style.STROKE);
                 p.setStrokeWidth(6);
-
 
                 if (localInt >= 270) {
                     p.setColor(getResources().getColor(R.color.green));
@@ -348,9 +344,6 @@ public class CompSeSecSub extends Fragment {
                 }
                 canvas.drawArc(rectF, 0, 360, false, defaultPaint);
                 canvas.drawArc(rectF, 270, Float.parseFloat(localInt + ""), false, p);
-                if (selected) {
-                    //	canvas.drawCircle(90, 65, 35, circlePaint);
-                }
             }
         }
     }

@@ -11,7 +11,6 @@ import android.os.AsyncTask;
 /**
  * Created by vinkrish.
  */
-
 public class SubActivityProgress {
     private Context context;
     private SQLiteDatabase sqliteDatabase;
@@ -37,7 +36,7 @@ public class SubActivityProgress {
             sqliteDatabase = AppGlobal.getSqliteDatabase();
 
             SubActivityDao.updateSubActivityAvg(sqliteDatabase);
-            SubActivityDao.checkSubActivityIsMark(sqliteDatabase);
+            //  SubActivityDao.checkSubActivityIsMark(sqliteDatabase);
             //	SubActivityDao.checkSubActivityMarkEmpty(sqliteDatabase);
 
             return null;

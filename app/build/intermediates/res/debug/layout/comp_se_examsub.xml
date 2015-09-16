@@ -85,15 +85,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/viewbelowbc"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_margin="10dp"
         android:gravity="center"
-        android:horizontalSpacing="20dp"
-        android:numColumns="4"
-        android:verticalSpacing="30dp"></GridView>
+        android:horizontalSpacing="10dp"
+        android:numColumns="3"
+        android:verticalSpacing="10dp">
+    </GridView>
 
     <LinearLayout
         android:id="@+id/comp_layout"

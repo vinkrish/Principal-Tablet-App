@@ -163,7 +163,6 @@ public class StudentClassSec extends Fragment {
                 row = inflater.inflate(layoutResourceId, parent, false);
                 holder = new RecordHolder();
                 holder.secTxtBlack = (TextView) row.findViewById(R.id.sectionBlack);
-                holder.secTxtWhite = (TextView) row.findViewById(R.id.sectionWhite);
                 row.setTag(holder);
             } else holder = (RecordHolder) row.getTag();
 

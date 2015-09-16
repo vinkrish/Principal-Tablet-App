@@ -75,12 +75,14 @@ public class StructuredExam extends Fragment {
         int layoutResourceId;
         ArrayList<CircleObject> data = new ArrayList<>();
         protected ListView mListView;
+        private LayoutInflater inflater = null;
 
         public CircleAdapter(Context context, int layoutResourceId, ArrayList<CircleObject> gridArray) {
             super(context, layoutResourceId, gridArray);
             this.context = context;
             this.layoutResourceId = layoutResourceId;
             this.data = gridArray;
+            inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
 
         @Override
@@ -89,7 +91,6 @@ public class StructuredExam extends Fragment {
             RecordHolder holder;
 
             if (row == null) {
-                LayoutInflater inflater = (LayoutInflater) context.getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 row = inflater.inflate(layoutResourceId, parent, false);
                 holder = new RecordHolder();
                 holder.clasTxt = (TextView) row.findViewById(R.id.clas);
@@ -146,7 +147,6 @@ public class StructuredExam extends Fragment {
                 p.setAntiAlias(true);
                 p.setStyle(Paint.Style.STROKE);
                 p.setStrokeWidth(9);
-
                 if (localInt >= 270) {
                     p.setColor(getResources().getColor(R.color.green));
                 } else if (localInt >= 180) {

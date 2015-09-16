@@ -11,7 +11,6 @@ import android.os.AsyncTask;
 /**
  * Created by vinkrish.
  */
-
 public class ExamProgress {
     private Context context;
     private SQLiteDatabase sqliteDatabase;
@@ -40,13 +39,13 @@ public class ExamProgress {
             ExmAvgDao.insertExmActAvg(sqliteDatabase);
             ExmAvgDao.insertExmSubActAvg(sqliteDatabase);
 
-            ExmAvgDao.checkExamIsMark(sqliteDatabase);
+            //  ExmAvgDao.checkExamIsMark(sqliteDatabase);
             //	ExmAvgDao.checkExamMarkEmpty(sqliteDatabase);
 
-            ExmAvgDao.checkExmActIsMark(sqliteDatabase);
+            //  ExmAvgDao.checkExmActIsMark(sqliteDatabase);
             //	ExmAvgDao.checkExmActMarkEmpty(sqliteDatabase);
 
-            ExmAvgDao.checkExmSubActIsMark(sqliteDatabase);
+            //  ExmAvgDao.checkExmSubActIsMark(sqliteDatabase);
             //	ExmAvgDao.checkExmSubActMarkEmpty(sqliteDatabase);
 
             return null;

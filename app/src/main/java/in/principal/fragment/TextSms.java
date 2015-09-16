@@ -47,6 +47,7 @@ import in.principal.util.ReplaceFragment;
 import in.principal.util.Util;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -67,6 +68,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnTouchListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -80,6 +82,7 @@ import android.widget.TextView;
 @SuppressWarnings("deprecation")
 @SuppressLint("ClickableViewAccessibility")
 public class TextSms extends Fragment implements StringConstant {
+    private Activity act;
     private SQLiteDatabase sqliteDatabase;
     private Button allStudentsBtn, allTeachersBtn, classBtn, sectionBtn, studentBtn, submitBtn, allClassTeachersBtn;
     private Button allMaleStudBtn, allFemaleStudBtn, allMaleTeacherBtn, allFemaleTeacherBtn;
@@ -116,7 +119,7 @@ public class TextSms extends Fragment implements StringConstant {
         View view = inflater.inflate(R.layout.text_sms, container, false);
 
         initializeList();
-
+        act = AppGlobal.getActivity();
         appContext = AppGlobal.getContext();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
 
@@ -303,6 +306,7 @@ public class TextSms extends Fragment implements StringConstant {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                hideKeyboard();
                 idList.clear();
                 if (textSms.getText().toString().equals("")) {
                     CommonDialogUtils.displayAlertWhiteDialog(TextSms.this.getActivity(), "Please enter message to deliver");
@@ -333,6 +337,14 @@ public class TextSms extends Fragment implements StringConstant {
         classNameList = new ArrayList<>();
         secNameList = new ArrayList<>();
         studNameList = new ArrayList<>();
+    }
+
+    private void hideKeyboard() {
+        View view = act.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager inputManager = (InputMethodManager) act.getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputManager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+        }
     }
 
     private OnTouchListener classTouch = new OnTouchListener() {

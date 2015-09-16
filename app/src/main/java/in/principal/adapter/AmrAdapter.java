@@ -16,7 +16,6 @@ import android.widget.TextView;
 /**
  * Created by vinkrish.
  */
-
 public class AmrAdapter extends ArrayAdapter<AdapterOverloaded> {
     private int resource;
     private Context context;
