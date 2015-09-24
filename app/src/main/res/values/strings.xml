@@ -105,7 +105,7 @@
     <string name="week">Week</string>
     <string name="today_eval">Today\'s evaluations</string>
     <string name="yesterday_eval">Yesterday\'s evaluations</string>
-    <string name="search">Search</string>
+    <string name="search">Search Student</string>
     <string name="max_mark">Max Mark</string>
     <string name="score">Score</string>
     <string name="absent_count">Absent Count</string>

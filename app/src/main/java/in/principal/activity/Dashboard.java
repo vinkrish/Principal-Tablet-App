@@ -60,6 +60,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -68,7 +69,6 @@ import android.widget.ListView;
 /**
  * Created by vinkrish.
  */
-
 @SuppressLint("InflateParams")
 @SuppressWarnings("deprecation")
 public class Dashboard extends BaseActivity {
@@ -239,8 +239,10 @@ public class Dashboard extends BaseActivity {
                 studIdList.clear();
                 studNameList.clear();
 
-                Cursor c = sqliteDatabase.rawQuery("select A.StudentId, A.Name, B.ClassName,C.SectionName from students A, Class B, Section C where B.ClassId=A.ClassId and "
-                        + "C.SectionId=A.SectionId group by A.StudentId", null);
+                Cursor c = sqliteDatabase.rawQuery("select A.StudentId, A.Name, B.ClassName,C.SectionName " +
+                        "from students A, Class B, Section C " +
+                        "where B.ClassId=A.ClassId and C.SectionId=A.SectionId " +
+                        "group by A.StudentId", null);
                 c.moveToFirst();
                 while (!c.isAfterLast()) {
                     studIdList.add(c.getInt(c.getColumnIndex("StudentId")));
@@ -267,7 +269,15 @@ public class Dashboard extends BaseActivity {
                     }
                 });
                 builder.setNegativeButton("Cancel", null);
-                builder.show();
+
+                AlertDialog dialog = builder.create();
+                dialog.getWindow().setGravity(Gravity.TOP);
+                WindowManager.LayoutParams layoutParams = dialog.getWindow().getAttributes();
+                layoutParams.y = 100; // top margin
+                dialog.getWindow().setAttributes(layoutParams);
+                dialog.show();
+
+                // builder.show();
                 return true;
             case R.id.action_logout:
                 finish();

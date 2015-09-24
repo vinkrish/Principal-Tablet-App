@@ -1,5 +1,8 @@
 package in.principal.sqlite;
 
+/**
+ * Created by vinkrish.
+ */
 public interface SqlConstant {
 
     public static String DATABASE_NAME = "principal.db";

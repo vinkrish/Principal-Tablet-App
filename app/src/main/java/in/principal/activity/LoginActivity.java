@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -41,7 +42,6 @@ import android.widget.Toast;
 /**
  * Created by vinkrish.
  */
-
 public class LoginActivity extends BaseActivity {
     private SQLiteDatabase sqliteDatabase;
     private Context context;
@@ -115,6 +115,19 @@ public class LoginActivity extends BaseActivity {
                     Intent i = new Intent(LoginActivity.this, in.principal.activity.MasterAuthentication.class);
                     startActivity(i);
                     AnimationUtils.activityEnter(LoginActivity.this);
+                }
+            });
+
+            findViewById(R.id.admin).setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    View image = findViewById(R.id.admin);
+                    ObjectAnimator anim
+                            = ObjectAnimator.ofFloat(image, "alpha",
+                            1.0f, 0.25f, 0.75f, 0.5f, 0.25f, 1.0f);
+                    anim.setDuration(4000);
+                    anim.start();
+                    return true;
                 }
             });
 

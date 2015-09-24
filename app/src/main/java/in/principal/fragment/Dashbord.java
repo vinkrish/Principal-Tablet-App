@@ -55,7 +55,6 @@ import android.widget.TextView;
 /**
  * Created by vinkrish.
  */
-
 @SuppressLint("UseSparseArrays")
 public class Dashbord extends Fragment {
     private Context context;
@@ -165,7 +164,7 @@ public class Dashbord extends Fragment {
     }
 
     private void updateView() {
-        List<Integer> secIdList = new ArrayList<Integer>();
+        List<Integer> secIdList = new ArrayList<>();
 
         Cursor cur = sqliteDatabase.rawQuery("select count(*) as count from section", null);
         cur.moveToFirst();
