@@ -21,7 +21,6 @@ import android.util.Log;
 /**
  * Created by vinkrish.
  */
-
 public class UploadError implements StringConstant {
     private SqlDbHelper sqlHandler;
     private SQLiteDatabase sqliteDatabase;
@@ -57,9 +56,9 @@ public class UploadError implements StringConstant {
             }
 
             try {
-                jsonReceived = UploadSyncParser.makePostRequest(logged, json);
-            } catch (SocketException e1) {
-                e1.printStackTrace();
+                jsonReceived = new JSONObject(RequestResponseHandler.reachServer(logged, json));
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
 
             try {

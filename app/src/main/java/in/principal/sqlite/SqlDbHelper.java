@@ -70,7 +70,6 @@ public class SqlDbHelper extends SQLiteOpenHelper implements SqlConstant {
                 + "ExamId, ExamId2, ActivityId, SubActivityId, SlipTestId, SelectedDate, SyncTime, IsSync) " +
                 "values(1,0,0,0,0,0,'A',0,0,0,0,0,0,0,0,'2014-1-1','Not Yet Synced',0)");
         db.execSQL("insert into datetracker(id, FirstDate, LastDate, NoOfDays, SelectedMonth) values(1,'','',0,0)");
-
         db.execSQL(HOMEWORK_TRIGGER);
         db.execSQL(MARKS_TRIGGER);
         db.execSQL(ACTIVITYMARK_TRIGGER);
@@ -81,6 +80,8 @@ public class SqlDbHelper extends SQLiteOpenHelper implements SqlConstant {
         db.execSQL(VOICE_CALL);
         db.execSQL(TEXT_SMS);
         db.execSQL(CREATE_SUB_GROUPS);
+        db.execSQL(CREATE_TIMETABLE);
+        db.execSQL(CREATE_TIMETABLE_TIMING);
     }
 
     @Override
@@ -125,6 +126,8 @@ public class SqlDbHelper extends SQLiteOpenHelper implements SqlConstant {
         db.execSQL("DROP TABLE IF EXISTS voicecall");
         db.execSQL("DROP TABLE IF EXISTS textsms");
         db.execSQL("DROP TABLE IF EXISTS subjects_groups");
+        db.execSQL("DROP TABLE IF EXISTS timetable");
+        db.execSQL("DROP TABLE IF EXISTS timetabletimings");
         onCreate(db);
     }
 

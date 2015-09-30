@@ -38,7 +38,6 @@ import android.util.Log;
 /**
  * Created by vinkrish.
  */
-
 @SuppressWarnings("deprecation")
 public class IntermediateDownloadTask extends AsyncTask<String, String, String> implements StringConstant {
     private TransferManager mTransferManager;
@@ -92,12 +91,10 @@ public class IntermediateDownloadTask extends AsyncTask<String, String, String> 
                     jsonObject.put("school", schoolId);
                     jsonObject.put("tab_id", deviceId);
                     jsonObject.put("file_name", "'" + sb.substring(0, sb.length() - 3) + "'");
-                    jsonReceived = UploadSyncParser.makePostRequest(update_downloaded_file, jsonObject);
+                    jsonReceived = new JSONObject(RequestResponseHandler.reachServer(update_downloaded_file, jsonObject));
                     if (jsonReceived.getInt(TAG_SUCCESS) == 1)
                         Log.d("update", "downloaded_file");
                 } catch (JSONException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }

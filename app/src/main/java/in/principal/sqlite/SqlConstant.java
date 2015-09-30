@@ -6,7 +6,7 @@ package in.principal.sqlite;
 public interface SqlConstant {
 
     public static String DATABASE_NAME = "principal.db";
-    public static int DATABASE_VERSION = 2;
+    public static int DATABASE_VERSION = 3;
 
     public static String CREATE_CLASS = "CREATE TABLE class(SchoolId INTEGER, ClassId INT DEFAULT 0,"
             + "ClassName TEXT, ClassType TEXT, DateTimeRecordInserted DATETIME, SubjectGroupIds TEXT)";
@@ -221,4 +221,10 @@ public interface SqlConstant {
     public static String VOICE_CALL = "CREATE TABLE voicecall(id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT, CustomName TEXT DEFAULT Voice_message, Date TEXT, MessageTo TEXT, Ids TEXT)";
 
     public static String TEXT_SMS = "CREATE TABLE textsms(Message TEXT, Date TEXT, MessageTo TEXT, Ids TEXT)";
+
+    public static String CREATE_TIMETABLE = "CREATE TABLE timetable(SchoolId INTEGER, ClassId INTEGER, SectionId INTEGER, DayId INTEGER, " +
+            "PeriodId INTEGER, SubjectId INTEGER, DateTimeRecordInserted DATETIME)";
+
+    public static String CREATE_TIMETABLE_TIMING = "CREATE TABLE timetabletimings(SchoolId INTEGER, ClassId INTEGER, Period INTEGER, " +
+            "FromTiming TEXT, ToTiming TEXT, DateTimeRecordInserted DATETIME)";
 }

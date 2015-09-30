@@ -7,7 +7,6 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.ConnectException;
 import java.util.ArrayList;
 
 import org.json.JSONException;
@@ -21,11 +20,10 @@ import in.principal.dao.StAvgDao;
 import in.principal.dao.SubActivityDao;
 import in.principal.dao.TempDao;
 import in.principal.sqlite.Temp;
-import in.principal.activity.ProcessFiles;
 import in.principal.sync.CallFTP;
 import in.principal.sync.FirstTimeSync;
+import in.principal.sync.RequestResponseHandler;
 import in.principal.sync.StringConstant;
-import in.principal.sync.UploadSyncParser;
 import in.principal.util.AppGlobal;
 import in.principal.util.ExceptionHandler;
 
@@ -48,7 +46,6 @@ import android.widget.TextView;
 /**
  * Created by vinkrish.
  */
-
 public class ProcessFiles extends BaseActivity implements StringConstant {
     private SqlDbHelper sqlHandler;
     private Context context;
@@ -181,13 +178,11 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
                         jsonObject.put("tab_id", deviceId);
                         jsonObject.put("file_name", "'" + sb.substring(0, sb.length() - 3) + "'");
                         jsonObject.put("version", savedVersion);
-                        jsonReceived = UploadSyncParser.makePostRequest(update_processed_file, jsonObject);
+                        jsonReceived = new JSONObject(RequestResponseHandler.reachServer(update_processed_file, jsonObject));
                         if (jsonReceived.getInt(TAG_SUCCESS) == 1) {
                             sqliteDatabase.execSQL("update downloadedfile set isack=1 where processed=1 and filename in ('" + sb.substring(0, sb.length() - 3) + "')");
                         }
                     } catch (JSONException e) {
-                        e.printStackTrace();
-                    } catch (ConnectException e) {
                         e.printStackTrace();
                     }
                 }

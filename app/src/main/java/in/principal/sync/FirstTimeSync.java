@@ -67,7 +67,7 @@ public class FirstTimeSync implements StringConstant {
             JSONObject ack_json = new JSONObject();
             try {
                 ack_json.put("tab_id", deviceId);
-                JSONObject jsonReceived = FirstTimeSyncParser.makePostRequest(request_first_time_sync, ack_json);
+                JSONObject jsonReceived = new JSONObject(RequestResponseHandler.reachServer(request_first_time_sync, ack_json));
                 block = jsonReceived.getInt(TAG_SUCCESS);
 
                 publishProgress("25");
@@ -82,8 +82,6 @@ public class FirstTimeSync implements StringConstant {
                 }
             } catch (JSONException e) {
                 zipFile = "";
-                e.printStackTrace();
-            } catch (IOException e) {
                 e.printStackTrace();
             }
 

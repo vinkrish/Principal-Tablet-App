@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 /**
  * Created by vinkrish.
  */
-
 public class SharedPreferenceUtil {
 
     public static void updateFirstSync(Context context, int i) {

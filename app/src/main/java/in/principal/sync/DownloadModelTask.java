@@ -125,13 +125,11 @@ public class DownloadModelTask extends AsyncTask<String, String, String> impleme
                     jsonObject.put("school", schoolId);
                     jsonObject.put("tab_id", deviceId);
                     jsonObject.put("file_name", "'" + f + "'");
-                    jsonReceived = FirstTimeSyncParser.makePostRequest(update_downloaded_file, jsonObject);
+                    jsonReceived = new JSONObject(RequestResponseHandler.reachServer(update_downloaded_file, jsonObject));
                     if (jsonReceived.getInt(TAG_SUCCESS) == 1) {
 
                     }
                 } catch (JSONException e) {
-                    e.printStackTrace();
-                } catch (ConnectException e) {
                     e.printStackTrace();
                 }
 
@@ -202,13 +200,11 @@ public class DownloadModelTask extends AsyncTask<String, String, String> impleme
                         jsonObject.put("tab_id", deviceId);
                         jsonObject.put("file_name", "'" + s + "'");
                         jsonObject.put("version", savedVersion);
-                        jsonReceived = FirstTimeSyncParser.makePostRequest(update_processed_file, jsonObject);
+                        jsonReceived = new JSONObject(RequestResponseHandler.reachServer(update_processed_file, jsonObject));
                         if (jsonReceived.getInt(TAG_SUCCESS) == 1) {
                             sqliteDatabase.execSQL("update downloadedfile set isack=1 where processed=1 and filename='" + s + "'");
                         }
                     } catch (JSONException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }

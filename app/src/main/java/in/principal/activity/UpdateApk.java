@@ -42,7 +42,6 @@ import in.principal.util.Util;
 /**
  * Created by vinkrish.
  */
-
 public class UpdateApk extends BaseActivity {
     private SharedPreferences sharedPref;
     private ProgressDialog pDialog;

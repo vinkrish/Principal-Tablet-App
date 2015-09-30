@@ -1,20 +1,14 @@
 package in.principal.activity;
 
-import java.io.IOException;
-import java.net.ConnectException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-import java.util.concurrent.locks.Lock;
 
 import in.principal.sqlite.Temp;
-import in.principal.activity.R;
-import in.principal.activity.LockActivity;
 import in.principal.dao.TempDao;
 import in.principal.sync.FirstTimeSync;
-import in.principal.sync.FirstTimeSyncParser;
+import in.principal.sync.RequestResponseHandler;
 import in.principal.sync.StringConstant;
-import in.principal.sync.UploadSyncParser;
 import in.principal.util.AppGlobal;
 import in.principal.util.NetworkUtils;
 import in.principal.util.SharedPreferenceUtil;
@@ -23,8 +17,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
@@ -38,7 +30,6 @@ import android.widget.Button;
 /**
  * Created by vinkrish.
  */
-
 public class LockActivity extends BaseActivity implements StringConstant {
     private ProgressDialog pDialog;
     private Button butSend, butRefresh;
@@ -117,11 +108,9 @@ public class LockActivity extends BaseActivity implements StringConstant {
                 jsonObject.put("school", schoolId);
                 jsonObject.put("tab_id", deviceId);
                 jsonObject.put("line_number", lineNumber);
-                jsonReceived = FirstTimeSyncParser.makePostRequest(block_a_tab, jsonObject);
+                jsonReceived = new JSONObject(RequestResponseHandler.reachServer(block_a_tab, jsonObject));
                 syncSent = jsonReceived.getInt(TAG_SUCCESS);
             } catch (JSONException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
                 e.printStackTrace();
             }
 
@@ -131,12 +120,11 @@ public class LockActivity extends BaseActivity implements StringConstant {
                 json.put("tab_id", deviceId);
                 json.put("log", stackTrace);
                 json.put("date", getToday());
-                jsonReceived = UploadSyncParser.makePostRequest(logged, json);
+                jsonReceived = new JSONObject(RequestResponseHandler.reachServer(logged, json));
             } catch (JSONException e1) {
                 e1.printStackTrace();
-            } catch (ConnectException e) {
-                e.printStackTrace();
             }
+
             return null;
         }
 

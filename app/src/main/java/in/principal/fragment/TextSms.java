@@ -37,8 +37,8 @@ import in.principal.sqlite.School;
 import in.principal.sqlite.Section;
 import in.principal.sqlite.Students;
 import in.principal.sqlite.Temp;
+import in.principal.sync.RequestResponseHandler;
 import in.principal.sync.StringConstant;
-import in.principal.sync.UploadSyncParser;
 import in.principal.util.AppGlobal;
 import in.principal.util.CommonDialogUtils;
 import in.principal.util.Constants;
@@ -49,10 +49,7 @@ import in.principal.util.Util;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -78,7 +75,6 @@ import android.widget.TextView;
 /**
  * Created by vinkrish.
  */
-
 @SuppressWarnings("deprecation")
 @SuppressLint("ClickableViewAccessibility")
 public class TextSms extends Fragment implements StringConstant {
@@ -671,13 +667,11 @@ public class TextSms extends Fragment implements StringConstant {
                     jsonObject.put("school", schoolId);
                     jsonObject.put("tab_id", deviceId);
                     jsonObject.put("file_name", zipName.substring(0, zipName.length() - 3) + "sql");
-                    jsonReceived = UploadSyncParser.makePostRequest(acknowledge_uploaded_file, jsonObject);
+                    jsonReceived = new JSONObject(RequestResponseHandler.reachServer(acknowledge_uploaded_file, jsonObject));
                     if (jsonReceived.getInt(TAG_SUCCESS) == 1) {
                         file.delete();
                     }
                 } catch (JSONException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
                     e.printStackTrace();
                 }
                /* try {

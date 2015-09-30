@@ -24,7 +24,6 @@ import android.util.Log;
 /**
  * Created by vinkrish.
  */
-
 public class CallFTP implements StringConstant {
     private SqlDbHelper sqlHandler;
     private SQLiteDatabase sqliteDatabase;
@@ -59,7 +58,7 @@ public class CallFTP implements StringConstant {
                 ack_json.put("tab_id", deviceId);
                 ack_json.put("battery_status", batteryLevel);
                 Log.d("get_file_req", "1");
-                jsonReceived = UploadSyncParser.makePostRequest(ask_for_download_file, ack_json);
+                jsonReceived = new JSONObject(RequestResponseHandler.reachServer(ask_for_download_file, ack_json));
                 Log.d("get_file_res", "1");
                 block = jsonReceived.getInt(TAG_SUCCESS);
                 if (jsonReceived.getInt("update") == 1) {
@@ -76,9 +75,8 @@ public class CallFTP implements StringConstant {
             } catch (JSONException e) {
                 zipFile = "";
                 e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
             }
+
             return null;
         }
 

@@ -7,14 +7,11 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Locale;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-import org.apache.commons.net.io.CopyStreamAdapter;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -30,8 +27,8 @@ import in.principal.dao.TempDao;
 import in.principal.model.TransferModel;
 import in.principal.sqlite.School;
 import in.principal.sqlite.Temp;
+import in.principal.sync.RequestResponseHandler;
 import in.principal.sync.StringConstant;
-import in.principal.sync.UploadSyncParser;
 import in.principal.util.AppGlobal;
 import in.principal.util.Constants;
 import in.principal.util.PKGenerator;
@@ -42,7 +39,6 @@ import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
@@ -63,7 +59,6 @@ import android.widget.TextView;
 /**
  * Created by vinkrish.
  */
-
 @SuppressWarnings("deprecation")
 public class UploadVoiceSms extends Fragment implements StringConstant {
     private int voiceSmsKey, schoolId, principalId, s3Count;
@@ -390,13 +385,11 @@ public class UploadVoiceSms extends Fragment implements StringConstant {
                     jsonObject.put("school", schoolId);
                     jsonObject.put("tab_id", deviceId);
                     jsonObject.put("file_name", zipName.substring(0, zipName.length() - 3) + "sql");
-                    jsonReceived = UploadSyncParser.makePostRequest(acknowledge_uploaded_file, jsonObject);
+                    jsonReceived = new JSONObject(RequestResponseHandler.reachServer(acknowledge_uploaded_file, jsonObject));
                     if (jsonReceived.getInt(TAG_SUCCESS) == 1) {
                         file.delete();
                     }
                 } catch (JSONException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
