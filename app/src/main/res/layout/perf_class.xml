@@ -32,25 +32,27 @@
 
         <Button
             android:id="@+id/perfButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@drawable/heading_selector"
             android:onClick="stPerf"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="@string/performance"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Button
             android:id="@+id/perfClass"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@drawable/button_selector_blue"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
     </LinearLayout>
 
     <View
@@ -95,15 +97,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/sectext"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_margin="10dp"
         android:gravity="center"
-        android:horizontalSpacing="20dp"
-        android:numColumns="4"
-        android:verticalSpacing="30dp"></GridView>
+        android:horizontalSpacing="10dp"
+        android:numColumns="3"
+        android:verticalSpacing="10dp"></GridView>
 
     <View
         android:id="@+id/top"

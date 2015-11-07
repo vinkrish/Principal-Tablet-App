@@ -36,11 +36,11 @@
             android:layout_height="match_parent"
             android:background="@drawable/heading_selector"
             android:onClick="se"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:text="@string/se"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <View
             android:layout_width="1dp"
@@ -49,14 +49,13 @@
 
         <Button
             android:id="@+id/seClass"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@drawable/heading_selector"
             android:onClick="seClass"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <View
             android:layout_width="1dp"
@@ -65,14 +64,13 @@
 
         <Button
             android:id="@+id/seSec"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@drawable/heading_selector"
             android:onClick="SeSecSub"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <View
             android:layout_width="1dp"
@@ -81,20 +79,18 @@
 
         <Button
             android:id="@+id/se"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
+            android:layout_weight="1"
             android:background="@drawable/heading_selector"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <Button
             android:id="@+id/seActSubAct"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
+            android:layout_weight="1"
             android:background="@color/universal"
             android:textColor="#FFFFFF"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
@@ -122,13 +118,13 @@
             android:id="@+id/subinfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="21sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
             android:id="@+id/teacherinfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="17sp" />
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </LinearLayout>
 

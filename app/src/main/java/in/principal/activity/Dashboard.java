@@ -1,8 +1,6 @@
 package in.principal.activity;
 
-import in.principal.adapter.NavDrawerListAdapter;
 import in.principal.fragment.StudentList;
-import in.principal.model.NavDrawerItem;
 import in.principal.sqlite.SqlDbHelper;
 import in.principal.util.AnimationUtils;
 import in.principal.util.CommonDialogUtils;
@@ -41,30 +39,26 @@ import java.util.List;
 import java.util.Locale;
 
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.res.Configuration;
-import android.content.res.TypedArray;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.view.GravityCompat;
+import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.ListView;
 
 /**
  * Created by vinkrish.
@@ -72,14 +66,10 @@ import android.widget.ListView;
 @SuppressLint("InflateParams")
 @SuppressWarnings("deprecation")
 public class Dashboard extends BaseActivity {
-    private DrawerLayout mDrawerLayout;
-    private ListView mDrawerList;
-    private CharSequence mTitle;
-    private ActionBarDrawerToggle mDrawerToggle;
-    private NavDrawerListAdapter navDrawerListAdapter;
-    private String[] navMenuTitles;
-    private TypedArray navMenuIcons;
-    private ArrayList<NavDrawerItem> navDrawerItems;
+    private Toolbar toolbar;
+    private Activity activity;
+    private NavigationView navigationView;
+    private DrawerLayout drawerLayout;
     private SqlDbHelper sqlHandler;
     private Context context;
     private static SQLiteDatabase sqliteDatabase;
@@ -96,69 +86,107 @@ public class Dashboard extends BaseActivity {
         filter.addAction(Intent.ACTION_SCREEN_OFF);*/
 
         context = AppGlobal.getContext();
+        activity = AppGlobal.getActivity();
         sqlHandler = AppGlobal.getSqlDbHelper();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
 
-        getActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getActionBar().setCustomView(R.layout.action_bar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        mTitle = getTitle();
+        navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 
-        navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items);
-        navMenuIcons = getResources().obtainTypedArray(R.array.nav_drawer_icons);
-
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mDrawerList = (ListView) findViewById(R.id.left_drawer);
-
-        findViewById(R.id.expand_drawer).setOnClickListener(new View.OnClickListener() {
+            // This method will trigger on item Click of navigation menu
             @Override
-            public void onClick(View v) {
-                open();
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+
+                menuItem.setChecked(true);
+                drawerLayout.closeDrawers();
+
+                switch (menuItem.getItemId()) {
+
+                    case R.id.dashboard_item:
+                        ReplaceFragment.replace(new Dashbord(), getFragmentManager());
+                        return true;
+
+                    case R.id.attendance_item:
+                        updateDate();
+                        ReplaceFragment.replace(new Attendance(), getFragmentManager());
+                        return true;
+
+                    case R.id.monthly_report_item:
+                        monthlyReport();
+                        return true;
+
+                    case R.id.sliptest_item:
+                        ReplaceFragment.replace(new Performance(), getFragmentManager());
+                        return true;
+
+                    case R.id.homework_item:
+                        updateDate();
+                        ReplaceFragment.replace(new HomeworkView(), getFragmentManager());
+                        return true;
+
+                    case R.id.exam_item:
+                        ReplaceFragment.replace(new StructuredExam(), getFragmentManager());
+                        return true;
+
+                    case R.id.students_item:
+                        ReplaceFragment.replace(new StudentList(), getFragmentManager());
+                        return true;
+
+                    case R.id.sms_item:
+                        if (NetworkUtils.isNetworkConnected(context)) {
+                            ReplaceFragment.replace(new TextSms(), getFragmentManager());
+                        } else {
+                            CommonDialogUtils.displayAlertWhiteDialog(activity, "Check Internet Connection");
+                        }
+                        return true;
+
+                    default:
+                        return true;
+
+                }
             }
         });
 
-        navDrawerItems = new ArrayList<>();
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(0, -1)));
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1)));
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(4, -1)));
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuIcons.getResourceId(5, -1)));
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[6], navMenuIcons.getResourceId(6, -1)));
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[7], navMenuIcons.getResourceId(7, -1)));
+        // Initializing Drawer Layout and ActionBarToggle
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
+        android.support.v7.app.ActionBarDrawerToggle actionBarDrawerToggle = new android.support.v7.app.ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.openDrawer, R.string.closeDrawer) {
 
-        navMenuIcons.recycle();
-        navDrawerListAdapter = new NavDrawerListAdapter(getApplicationContext(), navDrawerItems);
-        mDrawerList.setAdapter(navDrawerListAdapter);
-
-        mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
-        mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
-
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setHomeButtonEnabled(true);
-
-        mDrawerToggle = new ActionBarDrawerToggle(
-                this,
-                mDrawerLayout,
-                R.drawable.ic_drawer,
-                R.string.drawer_open,
-                R.string.drawer_close) {
-
-            public void onDrawerClosed(View view) {
-                invalidateOptionsMenu();
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                // Code here will be triggered once the drawer closes as we dont want anything to happen so we leave this blank
+                super.onDrawerClosed(drawerView);
             }
 
+            @Override
             public void onDrawerOpened(View drawerView) {
-                invalidateOptionsMenu();
+                // Code here will be triggered once the drawer open as we dont want anything to happen so we leave this blank
+
+                super.onDrawerOpened(drawerView);
             }
         };
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
+
+        //Setting the actionbarToggle to drawer layout
+        drawerLayout.setDrawerListener(actionBarDrawerToggle);
+
+        //calling sync state is necessay or else your hamburger icon wont show up
+        actionBarDrawerToggle.syncState();
+
 
         if (savedInstanceState == null) {
-            selectItem(0);
+            selectDefaultFragment();
         }
 
         registerReceiver(broadcastReceiver, new IntentFilter("INTERNET_STATUS"));
+    }
+
+    private void updateDate(){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        Calendar calendar = GregorianCalendar.getInstance();
+        Date da = calendar.getTime();
+        TempDao.updateSelectedDate(simpleDateFormat.format(da), sqliteDatabase);
     }
 
     BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
@@ -168,11 +196,8 @@ public class Dashboard extends BaseActivity {
         }
     };
 
-    public void open() {
-        if (mDrawerLayout.isDrawerOpen(GravityCompat.START))
-            mDrawerLayout.closeDrawer(Gravity.LEFT);
-        else
-            mDrawerLayout.openDrawer(Gravity.LEFT);
+    private void selectDefaultFragment() {
+        ReplaceFragment.replace(new Dashbord(), getFragmentManager());
     }
 
     @Override
@@ -228,9 +253,7 @@ public class Dashboard extends BaseActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (mDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
+
         switch (item.getItemId()) {
             case R.id.searchId:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -291,91 +314,6 @@ public class Dashboard extends BaseActivity {
         }
     }
 
-    private class DrawerItemClickListener implements ListView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            selectItem(position);
-        }
-    }
-
-    private void selectItem(int position) {
-        if (position == 0) {
-            ReplaceFragment.replace(new Dashbord(), getFragmentManager());
-        } else if (position == 1) {
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-            Calendar calendar = GregorianCalendar.getInstance();
-            Date da = calendar.getTime();
-            TempDao.updateSelectedDate(simpleDateFormat.format(da), sqliteDatabase);
-            ReplaceFragment.replace(new Attendance(), getFragmentManager());
-        } else if (position == 2) {
-            String line = StudentAttendanceDao.selectFirstAtt(sqliteDatabase);
-            String csvSplitBy = "-";
-            if (!line.equals("")) {
-
-                String[] data = line.split(csvSplitBy);
-                int firstMonth = Integer.parseInt(data[1]) - 1;
-
-                String last = StudentAttendanceDao.selectLastAtt(sqliteDatabase);
-
-                Calendar cal = GregorianCalendar.getInstance();
-                int currentDay = cal.get(Calendar.DAY_OF_MONTH);
-                int currentMonth = cal.get(Calendar.MONTH);
-                int currentYear = cal.get(Calendar.YEAR);
-
-                if (currentMonth == firstMonth) {
-                    DateTracker dt = new DateTracker();
-                    dt.setFirstDate(line);
-                    dt.setLastDate(last);
-                    dt.setSelectedMonth(cal.get(Calendar.MONTH));
-                    sqlHandler.updateDateTracker(dt);
-                } else if (currentMonth > firstMonth) {
-                    DateTracker dt = DateTrackerModel.getDateTracker3(currentDay, currentMonth, currentYear);
-                    sqlHandler.updateDateTracker(dt);
-                }
-                ReplaceFragment.replace(new MonthlyReport(), getFragmentManager());
-            }
-        } else if (position == 3) {
-            ReplaceFragment.replace(new Performance(), getFragmentManager());
-        } else if (position == 4) {
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-            Calendar calendar = GregorianCalendar.getInstance();
-            Date da = calendar.getTime();
-            TempDao.updateSelectedDate(simpleDateFormat.format(da), sqliteDatabase);
-            ReplaceFragment.replace(new HomeworkView(), getFragmentManager());
-        } else if (position == 5) {
-            ReplaceFragment.replace(new StructuredExam(), getFragmentManager());
-        } else if (position == 6) {
-            ReplaceFragment.replace(new StudentList(), getFragmentManager());
-        } else if (position == 7) {
-            if (NetworkUtils.isNetworkConnected(context)) {
-                ReplaceFragment.replace(new TextSms(), getFragmentManager());
-            } else {
-                CommonDialogUtils.displayAlertWhiteDialog(this, "Check Internet Connection");
-            }
-        }
-        mDrawerList.setItemChecked(position, true);
-        setTitle(navMenuTitles[position]);
-        mDrawerLayout.closeDrawer(mDrawerList);
-    }
-
-    @Override
-    public void setTitle(CharSequence title) {
-        mTitle = title;
-        getActionBar().setTitle(mTitle);
-    }
-
-    @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        mDrawerToggle.syncState();
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        mDrawerToggle.onConfigurationChanged(newConfig);
-    }
-
     public void toDashbord(View v) {
         ReplaceFragment.clearBackStack(getFragmentManager());
         ReplaceFragment.replace(new Dashbord(), getFragmentManager());
@@ -386,6 +324,35 @@ public class Dashboard extends BaseActivity {
 		    fragmentManager.popBackStack(backStackId, FragmentManager.POP_BACK_STACK_INCLUSIVE);
 
 		}*/
+    }
+
+    private void monthlyReport(){
+        String line = StudentAttendanceDao.selectFirstAtt(sqliteDatabase);
+        String csvSplitBy = "-";
+        if (!line.equals("")) {
+
+            String[] data = line.split(csvSplitBy);
+            int firstMonth = Integer.parseInt(data[1]) - 1;
+
+            String last = StudentAttendanceDao.selectLastAtt(sqliteDatabase);
+
+            Calendar cal = GregorianCalendar.getInstance();
+            int currentDay = cal.get(Calendar.DAY_OF_MONTH);
+            int currentMonth = cal.get(Calendar.MONTH);
+            int currentYear = cal.get(Calendar.YEAR);
+
+            if (currentMonth == firstMonth) {
+                DateTracker dt = new DateTracker();
+                dt.setFirstDate(line);
+                dt.setLastDate(last);
+                dt.setSelectedMonth(cal.get(Calendar.MONTH));
+                sqlHandler.updateDateTracker(dt);
+            } else if (currentMonth > firstMonth) {
+                DateTracker dt = DateTrackerModel.getDateTracker3(currentDay, currentMonth, currentYear);
+                sqlHandler.updateDateTracker(dt);
+            }
+            ReplaceFragment.replace(new MonthlyReport(), getFragmentManager());
+        }
     }
 
     private String getToday() {

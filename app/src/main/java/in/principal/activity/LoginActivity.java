@@ -64,6 +64,7 @@ public class LoginActivity extends BaseActivity {
             new CallFTP().syncFTP();
 
         context = AppGlobal.getContext();
+        sqliteDatabase = AppGlobal.getSqliteDatabase();
         sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
 
         SharedPreferenceUtil.updateSavedVersion(this);
@@ -107,7 +108,6 @@ public class LoginActivity extends BaseActivity {
     private void initView() {
         int isSync = sharedPref.getInt("is_sync", 0);
         if (isSync == 0) {
-            sqliteDatabase = AppGlobal.getSqliteDatabase();
 
             findViewById(R.id.admin).setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -350,14 +350,4 @@ public class LoginActivity extends BaseActivity {
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.login, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
-    }
 }

@@ -39,7 +39,7 @@
             android:paddingRight="20dp"
             android:text="@string/students"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
     </LinearLayout>
 
     <TextView

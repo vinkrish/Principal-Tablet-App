@@ -88,7 +88,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="15dp"
-                        android:background="@drawable/button_activated_light_blue"
+                        android:background="@drawable/button_activated_light_teal"
                         android:text="@string/all_students"
                         android:textColor="#FFFFFF" />
 
@@ -97,7 +97,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="15dp"
-                        android:background="@drawable/button_activated_light_blue"
+                        android:background="@drawable/button_activated_light_teal"
                         android:text="@string/all_male_students"
                         android:textColor="#FFFFFF" />
 
@@ -106,7 +106,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="15dp"
-                        android:background="@drawable/button_activated_light_blue"
+                        android:background="@drawable/button_activated_light_teal"
                         android:text="@string/all_female_students"
                         android:textColor="#FFFFFF" />
 
@@ -115,7 +115,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="15dp"
-                        android:background="@drawable/button_activated_light_blue"
+                        android:background="@drawable/button_activated_light_teal"
                         android:text="@string/all_teachers"
                         android:textColor="#FFFFFF" />
 
@@ -124,7 +124,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="15dp"
-                        android:background="@drawable/button_activated_light_blue"
+                        android:background="@drawable/button_activated_light_teal"
                         android:text="@string/all_male_teachers"
                         android:textColor="#FFFFFF" />
 
@@ -133,7 +133,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="15dp"
-                        android:background="@drawable/button_activated_light_blue"
+                        android:background="@drawable/button_activated_light_teal"
                         android:text="@string/all_female_teachers"
                         android:textColor="#FFFFFF" />
 
@@ -142,7 +142,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="15dp"
-                        android:background="@drawable/button_activated_light_blue"
+                        android:background="@drawable/button_activated_light_teal"
                         android:text="@string/all_class_teachers"
                         android:textColor="@color/white" />
 
@@ -151,7 +151,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="15dp"
-                        android:background="@drawable/button_activated_light_blue"
+                        android:background="@drawable/button_activated_light_teal"
                         android:text="@string/clas"
                         android:textColor="#FFFFFF" />
 
@@ -160,7 +160,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="15dp"
-                        android:background="@drawable/button_activated_light_blue"
+                        android:background="@drawable/button_activated_light_teal"
                         android:text="@string/section"
                         android:textColor="#FFFFFF" />
 
@@ -169,7 +169,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="15dp"
-                        android:background="@drawable/button_activated_light_blue"
+                        android:background="@drawable/button_activated_light_teal"
                         android:text="@string/student"
                         android:textColor="#FFFFFF" />
 
@@ -178,7 +178,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="15dp"
-                        android:background="@drawable/button_activated_light_blue"
+                        android:background="@drawable/button_activated_light_teal"
                         android:text="@string/prev_mes"
                         android:textColor="#FFFFFF"
                         android:visibility="gone" />

@@ -40,7 +40,7 @@ public class RequestResponseHandler {
                 inputStream = new BufferedInputStream(urlConnection.getInputStream());
                 response = convertInputStreamToString(inputStream);
             } else {
-                response = null;
+                response = "";
             }
 
         } catch (Exception e) {

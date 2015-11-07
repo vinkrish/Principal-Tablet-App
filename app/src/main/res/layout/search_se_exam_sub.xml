@@ -32,11 +32,10 @@
 
         <Button
             android:id="@+id/examButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@color/dark_black"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
             android:text="@string/se"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#FFFFFF" />
@@ -48,11 +47,10 @@
 
         <Button
             android:id="@+id/examSubButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@color/dark_black"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
             android:text="@string/se"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#FFFFFF" />

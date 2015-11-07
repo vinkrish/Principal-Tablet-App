@@ -39,7 +39,7 @@
             android:paddingRight="20dp"
             android:text="@string/homework"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
     </LinearLayout>
 
     <View
@@ -58,7 +58,7 @@
         android:gravity="left|center_vertical"
         android:paddingLeft="20dp"
         android:text="@string/homework"
-        android:textSize="21sp" />
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <LinearLayout
         android:id="@+id/selectbreadcrum"

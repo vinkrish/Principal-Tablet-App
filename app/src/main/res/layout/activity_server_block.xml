@@ -13,7 +13,7 @@
         android:layout_margin="30dp"
         android:text="@string/server_resolve"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#FFFFFF"
+        android:textColor="#000"
         android:onClick="resolveClicked" />
 
 </RelativeLayout>

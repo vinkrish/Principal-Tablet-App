@@ -32,15 +32,14 @@
 
         <Button
             android:id="@+id/hwButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@drawable/heading_selector"
             android:onClick="homeworkHome"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
             android:text="@string/homework"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <View
             android:layout_width="1dp"
@@ -49,24 +48,22 @@
 
         <Button
             android:id="@+id/hwclasButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@drawable/heading_selector"
             android:onClick="homeworkHome"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Button
             android:id="@+id/hwsecButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@drawable/button_selector_blue"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
     </LinearLayout>
 
     <View
@@ -85,7 +82,7 @@
         android:gravity="left|center_vertical"
         android:paddingLeft="20dp"
         android:text="@string/homework"
-        android:textSize="21sp" />
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <LinearLayout
         android:id="@+id/selectbreadcrum"

@@ -32,15 +32,14 @@
 
         <Button
             android:id="@+id/attendanceButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@drawable/heading_selector"
             android:onClick="todaysAttendance"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
             android:text="@string/attendance"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <View
             android:layout_width="1dp"
@@ -49,24 +48,22 @@
 
         <Button
             android:id="@+id/classButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
+            android:layout_weight="1"
             android:background="@drawable/heading_selector"
             android:onClick="classAttendance"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Button
             android:id="@+id/sectionButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
+            android:layout_weight="1"
             android:background="@drawable/button_selector_blue"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
     </LinearLayout>
     
     <View
@@ -98,7 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/attendance"
-                android:textSize="23sp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textStyle="bold" />
 
             <TextView

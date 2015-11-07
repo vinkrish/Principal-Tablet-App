@@ -13,7 +13,6 @@ import android.view.MenuItem;
 /**
  * Created by vinkrish.
  */
-
 public class Restart extends BaseActivity {
 
     @Override
@@ -35,17 +34,6 @@ public class Restart extends BaseActivity {
         new UploadError(this, s).upError();
         Intent intent = new Intent(this.getApplicationContext(), in.principal.activity.LoginActivity.class);
         startActivity(intent);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.restart, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
     }
 
     @Override

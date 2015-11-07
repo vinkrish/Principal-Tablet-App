@@ -32,15 +32,17 @@
 
         <Button
             android:id="@+id/perfButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="60dp"
+            android:layout_weight="1"
+            android:gravity="center"
             android:background="@drawable/heading_selector"
             android:onClick="stPerf"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:text="@string/performance"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <View
             android:layout_width="1dp"
@@ -51,12 +53,12 @@
             android:id="@+id/perfClass"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:background="@drawable/heading_selector"
             android:onClick="stPerfClass"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <View
             android:layout_width="1dp"
@@ -67,12 +69,12 @@
             android:id="@+id/perfSec"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:background="@drawable/heading_selector"
             android:onClick="stPerfSec"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <View
             android:layout_width="1dp"
@@ -89,11 +91,11 @@
             android:onClick="stPerfSt"
             android:text="@string/sliptest"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <Button
             android:id="@+id/perfStStud"
-            android:layout_width="125dp"
+            android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_gravity="center"
             android:background="@drawable/button_selector_blue"
@@ -101,7 +103,7 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceMedium" />
     </LinearLayout>
     
     <View

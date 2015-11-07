@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="version">Version - 1.4</string>
+    <string name="version">Version - 1.3</string>
 
     <string name="username">Username</string>
     <string name="password">Password</string>
@@ -17,27 +17,8 @@
     <string name="no_internet">no wifi / internet</string>
     <string name="syncme">sync the data</string>
 
-    <string-array name="nav_drawer_items">
-        <item>Dashboard</item>
-        <item>Attendance</item>
-        <item>Monthly Report</item>
-        <item>SlipTest</item>
-        <item>Homework</item>
-        <item>Exams</item>
-        <item>Students</item>
-        <item>Text SMS</item>
-    </string-array>
-
-    <array name="nav_drawer_icons">
-        <item>@drawable/dashboard</item>
-        <item>@drawable/attendance</item>
-        <item>@drawable/reports_white</item>
-        <item>@drawable/sliptest_white</item>
-        <item>@drawable/homework_white</item>
-        <item>@drawable/reports_white</item>
-        <item>@drawable/attendance</item>
-        <item>@drawable/sliptest_white</item>
-    </array>
+    <string name="closeDrawer">Navigation View</string>
+    <string name="openDrawer">Navigation View Closed</string>
 
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>

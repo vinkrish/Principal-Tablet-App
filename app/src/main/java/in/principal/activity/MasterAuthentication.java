@@ -22,7 +22,6 @@ import android.widget.TextView;
 /**
  * Created by vinkrish.
  */
-
 public class MasterAuthentication extends BaseActivity {
     private TextView adminUser, adminPass, deviceId;
     private boolean tvflag, authflag;
@@ -211,21 +210,6 @@ public class MasterAuthentication extends BaseActivity {
         } else {
             CommonDialogUtils.displayAlertWhiteDialog(this, "Check Internet");
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.master_authentication, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     @Override

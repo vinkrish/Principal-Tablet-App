@@ -15,7 +15,6 @@ import java.util.Locale;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-import org.apache.commons.net.io.CopyStreamAdapter;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -623,7 +622,6 @@ public class TextSms extends Fragment implements StringConstant {
     }
 
     class CalledFTPSync extends AsyncTask<String, Integer, String> {
-        CopyStreamAdapter streamListener;
         private JSONObject jsonReceived;
 
         @Override

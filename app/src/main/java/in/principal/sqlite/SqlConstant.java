@@ -227,4 +227,6 @@ public interface SqlConstant {
 
     public static String CREATE_TIMETABLE_TIMING = "CREATE TABLE timetabletimings(SchoolId INTEGER, ClassId INTEGER, Period INTEGER, " +
             "FromTiming TEXT, ToTiming TEXT, DateTimeRecordInserted DATETIME)";
+
+    public static String CREATE_TEACHER_INCHARGE = "CREATE TABLE classteacher_incharge(SchoolId INTEGER, ClassId INTEGER, TeacherId INTEGER)";
 }
