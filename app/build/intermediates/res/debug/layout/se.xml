@@ -39,7 +39,7 @@
             android:paddingRight="20dp"
             android:text="@string/se"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
     </LinearLayout>
 
     <TextView
@@ -51,7 +51,7 @@
         android:gravity="left|center_vertical"
         android:paddingLeft="20dp"
         android:text="@string/se"
-        android:textSize="21sp" />
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <View
         android:id="@+id/bottom"

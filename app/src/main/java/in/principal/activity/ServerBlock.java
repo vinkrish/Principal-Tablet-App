@@ -1,15 +1,10 @@
 package in.principal.activity;
 
-import in.principal.activity.R;
 import in.principal.sync.FirstTimeSync;
 import in.principal.util.NetworkUtils;
 import in.principal.util.SharedPreferenceUtil;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;

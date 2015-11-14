@@ -17,7 +17,7 @@
             android:gravity="left"
             android:padding="15dp"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
             android:layout_width="0dp"
@@ -39,7 +39,7 @@
         android:onClick="syncClicked"
         android:padding="10dp"
         android:text="@string/syncme"
-        android:textColor="@color/white"/>
+        android:textColor="#000"/>
 
     <LinearLayout
         android:id="@+id/ll"
@@ -81,7 +81,7 @@
             android:text="@string/username"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"
-            android:textSize="22sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
             android:id="@+id/password"
@@ -95,7 +95,7 @@
             android:text="@string/password"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"
-            android:textSize="22sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
     </LinearLayout>
 
     <ImageView
@@ -126,7 +126,7 @@
         android:background="@drawable/button_selector"
         android:text="@string/zero"
         android:textColor="#FFFFFF"
-        android:textSize="25sp" />
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         android:id="@+id/numclear"
@@ -139,7 +139,7 @@
         android:background="@drawable/button_selector"
         android:text="@string/clear"
         android:textColor="#FFFFFF"
-        android:textSize="25sp" />
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         android:id="@+id/num8"
@@ -151,7 +151,7 @@
         android:background="@drawable/button_selector"
         android:text="@string/eight"
         android:textColor="#FFFFFF"
-        android:textSize="25sp" />
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         android:id="@+id/num7"
@@ -163,7 +163,7 @@
         android:background="@drawable/button_selector"
         android:text="@string/seven"
         android:textColor="#FFFFFF"
-        android:textSize="25sp" />
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         android:id="@+id/num9"
@@ -175,7 +175,7 @@
         android:background="@drawable/button_selector"
         android:text="@string/nine"
         android:textColor="#FFFFFF"
-        android:textSize="25sp" />
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         android:id="@+id/num5"
@@ -187,7 +187,7 @@
         android:background="@drawable/button_selector"
         android:text="@string/five"
         android:textColor="#FFFFFF"
-        android:textSize="25sp" />
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         android:id="@+id/num4"
@@ -199,7 +199,7 @@
         android:background="@drawable/button_selector"
         android:text="@string/four"
         android:textColor="#FFFFFF"
-        android:textSize="25sp" />
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         android:id="@+id/num6"
@@ -211,7 +211,7 @@
         android:background="@drawable/button_selector"
         android:text="@string/six"
         android:textColor="#FFFFFF"
-        android:textSize="25sp" />
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         android:id="@+id/num2"
@@ -223,7 +223,7 @@
         android:background="@drawable/button_selector"
         android:text="@string/two"
         android:textColor="#FFFFFF"
-        android:textSize="25sp" />
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         android:id="@+id/num1"
@@ -235,7 +235,7 @@
         android:background="@drawable/button_selector"
         android:text="@string/one"
         android:textColor="#FFFFFF"
-        android:textSize="25sp" />
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         android:id="@+id/num3"
@@ -247,6 +247,6 @@
         android:background="@drawable/button_selector"
         android:text="@string/three"
         android:textColor="#FFFFFF"
-        android:textSize="25sp" />
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout><!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/layout/activity_login.xml -->

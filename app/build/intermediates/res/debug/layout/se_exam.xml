@@ -32,25 +32,27 @@
 
         <Button
             android:id="@+id/seButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@drawable/heading_selector"
             android:onClick="se"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="@string/se"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Button
             android:id="@+id/seClass"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@drawable/button_selector_blue"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
             android:textColor="#FFFFFF"
-            android:textSize="22sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
     </LinearLayout>
     
     <View

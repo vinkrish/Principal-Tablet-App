@@ -39,7 +39,7 @@
             android:paddingRight="20dp"
             android:text="@string/se"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <View
             android:layout_width="1dp"

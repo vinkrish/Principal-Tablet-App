@@ -5,7 +5,7 @@ import in.principal.sqlite.School;
 import in.principal.dao.SchoolDao;
 import in.principal.dao.TempDao;
 import in.principal.sqlite.Temp;
-import in.principal.sync.CallFTP;
+import in.principal.sync.SyncIntentService;
 import in.principal.util.AnimationUtils;
 import in.principal.util.AppGlobal;
 import in.principal.util.CommonDialogUtils;
@@ -32,8 +32,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.PowerManager;
 import android.provider.Settings.Secure;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -60,8 +58,11 @@ public class LoginActivity extends BaseActivity {
         Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
 
         Intent intent = getIntent();
-        if (intent.getIntExtra("create", 0) == 1)
-            new CallFTP().syncFTP();
+        if (intent.getIntExtra("create", 0) == 1) {
+            //new CallFTP().syncFTP();
+            Intent syncService = new Intent(context, SyncIntentService.class);
+            context.startService(syncService);
+        }
 
         context = AppGlobal.getContext();
         sqliteDatabase = AppGlobal.getSqliteDatabase();

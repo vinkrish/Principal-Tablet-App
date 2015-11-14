@@ -37,7 +37,7 @@
             android:paddingRight="20dp"
             android:text="@string/voice_sms"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
     </LinearLayout>
 
     <View
@@ -71,7 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:background="@drawable/button_activated_light_blue"
+                android:background="@drawable/button_activated_light_teal"
                 android:text="@string/all_students"
                 android:textColor="#FFFFFF" />
 
@@ -80,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:background="@drawable/button_activated_light_blue"
+                android:background="@drawable/button_activated_light_teal"
                 android:text="@string/all_teachers"
                 android:textColor="#FFFFFF" />
 
@@ -89,7 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:background="@drawable/button_activated_light_blue"
+                android:background="@drawable/button_activated_light_teal"
                 android:text="@string/clas"
                 android:textColor="#FFFFFF" />
 
@@ -98,7 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:background="@drawable/button_activated_light_blue"
+                android:background="@drawable/button_activated_light_teal"
                 android:text="@string/section"
                 android:textColor="#FFFFFF" />
 
@@ -107,7 +107,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:background="@drawable/button_activated_light_blue"
+                android:background="@drawable/button_activated_light_teal"
                 android:text="@string/student"
                 android:textColor="#FFFFFF" />
 

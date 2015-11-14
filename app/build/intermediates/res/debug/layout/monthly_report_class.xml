@@ -40,7 +40,7 @@
             android:paddingRight="20dp"
             android:text="@string/attendance"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Button
             android:id="@+id/classButton"
@@ -50,7 +50,7 @@
             android:paddingRight="20dp"
             android:background="@drawable/button_selector_blue"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
     </LinearLayout>
     
     <View
@@ -82,7 +82,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/amr"
-                android:textSize="22sp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textStyle="bold" />
 
             <TextView

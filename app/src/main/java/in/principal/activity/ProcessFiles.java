@@ -20,10 +20,10 @@ import in.principal.dao.StAvgDao;
 import in.principal.dao.SubActivityDao;
 import in.principal.dao.TempDao;
 import in.principal.sqlite.Temp;
-import in.principal.sync.CallFTP;
 import in.principal.sync.FirstTimeSync;
 import in.principal.sync.RequestResponseHandler;
 import in.principal.sync.StringConstant;
+import in.principal.sync.SyncIntentService;
 import in.principal.util.AppGlobal;
 import in.principal.util.ExceptionHandler;
 
@@ -37,8 +37,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -382,7 +380,9 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
                 editor.apply();
                 new FirstTimeSync().callFirstTimeSync();
             } else if (manualSync == 1) {
-                new CallFTP().syncFTP();
+                //new CallFTP().syncFTP();
+                Intent syncService = new Intent(context, SyncIntentService.class);
+                context.startService(syncService);
             } else {
                 editor.putInt("manual_sync", 0);
                 editor.apply();

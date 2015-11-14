@@ -13,28 +13,21 @@ import java.util.Locale;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-import org.json.JSONObject;
-
 import com.amazonaws.mobileconnectors.s3.transfermanager.Download;
 import com.amazonaws.mobileconnectors.s3.transfermanager.Transfer;
 import com.amazonaws.mobileconnectors.s3.transfermanager.TransferManager;
 import com.amazonaws.services.s3.model.ProgressEvent;
 import com.amazonaws.services.s3.model.ProgressListener;
 
-import android.app.KeyguardManager;
 import android.content.Context;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.util.Log;
 
-import in.principal.dao.TempDao;
 import in.principal.model.TransferModel;
-import in.principal.sqlite.Temp;
 import in.principal.sync.StringConstant;
-import in.principal.util.AppGlobal;
 import in.principal.util.Constants;
 import in.principal.util.NetworkUtils;
 import in.principal.util.Util;
