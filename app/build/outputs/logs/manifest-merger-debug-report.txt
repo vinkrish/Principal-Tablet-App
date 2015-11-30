@@ -209,6 +209,24 @@ ADDED from AndroidManifest.xml:94:9
 		ADDED from AndroidManifest.xml:98:13
 	android:name
 		ADDED from AndroidManifest.xml:95:13
+service#com.amazonaws.mobileconnectors.s3.transferutility.TransferService
+ADDED from AndroidManifest.xml:101:9
+	android:enabled
+		ADDED from AndroidManifest.xml:103:13
+	android:name
+		ADDED from AndroidManifest.xml:102:13
+service#in.principal.sync.SyncIntentService
+ADDED from AndroidManifest.xml:104:9
+	android:exported
+		ADDED from AndroidManifest.xml:106:13
+	android:name
+		ADDED from AndroidManifest.xml:105:13
+service#in.principal.sync.WakeLockIntentService
+ADDED from AndroidManifest.xml:108:9
+	android:exported
+		ADDED from AndroidManifest.xml:110:13
+	android:name
+		ADDED from AndroidManifest.xml:109:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:appcompat-v7:23.1.0:20:5

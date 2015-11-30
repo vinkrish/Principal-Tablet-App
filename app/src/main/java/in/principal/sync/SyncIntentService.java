@@ -63,7 +63,6 @@ public class SyncIntentService extends IntentService implements StringConstant {
     }
 
     private void checkDownloadStatus() {
-        JSONObject jsonReceived;
 
         sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
         IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
@@ -78,7 +77,7 @@ public class SyncIntentService extends IntentService implements StringConstant {
             ack_json.put("school", schoolId);
             ack_json.put("tab_id", deviceId);
             ack_json.put("battery_status", batteryLevel);
-            jsonReceived = new JSONObject(RequestResponseHandler.reachServer(ask_for_download_file, ack_json));
+            JSONObject jsonReceived = new JSONObject(RequestResponseHandler.reachServer(ask_for_download_file, ack_json));
             block = jsonReceived.getInt(TAG_SUCCESS);
             if (jsonReceived.getInt("update") == 1) {
                 String folder = jsonReceived.getString("version");
@@ -94,12 +93,16 @@ public class SyncIntentService extends IntentService implements StringConstant {
         } catch (JSONException e) {
             zipFile = "";
             e.printStackTrace();
+        } catch (NullPointerException e) {
+            zipFile = "";
+            e.printStackTrace();
         }
 
     }
 
     private void decideDownload() {
         if (block != 2 && zipFile != "") {
+            Log.d("downloadFile", "uh");
             fileName = "download/" + schoolId + "/zipped_folder/" + zipFile;
             TransferManager mTransferManager = new TransferManager(Util.getCredProvider(context));
             DownloadModel model = new DownloadModel(context, fileName, mTransferManager);
@@ -198,6 +201,7 @@ public class SyncIntentService extends IntentService implements StringConstant {
                 e.printStackTrace();
             }
         }
+        finishSync();
     }
 
     public void unZipIt() {
@@ -235,6 +239,7 @@ public class SyncIntentService extends IntentService implements StringConstant {
     }
 
     private void finishSync() {
+        Log.d("finishSync", "uh");
         int manualSync = sharedPref.getInt("manual_sync", 0);
         KeyguardManager km = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
         boolean screenLocked = km.inKeyguardRestrictedInputMode();
@@ -245,7 +250,6 @@ public class SyncIntentService extends IntentService implements StringConstant {
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         } else if (screenLocked) {
-            SharedPreferenceUtil.updateIsSync(context, 1);
             Intent intent = new Intent(context, in.principal.activity.ProcessFiles.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
@@ -255,6 +259,7 @@ public class SyncIntentService extends IntentService implements StringConstant {
     }
 
     private void exitSync() {
+        Log.d("exitSync", "uh");
         SharedPreferences.Editor editor = sharedPref.edit();
         int manualSync = sharedPref.getInt("manual_sync", 0);
         KeyguardManager km = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
@@ -270,7 +275,6 @@ public class SyncIntentService extends IntentService implements StringConstant {
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         } else if (screenLocked) {
-            SharedPreferenceUtil.updateIsSync(context, 1);
             Intent i = new Intent(context, in.principal.activity.ProcessFiles.class);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(i);

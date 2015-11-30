@@ -1,6 +1,8 @@
 package in.principal.activity;
 
 import in.principal.sync.UploadError;
+import in.principal.util.CommonDialogUtils;
+import in.principal.util.NetworkUtils;
 
 import android.content.Context;
 import android.content.Intent;
@@ -29,7 +31,12 @@ public class Restart extends BaseActivity {
         editor.putInt("sleep_sync", 0);
         editor.apply();
 
-        new UploadError(this, s).upError();
+
+        if (NetworkUtils.isNetworkConnected(this)) {
+            new UploadError(this, s).upError();
+        } else {
+            CommonDialogUtils.displayAlertWhiteDialog(this, "Please be in WiFi zone or check the status of WiFi");
+        }
         Intent intent = new Intent(this.getApplicationContext(), in.principal.activity.LoginActivity.class);
         startActivity(intent);
     }

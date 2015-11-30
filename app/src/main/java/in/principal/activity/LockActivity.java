@@ -6,7 +6,7 @@ import java.util.Locale;
 
 import in.principal.sqlite.Temp;
 import in.principal.dao.TempDao;
-import in.principal.sync.FirstTimeSync;
+import in.principal.sync.FirstTimeDownload;
 import in.principal.sync.RequestResponseHandler;
 import in.principal.sync.StringConstant;
 import in.principal.util.AppGlobal;
@@ -74,7 +74,7 @@ public class LockActivity extends BaseActivity implements StringConstant {
             butSend.setVisibility(View.GONE);
             butRefresh.setVisibility(View.VISIBLE);
             SharedPreferenceUtil.updateFirstSync(this, 1);
-            new FirstTimeSync().callFirstTimeSync();
+            new FirstTimeDownload().callFirstTimeSync();
         }
     }
 
@@ -86,7 +86,7 @@ public class LockActivity extends BaseActivity implements StringConstant {
 
     public void refreshClicked(View view) {
         SharedPreferenceUtil.updateFirstSync(this, 1);
-        new FirstTimeSync().callFirstTimeSync();
+        new FirstTimeDownload().callFirstTimeSync();
     }
 
     class SendLocked extends AsyncTask<String, String, String> {
@@ -134,7 +134,7 @@ public class LockActivity extends BaseActivity implements StringConstant {
                 butRefresh.setVisibility(View.VISIBLE);
                 sqliteDatabase.execSQL("update locked set IsSent=1");
                 SharedPreferenceUtil.updateFirstSync(LockActivity.this, 1);
-                new FirstTimeSync().callFirstTimeSync();
+                new FirstTimeDownload().callFirstTimeSync();
             }
         }
     }

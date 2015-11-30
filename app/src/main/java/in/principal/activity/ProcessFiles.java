@@ -20,7 +20,7 @@ import in.principal.dao.StAvgDao;
 import in.principal.dao.SubActivityDao;
 import in.principal.dao.TempDao;
 import in.principal.sqlite.Temp;
-import in.principal.sync.FirstTimeSync;
+import in.principal.sync.FirstTimeDownload;
 import in.principal.sync.RequestResponseHandler;
 import in.principal.sync.StringConstant;
 import in.principal.sync.SyncIntentService;
@@ -132,7 +132,6 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
                                 SharedPreferences sp = ProcessFiles.this.getSharedPreferences("db_access", Context.MODE_PRIVATE);
                                 SharedPreferences.Editor editr = sp.edit();
                                 editr.putInt("tablet_lock", 1);
-                                editr.putInt("is_sync", 0);
                                 editr.putInt("sleep_sync", 0);
                                 editr.apply();
                                 String except = e + "";
@@ -156,7 +155,7 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
             }
             Log.d("process_file_res", "...");
 
-            publishProgress("100", 100 + "", "acknowledge processes file");
+            publishProgress("100", 100 + "", "acknowledge processed file");
 
             StringBuilder sb = new StringBuilder();
             Cursor c2 = sqliteDatabase.rawQuery("select filename from downloadedfile where processed=1 and isack=0", null);
@@ -364,10 +363,9 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
             super.onPostExecute(s);
 
             SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putInt("is_sync", 0);
             editor.putInt("sleep_sync", 0);
             editor.apply();
-
+            Log.d("1", "1");
             if (isException) {
                 editor.putInt("manual_sync", 0);
                 editor.apply();
@@ -378,16 +376,17 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
                 editor.putInt("manual_sync", 0);
                 editor.putInt("first_sync", 1);
                 editor.apply();
-                new FirstTimeSync().callFirstTimeSync();
+                new FirstTimeDownload().callFirstTimeSync();
             } else if (manualSync == 1) {
-                //new CallFTP().syncFTP();
+                Log.d("2", "2");
                 Intent syncService = new Intent(context, SyncIntentService.class);
                 context.startService(syncService);
             } else {
+                Log.d("3", "3");
                 editor.putInt("manual_sync", 0);
                 editor.apply();
                 Intent intent = new Intent(context, in.principal.activity.LoginActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         }

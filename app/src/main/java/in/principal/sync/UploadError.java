@@ -59,14 +59,10 @@ public class UploadError implements StringConstant {
                 jsonReceived = new JSONObject(RequestResponseHandler.reachServer(logged, json));
             } catch (JSONException e) {
                 e.printStackTrace();
-            }
-
-            try {
-                uploadSuccess = jsonReceived.getInt(TAG_SUCCESS);
-                Log.d("error_success", uploadSuccess + "");
-            } catch (JSONException e) {
+            } catch (NullPointerException e) {
                 e.printStackTrace();
             }
+
             return null;
         }
 

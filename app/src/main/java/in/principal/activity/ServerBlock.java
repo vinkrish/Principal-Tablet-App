@@ -1,6 +1,6 @@
 package in.principal.activity;
 
-import in.principal.sync.FirstTimeSync;
+import in.principal.sync.FirstTimeDownload;
 import in.principal.util.NetworkUtils;
 import in.principal.util.SharedPreferenceUtil;
 
@@ -30,7 +30,7 @@ public class ServerBlock extends BaseActivity {
     public void resolveClicked(View view) {
         SharedPreferenceUtil.updateFirstSync(this, 1);
         if (NetworkUtils.isNetworkConnected(ServerBlock.this)) {
-            new FirstTimeSync().callFirstTimeSync();
+            new FirstTimeDownload().callFirstTimeSync();
         }
     }
 

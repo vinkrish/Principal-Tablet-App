@@ -1,6 +1,6 @@
 package in.principal.activity;
 
-import in.principal.sync.FirstTimeSync;
+import in.principal.sync.FirstTimeDownload;
 import in.principal.util.AnimationUtils;
 import in.principal.util.AppGlobal;
 import in.principal.util.CommonDialogUtils;
@@ -204,7 +204,7 @@ public class MasterAuthentication extends BaseActivity {
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putInt("first_sync", 1);
             editor.apply();
-            new FirstTimeSync().callFirstTimeSync();
+            new FirstTimeDownload().callFirstTimeSync();
         } else {
             CommonDialogUtils.displayAlertWhiteDialog(this, "Check Internet");
         }

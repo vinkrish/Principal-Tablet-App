@@ -101,6 +101,18 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
         </activity>
+
+        <service
+            android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
+            android:enabled="true" />
+        <service
+            android:name="in.principal.sync.SyncIntentService"
+            android:exported="false" >
+        </service>
+        <service
+            android:name="in.principal.sync.WakeLockIntentService"
+            android:exported="false" >
+        </service>
     </application>
 
 </manifest>

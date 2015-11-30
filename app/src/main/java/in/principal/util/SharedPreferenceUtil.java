@@ -34,13 +34,6 @@ public class SharedPreferenceUtil {
         editor.apply();
     }
 
-    public static void updateIsSync(Context context, int i) {
-        SharedPreferences sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt("is_sync", i);
-        editor.apply();
-    }
-
     public static void updateBootSync(Context context, int i) {
         SharedPreferences sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
