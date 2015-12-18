@@ -105,10 +105,25 @@
         android:layout_below="@id/belowbreadcrum"
         android:layout_marginLeft="100dp"
         android:layout_marginRight="100dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/dash2ndnav"
         android:gravity="center"
         android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/profile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:gravity="center"
+            android:text="@string/profile"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#8A8889" />
 
         <TextView
             android:id="@+id/slipSearch"
@@ -157,7 +172,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@id/linearLayout1"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:background="@color/divider" />
 
     <LinearLayout

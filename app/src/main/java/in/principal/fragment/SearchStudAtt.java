@@ -134,6 +134,7 @@ public class SearchStudAtt extends Fragment {
         attGraph = new AttGraph(context, R.layout.att_graph_list, amrList);
         lv.setAdapter(attGraph);
 
+        view.findViewById(R.id.profile).setOnClickListener(searchProfile);
         view.findViewById(R.id.slipSearch).setOnClickListener(searchSlipTest);
         view.findViewById(R.id.seSearch).setOnClickListener(searchExam);
 
@@ -155,6 +156,13 @@ public class SearchStudAtt extends Fragment {
         absentCnt = 0;
         noOfDays = 0;
     }
+
+    private View.OnClickListener searchProfile = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            ReplaceFragment.replace(new StudentProfile(), getFragmentManager());
+        }
+    };
 
     private View.OnClickListener searchSlipTest = new View.OnClickListener() {
         @Override

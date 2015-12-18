@@ -229,4 +229,7 @@ public interface SqlConstant {
             "FromTiming TEXT, ToTiming TEXT, DateTimeRecordInserted DATETIME)";
 
     public static String CREATE_TEACHER_INCHARGE = "CREATE TABLE classteacher_incharge(SchoolId INTEGER, ClassId INTEGER, TeacherId INTEGER)";
+
+    public static String CREATE_MOVE_STUDENT = "CREATE TABLE movestudent(SchoolId INTEGER, Query TEXT, StudentId INTEGER, StudentName TEXT, ClassName TEXT, " +
+            "SecIdFrom INTEGER, SecIdTo INTEGER, SectionFrom TEXT, SectionTo TEXT, Status INTEGER, PRIMARY KEY(StudentId, SecIdFrom, SecIdTo))";
 }

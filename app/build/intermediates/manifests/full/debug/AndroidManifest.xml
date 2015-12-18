@@ -45,41 +45,34 @@
             android:name="in.principal.activity.MasterAuthentication"
             android:label="@string/title_activity_master_authentication"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name="in.principal.activity.LockActivity"
             android:label="@string/title_activity_lock"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name="in.principal.activity.Restart"
             android:label="@string/title_activity_restart"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name="in.principal.activity.ServerBlock"
             android:label="@string/title_activity_server_block"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name="in.principal.activity.Dashboard"
             android:label="@string/title_activity_dashboard"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyActivityTheme"
-            android:windowSoftInputMode="adjustPan" >
-        </activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="in.principal.activity.ProcessFiles"
             android:label="@string/title_activity_process_files"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-        </activity>
-        <activity android:name="in.principal.activity.BaseActivity" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name="in.principal.activity.BaseActivity" />
 
         <receiver android:name="in.principal.adapter.BootSync" >
             <intent-filter>
@@ -89,30 +82,34 @@
 
         <service
             android:name="in.principal.adapter.SyncService"
-            android:enabled="true" >
-        </service>
+            android:enabled="true" />
 
-        <receiver android:name="in.principal.adapter.SyncServiceReceiver" >
-        </receiver>
+        <receiver android:name="in.principal.adapter.SyncServiceReceiver" />
 
         <activity
             android:name="in.principal.activity.UpdateApk"
             android:label="@string/title_activity_update_apk"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <service
             android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
             android:enabled="true" />
         <service
             android:name="in.principal.sync.SyncIntentService"
-            android:exported="false" >
-        </service>
+            android:exported="false" />
         <service
             android:name="in.principal.sync.WakeLockIntentService"
-            android:exported="false" >
-        </service>
+            android:exported="false" />
+
+        <receiver
+            android:name="in.principal.util.UpdateReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

@@ -27,8 +27,10 @@ import in.principal.sync.SyncIntentService;
 import in.principal.util.AppGlobal;
 import in.principal.util.ExceptionHandler;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -48,8 +50,8 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
     private SqlDbHelper sqlHandler;
     private Context context;
     private SQLiteDatabase sqliteDatabase;
-    private int schoolId, manualSync;
-    private String deviceId, savedVersion;
+    private int manualSync;
+    private String savedVersion;
     private ProgressBar progressBar;
     private TextView txtPercentage, txtSync;
     private boolean isException = false, isFirstTimeSync = false;
@@ -64,6 +66,7 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
+        registerReceiver(broadcastReceiver, new IntentFilter("in.vinkrish.networkChange"));
 
         txtPercentage = (TextView) findViewById(R.id.txtPercentage);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
@@ -93,13 +96,13 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
         @Override
         protected String doInBackground(String... params) {
             Temp t = TempDao.selectTemp(sqliteDatabase);
-            schoolId = t.getSchoolId();
-            deviceId = t.getDeviceId();
+            int schoolId = t.getSchoolId();
+            String deviceId = t.getDeviceId();
 
             isFirstTimeSync = false;
 
             ArrayList<String> downFileList = new ArrayList<>();
-            Cursor c1 = sqliteDatabase.rawQuery("select filename from downloadedfile where processed=0", null);
+            Cursor c1 = sqliteDatabase.rawQuery("select filename from downloadedfile where processed=0 and downloaded=1", null);
             c1.moveToFirst();
             while (!c1.isAfterLast()) {
                 downFileList.add(c1.getString(c1.getColumnIndex("filename")));
@@ -416,4 +419,24 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
     @Override
     public void onBackPressed() {
     }
+
+    BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            SharedPreferences sharedPref = ProcessFiles.this.getSharedPreferences("db_access", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt("manual_sync", 0);
+            editor.apply();
+            Intent exitIntent = new Intent(getApplicationContext(), in.principal.activity.LoginActivity.class);
+            exitIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(exitIntent);
+        }
+    };
+
+    @Override
+    protected void onStop() {
+        unregisterReceiver(broadcastReceiver);
+        super.onStop();
+    }
+
 }

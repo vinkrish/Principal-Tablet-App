@@ -6,7 +6,7 @@
         <item
             android:id="@+id/dashboard_item"
             android:checked="true"
-            android:icon="@drawable/dashboard"
+            android:icon="@drawable/dashboard_black"
             android:title="@string/dashboard" />
 
         <item
@@ -18,37 +18,37 @@
         <item
             android:id="@+id/monthly_report_item"
             android:checked="false"
-            android:icon="@drawable/reports_white"
+            android:icon="@drawable/evaluate"
             android:title="@string/monthlyreport" />
 
         <item
             android:id="@+id/sliptest_item"
             android:checked="false"
-            android:icon="@drawable/sliptest_white"
+            android:icon="@drawable/evaluate"
             android:title="@string/sliptest" />
 
         <item
             android:id="@+id/homework_item"
             android:checked="false"
-            android:icon="@drawable/homework_white"
+            android:icon="@drawable/homework"
             android:title="@string/homework" />
 
         <item
             android:id="@+id/exam_item"
             android:checked="false"
-            android:icon="@drawable/reports_white"
+            android:icon="@drawable/evaluate"
             android:title="@string/exam" />
 
         <item
             android:id="@+id/students_item"
             android:checked="false"
-            android:icon="@drawable/homework"
+            android:icon="@drawable/profile"
             android:title="@string/students" />
 
         <item
             android:id="@+id/sms_item"
             android:checked="false"
-            android:icon="@drawable/sliptest_white"
+            android:icon="@drawable/sms"
             android:title="@string/sms" />
 
     </group>

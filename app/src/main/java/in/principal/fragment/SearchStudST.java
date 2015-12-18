@@ -67,6 +67,7 @@ public class SearchStudST extends Fragment {
         amrAdapter = new StSearchAdapter(context, R.layout.st_search_list, amrList);
         lv.setAdapter(amrAdapter);
 
+        view.findViewById(R.id.profile).setOnClickListener(searchProfile);
         view.findViewById(R.id.attSearch).setOnClickListener(searchAttendance);
         view.findViewById(R.id.seSearch).setOnClickListener(searchExam);
 
@@ -90,6 +91,13 @@ public class SearchStudST extends Fragment {
         teacherNameList.clear();
         progressList.clear();
     }
+
+    private View.OnClickListener searchProfile = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            ReplaceFragment.replace(new StudentProfile(), getFragmentManager());
+        }
+    };
 
     private View.OnClickListener searchAttendance = new View.OnClickListener() {
         @Override

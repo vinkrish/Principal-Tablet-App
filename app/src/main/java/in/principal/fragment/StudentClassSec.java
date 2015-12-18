@@ -95,7 +95,7 @@ public class StudentClassSec extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 TempDao.updateStudentId(studIDList.get(position), sqliteDatabase);
-                ReplaceFragment.replace(new SearchStudST(), getFragmentManager());
+                ReplaceFragment.replace(new StudentProfile(), getFragmentManager());
             }
         });
 

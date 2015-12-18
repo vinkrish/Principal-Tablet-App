@@ -70,6 +70,7 @@ public class SearchStudExamSub extends Fragment {
         adapter = new StudExamSubAdapter(context, R.layout.search_exam_sub_list, amrList);
         lv.setAdapter(adapter);
 
+        view.findViewById(R.id.profile).setOnClickListener(searchProfile);
         view.findViewById(R.id.slipSearch).setOnClickListener(searchSlipTest);
         view.findViewById(R.id.seSearch).setOnClickListener(searchExam);
         view.findViewById(R.id.examButton).setOnClickListener(searchExam);
@@ -93,6 +94,13 @@ public class SearchStudExamSub extends Fragment {
         subIdList.clear();
         scoreList.clear();
     }
+
+    private View.OnClickListener searchProfile = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            ReplaceFragment.replace(new StudentProfile(), getFragmentManager());
+        }
+    };
 
     private View.OnClickListener searchSlipTest = new View.OnClickListener() {
         @Override

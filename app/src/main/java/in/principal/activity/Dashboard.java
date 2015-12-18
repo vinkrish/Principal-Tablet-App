@@ -1,6 +1,7 @@
 package in.principal.activity;
 
 import in.principal.fragment.StudentList;
+import in.principal.fragment.StudentProfile;
 import in.principal.sqlite.SqlDbHelper;
 import in.principal.util.AnimationUtils;
 import in.principal.util.CommonDialogUtils;
@@ -179,7 +180,7 @@ public class Dashboard extends BaseActivity {
             selectDefaultFragment();
         }
 
-        registerReceiver(broadcastReceiver, new IntentFilter("INTERNET_STATUS"));
+        //registerReceiver(broadcastReceiver, new IntentFilter("INTERNET_STATUS"));
     }
 
     private void updateDate(){
@@ -212,25 +213,23 @@ public class Dashboard extends BaseActivity {
 
     @Override
     protected void onResume() {
-        registerReceiver(broadcastReceiver, new IntentFilter("INTERNET_STATUS"));
+        //registerReceiver(broadcastReceiver, new IntentFilter("INTERNET_STATUS"));
         super.onResume();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        registerReceiver(broadcastReceiver, new IntentFilter("INTERNET_STATUS"));
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        registerReceiver(broadcastReceiver, new IntentFilter("INTERNET_STATUS"));
     }
 
     @Override
     protected void onStop() {
-        unregisterReceiver(broadcastReceiver);
+        //unregisterReceiver(broadcastReceiver);
         super.onStop();
     }
 
@@ -287,7 +286,7 @@ public class Dashboard extends BaseActivity {
                         int idx = studNameList.indexOf(textView2.getText().toString());
                         if (idx != -1) {
                             TempDao.updateStudentId(studIdList.get(idx), sqliteDatabase);
-                            ReplaceFragment.replace(new SearchStudST(), getFragmentManager());
+                            ReplaceFragment.replace(new StudentProfile(), getFragmentManager());
                         }
                     }
                 });

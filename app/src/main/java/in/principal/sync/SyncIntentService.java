@@ -44,7 +44,7 @@ public class SyncIntentService extends IntentService implements StringConstant {
     private SQLiteDatabase sqliteDatabase;
     private Context context;
     private int block, schoolId;
-    private String zipFile, fileName, deviceId;
+    private String zipFile, deviceId;
     private SharedPreferences sharedPref;
 
     public SyncIntentService() {
@@ -103,7 +103,7 @@ public class SyncIntentService extends IntentService implements StringConstant {
     private void decideDownload() {
         if (block != 2 && zipFile != "") {
             Log.d("downloadFile", "uh");
-            fileName = "download/" + schoolId + "/zipped_folder/" + zipFile;
+            String fileName = "download/" + schoolId + "/zipped_folder/" + zipFile;
             TransferManager mTransferManager = new TransferManager(Util.getCredProvider(context));
             DownloadModel model = new DownloadModel(context, fileName, mTransferManager);
             model.download();
@@ -129,7 +129,9 @@ public class SyncIntentService extends IntentService implements StringConstant {
                         mStatus = Status.COMPLETED;
                         unzipAndAck();
                     } else if (event.getEventCode() == ProgressEvent.FAILED_EVENT_CODE) {
-                        finishSync();
+                        exitSync();
+                    } else if (event.getEventCode() == ProgressEvent.CANCELED_EVENT_CODE) {
+                        exitSync();
                     }
                 }
             };
@@ -160,6 +162,7 @@ public class SyncIntentService extends IntentService implements StringConstant {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
+                exitSync();
             }
         }
 

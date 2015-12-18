@@ -128,7 +128,7 @@
     <string name="stoan">Select the options as need</string>
     <string name="title_activity_syncing">Syncing</string>
     <string name="resolving">Resolving Errors</string>
-    <string name="bugs">Touch here to sync</string>
+    <string name="bugs">Touch here to sync and have internet accesible</string>
     <string name="server_resolve">Tab is in Sync</string>
     <string name="voice_sms">Voice SMS</string>
     <string name="send_voice_sms">Send Voice SMS to:</string>
@@ -136,13 +136,13 @@
     <string name="sms">SMS</string>
     <string name="submit">Submit</string>
 
-    <string name="all_students_mes">Recorded message will be sent to all students.</string>
-    <string name="all_male_stud_mes">Recorded message will be sent to all male students.</string>
-    <string name="all_female_stud_mes">Recorded message will be sent to all female students.</string>
-    <string name="all_teachers_mes">Recorded message will be sent to all teachers.</string>
-    <string name="all_male_teachers_mes">Recorded message will be sent to all male teachers.</string>
-    <string name="all_female_teachers_mes">Recorded message will be sent to all female teachers.</string>
-    <string name="all_class_teacher_mes">Recorded message will be sent to all class teachers</string>
+    <string name="all_students_mes">Text sms will be sent to all students.</string>
+    <string name="all_male_stud_mes">Text sms will be sent to all male students.</string>
+    <string name="all_female_stud_mes">Text sms will be sent to all female students.</string>
+    <string name="all_teachers_mes">Text sms will be sent to all teachers.</string>
+    <string name="all_male_teachers_mes">Text sms will be sent to all male teachers.</string>
+    <string name="all_female_teachers_mes">Text sms will be sent to all female teachers.</string>
+    <string name="all_class_teacher_mes">Text sms will be sent to all class teachers</string>
 
     <string name="upload">Upload</string>
     <string name="record">Start Recording</string>
@@ -167,5 +167,21 @@
     <string name="update_apk">A new version of application is available, please click the update button to confirm and continue.</string>
     <string name="update_apk_wifi">*tab should be in wifi zone.</string>
     <string name="update_apk_button">Update the application</string>
+
+    <string name="profile">Profile</string>
+    <string name="name">Name</string>
+    <string name="colon">:</string>
+    <string name="sec">Section</string>
+    <string name="roll_no">Roll No</string>
+    <string name="father">Father\'s Name</string>
+    <string name="mother">Mother\'s Name</string>
+    <string name="dob">Date Of Birth</string>
+    <string name="gender">Gender</string>
+    <string name="mobile1">Mobile</string>
+    <string name="mobile2">Alternate Mob</string>
+    <string name="address">Address</string>
+    <string name="pincode">PinCode</string>
+    <string name="admission_no">Admission No</string>
+    <string name="dummy">.</string>
 
 </resources>

@@ -321,7 +321,7 @@ public class LoginActivity extends BaseActivity {
                             manualSync == 0) {
                         Intent intentProcess = new Intent(context, in.principal.activity.ProcessFiles.class);
                         intentProcess.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
+                        startActivity(intentProcess);
                     }
                     //System.out.println("Screen off " + "LOCKED");
                 } else {

@@ -48,7 +48,7 @@ public class FirstTimeProcessTask extends AsyncTask<String, String, String> impl
 
     protected void onPreExecute() {
         super.onPreExecute();
-        pDialog.setMessage("Downloading/Processing File ...");
+        pDialog.setMessage("Processing File ...");
         pDialog.setIndeterminate(false);
         pDialog.setCancelable(false);
         pDialog.setMax(100);

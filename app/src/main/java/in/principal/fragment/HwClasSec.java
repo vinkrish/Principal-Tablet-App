@@ -221,7 +221,13 @@ public class HwClasSec extends Fragment {
                 for (String subjectId : id) {
                     subIdList.add(Integer.parseInt(subjectId));
                 }
-                String messageBody = hw.getHomework();
+                String messageBody = hw.getHomework() + " ";
+
+                while (messageBody.contains("##")) {
+                    String s = messageBody.replaceAll("##","# # ");
+                    messageBody = s;
+                }
+
                 String splitBy2 = "#";
                 String[] message = messageBody.split(splitBy2);
                 hwMesList.addAll(Arrays.asList(message));

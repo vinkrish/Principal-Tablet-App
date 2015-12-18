@@ -67,6 +67,7 @@ public class SearchStudExam extends Fragment {
         adapter = new StudExamAdapter(context, R.layout.search_exam_list, amrList);
         lv.setAdapter(adapter);
 
+        view.findViewById(R.id.profile).setOnClickListener(searchProfile);
         view.findViewById(R.id.slipSearch).setOnClickListener(searchSlipTest);
         view.findViewById(R.id.attSearch).setOnClickListener(searchAttendance);
 
@@ -87,6 +88,13 @@ public class SearchStudExam extends Fragment {
         avgList1.clear();
         avgList2.clear();
     }
+
+    private View.OnClickListener searchProfile = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            ReplaceFragment.replace(new StudentProfile(), getFragmentManager());
+        }
+    };
 
     private View.OnClickListener searchSlipTest = new View.OnClickListener() {
         @Override
