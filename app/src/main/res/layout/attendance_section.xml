@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF" >
+    android:background="#FFFFFF">
 
     <LinearLayout
         android:id="@+id/breadcrum"
@@ -11,7 +11,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:background="@color/dark_black"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/dash"
@@ -38,8 +38,8 @@
             android:background="@drawable/heading_selector"
             android:onClick="todaysAttendance"
             android:text="@string/attendance"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
 
         <View
             android:layout_width="1dp"
@@ -53,8 +53,8 @@
             android:layout_weight="1"
             android:background="@drawable/heading_selector"
             android:onClick="classAttendance"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/sectionButton"
@@ -62,10 +62,10 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/button_selector_blue"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
-    
+
     <View
         android:id="@+id/dividerup"
         android:layout_width="match_parent"
@@ -81,7 +81,8 @@
         android:background="@color/layoutbelowBC"
         android:baselineAligned="false"
         android:orientation="horizontal"
-        android:paddingLeft="10dp" >
+        android:paddingEnd="0dp"
+        android:paddingStart="10dp">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -89,7 +90,7 @@
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:layout_weight="0.7"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -110,12 +111,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginEnd="5dp"
             android:layout_weight="0.3"
-            android:gravity="center"
             android:background="#FFFFFF"
-            android:layout_marginRight="5dp"
-            android:paddingRight="5dp"
-            android:orientation="horizontal" >
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingEnd="5dp"
+            android:paddingStart="0dp">
 
             <TextView
                 android:id="@+id/dat"
@@ -123,14 +125,14 @@
                 android:layout_height="45dp"
                 android:layout_gravity="center_vertical"
                 android:gravity="center_vertical"
-                android:paddingLeft="15dp"
-                android:textSize="20sp" >
-            </TextView>
+                android:paddingEnd="0dp"
+                android:paddingStart="15dp"
+                android:textSize="20sp" />
 
             <ImageView
                 android:layout_width="15dp"
                 android:layout_height="15dp"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:background="@drawable/downarrow"
                 android:contentDescription="@string/cc" />
@@ -150,12 +152,12 @@
         android:layout_height="40dp"
         android:layout_below="@id/viewbelowbc"
         android:background="@color/layoutbelowBC"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <LinearLayout
             android:id="@+id/selectSection"
             android:layout_width="170dp"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/clasecName"
@@ -169,7 +171,8 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:contentDescription="@string/cc"
-                android:paddingRight="5dp"
+                android:paddingEnd="5dp"
+                android:paddingStart="0dp"
                 android:src="@drawable/downarrow" />
         </LinearLayout>
 
@@ -182,15 +185,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:gravity="end"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="230dp"
+                android:layout_marginStart="230dp"
                 android:text="@string/sectionaverage"
                 android:textStyle="bold" />
 
@@ -200,7 +203,7 @@
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:focusable="false" />
 
             <TextView
@@ -221,12 +224,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/breadcrum3"
         android:layout_centerInParent="true"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="0dp"
@@ -234,7 +237,8 @@
                 android:layout_gravity="center_vertical"
                 android:layout_weight="0.15"
                 android:gravity="center"
-                android:paddingLeft="15dp"
+                android:paddingEnd="0dp"
+                android:paddingStart="15dp"
                 android:text="@string/roll"
                 android:textColor="@color/light_black"
                 android:textSize="18sp"
@@ -250,8 +254,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="0.8"
-                android:gravity="left"
-                android:paddingLeft="15dp"
+                android:gravity="start"
+                android:paddingEnd="0dp"
+                android:paddingStart="15dp"
                 android:text="@string/studentname"
                 android:textColor="@color/light_black"
                 android:textSize="18sp"
@@ -269,8 +274,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:divider="@null"
-            android:dividerHeight="0dp" >
-        </ListView>
+            android:dividerHeight="0dp" />
     </LinearLayout>
 
 </RelativeLayout>

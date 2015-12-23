@@ -14,16 +14,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:gravity="left"
+            android:gravity="start"
             android:padding="15dp"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:gravity="right"
+            android:gravity="end"
             android:padding="15dp"
             android:text="@string/version"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -34,12 +34,12 @@
         android:id="@+id/sync_me"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_below="@id/top_view"
-        android:layout_alignParentRight="true"
         android:onClick="syncClicked"
         android:padding="10dp"
         android:text="@string/syncme"
-        android:textColor="#000"/>
+        android:textColor="#000" />
 
     <LinearLayout
         android:id="@+id/ll"
@@ -48,7 +48,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="#66FFFFFF"
-        android:orientation="vertical"></LinearLayout>
+        android:orientation="vertical" />
 
     <View
         android:id="@+id/viewlayout"
@@ -79,9 +79,9 @@
             android:gravity="center"
             android:onClick="usernameClicked"
             android:text="@string/username"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textColorHint="#FFFFFF" />
 
         <TextView
             android:id="@+id/password"
@@ -93,9 +93,9 @@
             android:gravity="center"
             android:onClick="passwordClicked"
             android:text="@string/password"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textColorHint="#FFFFFF" />
     </LinearLayout>
 
     <ImageView
@@ -121,12 +121,12 @@
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
-        android:layout_marginRight="10dp"
-        android:layout_toLeftOf="@id/bottomViewCenter"
+        android:layout_marginEnd="10dp"
+        android:layout_toStartOf="@id/bottomViewCenter"
         android:background="@drawable/button_selector"
         android:text="@string/zero"
-        android:textColor="#FFFFFF"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/numclear"
@@ -134,12 +134,12 @@
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/bottomViewCenter"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/bottomViewCenter"
         android:background="@drawable/button_selector"
         android:text="@string/clear"
-        android:textColor="#FFFFFF"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/num8"
@@ -150,32 +150,32 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/button_selector"
         android:text="@string/eight"
-        android:textColor="#FFFFFF"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/num7"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_alignBaseline="@id/num8"
-        android:layout_marginRight="20dp"
-        android:layout_toLeftOf="@id/num8"
+        android:layout_marginEnd="20dp"
+        android:layout_toStartOf="@id/num8"
         android:background="@drawable/button_selector"
         android:text="@string/seven"
-        android:textColor="#FFFFFF"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/num9"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_alignBaseline="@id/num8"
-        android:layout_marginLeft="20dp"
-        android:layout_toRightOf="@id/num8"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/num8"
         android:background="@drawable/button_selector"
         android:text="@string/nine"
-        android:textColor="#FFFFFF"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/num5"
@@ -186,32 +186,32 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/button_selector"
         android:text="@string/five"
-        android:textColor="#FFFFFF"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/num4"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_alignBaseline="@id/num5"
-        android:layout_marginRight="20dp"
-        android:layout_toLeftOf="@id/num5"
+        android:layout_marginEnd="20dp"
+        android:layout_toStartOf="@id/num5"
         android:background="@drawable/button_selector"
         android:text="@string/four"
-        android:textColor="#FFFFFF"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/num6"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_alignBaseline="@id/num5"
-        android:layout_marginLeft="20dp"
-        android:layout_toRightOf="@id/num5"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/num5"
         android:background="@drawable/button_selector"
         android:text="@string/six"
-        android:textColor="#FFFFFF"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/num2"
@@ -222,31 +222,31 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/button_selector"
         android:text="@string/two"
-        android:textColor="#FFFFFF"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/num1"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_alignBaseline="@id/num2"
-        android:layout_marginRight="20dp"
-        android:layout_toLeftOf="@id/num2"
+        android:layout_marginEnd="20dp"
+        android:layout_toStartOf="@id/num2"
         android:background="@drawable/button_selector"
         android:text="@string/one"
-        android:textColor="#FFFFFF"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/num3"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_alignBaseline="@id/num2"
-        android:layout_marginLeft="20dp"
-        android:layout_toRightOf="@id/num2"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/num2"
         android:background="@drawable/button_selector"
         android:text="@string/three"
-        android:textColor="#FFFFFF"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF" />
 
 </RelativeLayout>

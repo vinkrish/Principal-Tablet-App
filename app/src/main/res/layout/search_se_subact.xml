@@ -99,7 +99,8 @@
         android:background="@color/layoutbelowBC"
         android:baselineAligned="false"
         android:orientation="horizontal"
-        android:paddingLeft="10dp">
+        android:paddingEnd="0dp"
+        android:paddingStart="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -218,8 +219,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.75"
-            android:gravity="left"
-            android:paddingLeft="10dp"
+            android:gravity="start"
+            android:paddingEnd="0dp"
+            android:paddingStart="10dp"
             android:text="@string/activity"
             android:textColor="@color/light_black"
             android:textSize="19sp"
@@ -234,10 +236,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_weight="0.55"
-            android:gravity="left"
-            android:paddingLeft="10dp"
+            android:gravity="start"
+            android:paddingEnd="0dp"
+            android:paddingStart="10dp"
             android:text="@string/stud_avg"
             android:textColor="@color/light_black"
             android:textSize="19sp"
@@ -258,6 +261,6 @@
         android:layout_below="@id/bottom"
         android:layout_gravity="center"
         android:divider="@null"
-        android:dividerHeight="0dp"></ListView>
+        android:dividerHeight="0dp" />
 
 </RelativeLayout>

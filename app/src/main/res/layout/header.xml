@@ -8,7 +8,8 @@
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:layout_margin="15dp"
-        android:src="@drawable/logo"/>
+        android:contentDescription="@string/cc"
+        android:src="@drawable/logo" />
 
     <View
         android:layout_width="match_parent"

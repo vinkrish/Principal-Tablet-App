@@ -39,8 +39,8 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:text="@string/performance"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
 
         <View
             android:layout_width="1dp"
@@ -54,8 +54,8 @@
             android:layout_weight="1"
             android:background="@drawable/heading_selector"
             android:onClick="stPerfClass"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
 
         <View
             android:layout_width="1dp"
@@ -69,19 +69,19 @@
             android:layout_weight="1"
             android:background="@drawable/heading_selector"
             android:onClick="stPerfSec"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/perfSt"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
             android:background="@drawable/button_selector_blue"
             android:text="@string/sliptest"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 
     <View
@@ -99,7 +99,8 @@
         android:background="@color/layoutbelowBC"
         android:baselineAligned="false"
         android:orientation="horizontal"
-        android:paddingLeft="10dp">
+        android:paddingEnd="0dp"
+        android:paddingStart="10dp">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -136,7 +137,7 @@
             android:layout_width="0dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
-            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_weight="0.05"
             android:background="@color/dark_black"
             android:gravity="center"
@@ -165,7 +166,7 @@
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:gravity="center"
-            android:numColumns="3"></GridView>
+            android:numColumns="3" />
 
         <GridView
             android:id="@+id/gridView2"
@@ -174,7 +175,7 @@
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:gravity="center"
-            android:numColumns="3"></GridView>
+            android:numColumns="3" />
     </FrameLayout>
 
     <View
@@ -203,7 +204,8 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:paddingLeft="5dp"
+                android:paddingEnd="0dp"
+                android:paddingStart="5dp"
                 android:text="@string/slno"
                 android:textColor="@color/light_black"
                 android:textSize="18sp"
@@ -233,7 +235,8 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:paddingLeft="10dp"
+                android:paddingEnd="0dp"
+                android:paddingStart="10dp"
                 android:text="@string/studentname"
                 android:textColor="@color/light_black"
                 android:textSize="18sp"
@@ -264,7 +267,8 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:paddingLeft="5dp"
+                android:paddingEnd="0dp"
+                android:paddingStart="5dp"
                 android:textColor="@color/light_black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -286,7 +290,7 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="45dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_weight="0.4">
 
             <TextView
@@ -295,7 +299,8 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:paddingLeft="10dp"
+                android:paddingEnd="0dp"
+                android:paddingStart="10dp"
                 android:text="@string/average"
                 android:textColor="@color/light_black"
                 android:textSize="18sp"
@@ -322,6 +327,6 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/bottom"></ListView>
+        android:layout_below="@id/bottom" />
 
 </RelativeLayout>

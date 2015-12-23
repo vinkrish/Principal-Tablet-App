@@ -40,8 +40,8 @@
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="@string/se"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
 
         <View
             android:layout_width="1dp"
@@ -57,8 +57,8 @@
             android:onClick="seClass"
             android:paddingLeft="25dp"
             android:paddingRight="25dp"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
 
         <View
             android:layout_width="1dp"
@@ -74,8 +74,8 @@
             android:onClick="SeSecSub"
             android:paddingLeft="25dp"
             android:paddingRight="25dp"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/se"
@@ -85,8 +85,8 @@
             android:background="@drawable/button_selector_blue"
             android:paddingLeft="25dp"
             android:paddingRight="25dp"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 
     <View
@@ -105,7 +105,8 @@
         android:baselineAligned="false"
         android:gravity="center_vertical"
         android:orientation="vertical"
-        android:paddingLeft="10dp">
+        android:paddingEnd="0dp"
+        android:paddingStart="10dp">
 
         <TextView
             android:id="@+id/subinfo"
@@ -167,8 +168,9 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="0.5"
-            android:gravity="left|center"
-            android:paddingLeft="10dp"
+            android:gravity="start|center"
+            android:paddingEnd="0dp"
+            android:paddingStart="10dp"
             android:text="@string/studentname"
             android:textColor="@color/light_black"
             android:textSize="18sp"
@@ -204,6 +206,6 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/bottom"></ListView>
+        android:layout_below="@id/bottom" />
 
 </RelativeLayout>

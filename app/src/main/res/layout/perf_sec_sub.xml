@@ -39,8 +39,8 @@
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="@string/performance"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
 
         <View
             android:layout_width="1dp"
@@ -56,8 +56,8 @@
             android:onClick="stPerfClass"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/perfSec"
@@ -67,8 +67,8 @@
             android:background="@drawable/button_selector_blue"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 
     <View
@@ -86,7 +86,8 @@
         android:background="@color/layoutbelowBC"
         android:baselineAligned="false"
         android:orientation="horizontal"
-        android:paddingLeft="10dp">
+        android:paddingEnd="0dp"
+        android:paddingStart="10dp">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -123,7 +124,7 @@
             android:layout_width="0dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
-            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_weight="0.07"
             android:background="@color/dark_black"
             android:gravity="center"
@@ -173,7 +174,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.7"
-            android:paddingLeft="10dp"
+            android:paddingEnd="0dp"
+            android:paddingStart="10dp"
             android:text="@string/portions"
             android:textColor="@color/light_black"
             android:textSize="18sp"
@@ -189,7 +191,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.25"
-            android:paddingLeft="10dp"
+            android:paddingEnd="0dp"
+            android:paddingStart="10dp"
             android:text="@string/date"
             android:textColor="@color/light_black"
             android:textSize="18sp"
@@ -204,9 +207,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_weight="0.5"
-            android:paddingLeft="10dp"
+            android:paddingEnd="0dp"
+            android:paddingStart="10dp"
             android:text="@string/average"
             android:textColor="@color/light_black"
             android:textSize="18sp"
@@ -224,6 +228,6 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/bottom"></ListView>
+        android:layout_below="@id/bottom" />
 
 </RelativeLayout>

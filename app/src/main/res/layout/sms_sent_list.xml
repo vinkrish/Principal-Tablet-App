@@ -1,21 +1,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="10dp"
+    android:orientation="horizontal"
     android:paddingBottom="10dp"
-    android:orientation="horizontal" >
+    android:paddingTop="10dp">
 
     <TextView
         android:id="@+id/message"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
         android:layout_weight="1"
-        android:paddingLeft="10dp"
         android:focusable="false"
-        android:textColor="#000000"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-    
+        android:gravity="center_vertical"
+        android:paddingEnd="0dp"
+        android:paddingStart="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
     <View
         android:layout_width="1dp"
         android:layout_height="match_parent"
@@ -25,13 +26,13 @@
         android:id="@+id/date"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_weight="0.5"
         android:focusable="false"
-        android:textColor="#000000"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-    
-   <View
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <View
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:background="@color/divider" />
@@ -40,10 +41,10 @@
         android:id="@+id/to"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_weight="0.5"
         android:focusable="false"
-        android:textColor="#000000"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-  
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
 </LinearLayout>

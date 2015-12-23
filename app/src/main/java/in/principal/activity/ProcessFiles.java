@@ -66,7 +66,7 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
-        registerReceiver(broadcastReceiver, new IntentFilter("in.vinkrish.networkChange"));
+        //registerReceiver(broadcastReceiver, new IntentFilter("in.vinkrish.networkChange"));
 
         txtPercentage = (TextView) findViewById(R.id.txtPercentage);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
@@ -420,7 +420,7 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
     public void onBackPressed() {
     }
 
-    BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+    /*BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             SharedPreferences sharedPref = ProcessFiles.this.getSharedPreferences("db_access", Context.MODE_PRIVATE);
@@ -437,6 +437,6 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
     protected void onStop() {
         unregisterReceiver(broadcastReceiver);
         super.onStop();
-    }
+    }*/
 
 }

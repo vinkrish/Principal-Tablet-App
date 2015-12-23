@@ -1,67 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/login_page_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rectangle_gray_pop_up_bottom"
+    android:gravity="center"
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/alertMessageLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/rectangle_gray_pop_up_bottom"
-        android:orientation="vertical">
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dip"
-            android:background="#848484"
-            android:visibility="gone" />
-
-        <LinearLayout
-            android:id="@+id/alertMessageLayout"
+        <TextView
+            android:id="@+id/alertText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="15dp">
-
-            <TextView
-                android:id="@+id/alertText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="alert Text"
-                android:textColor="#848484"
-                android:textSize="@dimen/text_medium" />
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dip"
-            android:background="#C0C0C0" />
-
-        <LinearLayout
-            android:id="@+id/alertButtonLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-
-            <Button
-                android:id="@+id/ok_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:background="@drawable/gray_button_background"
-                android:gravity="center"
-                android:text="@string/ok"
-                android:textColor="#848484"
-                android:textSize="@dimen/text_medium" />
-
-        </LinearLayout>
+            android:gravity="center"
+            android:text=""
+            android:textColor="#848484"
+            android:textSize="@dimen/text_medium" />
 
     </LinearLayout>
 
-</RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#C0C0C0" />
+
+    <LinearLayout
+        android:id="@+id/alertButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/ok_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gray_button_background"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/ok"
+            android:textColor="#848484"
+            android:textSize="@dimen/text_medium" />
+
+    </LinearLayout>
+
+</LinearLayout>

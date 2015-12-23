@@ -11,8 +11,8 @@
         android:contentDescription="@string/app_name"
         android:gravity="center"
         android:text="@string/search"
-        android:textColor="@color/white"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/white"
         android:textStyle="bold" />
 
     <AutoCompleteTextView

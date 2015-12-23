@@ -76,8 +76,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:gravity="left|center"
-            android:paddingLeft="10dp"
+            android:gravity="start|center"
+            android:paddingStart="10dp"
+            android:paddingEnd="0dp"
             android:text="@string/message"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/light_black" />

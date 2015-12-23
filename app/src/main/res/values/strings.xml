@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="version">Version - 1.3</string>
+    <string name="version">Version - 1.34</string>
 
     <string name="username">Username</string>
     <string name="password">Password</string>
@@ -16,6 +16,7 @@
     <string name="cc">content description</string>
     <string name="no_internet">no wifi / internet</string>
     <string name="syncme">sync the data</string>
+    <string name="admin">Admin</string>
 
     <string name="closeDrawer">Navigation View</string>
     <string name="openDrawer">Navigation View Closed</string>
@@ -135,6 +136,8 @@
     <string name="send_sms">Send SMS to:</string>
     <string name="sms">SMS</string>
     <string name="submit">Submit</string>
+    <string name="select_clas">select class</string>
+    <string name="select_sec">select section</string>
 
     <string name="all_students_mes">Text sms will be sent to all students.</string>
     <string name="all_male_stud_mes">Text sms will be sent to all male students.</string>
@@ -144,13 +147,19 @@
     <string name="all_female_teachers_mes">Text sms will be sent to all female teachers.</string>
     <string name="all_class_teacher_mes">Text sms will be sent to all class teachers</string>
 
+    <string name="enter_msg">Enter message</string>
+    <string name="sel_clas">select class</string>
+    <string name="sel_sec">select section</string>
+    <string name="sel_stud">select student</string>
+
+    <string name="status">Status :</string>
+    <string name="custom_name">Custom name</string>
     <string name="upload">Upload</string>
     <string name="record">Start Recording</string>
     <string name="stop_rec">Stop Recording</string>
     <string name="play">Play</string>
     <string name="stop_play">Stop Playing</string>
     <string name="delete">Delete</string>
-    <string name="custom_name">Custom Name</string>
     <string name="prev_rec">Previous Recordings</string>
     <string name="message">Message</string>
     <string name="idxcolumn"> # </string>

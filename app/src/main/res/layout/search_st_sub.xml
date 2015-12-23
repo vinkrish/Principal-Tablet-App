@@ -37,8 +37,8 @@
             android:layout_weight="1"
             android:background="@color/dark_black"
             android:text="@string/sliptest"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
 
         <View
             android:layout_width="1dp"
@@ -51,9 +51,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/dark_black"
-            android:gravity="left|center"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:gravity="start|center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
 
         <View
             android:layout_width="1dp"
@@ -69,7 +69,8 @@
         android:background="@color/layoutbelowBC"
         android:baselineAligned="false"
         android:orientation="horizontal"
-        android:paddingLeft="10dp">
+        android:paddingEnd="0dp"
+        android:paddingStart="10dp">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -102,7 +103,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
             android:layout_weight="0.21">
 
             <ProgressBar
@@ -213,7 +214,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.8"
-            android:paddingLeft="10dp"
+            android:paddingEnd="0dp"
+            android:paddingStart="10dp"
             android:text="@string/portions"
             android:textColor="@color/light_black"
             android:textSize="18sp"
@@ -279,6 +281,6 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/bottom"></ListView>
+        android:layout_below="@id/bottom" />
 
 </RelativeLayout>

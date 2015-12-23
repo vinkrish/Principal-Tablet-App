@@ -100,14 +100,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:paddingLeft="5dp"
+                android:paddingEnd="0dp"
+                android:paddingStart="5dp"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <ImageView
                 android:layout_width="15dp"
                 android:layout_height="15dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="-20dp"
+                android:layout_marginStart="-20dp"
                 android:background="@drawable/downarrow"
                 android:contentDescription="@string/cc" />
         </LinearLayout>
@@ -127,14 +128,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:paddingLeft="5dp"
+                android:paddingEnd="0dp"
+                android:paddingStart="5dp"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <ImageView
                 android:layout_width="15dp"
                 android:layout_height="15dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="-20dp"
+                android:layout_marginStart="-20dp"
                 android:background="@drawable/downarrow"
                 android:contentDescription="@string/cc" />
         </LinearLayout>
@@ -155,7 +157,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:paddingLeft="5dp"
+                android:paddingEnd="0dp"
+                android:paddingStart="5dp"
                 android:text="@string/clas"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -163,7 +166,7 @@
                 android:layout_width="15dp"
                 android:layout_height="15dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="-20dp"
+                android:layout_marginStart="-20dp"
                 android:background="@drawable/downarrow"
                 android:contentDescription="@string/cc" />
         </LinearLayout>
@@ -184,7 +187,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:paddingLeft="5dp"
+                android:paddingEnd="0dp"
+                android:paddingStart="5dp"
                 android:text="@string/section"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -192,7 +196,7 @@
                 android:layout_width="15dp"
                 android:layout_height="15dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="-20dp"
+                android:layout_marginStart="-20dp"
                 android:background="@drawable/downarrow"
                 android:contentDescription="@string/cc" />
         </LinearLayout>
@@ -212,7 +216,7 @@
             android:id="@+id/creation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="40dp"
+            android:layout_marginEnd="40dp"
             android:text="@string/creation"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -260,7 +264,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.3"
-            android:paddingLeft="10dp"
+            android:paddingEnd="0dp"
+            android:paddingStart="10dp"
             android:text="@string/subject"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/light_black"
@@ -293,7 +298,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.55"
-            android:paddingLeft="15dp"
+            android:paddingEnd="0dp"
+            android:paddingStart="15dp"
             android:text="@string/portions"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/light_black"
@@ -328,6 +334,6 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/bottom"></ListView>
+        android:layout_below="@id/bottom" />
 
 </RelativeLayout>

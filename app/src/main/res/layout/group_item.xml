@@ -23,7 +23,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.6"
-        android:gravity="left|center_vertical"
+        android:gravity="start|center_vertical"
         android:paddingBottom="20dp"
         android:paddingTop="20dp"
         android:textAppearance="?android:attr/textAppearanceLarge"

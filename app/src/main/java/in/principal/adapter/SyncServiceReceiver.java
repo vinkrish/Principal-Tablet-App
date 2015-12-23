@@ -44,7 +44,7 @@ public class SyncServiceReceiver extends BroadcastReceiver {
                     editor.apply();
                     Intent processIntent = new Intent(context, in.principal.activity.ProcessFiles.class);
                     processIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(intent);
+                    context.startActivity(processIntent);
                 }
             } else {
                 Intent i = new Intent(context, in.principal.activity.LoginActivity.class);
