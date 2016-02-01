@@ -38,8 +38,8 @@
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="@string/se"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 
     <TextView
@@ -48,8 +48,9 @@
         android:layout_height="60dp"
         android:layout_below="@id/breadcrum"
         android:background="@color/layoutbelowBC"
-        android:gravity="left|center_vertical"
-        android:paddingLeft="20dp"
+        android:gravity="start|center_vertical"
+        android:paddingEnd="0dp"
+        android:paddingStart="20dp"
         android:text="@string/se"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -83,6 +84,6 @@
         android:gravity="center"
         android:horizontalSpacing="20dp"
         android:numColumns="3"
-        android:verticalSpacing="40dp"></GridView>
+        android:verticalSpacing="40dp" />
 
 </RelativeLayout><!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/layout/se.xml -->

@@ -45,6 +45,7 @@ import android.widget.TextView;
 
 /**
  * Created by vinkrish.
+ * This needs to be optimized, good luck with that.
  */
 public class ProcessFiles extends BaseActivity implements StringConstant {
     private SqlDbHelper sqlHandler;
@@ -135,7 +136,6 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
                                 SharedPreferences sp = ProcessFiles.this.getSharedPreferences("db_access", Context.MODE_PRIVATE);
                                 SharedPreferences.Editor editr = sp.edit();
                                 editr.putInt("tablet_lock", 1);
-                                editr.putInt("sleep_sync", 0);
                                 editr.apply();
                                 String except = e + "";
                                 try {
@@ -191,17 +191,17 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
 
             publishProgress("0", 0 + "", "calculating average");
 
-            ArrayList<Integer> examIdList = new ArrayList<>();
+            ArrayList<Long> examIdList = new ArrayList<>();
             ArrayList<Integer> subjectIdList = new ArrayList<>();
-            ArrayList<Integer> activityIdList = new ArrayList<>();
-            ArrayList<Integer> subActIdList = new ArrayList<>();
+            ArrayList<Long> activityIdList = new ArrayList<>();
+            ArrayList<Long> subActIdList = new ArrayList<>();
             ArrayList<Integer> sectionIdList = new ArrayList<>();
 
             Cursor c3 = sqliteDatabase.rawQuery("select distinct ExamId,SubjectId from avgtrack " +
                     "where Type=0 and ActivityId=0 and SubActivityId=0 and SectionId=0 and ExamId!=0 and SubjectId!=0", null);
             c3.moveToFirst();
             while (!c3.isAfterLast()) {
-                examIdList.add(c3.getInt(c3.getColumnIndex("ExamId")));
+                examIdList.add(c3.getLong(c3.getColumnIndex("ExamId")));
                 subjectIdList.add(c3.getInt(c3.getColumnIndex("SubjectId")));
                 c3.moveToNext();
             }
@@ -217,7 +217,7 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
                     "where Type=1 and ActivityId=0 and SubActivityId=0 and SectionId=0 and ExamId!=0 and SubjectId!=0", null);
             c4.moveToFirst();
             while (!c4.isAfterLast()) {
-                examIdList.add(c4.getInt(c4.getColumnIndex("ExamId")));
+                examIdList.add(c4.getLong(c4.getColumnIndex("ExamId")));
                 subjectIdList.add(c4.getInt(c4.getColumnIndex("SubjectId")));
                 c4.moveToNext();
             }
@@ -235,8 +235,8 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
                     "where Type=0 and SubActivityId=0 and SectionId=0 and ExamId!=0 and ActivityId!=0 and SubjectId!=0", null);
             c5.moveToFirst();
             while (!c5.isAfterLast()) {
-                examIdList.add(c5.getInt(c5.getColumnIndex("ExamId")));
-                activityIdList.add(c5.getInt(c5.getColumnIndex("ActivityId")));
+                examIdList.add(c5.getLong(c5.getColumnIndex("ExamId")));
+                activityIdList.add(c5.getLong(c5.getColumnIndex("ActivityId")));
                 subjectIdList.add(c5.getInt(c5.getColumnIndex("SubjectId")));
                 c5.moveToNext();
             }
@@ -255,8 +255,8 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
                     "where Type=1 and SubActivityId=0 and SectionId=0 and ExamId!=0 and ActivityId!=0 and SubjectId!=0", null);
             c6.moveToFirst();
             while (!c6.isAfterLast()) {
-                examIdList.add(c6.getInt(c6.getColumnIndex("ExamId")));
-                activityIdList.add(c6.getInt(c6.getColumnIndex("ActivityId")));
+                examIdList.add(c6.getLong(c6.getColumnIndex("ExamId")));
+                activityIdList.add(c6.getLong(c6.getColumnIndex("ActivityId")));
                 subjectIdList.add(c6.getInt(c6.getColumnIndex("SubjectId")));
                 c6.moveToNext();
             }
@@ -277,9 +277,9 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
                     "where Type=0 and SectionId=0 and ExamId!=0 and ActivityId!=0 and SubActivityId!=0 and SubjectId!=0", null);
             c7.moveToFirst();
             while (!c7.isAfterLast()) {
-                examIdList.add(c7.getInt(c7.getColumnIndex("ExamId")));
-                activityIdList.add(c7.getInt(c7.getColumnIndex("ActivityId")));
-                subActIdList.add(c7.getInt(c7.getColumnIndex("SubActivityId")));
+                examIdList.add(c7.getLong(c7.getColumnIndex("ExamId")));
+                activityIdList.add(c7.getLong(c7.getColumnIndex("ActivityId")));
+                subActIdList.add(c7.getLong(c7.getColumnIndex("SubActivityId")));
                 subjectIdList.add(c7.getInt(c7.getColumnIndex("SubjectId")));
                 c7.moveToNext();
             }
@@ -301,9 +301,9 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
                     "where Type=1 and SectionId=0 and ExamId!=0 and ActivityId!=0 and SubActivityId!=0 and SubjectId!=0", null);
             c8.moveToFirst();
             while (!c8.isAfterLast()) {
-                examIdList.add(c8.getInt(c8.getColumnIndex("ExamId")));
-                activityIdList.add(c8.getInt(c8.getColumnIndex("ActivityId")));
-                subActIdList.add(c8.getInt(c8.getColumnIndex("SubActivityId")));
+                examIdList.add(c8.getLong(c8.getColumnIndex("ExamId")));
+                activityIdList.add(c8.getLong(c8.getColumnIndex("ActivityId")));
+                subActIdList.add(c8.getLong(c8.getColumnIndex("SubActivityId")));
                 subjectIdList.add(c8.getInt(c8.getColumnIndex("SubjectId")));
                 c8.moveToNext();
             }
@@ -370,24 +370,16 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
             editor.apply();
             Log.d("1", "1");
             if (isException) {
-                editor.putInt("manual_sync", 0);
                 editor.apply();
                 Intent intent = new Intent(context, in.principal.activity.LockActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             } else if (isFirstTimeSync) {
-                editor.putInt("manual_sync", 0);
                 editor.putInt("first_sync", 1);
                 editor.apply();
                 new FirstTimeDownload().callFirstTimeSync();
-            } else if (manualSync == 1) {
-                Log.d("2", "2");
-                Intent syncService = new Intent(context, SyncIntentService.class);
-                context.startService(syncService);
             } else {
                 Log.d("3", "3");
-                editor.putInt("manual_sync", 0);
-                editor.apply();
                 Intent intent = new Intent(context, in.principal.activity.LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
@@ -419,24 +411,5 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
     @Override
     public void onBackPressed() {
     }
-
-    /*BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            SharedPreferences sharedPref = ProcessFiles.this.getSharedPreferences("db_access", Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putInt("manual_sync", 0);
-            editor.apply();
-            Intent exitIntent = new Intent(getApplicationContext(), in.principal.activity.LoginActivity.class);
-            exitIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(exitIntent);
-        }
-    };
-
-    @Override
-    protected void onStop() {
-        unregisterReceiver(broadcastReceiver);
-        super.onStop();
-    }*/
 
 }

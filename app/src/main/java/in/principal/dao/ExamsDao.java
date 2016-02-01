@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 public class ExamsDao {
 	
-	public static String selectExamName(int examId, SQLiteDatabase sqliteDatabase){
+	public static String selectExamName(long examId, SQLiteDatabase sqliteDatabase){
 		String s = null;
 		Cursor c = sqliteDatabase.rawQuery("select * from exams where ExamId="+examId, null);
 		c.moveToFirst();

@@ -30,8 +30,8 @@ public class TempDao {
 			t.setSubjectId(c.getInt(c.getColumnIndex("SubjectId")));
 			t.setExamId(c.getInt(c.getColumnIndex("ExamId")));
 			t.setExamId2(c.getInt(c.getColumnIndex("ExamId2")));
-			t.setActivityId(c.getInt(c.getColumnIndex("ActivityId")));
-			t.setSubActivityId(c.getInt(c.getColumnIndex("SubActivityId")));
+			t.setActivityId(c.getLong(c.getColumnIndex("ActivityId")));
+			t.setSubActivityId(c.getLong(c.getColumnIndex("SubActivityId")));
 			t.setSlipTestId(c.getLong(c.getColumnIndex("SlipTestId")));
 			t.setSelectedDate(c.getString(c.getColumnIndex("SelectedDate")));
 			t.setYesterDate(c.getString(c.getColumnIndex("YesterDate")));
@@ -133,12 +133,12 @@ public class TempDao {
 		sqliteDatabase.update("temp", cv, "id=1", null);
 	}
 	
-	public static void updateActivityId(int id, SQLiteDatabase sqliteDatabase){
+	public static void updateActivityId(long id, SQLiteDatabase sqliteDatabase){
 		ContentValues cv = new ContentValues();
 		cv.put("ActivityId", id);
 		sqliteDatabase.update("temp", cv, "id=1", null);
 	}
-	public static void updateSubActivityId(int id, SQLiteDatabase sqliteDatabase){
+	public static void updateSubActivityId(long id, SQLiteDatabase sqliteDatabase){
 		ContentValues cv = new ContentValues();
 		cv.put("SubActivityId", id);
 		sqliteDatabase.update("temp", cv, "id=1", null);

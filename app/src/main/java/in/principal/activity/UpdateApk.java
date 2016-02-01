@@ -1,10 +1,20 @@
 package in.principal.activity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
+
+import com.amazonaws.mobileconnectors.s3.transfermanager.Download;
+import com.amazonaws.mobileconnectors.s3.transfermanager.Transfer;
+import com.amazonaws.mobileconnectors.s3.transfermanager.TransferManager;
+import com.amazonaws.services.s3.model.ProgressEvent;
+import com.amazonaws.services.s3.model.ProgressListener;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,19 +24,7 @@ import java.util.Locale;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-import com.amazonaws.mobileconnectors.s3.transfermanager.Download;
-import com.amazonaws.mobileconnectors.s3.transfermanager.Transfer;
-import com.amazonaws.mobileconnectors.s3.transfermanager.TransferManager;
-import com.amazonaws.services.s3.model.ProgressEvent;
-import com.amazonaws.services.s3.model.ProgressListener;
-
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Environment;
-
 import in.principal.model.TransferModel;
-import in.principal.sync.StringConstant;
 import in.principal.util.CommonDialogUtils;
 import in.principal.util.Constants;
 import in.principal.util.NetworkUtils;
@@ -51,22 +49,18 @@ public class UpdateApk extends BaseActivity {
     }
 
     public void updateClicked(View v) {
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt("manual_sync", 1);
-        editor.apply();
-
         if (NetworkUtils.isNetworkConnected(this))
             downloadApk();
-        else {
+        else
             CommonDialogUtils.displayAlertWhiteDialog(this, "Please check internet connection before proceeding.");
-        }
+
     }
 
     private void downloadApk() {
         new ApkDownloadTask().execute();
     }
 
-    private class ApkDownloadTask extends AsyncTask<Void, Void, Void>{
+    private class ApkDownloadTask extends AsyncTask<Void, Void, Void> {
 
         protected void onPreExecute() {
             super.onPreExecute();

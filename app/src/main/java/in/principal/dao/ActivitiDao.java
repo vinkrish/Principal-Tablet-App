@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteStatement;
 
 public class ActivitiDao {
 
-	public static float getActivityMaxMark(int activityId, SQLiteDatabase sqliteDatabase){
+	public static float getActivityMaxMark(long activityId, SQLiteDatabase sqliteDatabase){
 		float maxMark = 0;
 		Cursor c = sqliteDatabase.rawQuery("select MaximumMark from activity where ActivityId="+activityId, null);
 		c.moveToFirst();
@@ -33,7 +33,7 @@ public class ActivitiDao {
 		c.moveToFirst();
 		while(!c.isAfterLast()){
 			stmt.bindDouble(1, c.getDouble(c.getColumnIndex("Average")));
-			stmt.bindLong(2, c.getInt(c.getColumnIndex("ActivityId")));
+			stmt.bindLong(2, c.getLong(c.getColumnIndex("ActivityId")));
 			stmt.execute();
 			stmt.clearBindings();
 			c.moveToNext();
@@ -52,7 +52,7 @@ public class ActivitiDao {
 		c.moveToFirst();
 		while(!c.isAfterLast()){
 			stmt.bindDouble(1, c.getDouble(c.getColumnIndex("Average")));
-			stmt.bindLong(2, c.getInt(c.getColumnIndex("ActivityId")));
+			stmt.bindLong(2, c.getLong(c.getColumnIndex("ActivityId")));
 			stmt.execute();
 			stmt.clearBindings();
 			c.moveToNext();
@@ -70,7 +70,7 @@ public class ActivitiDao {
 		SQLiteStatement stmt = sqliteDatabase.compileStatement(sql);
 		c.moveToFirst();
 		while(!c.isAfterLast()){
-			stmt.bindLong(1, c.getInt(c.getColumnIndex("ActivityId")));
+			stmt.bindLong(1, c.getLong(c.getColumnIndex("ActivityId")));
 			stmt.execute();
 			stmt.clearBindings();
 			c.moveToNext();
@@ -88,7 +88,7 @@ public class ActivitiDao {
 		SQLiteStatement stmt = sqliteDatabase.compileStatement(sql);
 		c.moveToFirst();
 		while(!c.isAfterLast()){
-			stmt.bindLong(1, c.getInt(c.getColumnIndex("ActivityId")));
+			stmt.bindLong(1, c.getLong(c.getColumnIndex("ActivityId")));
 			stmt.execute();
 			stmt.clearBindings();
 			c.moveToNext();
@@ -106,7 +106,7 @@ public class ActivitiDao {
 		SQLiteStatement stmt = sqliteDatabase.compileStatement(sql);
 		c.moveToFirst();
 		while(!c.isAfterLast()){
-			stmt.bindLong(1, c.getInt(c.getColumnIndex("ActivityId")));
+			stmt.bindLong(1, c.getLong(c.getColumnIndex("ActivityId")));
 			stmt.execute();
 			stmt.clearBindings();
 			c.moveToNext();
@@ -124,7 +124,7 @@ public class ActivitiDao {
 		SQLiteStatement stmt = sqliteDatabase.compileStatement(sql);
 		c.moveToFirst();
 		while(!c.isAfterLast()){
-			stmt.bindLong(1, c.getInt(c.getColumnIndex("ActivityId")));
+			stmt.bindLong(1, c.getLong(c.getColumnIndex("ActivityId")));
 			stmt.execute();
 			stmt.clearBindings();
 			c.moveToNext();
@@ -134,12 +134,12 @@ public class ActivitiDao {
 		sqliteDatabase.endTransaction();
 	}
 	
-	public static void updateActivityAvg(List<Integer> actList, SQLiteDatabase sqliteDatabase){
+	public static void updateActivityAvg(List<Long> actList, SQLiteDatabase sqliteDatabase){
 		String sql = "Update activity set CompleteEntry=1,ActivityAvg= (SELECT (AVG(Mark)/A.MaximumMark)*360 as Average FROM activity A, activitymark B WHERE A.ActivityId = "+
 				"B.ActivityId and A.ActivityId=? and B.Mark!='0' and B.Mark!='-1') where ActivityId=?";
 		sqliteDatabase.beginTransaction();
 		SQLiteStatement stmt = sqliteDatabase.compileStatement(sql);
-		for(Integer act: actList){
+		for(Long act: actList){
 			stmt.bindLong(1, act);
 			stmt.bindLong(2, act);
 			stmt.execute();
@@ -149,9 +149,9 @@ public class ActivitiDao {
 		sqliteDatabase.endTransaction();
 	}
 	
-	public static void checkActivityMarkEmpty(List<Integer> actList, SQLiteDatabase sqliteDatabase){
+	public static void checkActivityMarkEmpty(List<Long> actList, SQLiteDatabase sqliteDatabase){
 		StringBuilder sb = new StringBuilder();
-		for(Integer act: actList){
+		for(Long act: actList){
 			sb.append(",").append(act+"");
 		}
 		String s = sb.substring(1, sb.length());
@@ -159,14 +159,14 @@ public class ActivitiDao {
 				+ " AND A.ActivityId in ("+s+") GROUP BY A.ActivityId HAVING COUNT(*)>0)");
 	}
 	
-	public static void updateActSubActAvg(List<Integer> actList, SQLiteDatabase sqliteDatabase){
-		for(Integer act: actList){
+	public static void updateActSubActAvg(List<Long> actList, SQLiteDatabase sqliteDatabase){
+		for(Long act: actList){
 			String sql = "SELECT A.SectionId, A.ExamId, A.SubjectId, A.ActivityId, AVG(SubActivityAvg) as Average FROM subactivity A where A.ActivityId="+act+
 					" and A.SubActivityAvg!=0 group by A.SectionId, A.ExamId, A.SubjectId, A.ActivityId";
 			Cursor c = sqliteDatabase.rawQuery(sql, null);
 			c.moveToFirst();
 			while(!c.isAfterLast()){
-				String sql2 = "update activity set ActivityAvg="+c.getInt(c.getColumnIndex("Average"))+" where ActivityId="+c.getInt(c.getColumnIndex("ActivityId"));
+				String sql2 = "update activity set ActivityAvg="+c.getInt(c.getColumnIndex("Average"))+" where ActivityId="+c.getLong(c.getColumnIndex("ActivityId"));
 				sqliteDatabase.execSQL(sql2);
 				c.moveToNext();
 			}
@@ -174,7 +174,7 @@ public class ActivitiDao {
 		}
 	}
 	
-	public static int seActSubActAvg(int activityId, SQLiteDatabase sqliteDatabase){
+	public static int seActSubActAvg(long activityId, SQLiteDatabase sqliteDatabase){
 		double avg = 0;
 		String sql = "select AVG(ActivityAvg) as average from activity where ActivityId="+activityId;
 		Cursor c = sqliteDatabase.rawQuery(sql, null);
@@ -187,7 +187,7 @@ public class ActivitiDao {
 		return (int)avg;
 	}
 	
-	public static int getActAvg(int activityId, SQLiteDatabase sqliteDatabase){
+	public static int getActAvg(long activityId, SQLiteDatabase sqliteDatabase){
 		Cursor c = sqliteDatabase.rawQuery("select ActivityAvg from activity where ActivityId="+activityId, null);
 		c.moveToFirst();
 		int i = 0;
@@ -199,17 +199,17 @@ public class ActivitiDao {
 		return i;
 	}
 	
-	public static List<Activiti> selectActiviti(int examId, int subjectId, int sectionId, SQLiteDatabase sqliteDatabase){
+	public static List<Activiti> selectActiviti(long examId, int subjectId, int sectionId, SQLiteDatabase sqliteDatabase){
 		Cursor c = sqliteDatabase.rawQuery("select * from activity  where ExamId="+examId+" and SubjectId="+subjectId+" and SectionId="+sectionId, null);
-		List<Activiti> aList = new ArrayList<Activiti>();
+		List<Activiti> aList = new ArrayList<>();
 		c.moveToFirst();
 		while(!c.isAfterLast()){
 			Activiti a = new Activiti();
-			a.setActivityId(c.getInt(c.getColumnIndex("ActivityId")));
+			a.setActivityId(c.getLong(c.getColumnIndex("ActivityId")));
 			a.setActivityName(c.getString(c.getColumnIndex("ActivityName")));
 			a.setCalculation(c.getInt(c.getColumnIndex("Calculation")));
 			a.setClassId(c.getInt(c.getColumnIndex("ClassId")));
-			a.setExamId(c.getInt(c.getColumnIndex("ExamId")));
+			a.setExamId(c.getLong(c.getColumnIndex("ExamId")));
 			a.setMaximumMark(c.getInt(c.getColumnIndex("MaximumMark")));
 			a.setSectionId(c.getInt(c.getColumnIndex("SectionId")));
 			a.setSubActivity(c.getInt(c.getColumnIndex("SubActivity")));
@@ -224,7 +224,7 @@ public class ActivitiDao {
 		return aList;
 	}
 	
-	public static String selectActivityName(int activityId, SQLiteDatabase sqliteDatabase){
+	public static String selectActivityName(long activityId, SQLiteDatabase sqliteDatabase){
 		String s = null;
 		Cursor c = sqliteDatabase.rawQuery("select * from activity where ActivityId="+activityId, null);
 		c.moveToFirst();
@@ -236,7 +236,7 @@ public class ActivitiDao {
 		return s;
 	}
 	
-	public static int isThereActivity(int sectionId, int subjectId, int examId, SQLiteDatabase sqliteDatabase){
+	public static int isThereActivity(int sectionId, int subjectId, long examId, SQLiteDatabase sqliteDatabase){
 		Cursor c = sqliteDatabase.rawQuery("select * from activity where ExamId="+examId+" and SubjectId="+subjectId+" and SectionId="+sectionId, null);
 		int count=0;
 		if(c.getCount()>0){
@@ -246,7 +246,7 @@ public class ActivitiDao {
 		return count;
 	}
 	
-	public static int getStudActAvg(int studentId, int activityId, SQLiteDatabase sqliteDatabase){
+	public static int getStudActAvg(int studentId, long activityId, SQLiteDatabase sqliteDatabase){
 		int i = 0;
 		Cursor c = sqliteDatabase.rawQuery("select (Avg(A.Mark)/B.MaximumMark)*100 as avg from activitymark A, activity B where A.ActivityId=B.ActivityId and A.ActivityId="+activityId+
 				" and StudentId="+studentId, null);

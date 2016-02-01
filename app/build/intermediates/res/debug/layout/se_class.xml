@@ -40,8 +40,8 @@
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="@string/se"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/seClass"
@@ -51,8 +51,8 @@
             android:background="@drawable/button_selector_blue"
             android:paddingLeft="25dp"
             android:paddingRight="25dp"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 
     <View
@@ -68,8 +68,9 @@
         android:layout_height="50dp"
         android:layout_below="@id/dividerup"
         android:background="@color/layoutbelowBC"
-        android:gravity="left|center_vertical"
-        android:paddingLeft="20dp"
+        android:gravity="start|center_vertical"
+        android:paddingEnd="0dp"
+        android:paddingStart="20dp"
         android:textColor="@color/light_black"
         android:textSize="21sp" />
 
@@ -86,8 +87,9 @@
         android:layout_height="30dp"
         android:layout_below="@id/viewbelowbc"
         android:background="@color/layoutbelowBC"
-        android:gravity="left|center_vertical"
-        android:paddingLeft="20dp"
+        android:gravity="start|center_vertical"
+        android:paddingEnd="0dp"
+        android:paddingStart="20dp"
         android:text="@string/sections"
         android:textColor="@color/light_black"
         android:textSize="18sp" />
@@ -101,7 +103,7 @@
         android:gravity="center"
         android:horizontalSpacing="10dp"
         android:numColumns="3"
-        android:verticalSpacing="10dp"></GridView>
+        android:verticalSpacing="10dp" />
 
     <LinearLayout
         android:id="@+id/compareLayout"
@@ -110,7 +112,7 @@
         android:layout_below="@id/gridView"
         android:layout_marginBottom="5dp"
         android:layout_marginTop="5dp"
-        android:gravity="right"
+        android:gravity="end"
         android:orientation="horizontal">
 
         <Button
@@ -118,8 +120,8 @@
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="148dp"
             android:layout_height="40dp"
-            android:layout_gravity="left"
-            android:layout_marginRight="10dp"
+            android:layout_gravity="start"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/button_selector_blue"
             android:gravity="center"
             android:text="@string/coscholastic"
@@ -131,8 +133,8 @@
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="148dp"
             android:layout_height="40dp"
-            android:layout_gravity="left"
-            android:layout_marginRight="10dp"
+            android:layout_gravity="start"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/button_selector_blue"
             android:gravity="center"
             android:text="@string/view_exam"
@@ -143,8 +145,8 @@
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="148dp"
             android:layout_height="40dp"
-            android:layout_gravity="right"
-            android:layout_marginRight="10dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/button_selector_blue"
             android:gravity="center"
             android:text="@string/compare"
@@ -171,7 +173,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.3"
-            android:paddingLeft="10dp"
+            android:paddingEnd="0dp"
+            android:paddingStart="10dp"
             android:text="@string/subject"
             android:textColor="@color/light_black"
             android:textSize="18sp"
@@ -187,7 +190,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.45"
-            android:paddingLeft="10dp"
+            android:paddingEnd="0dp"
+            android:paddingStart="10dp"
             android:text="@string/teacher"
             android:textColor="@color/light_black"
             android:textSize="18sp"
@@ -202,9 +206,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_weight="0.4"
-            android:paddingLeft="10dp"
+            android:paddingEnd="0dp"
+            android:paddingStart="10dp"
             android:text="@string/average"
             android:textColor="@color/light_black"
             android:textSize="18sp"
@@ -222,6 +227,6 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/bottom"></ListView>
+        android:layout_below="@id/bottom" />
 
 </RelativeLayout><!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/layout/se_class.xml -->

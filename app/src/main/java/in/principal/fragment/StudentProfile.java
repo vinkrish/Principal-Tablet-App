@@ -11,6 +11,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import in.principal.activity.R;
+import in.principal.searchfragment.SearchStudAtt;
+import in.principal.searchfragment.SearchStudExam;
+import in.principal.searchfragment.SearchStudST;
 import in.principal.dao.TempDao;
 import in.principal.sqlite.Temp;
 import in.principal.util.AppGlobal;
@@ -18,6 +21,7 @@ import in.principal.util.ReplaceFragment;
 
 /**
  * Created by vinkrish on 18/12/15.
+ * Don't expect comments explaining every piece of code, class and function names are self explanatory.
  */
 public class StudentProfile extends Fragment{
     private SQLiteDatabase sqliteDatabase;

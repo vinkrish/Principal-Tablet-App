@@ -38,12 +38,6 @@ public class ActivityProgress {
             ActivitiDao.updateActivityAvg(sqliteDatabase);
             ActivitiDao.updateSubactActAvg(sqliteDatabase);
 
-            //  ActivitiDao.checkActivityIsMark(sqliteDatabase);
-            //	ActivitiDao.checkActivityMarkEmpty(sqliteDatabase);
-
-            //  ActivitiDao.checkActSubActIsMark(sqliteDatabase);
-            //	ActivitiDao.checkActSubActMarkEmpty(sqliteDatabase);
-
             return null;
         }
 

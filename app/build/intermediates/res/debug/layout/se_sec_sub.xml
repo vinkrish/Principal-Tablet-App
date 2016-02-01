@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF" >
+    android:background="#FFFFFF">
 
     <LinearLayout
         android:id="@+id/breadcrum"
@@ -11,7 +11,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:background="@color/dark_black"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/dash"
@@ -40,8 +40,8 @@
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="@string/se"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
 
         <View
             android:layout_width="1dp"
@@ -53,25 +53,25 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:paddingLeft="25dp"
-            android:paddingRight="25dp"
             android:background="@drawable/heading_selector"
             android:onClick="seClass"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/seSec"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/button_selector_blue"
             android:paddingLeft="25dp"
             android:paddingRight="25dp"
-            android:background="@drawable/button_selector_blue"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
-    
+
     <View
         android:id="@+id/dividerup"
         android:layout_width="match_parent"
@@ -87,7 +87,8 @@
         android:background="@color/layoutbelowBC"
         android:baselineAligned="false"
         android:orientation="horizontal"
-        android:paddingLeft="10dp" >
+        android:paddingEnd="0dp"
+        android:paddingStart="10dp">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -95,7 +96,7 @@
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:layout_weight="0.7"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/subinfo"
@@ -124,10 +125,10 @@
             android:layout_width="0dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
+            android:layout_marginEnd="5dp"
             android:layout_weight="0.07"
             android:background="@color/dark_black"
             android:gravity="center"
-            android:layout_marginRight="5dp"
             android:textColor="#FFFFFF" />
     </LinearLayout>
 
@@ -147,18 +148,17 @@
         android:gravity="center"
         android:horizontalSpacing="10dp"
         android:numColumns="3"
-        android:verticalSpacing="10dp" >
-    </GridView>
+        android:verticalSpacing="10dp" />
 
     <Button
         android:id="@+id/compare"
         style="?android:attr/buttonBarButtonStyle"
         android:layout_width="148dp"
         android:layout_height="40dp"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_below="@id/gridView"
         android:layout_marginBottom="5dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginTop="7dp"
         android:background="@drawable/button_selector_blue"
         android:gravity="center"
@@ -179,15 +179,16 @@
         android:layout_below="@id/top"
         android:layout_centerInParent="true"
         android:background="@color/layoutbelowBC"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.75"
-            android:gravity="left"
-            android:paddingLeft="10dp"
+            android:gravity="start"
+            android:paddingEnd="0dp"
+            android:paddingStart="10dp"
             android:text="@string/exam"
             android:textColor="@color/light_black"
             android:textSize="18sp"
@@ -202,10 +203,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_weight="0.4"
-            android:gravity="left"
-            android:paddingLeft="10dp"
+            android:gravity="start"
+            android:paddingEnd="0dp"
+            android:paddingStart="10dp"
             android:text="@string/average"
             android:textColor="@color/light_black"
             android:textSize="18sp"
@@ -226,7 +228,6 @@
         android:layout_below="@id/bottom"
         android:layout_gravity="center"
         android:divider="@null"
-        android:dividerHeight="0dp" >
-    </ListView>
+        android:dividerHeight="0dp" />
 
 </RelativeLayout><!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/layout/se_sec_sub.xml -->

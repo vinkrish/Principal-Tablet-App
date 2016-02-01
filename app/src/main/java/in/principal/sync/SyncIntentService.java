@@ -2,8 +2,8 @@ package in.principal.sync;
 
 import android.app.IntentService;
 import android.app.KeyguardManager;
-import android.content.Intent;
 import android.content.Context;
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -90,10 +90,7 @@ public class SyncIntentService extends IntentService implements StringConstant {
                 TempDao.updateSyncTimer(sqliteDatabase);
                 sqlHandler.insertDownloadedFile(split);
             }
-        } catch (JSONException e) {
-            zipFile = "";
-            e.printStackTrace();
-        } catch (NullPointerException e) {
+        } catch (JSONException | NullPointerException e) {
             zipFile = "";
             e.printStackTrace();
         }
@@ -243,16 +240,10 @@ public class SyncIntentService extends IntentService implements StringConstant {
 
     private void finishSync() {
         Log.d("finishSync", "uh");
-        int manualSync = sharedPref.getInt("manual_sync", 0);
         KeyguardManager km = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
         boolean screenLocked = km.inKeyguardRestrictedInputMode();
 
-        if (manualSync == 1) {
-            SharedPreferenceUtil.updateManualSync(context, 2);
-            Intent intent = new Intent(context, in.principal.activity.ProcessFiles.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(intent);
-        } else if (screenLocked) {
+        if (screenLocked) {
             Intent intent = new Intent(context, in.principal.activity.ProcessFiles.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
@@ -264,19 +255,11 @@ public class SyncIntentService extends IntentService implements StringConstant {
     private void exitSync() {
         Log.d("exitSync", "uh");
         SharedPreferences.Editor editor = sharedPref.edit();
-        int manualSync = sharedPref.getInt("manual_sync", 0);
         KeyguardManager km = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
         boolean screenLocked = km.inKeyguardRestrictedInputMode();
         if (block == 2) {
-            editor.putInt("manual_sync", 0);
             editor.putInt("tablet_lock", 2);
             editor.apply();
-        } else if (manualSync == 1) {
-            editor.putInt("manual_sync", 0);
-            editor.apply();
-            Intent intent = new Intent(context, in.principal.activity.LoginActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(intent);
         } else if (screenLocked) {
             Intent i = new Intent(context, in.principal.activity.ProcessFiles.class);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

@@ -4,6 +4,7 @@ import in.principal.activity.R;
 import in.principal.adapter.CustomAlertAdapter;
 import in.principal.adapter.DashAdapt1;
 import in.principal.adapter.DashAdapt2;
+import in.principal.attendancefragment.AttendanceClass;
 import in.principal.dao.ClasDao;
 import in.principal.dao.StudentAttendanceDao;
 import in.principal.dao.StudentsDao;
@@ -54,6 +55,7 @@ import android.widget.TextView;
 
 /**
  * Created by vinkrish.
+ * Don't expect comments explaining every piece of code, class and function names are self explanatory.
  */
 @SuppressLint("UseSparseArrays")
 public class Dashbord extends Fragment {

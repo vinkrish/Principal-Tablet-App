@@ -2,18 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:orientation="horizontal" >
+    android:orientation="horizontal">
 
     <TextView
         android:id="@+id/idx"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         android:layout_weight="0.2"
         android:text="@string/subject"
-        android:textColor="#000000"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
 
     <View
         android:layout_width="1dp"
@@ -25,11 +25,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         android:layout_weight="0.8"
         android:text="@string/sub_teacher"
-        android:textColor="#000000"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
 
     <View
         android:layout_width="1dp"
@@ -40,9 +40,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="10dp"
-        android:layout_weight="0.6" >
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="15dp"
+        android:layout_weight="0.6">
 
         <ProgressBar
             android:id="@+id/avgProgress"
@@ -57,8 +57,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textColor="#000000"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#000000" />
     </FrameLayout>
 
 </LinearLayout><!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/layout/st_detail_list.xml -->

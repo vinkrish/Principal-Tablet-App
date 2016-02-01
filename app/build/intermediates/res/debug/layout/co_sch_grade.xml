@@ -115,8 +115,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.1"
-            android:gravity="left|center"
-            android:paddingLeft="10dp"
+            android:gravity="start|center"
+            android:paddingEnd="0dp"
+            android:paddingStart="10dp"
             android:text="@string/idxcolumn"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/light_black" />
@@ -131,8 +132,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.5"
-            android:gravity="left|center"
-            android:paddingLeft="10dp"
+            android:gravity="start|center"
+            android:paddingEnd="0dp"
+            android:paddingStart="10dp"
             android:text="@string/studentname"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/light_black" />
@@ -147,8 +149,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.7"
-            android:gravity="left|center"
-            android:paddingLeft="10dp"
+            android:gravity="start|center"
+            android:paddingEnd="0dp"
+            android:paddingStart="10dp"
             android:text="@string/remark"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/light_black" />
@@ -163,8 +166,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.2"
-            android:gravity="left|center"
-            android:paddingLeft="10dp"
+            android:gravity="start|center"
+            android:paddingEnd="0dp"
+            android:paddingStart="10dp"
             android:text="@string/grade"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/light_black" />
@@ -178,7 +182,7 @@
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
 <!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/layout/co_sch_grade.xml -->

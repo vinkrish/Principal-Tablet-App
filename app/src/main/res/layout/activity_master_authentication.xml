@@ -217,9 +217,13 @@
         android:layout_above="@id/centerll"
         android:layout_marginBottom="20dp"
         android:gravity="center"
+        android:shadowColor="#FFF"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
         android:text="@string/admin"
-        android:textColor="@color/divider"
-        android:textSize="50sp"
+        android:textColor="@color/light_black"
+        android:textSize="60sp"
         android:typeface="sans" />
 
 </RelativeLayout>

@@ -6,6 +6,8 @@ import java.util.List;
 import in.principal.activity.R;
 import in.principal.dao.ExamsDao;
 import in.principal.dao.TempDao;
+import in.principal.examfragment.SeExam;
+import in.principal.examfragment.SeExamSub;
 import in.principal.sqlite.Temp;
 import in.principal.util.AppGlobal;
 import in.principal.util.ReplaceFragment;
@@ -33,7 +35,8 @@ import android.widget.Spinner;
 public class ReportGeneration extends Fragment {
     private Context context;
     private String className, secName, examName;
-    private int classId, sectionId, examId;
+    private int classId, sectionId;
+    private long examId;
     private SQLiteDatabase sqliteDatabase;
     private List<Integer> subIdList = new ArrayList<>();
     private List<String> subNameList = new ArrayList<>();

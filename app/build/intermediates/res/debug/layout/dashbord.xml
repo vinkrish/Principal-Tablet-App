@@ -66,8 +66,9 @@
         android:layout_marginRight="1dp"
         android:layout_marginTop="1dp"
         android:background="@color/layoutbelowBC"
-        android:gravity="left|center_vertical"
-        android:paddingLeft="10dp"
+        android:gravity="start|center_vertical"
+        android:paddingEnd="0dp"
+        android:paddingStart="10dp"
         android:text="@string/attendoverview"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -86,7 +87,7 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
         android:gravity="center"
-        android:numColumns="2"></GridView>
+        android:numColumns="2" />
 
     <View
         android:id="@+id/dividerOverview"
@@ -108,8 +109,9 @@
             android:layout_height="40dp"
             android:layout_weight="0.5"
             android:background="@color/layoutbelowBC"
-            android:gravity="left|center_vertical"
-            android:paddingLeft="20dp"
+            android:gravity="start|center_vertical"
+            android:paddingEnd="0dp"
+            android:paddingStart="20dp"
             android:text="@string/att_per"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textStyle="bold" />
@@ -125,8 +127,9 @@
             android:layout_height="40dp"
             android:layout_weight="0.5"
             android:background="@color/layoutbelowBC"
-            android:gravity="left|center_vertical"
-            android:paddingLeft="20dp"
+            android:gravity="start|center_vertical"
+            android:paddingEnd="0dp"
+            android:paddingStart="20dp"
             android:text="@string/loa"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textStyle="bold" />
@@ -171,8 +174,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.75"
                 android:background="@color/layoutbelowBC"
-                android:gravity="left|center_vertical"
-                android:paddingLeft="10dp"
+                android:gravity="start|center_vertical"
+                android:paddingEnd="0dp"
+                android:paddingStart="10dp"
                 android:text="@string/percentage"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -207,8 +211,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.6"
                 android:background="@color/layoutbelowBC"
-                android:gravity="left|center_vertical"
-                android:paddingLeft="10dp"
+                android:gravity="start|center_vertical"
+                android:paddingEnd="0dp"
+                android:paddingStart="10dp"
                 android:text="@string/studentname"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -235,7 +240,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:paddingBottom="1dp"
-            android:paddingLeft="1dp"></ListView>
+            android:paddingEnd="0dp"
+            android:paddingStart="1dp" />
 
         <ListView
             android:id="@+id/list2"
@@ -243,7 +249,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:paddingBottom="1dp"
-            android:paddingRight="1dp"></ListView>
+            android:paddingEnd="1dp"
+            android:paddingStart="0dp" />
     </LinearLayout>
 
 </RelativeLayout><!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/layout/dashbord.xml -->

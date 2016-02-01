@@ -58,6 +58,7 @@ import android.widget.TextView;
 
 /**
  * Created by vinkrish.
+ * I would write this class a better way if i've to start over again, optimize it if you can.
  */
 @SuppressWarnings("deprecation")
 public class UploadVoiceSms extends Fragment implements StringConstant {

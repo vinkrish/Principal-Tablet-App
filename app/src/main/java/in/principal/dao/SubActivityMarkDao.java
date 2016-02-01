@@ -6,7 +6,7 @@ import android.util.Log;
 
 public class SubActivityMarkDao {
 
-    public static int getStudSubActMark(int studentId, int subActivityId, SQLiteDatabase sqliteDatabase){
+    public static int getStudSubActMark(int studentId, long subActivityId, SQLiteDatabase sqliteDatabase){
         int i = 0;
         Cursor c = sqliteDatabase.rawQuery("select Mark from subactivitymark where StudentId="+studentId+" and SubActivityId="+subActivityId,null);
         c.moveToFirst();
@@ -18,7 +18,7 @@ public class SubActivityMarkDao {
         return i;
     }
 
-    public static int getStudSubActAvg(int studentId, int subActivityId, SQLiteDatabase sqliteDatabase){
+    public static int getStudSubActAvg(int studentId, long subActivityId, SQLiteDatabase sqliteDatabase){
         int i = 0;
         Cursor c = sqliteDatabase.rawQuery("select (Avg(A.Mark)/B.MaximumMark)*100 as avg from subactivitymark A, subactivity B where A.SubActivityId=B.SubActivityId and A.SubActivityId="+subActivityId+
                 " and StudentId="+studentId, null);
@@ -31,7 +31,7 @@ public class SubActivityMarkDao {
         return i;
     }
 
-    public static int isThereSubActMark(int subActId, int subjectId, SQLiteDatabase sqliteDatabase){
+    public static int isThereSubActMark(long subActId, int subjectId, SQLiteDatabase sqliteDatabase){
         int isThere = 0;
         Cursor c = sqliteDatabase.rawQuery("select * from subactivitymark where SubActivityId="+subActId+" and SubjectId="+subjectId+" LIMIT 1", null);
         if(c.getCount()>0){
@@ -41,7 +41,7 @@ public class SubActivityMarkDao {
         return isThere;
     }
 
-    public static int isThereSubActGrade(int subActId, int subjectId, SQLiteDatabase sqliteDatabase){
+    public static int isThereSubActGrade(long subActId, int subjectId, SQLiteDatabase sqliteDatabase){
         int isThere = 0;
         String sql = "select * from subactivitygrade where SubActivityId="+subActId+" and SubjectId="+subjectId+" LIMIT 1";
         Cursor c = sqliteDatabase.rawQuery(sql, null);

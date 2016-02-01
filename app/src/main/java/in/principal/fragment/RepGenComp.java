@@ -33,7 +33,8 @@ import android.widget.AdapterView.OnItemSelectedListener;
 public class RepGenComp extends Fragment {
     private Context context;
     private String className, secName, examName, examName2;
-    private int classId, sectionId, examId, examId2;
+    private int classId, sectionId;
+    private long examId, examId2;
     private SQLiteDatabase sqliteDatabase;
     private List<Integer> subIdList = new ArrayList<>();
     private List<String> subNameList = new ArrayList<>();

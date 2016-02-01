@@ -1,28 +1,5 @@
 package in.principal.activity;
 
-import in.principal.dao.TeacherDao;
-import in.principal.sqlite.School;
-import in.principal.dao.SchoolDao;
-import in.principal.dao.TempDao;
-import in.principal.sqlite.Temp;
-import in.principal.sync.SyncIntentService;
-import in.principal.util.AnimationUtils;
-import in.principal.util.AppGlobal;
-import in.principal.util.CommonDialogUtils;
-import in.principal.util.ExceptionHandler;
-import in.principal.util.NetworkUtils;
-import in.principal.util.SharedPreferenceUtil;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.nio.channels.FileChannel;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Locale;
-
 import android.animation.ObjectAnimator;
 import android.app.KeyguardManager;
 import android.content.BroadcastReceiver;
@@ -40,8 +17,32 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
+
+import in.principal.dao.SchoolDao;
+import in.principal.dao.TeacherDao;
+import in.principal.dao.TempDao;
+import in.principal.sqlite.School;
+import in.principal.sqlite.Temp;
+import in.principal.sync.SyncIntentService;
+import in.principal.util.AnimationUtils;
+import in.principal.util.AppGlobal;
+import in.principal.util.CommonDialogUtils;
+import in.principal.util.ExceptionHandler;
+import in.principal.util.NetworkUtils;
+import in.principal.util.SharedPreferenceUtil;
+
 /**
  * Created by vinkrish.
+ * I would write this class a better way if i've to start over again, optimize it if you can.
  */
 public class LoginActivity extends BaseActivity {
     private SQLiteDatabase sqliteDatabase;
@@ -205,11 +206,8 @@ public class LoginActivity extends BaseActivity {
 
     public void syncClicked(View v) {
         if (NetworkUtils.isNetworkConnected(context)) {
-            SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putInt("manual_sync", 1);
-            editor.apply();
-            Intent intent = new Intent(this, ProcessFiles.class);
-            startActivity(intent);
+            Intent syncService = new Intent(context, SyncIntentService.class);
+            context.startService(syncService);
         } else {
             CommonDialogUtils.displayAlertWhiteDialog(this, "Please check the internet connection");
         }
@@ -306,19 +304,15 @@ public class LoginActivity extends BaseActivity {
                 if (myKM.inKeyguardRestrictedInputMode()) {
                     SharedPreferences pref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
                     int is_first_sync = pref.getInt("first_sync", 0);
-                    int sleepSync = pref.getInt("sleep_sync", 0);
                     int tabletLock = pref.getInt("tablet_lock", 0);
-                    int manualSync = pref.getInt("manual_sync", 0);
 
                     PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
                     boolean isScreen = pm.isScreenOn();
 
                     if (NetworkUtils.isNetworkConnected(context) &&
-                            sleepSync == 1 &&
                             !isScreen &&
                             is_first_sync == 0 &&
-                            tabletLock == 0 &&
-                            manualSync == 0) {
+                            tabletLock == 0) {
                         Intent intentProcess = new Intent(context, in.principal.activity.ProcessFiles.class);
                         intentProcess.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intentProcess);

@@ -3,8 +3,8 @@ package in.principal.fragment;
 import in.principal.activity.R;
 import in.principal.activity.R.animator;
 import in.principal.dao.TempDao;
-import in.principal.model.ExpChild;
-import in.principal.model.ExpGroup;
+import in.principal.sqlite.ExpChild;
+import in.principal.sqlite.ExpGroup;
 import in.principal.sqlite.SqlDbHelper;
 import in.principal.sqlite.Temp;
 import in.principal.util.AppGlobal;
@@ -34,6 +34,7 @@ import android.widget.ExpandableListView.OnGroupClickListener;
 
 /**
  * Created by vinkrish.
+ * I would write this class a better way if i've to start over again, optimize it if you can.
  */
 
 @SuppressLint("InflateParams")

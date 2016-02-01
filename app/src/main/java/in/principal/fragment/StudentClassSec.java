@@ -29,7 +29,7 @@ import in.principal.dao.ExmAvgDao;
 import in.principal.dao.SectionDao;
 import in.principal.dao.StudentsDao;
 import in.principal.dao.TempDao;
-import in.principal.model.Circle;
+import in.principal.sqlite.Circle;
 import in.principal.sqlite.AdapterOverloaded;
 import in.principal.sqlite.Section;
 import in.principal.sqlite.Students;
@@ -39,6 +39,7 @@ import in.principal.util.ReplaceFragment;
 
 /**
  * Created by vinkrish.
+ * Don't expect comments explaining every piece of code, class and function names are self explanatory.
  */
 public class StudentClassSec extends Fragment {
     private Context context;

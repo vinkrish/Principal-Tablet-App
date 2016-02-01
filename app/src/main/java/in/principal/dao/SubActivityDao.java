@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteStatement;
 
 public class SubActivityDao {
 
-	public static float getSubActMaxMark(int subActivityId, SQLiteDatabase sqliteDatabase){
+	public static float getSubActMaxMark(long subActivityId, SQLiteDatabase sqliteDatabase){
 		float maxMark = 0;
 		Cursor c = sqliteDatabase.rawQuery("select MaximumMark from subactivity where SubActivityId="+subActivityId, null);
 		c.moveToFirst();
@@ -33,7 +33,7 @@ public class SubActivityDao {
 		c.moveToFirst();
 		while(!c.isAfterLast()){
 			stmt.bindDouble(1, c.getDouble(c.getColumnIndex("Average")));
-			stmt.bindLong(2, c.getInt(c.getColumnIndex("SubActivityId")));
+			stmt.bindLong(2, c.getLong(c.getColumnIndex("SubActivityId")));
 			stmt.execute();
 			stmt.clearBindings();
 			c.moveToNext();
@@ -51,7 +51,7 @@ public class SubActivityDao {
 		SQLiteStatement stmt = sqliteDatabase.compileStatement(sql);
 		c.moveToFirst();
 		while(!c.isAfterLast()){
-			stmt.bindLong(1, c.getInt(c.getColumnIndex("SubActivityId")));
+			stmt.bindLong(1, c.getLong(c.getColumnIndex("SubActivityId")));
 			stmt.execute();
 			stmt.clearBindings();
 			c.moveToNext();
@@ -69,7 +69,7 @@ public class SubActivityDao {
 		SQLiteStatement stmt = sqliteDatabase.compileStatement(sql);
 		c.moveToFirst();
 		while(!c.isAfterLast()){
-			stmt.bindLong(1, c.getInt(c.getColumnIndex("SubActivityId")));
+			stmt.bindLong(1, c.getLong(c.getColumnIndex("SubActivityId")));
 			stmt.execute();
 			stmt.clearBindings();
 			c.moveToNext();
@@ -79,16 +79,16 @@ public class SubActivityDao {
 		sqliteDatabase.endTransaction();
 	}
 	
-	public static void updateSubActivityAvg(List<Integer> subActList, SQLiteDatabase sqliteDatabase){
-		for(Integer subAct: subActList){
+	public static void updateSubActivityAvg(List<Long> subActList, SQLiteDatabase sqliteDatabase){
+		for(Long subAct: subActList){
 			sqliteDatabase.execSQL("update subactivity set CompleteEntry=1, SubActivityAvg=(SELECT (AVG(Mark)/A.MaximumMark)*360 as Average FROM subactivity A, subactivitymark B WHERE A.SubActivityId = B.SubActivityId and"+
 					" B.Mark!='0' and B.Mark!='-1' and A.SubActivityId="+subAct+") where SubActivityId="+subAct);
 		}
 	}
 	
-	public static void checkSubActivityMarkEmpty(List<Integer> subactList, SQLiteDatabase sqliteDatabase){
+	public static void checkSubActivityMarkEmpty(List<Long> subactList, SQLiteDatabase sqliteDatabase){
 		StringBuilder sb = new StringBuilder();
-		for(Integer subact: subactList){
+		for(Long subact: subactList){
 			sb.append(",").append(subact+"");
 		}
 		String s = sb.substring(1, sb.length());
@@ -96,7 +96,7 @@ public class SubActivityDao {
 				+ " AND A.SubActivityId in ("+s+") GROUP BY A.SubActivityId HAVING COUNT(*)>0)");
 	}
 	
-	public static int getSubActAvg(int subActivityId, SQLiteDatabase sqliteDatabase){
+	public static int getSubActAvg(long subActivityId, SQLiteDatabase sqliteDatabase){
 		Cursor c = sqliteDatabase.rawQuery("select SubActivityAvg from subactivity where SubActivityId="+subActivityId, null);
 		c.moveToFirst();
 		int i = 0;
@@ -108,7 +108,7 @@ public class SubActivityDao {
 		return i;
 	}
 	
-	public static String selectSubActivityName(int subActivityId, SQLiteDatabase sqliteDatabase){
+	public static String selectSubActivityName(long subActivityId, SQLiteDatabase sqliteDatabase){
 		String s = null;
 		Cursor c = sqliteDatabase.rawQuery("select * from subactivity where SubActivityId="+subActivityId, null);
 		c.moveToFirst();
@@ -120,14 +120,14 @@ public class SubActivityDao {
 		return s;
 	}
 
-	public static List<SubActivity> selectSubActivity(int activityId, SQLiteDatabase sqliteDatabase){
+	public static List<SubActivity> selectSubActivity(long activityId, SQLiteDatabase sqliteDatabase){
 		Cursor c = sqliteDatabase.rawQuery("select * from subactivity where ActivityId="+activityId, null);
 		List<SubActivity> aList = new ArrayList<>();
 		c.moveToFirst();
 		while(!c.isAfterLast()){
 			SubActivity a = new SubActivity();
-			a.setSubActivityId(c.getInt(c.getColumnIndex("SubActivityId")));
-			a.setActivityId(c.getInt(c.getColumnIndex("ActivityId")));
+			a.setSubActivityId(c.getLong(c.getColumnIndex("SubActivityId")));
+			a.setActivityId(c.getLong(c.getColumnIndex("ActivityId")));
 			a.setSubActivityName(c.getString(c.getColumnIndex("SubActivityName")));
 			a.setCalculation(c.getInt(c.getColumnIndex("Calculation")));
 			a.setClassId(c.getInt(c.getColumnIndex("ClassId")));
@@ -145,7 +145,7 @@ public class SubActivityDao {
 		return aList;
 	}
 	
-	public static int isThereSubAct(int actId, SQLiteDatabase sqliteDatabase){
+	public static int isThereSubAct(long actId, SQLiteDatabase sqliteDatabase){
 		Cursor c = sqliteDatabase.rawQuery("select * from subactivity where ActivityId="+actId, null);
 		int count = 0;
 		if(c.getCount()>0){
