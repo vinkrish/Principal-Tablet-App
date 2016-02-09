@@ -100,6 +100,13 @@ public class StudentClassSec extends Fragment {
             }
         });
 
+        view.findViewById(R.id.seButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ReplaceFragment.replace(new StudentList(), getFragmentManager());
+            }
+        });
+
         return view;
     }
 

@@ -7,6 +7,7 @@ import in.principal.activity.R;
 import in.principal.adapter.SearchStAdapter;
 import in.principal.dao.SubjectsDao;
 import in.principal.dao.TempDao;
+import in.principal.fragment.StudentProfile;
 import in.principal.sqlite.AdapterOverloaded;
 import in.principal.sqlite.Temp;
 import in.principal.util.AppGlobal;
@@ -67,6 +68,7 @@ public class SearchStudSTSub extends Fragment {
         pecent = (TextView) view.findViewById(R.id.percent);
 
         view.findViewById(R.id.stButton).setOnClickListener(searchSlipTest);
+        view.findViewById(R.id.profile).setOnClickListener(searchProfile);
         view.findViewById(R.id.slipSearch).setOnClickListener(searchSlipTest);
         view.findViewById(R.id.seSearch).setOnClickListener(searchExam);
         view.findViewById(R.id.attSearch).setOnClickListener(searchAttendance);
@@ -95,6 +97,13 @@ public class SearchStudSTSub extends Fragment {
         maxMarkList.clear();
         markList.clear();
     }
+
+    private View.OnClickListener searchProfile = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            ReplaceFragment.replace(new StudentProfile(), getFragmentManager());
+        }
+    };
 
     private View.OnClickListener searchSlipTest = new View.OnClickListener() {
         @Override

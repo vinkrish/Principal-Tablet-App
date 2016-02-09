@@ -6,6 +6,20 @@ import android.util.Log;
 
 public class SubActivityMarkDao {
 
+    public static int getSectionAvg(long subActivityId, SQLiteDatabase sqliteDatabase){
+        int avg = 0;
+        String sql = "SELECT (AVG(Mark)/A.MaximumMark)*100 as Average FROM subactivity A, subactivitymark B WHERE A.SubActivityId = B.SubActivityId" +
+        " and B.Mark!='-1' and A.SubActivityId=" + subActivityId ;
+        Cursor c = sqliteDatabase.rawQuery(sql, null);
+        c.moveToFirst();
+        while(!c.isAfterLast()){
+            avg = c.getInt(c.getColumnIndex("Average"));
+            c.moveToNext();
+        }
+        c.close();
+        return avg;
+    }
+
     public static int getStudSubActMark(int studentId, long subActivityId, SQLiteDatabase sqliteDatabase){
         int i = 0;
         Cursor c = sqliteDatabase.rawQuery("select Mark from subactivitymark where StudentId="+studentId+" and SubActivityId="+subActivityId,null);

@@ -6,6 +6,7 @@ import java.util.List;
 import in.principal.activity.R;
 import in.principal.adapter.StudExamAdapter;
 import in.principal.dao.ActivitiDao;
+import in.principal.dao.ActivityMarkDao;
 import in.principal.dao.ExmAvgDao;
 import in.principal.dao.MarksDao;
 import in.principal.dao.TempDao;
@@ -142,6 +143,11 @@ public class SearchStudExam extends Fragment {
             }
             c.close();
 
+            Temp t = new Temp();
+            t.setClassId(classId);
+            t.setClassName(className);
+            TempDao.updateClass(t, sqliteDatabase);
+
             Cursor c2 = sqliteDatabase.rawQuery("select ExamId,ExamName from exams where ClassId=" + classId, null);
             c2.moveToFirst();
             while (!c2.isAfterLast()) {
@@ -192,7 +198,7 @@ public class SearchStudExam extends Fragment {
                         c3.close();
 
                         for (Integer actId : actList) {
-                            actAvg += ActivitiDao.getStudActAvg(studentId, actId, sqliteDatabase);
+                            actAvg += ActivityMarkDao.getStudActAvg(studentId, actId, sqliteDatabase);
                         }
                         overallActAvg = actAvg / actList.size();
                         if (overallActAvg != 0) {

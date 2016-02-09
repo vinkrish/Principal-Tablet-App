@@ -6,7 +6,7 @@ package in.principal.sqlite;
 public interface SqlConstant {
 
     String DATABASE_NAME = "principal.db";
-    int DATABASE_VERSION = 3;
+    int DATABASE_VERSION = 4;
 
     String CREATE_CLASS = "CREATE TABLE class(SchoolId INTEGER, ClassId INT DEFAULT 0,"
             + "ClassName TEXT, ClassType TEXT, DateTimeRecordInserted DATETIME, SubjectGroupIds TEXT)";
@@ -232,4 +232,7 @@ public interface SqlConstant {
 
     String CREATE_MOVE_STUDENT = "CREATE TABLE movestudent(SchoolId INTEGER, Query TEXT, StudentId INTEGER, StudentName TEXT, ClassName TEXT, " +
             "SecIdFrom INTEGER, SecIdTo INTEGER, SectionFrom TEXT, SectionTo TEXT, Status INTEGER, PRIMARY KEY(StudentId, SecIdFrom, SecIdTo))";
+
+    String CREATE_TERM_REMARK = "CREATE TABLE term_remark(term_remark_id INTEGER, SchoolId INTEGER, ClassId INTEGER, " +
+            "SectionId INTEGER, StudentId INTEGER, Term INTEGER, Remark TEXT)";
 }

@@ -1,5 +1,21 @@
 package in.principal.activity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Environment;
+import android.view.WindowManager;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
@@ -9,39 +25,19 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import in.principal.sqlite.SqlDbHelper;
 import in.principal.dao.ActivitiDao;
 import in.principal.dao.ExmAvgDao;
 import in.principal.dao.SlipTesttDao;
 import in.principal.dao.StAvgDao;
 import in.principal.dao.SubActivityDao;
 import in.principal.dao.TempDao;
+import in.principal.sqlite.SqlDbHelper;
 import in.principal.sqlite.Temp;
 import in.principal.sync.FirstTimeDownload;
 import in.principal.sync.RequestResponseHandler;
 import in.principal.sync.StringConstant;
-import in.principal.sync.SyncIntentService;
 import in.principal.util.AppGlobal;
 import in.principal.util.ExceptionHandler;
-
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.database.SQLException;
-import android.database.sqlite.SQLiteDatabase;
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.os.Environment;
-import android.util.Log;
-import android.view.WindowManager;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 
 /**
  * Created by vinkrish.
@@ -51,7 +47,6 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
     private SqlDbHelper sqlHandler;
     private Context context;
     private SQLiteDatabase sqliteDatabase;
-    private int manualSync;
     private String savedVersion;
     private ProgressBar progressBar;
     private TextView txtPercentage, txtSync;
@@ -78,10 +73,34 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
         context = AppGlobal.getContext();
 
         sharedPref = getSharedPreferences("db_access", Context.MODE_PRIVATE);
-        manualSync = sharedPref.getInt("manual_sync", 0);
         savedVersion = sharedPref.getString("saved_version", "v1.3");
 
         new ProcessedFiles().execute();
+    }
+
+    public int countLines(String filename) throws IOException {
+        InputStream is = new BufferedInputStream(new FileInputStream(new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename)));
+        try {
+            byte[] c = new byte[1024];
+            int count = 0;
+            int readChars = 0;
+            boolean empty = true;
+            while ((readChars = is.read(c)) != -1) {
+                empty = false;
+                for (int i = 0; i < readChars; ++i) {
+                    if (c[i] == '\n') {
+                        ++count;
+                    }
+                }
+            }
+            return (count == 0 && !empty) ? 1 : count;
+        } finally {
+            is.close();
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 
     class ProcessedFiles extends AsyncTask<String, String, String> {
@@ -110,8 +129,6 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
                 c1.moveToNext();
             }
             c1.close();
-
-            Log.d("process_file_req", "...");
 
             int fileCount = downFileList.size();
             int fileIndex = 0;
@@ -156,7 +173,6 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
                 e.printStackTrace();
                 isFirstTimeSync = true;
             }
-            Log.d("process_file_res", "...");
 
             publishProgress("100", 100 + "", "acknowledge processed file");
 
@@ -170,7 +186,6 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
             c2.close();
 
             if (!isFirstTimeSync) {
-                Log.d("ack_file_req", "...");
                 if (sb.length() > 3) {
                     try {
                         JSONObject jsonObject = new JSONObject();
@@ -186,7 +201,6 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
                         e.printStackTrace();
                     }
                 }
-                Log.d("ack_file_res", "...");
             }
 
             publishProgress("0", 0 + "", "calculating average");
@@ -368,7 +382,6 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putInt("sleep_sync", 0);
             editor.apply();
-            Log.d("1", "1");
             if (isException) {
                 editor.apply();
                 Intent intent = new Intent(context, in.principal.activity.LockActivity.class);
@@ -379,37 +392,11 @@ public class ProcessFiles extends BaseActivity implements StringConstant {
                 editor.apply();
                 new FirstTimeDownload().callFirstTimeSync();
             } else {
-                Log.d("3", "3");
                 Intent intent = new Intent(context, in.principal.activity.LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         }
-    }
-
-    public int countLines(String filename) throws IOException {
-        InputStream is = new BufferedInputStream(new FileInputStream(new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename)));
-        try {
-            byte[] c = new byte[1024];
-            int count = 0;
-            int readChars = 0;
-            boolean empty = true;
-            while ((readChars = is.read(c)) != -1) {
-                empty = false;
-                for (int i = 0; i < readChars; ++i) {
-                    if (c[i] == '\n') {
-                        ++count;
-                    }
-                }
-            }
-            return (count == 0 && !empty) ? 1 : count;
-        } finally {
-            is.close();
-        }
-    }
-
-    @Override
-    public void onBackPressed() {
     }
 
 }
