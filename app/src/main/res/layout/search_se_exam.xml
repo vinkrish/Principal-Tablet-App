@@ -163,47 +163,19 @@
         android:layout_marginTop="15dp"
         android:background="@color/divider" />
 
-    <LinearLayout
+    <TextView
         android:id="@+id/lisview"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/top"
-        android:layout_centerInParent="true"
+        android:layout_gravity="center_vertical"
         android:background="@color/layoutbelowBC"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="0.75"
-            android:gravity="start"
-            android:paddingEnd="0dp"
-            android:paddingStart="10dp"
-            android:text="@string/exam"
-            android:textColor="@color/light_black"
-            android:textSize="19sp"
-            android:textStyle="bold" />
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@color/divider" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="5dp"
-            android:layout_weight="0.4"
-            android:gravity="start"
-            android:paddingEnd="0dp"
-            android:paddingStart="10dp"
-            android:text="@string/stud_avg"
-            android:textColor="@color/light_black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+        android:gravity="start"
+        android:padding="10dp"
+        android:text="@string/exam"
+        android:textColor="@color/light_black"
+        android:textSize="19sp"
+        android:textStyle="bold" />
 
     <View
         android:id="@+id/bottom"

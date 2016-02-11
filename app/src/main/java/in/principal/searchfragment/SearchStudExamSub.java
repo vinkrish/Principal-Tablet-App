@@ -7,7 +7,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,9 +23,7 @@ import java.util.List;
 import in.principal.activity.R;
 import in.principal.adapter.StudExamSubAdapter;
 import in.principal.dao.ActivitiDao;
-import in.principal.dao.ActivityMarkDao;
 import in.principal.dao.ExamsDao;
-import in.principal.dao.ExmAvgDao;
 import in.principal.dao.GradesClassWiseDao;
 import in.principal.dao.MarksDao;
 import in.principal.dao.TempDao;
@@ -52,7 +49,6 @@ public class SearchStudExamSub extends Fragment {
     private ArrayList<AdapterOverloaded> amrList = new ArrayList<>();
     private StudExamSubAdapter adapter;
     private List<Activiti> activitiList = new ArrayList<>();
-    private List<Integer> isSubGotActList = new ArrayList<>();
     private ProgressDialog pDialog;
     private TextView studTV, clasSecTV;
     private List<Integer> subIdList = new ArrayList<>();
@@ -190,66 +186,36 @@ public class SearchStudExamSub extends Fragment {
             }
             c2.close();
 
-            for (Integer subId : subIdList) {
-                int cache = ActivitiDao.isThereActivity(sectionId, subId, examId, sqliteDatabase);
-                if (cache == 1) {
-                    isSubGotActList.add(subId);
-                }
-            }
-
-            List<Integer> actList = new ArrayList<>();
-            int actAvg = 0;
-            int overallActAvg = 0;
             for (Integer sub : subIdList) {
-                int avg = 0;
-                if (isSubGotActList.contains(sub)) {
-                    actList.clear();
-                    actAvg = 0;
-                    Cursor c3 = sqliteDatabase.rawQuery("select ActivityId from activity where ExamId=" + examId + " and SubjectId=" + sub + " and SectionId=" + sectionId, null);
-                    c3.moveToFirst();
-                    while (!c3.isAfterLast()) {
-                        actList.add(c3.getInt(c3.getColumnIndex("ActivityId")));
-                        c3.moveToNext();
-                    }
-                    c3.close();
-
-                    for (Integer actId : actList) {
-                        actAvg += ActivityMarkDao.getStudActAvg(studentId, actId, sqliteDatabase);
-                    }
-                    overallActAvg = actAvg / actList.size();
-                    progressList1.add(overallActAvg);
-                    scoreList.add(" ");
-                    progressList2.add(ExmAvgDao.selectSeAvg2(sectionId, sub, examId, sqliteDatabase));
+                int avg;
+                int sectionAvg = MarksDao.getSectionAvg(examId, sub, sectionId, sqliteDatabase);
+                Cursor cursor = sqliteDatabase.rawQuery("select Mark from marks where ExamId=" + examId + " and SubjectId=" + sub + " and StudentId=" + studentId, null);
+                cursor.moveToFirst();
+                if (cursor.getCount() > 0 && sectionAvg != 0) {
+                    avg = MarksDao.getStudExamAvg(studentId, sub, examId, sqliteDatabase);
+                    int score = MarksDao.getStudExamMark(studentId, sub, examId, sqliteDatabase);
+                    int maxScore = MarksDao.getExamMaxMark(sub, examId, sqliteDatabase);
+                    scoreList.add(score + "/" + maxScore);
+                    progressList1.add(avg);
+                    progressList2.add(sectionAvg);
                 } else {
-                    int sectionAvg = MarksDao.getSectionAvg(examId, sub, sectionId, sqliteDatabase);
-                    Cursor cursor = sqliteDatabase.rawQuery("select Mark from marks where ExamId=" + examId + " and SubjectId=" + sub + " and StudentId=" + studentId, null);
-                    cursor.moveToFirst();
-                    if (cursor.getCount() > 0 && sectionAvg != 0) {
-                        avg = MarksDao.getStudExamAvg(studentId, sub, examId, sqliteDatabase);
-                        int score = MarksDao.getStudExamMark(studentId, sub, examId, sqliteDatabase);
-                        int maxScore = MarksDao.getExamMaxMark(sub, examId, sqliteDatabase);
-                        scoreList.add(score + "/" + maxScore);
-                        progressList1.add(avg);
-                        progressList2.add(sectionAvg);
-                    } else {
-                        Cursor cursor1 = sqliteDatabase.rawQuery("select Grade from marks where ExamId=" + examId + " and SubjectId=" + sub + " and StudentId=" + studentId, null);
-                        cursor1.moveToFirst();
-                        if (cursor1.getCount() > 0 && !cursor1.getString(cursor1.getColumnIndex("Grade")).equals("")) {
-                            while (!cursor1.isAfterLast()) {
-                                scoreList.add(cursor1.getString(cursor1.getColumnIndex("Grade")));
-                                progressList1.add(getMarkTo(cursor1.getString(cursor1.getColumnIndex("Grade"))));
-                                cursor1.moveToNext();
-                            }
-                            progressList2.add(MarksDao.getSectionAvg(classId, sub, examId, sqliteDatabase));
-                        } else {
-                            progressList1.add(0);
-                            scoreList.add("-");
-                            progressList2.add(0);
+                    Cursor cursor1 = sqliteDatabase.rawQuery("select Grade from marks where ExamId=" + examId + " and SubjectId=" + sub + " and StudentId=" + studentId, null);
+                    cursor1.moveToFirst();
+                    if (cursor1.getCount() > 0 && !cursor1.getString(cursor1.getColumnIndex("Grade")).equals("")) {
+                        while (!cursor1.isAfterLast()) {
+                            scoreList.add(cursor1.getString(cursor1.getColumnIndex("Grade")));
+                            progressList1.add(getMarkTo(cursor1.getString(cursor1.getColumnIndex("Grade"))));
+                            cursor1.moveToNext();
                         }
-                        cursor1.close();
+                        progressList2.add(MarksDao.getSectionAvg(classId, sub, examId, sqliteDatabase));
+                    } else {
+                        progressList1.add(0);
+                        scoreList.add("-");
+                        progressList2.add(0);
                     }
-                    cursor.close();
+                    cursor1.close();
                 }
+                cursor.close();
             }
 
             for (int i = 0; i < subIdList.size(); i++) {

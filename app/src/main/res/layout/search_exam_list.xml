@@ -16,75 +16,18 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000" />
 
-    <View
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:background="@color/divider" />
-
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginEnd="5dp"
-        android:layout_weight="0.4"
-        android:orientation="vertical"
-        android:paddingEnd="0dp"
-        android:paddingStart="10dp">
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="0.2"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/chart"/>
 
-            <ProgressBar
-                android:id="@+id/avgProgress1"
-                style="@style/tallerBarStyle"
-                android:layout_width="0dp"
-                android:layout_height="16dp"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="0.33"
-                android:focusable="false" />
-
-            <TextView
-                android:id="@+id/percent1"
-                android:layout_width="0dp"
-                android:layout_height="16dp"
-                android:layout_gravity="center"
-                android:layout_weight="0.07"
-                android:background="@color/dark_black"
-                android:gravity="center"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/divider" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ProgressBar
-                android:id="@+id/avgProgress2"
-                style="@style/tallerBarStyle"
-                android:layout_width="0dp"
-                android:layout_height="16dp"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="0.33"
-                android:focusable="false" />
-
-            <TextView
-                android:id="@+id/percent2"
-                android:layout_width="0dp"
-                android:layout_height="16dp"
-                android:layout_gravity="center"
-                android:layout_weight="0.07"
-                android:background="@color/dark_black"
-                android:gravity="center"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>
