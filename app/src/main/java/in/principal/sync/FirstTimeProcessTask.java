@@ -189,7 +189,8 @@ public class FirstTimeProcessTask extends AsyncTask<String, String, String> impl
         if (tabletLock == 1) {
             SharedPreferenceUtil.updateFirstSync(context, 0);
         } else {
-            new SubActivityProgress(context).findSubActProgress();
+            new SlipTestProgress(context).findStProgress();
+            //new SubActivityProgress(context).findSubActProgress();
         }
     }
 

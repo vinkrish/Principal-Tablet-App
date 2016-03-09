@@ -37,7 +37,8 @@ import android.widget.AdapterView.OnItemClickListener;
  */
 public class SearchStudExam extends Fragment {
     private Context context;
-    private int studentId, sectionId, classId;
+    private int sectionId, classId;
+    private long studentId;
     private String studentName, className, secName;
     private SQLiteDatabase sqliteDatabase;
     private ArrayList<AdapterOverloaded> amrList = new ArrayList<>();

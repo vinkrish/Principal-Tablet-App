@@ -113,7 +113,9 @@
         android:gravity="center_vertical"
         android:orientation="vertical"
         android:paddingEnd="0dp"
-        android:paddingStart="10dp">
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="0dp">
 
         <TextView
             android:id="@+id/subinfo"
@@ -176,6 +178,8 @@
             android:gravity="start|center"
             android:paddingEnd="0dp"
             android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="0dp"
             android:text="@string/studentname"
             android:textColor="@color/light_black"
             android:textSize="18sp"

@@ -7,7 +7,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,8 +44,8 @@ import in.principal.util.ReplaceFragment;
  */
 public class SearchStudAct extends Fragment {
     private Context context;
-    private int studentId, sectionId, subjectId, classId;
-    private long examId;
+    private int sectionId, subjectId, classId;
+    private long examId, studentId;
     private String studentName, className, secName, examName, subjectName;
     private SQLiteDatabase sqliteDatabase;
     private List<Long> actIdList = new ArrayList<>();
@@ -209,9 +208,9 @@ public class SearchStudAct extends Fragment {
                         while (!cursor1.isAfterLast()) {
                             scoreList.add(cursor1.getString(cursor1.getColumnIndex("Grade")));
                             avgList1.add(getMarkTo(cursor1.getString(cursor1.getColumnIndex("Grade"))));
-                            avgList2.add(ActivityGradeDao.getSectionAvg(classId, act.getActivityId(), sqliteDatabase));
                             cursor1.moveToNext();
                         }
+                        avgList2.add(ActivityGradeDao.getSectionAvg(classId, act.getActivityId(), sqliteDatabase));
                     } else {
                         avgList1.add(0);
                         scoreList.add("-");

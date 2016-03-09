@@ -1,5 +1,32 @@
 package in.principal.examfragment;
 
+import android.app.Fragment;
+import android.content.Context;
+import android.content.res.Resources;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.GridView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -16,40 +43,13 @@ import in.principal.dao.SectionDao;
 import in.principal.dao.SubjectsDao;
 import in.principal.dao.TeacherDao;
 import in.principal.dao.TempDao;
-import in.principal.sqlite.Circle;
 import in.principal.sqlite.Activiti;
 import in.principal.sqlite.AdapterOverloaded;
+import in.principal.sqlite.Circle;
 import in.principal.sqlite.Section;
 import in.principal.sqlite.Temp;
 import in.principal.util.AppGlobal;
 import in.principal.util.ReplaceFragment;
-
-import android.app.Fragment;
-import android.content.Context;
-import android.content.res.Resources;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.GridView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.Toast;
 
 /**
  * Created by vinkrish.
@@ -57,7 +57,7 @@ import android.widget.Toast;
  */
 public class SeSecSub extends Fragment {
     private Context context;
-    private int subjectId, classId, sectionId;
+    private int subjectId, classId, sectionId, progres;
     private List<Section> secList = new ArrayList<>();
     private static List<Integer> secIdList = new ArrayList<>();
     private List<String> secNameList = new ArrayList<>();
@@ -123,7 +123,9 @@ public class SeSecSub extends Fragment {
         TextView teacher = (TextView) view.findViewById(R.id.teacherinfo);
         teacher.setText(Capitalize.capitalThis(TeacherDao.getTeacherName(teacherId, sqliteDatabase)));
 
-        int progres = ExmAvgDao.selectSeAvg(sectionId, subjectId, sqliteDatabase);
+        updateListView();
+        updateView();
+
         ProgressBar pb = (ProgressBar) view.findViewById(R.id.subAvgProgress);
         if (progres >= 75) {
             pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_green));
@@ -135,9 +137,6 @@ public class SeSecSub extends Fragment {
         pb.setProgress(progres);
         TextView pecent = (TextView) view.findViewById(R.id.percent);
         pecent.setText(progres + "%");
-
-        updateView();
-        updateListView();
 
         lv.setOnItemClickListener(new OnItemClickListener() {
             @Override
@@ -176,12 +175,12 @@ public class SeSecSub extends Fragment {
     private void updateView() {
         for (int loop = 0; loop < secList.size(); loop++) {
             Section s = secList.get(loop);
-            int per = ExmAvgDao.seSecSubAvg(s.getSectionId(), subjectId, sqliteDatabase);
+            int per = (int)(progres * 3.6);
             if (sectionId == s.getSectionId()) {
                 Circle c = new Circle(per, secNameList.get(loop), true);
                 circleArrayGrid.add(c);
             } else {
-                Circle c = new Circle(per, secNameList.get(loop), false);
+                Circle c = new Circle(0, secNameList.get(loop), false);
                 circleArrayGrid.add(c);
             }
             cA.notifyDataSetChanged();
@@ -198,22 +197,19 @@ public class SeSecSub extends Fragment {
         }
         c.close();
 
-		/*for(Integer id: examIdList){
-            Cursor c2 = sqliteDatabase.rawQuery("select (ExamAvg/360.00)*100.00 as avg from exmavg where ExamId="+id+" and SubjectId="+subjectId+" and SectionId="+sectionId, null);
-			c2.moveToFirst();
-			while(!c2.isAfterLast()){
-				avgList.add(c2.getInt(c2.getColumnIndex("avg")));
-				c2.moveToNext();
-			}
-			c2.close();
-		}*/
+        int averag = 0;
         for (Integer id : examIdList) {
-            avgList.add(ExmAvgDao.getSeSecSubAvg(id, sectionId, subjectId, sqliteDatabase));
+            //avgList.add(ExmAvgDao.getSeSecSubAvg(id, sectionId, subjectId, sqliteDatabase));
+            int exmAvg = getExamAvg(id, subjectId);
+            avgList.add(exmAvg);
+            averag += exmAvg;
             int markEntry = MarksDao.isThereExamMark(id, sectionId, subjectId, sqliteDatabase);
             if (markEntry == 1) mi1.put(id, true);
             int gradeEntry = MarksDao.isThereExamGrade(id, sectionId, subjectId, sqliteDatabase);
             if (gradeEntry == 1) mi2.put(id, true);
         }
+
+        progres = averag / examIdList.size();
 
         for (int i = 0; i < examIdList.size(); i++) {
             try {
@@ -332,6 +328,27 @@ public class SeSecSub extends Fragment {
                 canvas.drawArc(rectF, 270, Float.parseFloat(localInt + ""), false, p);
             }
         }
+    }
+
+    private int getExamAvg(long examId, int subjectId) {
+        int avg = 0;
+        int sectionAvg = MarksDao.getSectionAvg(examId, subjectId, sectionId, sqliteDatabase);
+        Cursor cursor = sqliteDatabase.rawQuery("select Mark from marks where ExamId=" + examId + " and SubjectId=" + subjectId +
+                " and StudentId in (select StudentId from Students where SectionId = " + sectionId + ")", null);
+        cursor.moveToFirst();
+        if (cursor.getCount() > 0 && sectionAvg != 0) {
+            avg = sectionAvg;
+        } else {
+            Cursor cursor1 = sqliteDatabase.rawQuery("select Grade from marks where ExamId=" + examId + " and SubjectId=" + subjectId +
+                    " and StudentId in (select StudentId from Students where SectionId = " + sectionId + ")", null);
+            cursor1.moveToFirst();
+            if (cursor1.getCount() > 0) {
+                avg = MarksDao.getSectionAvg(classId, sectionId, subjectId, examId, sqliteDatabase);
+            }
+            cursor1.close();
+        }
+        cursor.close();
+        return avg;
     }
 
 }

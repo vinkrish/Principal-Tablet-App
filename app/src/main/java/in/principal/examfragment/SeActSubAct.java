@@ -1,29 +1,5 @@
 package in.principal.examfragment;
 
-import in.principal.activity.R;
-import in.principal.adapter.AssAdapter;
-import in.principal.adapter.Capitalize;
-import in.principal.dao.ActivitiDao;
-import in.principal.dao.ExamsDao;
-import in.principal.dao.SectionDao;
-import in.principal.dao.SubActivityDao;
-import in.principal.dao.SubActivityMarkDao;
-import in.principal.dao.SubjectsDao;
-import in.principal.dao.TeacherDao;
-import in.principal.dao.TempDao;
-import in.principal.sqlite.Circle;
-import in.principal.sqlite.AdapterOverloaded;
-import in.principal.sqlite.Section;
-import in.principal.sqlite.SubActivity;
-import in.principal.sqlite.Temp;
-import in.principal.util.AppGlobal;
-import in.principal.util.ReplaceFragment;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import android.app.Fragment;
 import android.content.Context;
 import android.content.res.Resources;
@@ -35,10 +11,11 @@ import android.graphics.RectF;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -47,8 +24,31 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import in.principal.activity.R;
+import in.principal.adapter.AssAdapter;
+import in.principal.adapter.Capitalize;
+import in.principal.dao.ActivitiDao;
+import in.principal.dao.ExamsDao;
+import in.principal.dao.SectionDao;
+import in.principal.dao.SubActivityDao;
+import in.principal.dao.SubActivityMarkDao;
+import in.principal.dao.SubjectsDao;
+import in.principal.dao.TeacherDao;
+import in.principal.dao.TempDao;
+import in.principal.sqlite.AdapterOverloaded;
+import in.principal.sqlite.Circle;
+import in.principal.sqlite.Section;
+import in.principal.sqlite.SubActivity;
+import in.principal.sqlite.Temp;
+import in.principal.util.AppGlobal;
+import in.principal.util.ReplaceFragment;
 
 /**
  * Created by vinkrish.
@@ -58,7 +58,7 @@ public class SeActSubAct extends Fragment {
     private Context context;
     private SQLiteDatabase sqliteDatabase;
     private String secName;
-    private int sectionId, subjectId;
+    private int sectionId, subjectId, progres;
     private long activityId;
     private List<Section> secList = new ArrayList<>();
     private static List<Integer> secIdList = new ArrayList<>();
@@ -134,7 +134,9 @@ public class SeActSubAct extends Fragment {
         TextView teacher = (TextView) view.findViewById(R.id.teacherinfo);
         teacher.setText(Capitalize.capitalThis(TeacherDao.getTeacherName(teacherId, sqliteDatabase)));
 
-        int progres = ActivitiDao.getActAvg(activityId, sqliteDatabase);
+        updateListView();
+        updateView();
+
         ProgressBar pb = (ProgressBar) view.findViewById(R.id.subAvgProgress);
         if (progres >= 75) {
             pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_green));
@@ -146,9 +148,6 @@ public class SeActSubAct extends Fragment {
         pb.setProgress(progres);
         TextView pecent = (TextView) view.findViewById(R.id.percent);
         pecent.setText(progres + "%");
-
-        updateView();
-        updateListView();
 
         lv.setOnItemClickListener(new OnItemClickListener() {
             @Override
@@ -196,24 +195,27 @@ public class SeActSubAct extends Fragment {
 	}*/
 
     private void updateView() {
-        int per = ActivitiDao.seActSubActAvg(activityId, sqliteDatabase);
-        Circle c = new Circle(per, secName, true);
+        Circle c = new Circle((int) (progres * 3.6), secName, true);
         circleArrayGrid.add(c);
         cA.notifyDataSetChanged();
     }
 
     private void updateListView() {
         subActivitiList = SubActivityDao.selectSubActivity(activityId, sqliteDatabase);
+        int averag = 0;
         for (SubActivity at : subActivitiList) {
             subActNameList.add(at.getSubActivityName());
             subActIdList.add(at.getSubActivityId());
-            int i = (int) (((double) at.getSubActivityAvg() / (double) 360) * 100);
-            avgList.add(i);
+            //int i = (int) (((double) at.getSubActivityAvg() / (double) 360) * 100);
+            avgList.add((int) at.getSubActivityAvg());
+            averag += (int) at.getSubActivityAvg();
             int markEntry = SubActivityMarkDao.isThereSubActMark(at.getSubActivityId(), subjectId, sqliteDatabase);
             if (markEntry == 1) mi1.put(at.getSubActivityId(), true);
             int gradeEntry = SubActivityMarkDao.isThereSubActGrade(at.getSubActivityId(), subjectId, sqliteDatabase);
             if (gradeEntry == 1) mi2.put(at.getSubActivityId(), true);
         }
+
+        progres = averag / subActivitiList.size();
 
         for (int i = 0; i < subActIdList.size(); i++) {
             try {

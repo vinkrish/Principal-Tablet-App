@@ -25,7 +25,7 @@ import in.principal.util.ReplaceFragment;
  */
 public class StudentProfile extends Fragment{
     private SQLiteDatabase sqliteDatabase;
-    private int studentId;
+    private long studentId;
     private TextView studTV, clasSecTV;
     private EditText rollNo, admissionNo, dob, fatherName, motherName, gender, mobile1, mobile2, address, pincode;
 

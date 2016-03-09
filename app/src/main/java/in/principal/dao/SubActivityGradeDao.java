@@ -40,7 +40,7 @@ public class SubActivityGradeDao {
         } else return 0;
     }
 
-    public static String getSubActivityGrade(long subActId, int studentId, int subjectId, SQLiteDatabase sqLiteDatabase) {
+    public static String getSubActivityGrade(long subActId, long studentId, int subjectId, SQLiteDatabase sqLiteDatabase) {
         String grade = "";
         Cursor c = sqLiteDatabase.rawQuery("select Grade from subactivitygrade " +
                 "where StudentId = " + studentId + " and SubActivityId = " + subActId + " and SubjectId = " + subjectId, null);
@@ -63,9 +63,9 @@ public class SubActivityGradeDao {
         return isThere;
     }
 
-    public static List<String> selectSubActivityGrade(long subActivityId, List<Integer> studentId, SQLiteDatabase sqliteDatabase) {
+    public static List<String> selectSubActivityGrade(long subActivityId, List<Long> studentId, SQLiteDatabase sqliteDatabase) {
         List<String> aList = new ArrayList<>();
-        for (Integer i : studentId) {
+        for (Long i : studentId) {
             Cursor c = sqliteDatabase.rawQuery("select Grade from subactivitygrade where SubActivityId=" + subActivityId + " and StudentId=" + i, null);
             c.moveToFirst();
             if (c.getCount() > 0) {

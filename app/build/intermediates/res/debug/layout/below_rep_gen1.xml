@@ -41,6 +41,8 @@
             android:layout_weight="0.5"
             android:paddingEnd="0dp"
             android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="0dp"
             android:text="@string/studentname"
             android:textColor="@color/light_black"
             android:textSize="18sp"
@@ -56,9 +58,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="0.4"
             android:paddingEnd="0dp"
             android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="0dp"
             android:text="@string/performance"
             android:textColor="@color/light_black"
             android:textSize="18sp"
@@ -68,6 +73,6 @@
     <ListView
         android:id="@+id/lisview1"
         android:layout_width="match_parent"
-        android:layout_height="500dp"></ListView>
+        android:layout_height="500dp"/>
 
 </LinearLayout><!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/layout/below_rep_gen1.xml -->

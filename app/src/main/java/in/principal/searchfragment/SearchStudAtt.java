@@ -50,7 +50,8 @@ import android.widget.TextView;
 public class SearchStudAtt extends Fragment {
     private Activity act;
     private Context context;
-    private int studentId, classId, classStrength;
+    private int classId, classStrength;
+    private long studentId;
     private String studentName, className, secName;
     private SQLiteDatabase sqliteDatabase;
     private JSONObject monObject;

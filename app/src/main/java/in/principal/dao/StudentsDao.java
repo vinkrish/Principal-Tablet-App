@@ -28,7 +28,7 @@ public class StudentsDao {
 		return sList;
 	}
 	
-	public static String getStudentName(int studentId, SQLiteDatabase sqliteDatabase){
+	public static String getStudentName(long studentId, SQLiteDatabase sqliteDatabase){
 		String name = null;
 		Cursor c = sqliteDatabase.rawQuery("select Name from students where StudentId="+studentId, null);
 		c.moveToFirst();
@@ -42,9 +42,9 @@ public class StudentsDao {
 		return name;
 	}
 
-	public static List<Students> selectAbsentStudents(List<Integer> ids, SQLiteDatabase sqliteDatabase){
-		List<Students> sList = new ArrayList<Students>();
-		for(Integer id: ids){
+	public static List<Students> selectAbsentStudents(List<Long> ids, SQLiteDatabase sqliteDatabase){
+		List<Students> sList = new ArrayList<>();
+		for(Long id: ids){
 			Cursor c = sqliteDatabase.rawQuery("select * from students where StudentId="+id, null);
 			c.moveToFirst();
 			while(!c.isAfterLast()){

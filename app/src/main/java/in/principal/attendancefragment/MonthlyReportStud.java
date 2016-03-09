@@ -57,7 +57,8 @@ public class MonthlyReportStud extends Fragment {
     private XYMultipleSeriesDataset dataset;
     private XYMultipleSeriesRenderer multiRenderer;
     private static final int SERIES_NR = 2;
-    private int studentId, classId, classStrength;
+    private int classId, classStrength;
+    private long studentId;
     private double absentCnt, noOfDays;
     private List<Integer> intMon = new ArrayList<>();
     private List<String> stringMon = new ArrayList<>();

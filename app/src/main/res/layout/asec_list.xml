@@ -28,6 +28,8 @@
         android:gravity="start"
         android:paddingEnd="0dp"
         android:paddingStart="15dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="0dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000" />
 

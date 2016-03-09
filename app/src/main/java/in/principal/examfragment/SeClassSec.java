@@ -2,7 +2,6 @@ package in.principal.examfragment;
 
 import in.principal.activity.R;
 import in.principal.adapter.AmrAdapter;
-import in.principal.comparefragment.CompSeClassSec;
 import in.principal.dao.ExmAvgDao;
 import in.principal.dao.SectionDao;
 import in.principal.dao.TempDao;
@@ -99,23 +98,6 @@ public class SeClassSec extends Fragment {
             }
         });
 
-        Button compare = (Button) view.findViewById(R.id.compare);
-        compare.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sqliteDatabase.execSQL("delete from comp");
-                ReplaceFragment.replace(new CompSeClassSec(), getFragmentManager());
-            }
-        });
-
-        Button viewChange = (Button) view.findViewById(R.id.viewChange);
-        viewChange.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ReplaceFragment.replace(new SeExam(), getFragmentManager());
-            }
-        });
-
         secList = SectionDao.selectSection(classId, sqliteDatabase);
         for (Section s : secList) {
             secIdList.add(s.getSectionId());
@@ -140,12 +122,11 @@ public class SeClassSec extends Fragment {
     private void updateView() {
         for (int loop = 0; loop < secList.size(); loop++) {
             Section s = secList.get(loop);
-            int per = ExmAvgDao.seSecAvg(s.getSectionId(), sqliteDatabase);
             if (sectionId == s.getSectionId()) {
-                Circle c = new Circle(per, secNameList.get(loop), true);
+                Circle c = new Circle(0, secNameList.get(loop), true);
                 circleArrayGrid.add(c);
             } else {
-                Circle c = new Circle(per, secNameList.get(loop), false);
+                Circle c = new Circle(0, secNameList.get(loop), false);
                 circleArrayGrid.add(c);
             }
             cA.notifyDataSetChanged();
@@ -210,7 +191,8 @@ public class SeClassSec extends Fragment {
         }
 
         for (Integer subId : subIdList) {
-            progressList.add(ExmAvgDao.selectSeAvg(sectionId, subId, sqliteDatabase));
+            //progressList.add(ExmAvgDao.selectSeAvg(sectionId, subId, sqliteDatabase));
+            progressList.add(0);
         }
 
         for (int i = 0; i < subIdList.size(); i++) {
@@ -313,15 +295,12 @@ public class SeClassSec extends Fragment {
                 p.setStyle(Paint.Style.STROKE);
                 p.setStrokeWidth(6);
 
-                if (localInt >= 270) {
-                    p.setColor(getResources().getColor(R.color.green));
-                } else if (localInt >= 180) {
-                    p.setColor(getResources().getColor(R.color.orange));
-                } else if (localInt > 0) {
-                    p.setColor(getResources().getColor(R.color.red));
+                if (selected) {
+                    p.setColor(getResources().getColor(R.color.universal));
+                    canvas.drawArc(rectF, 0, 360, false, p);
+                } else {
+                    canvas.drawArc(rectF, 0, 360, false, defaultPaint);
                 }
-                canvas.drawArc(rectF, 0, 360, false, defaultPaint);
-                canvas.drawArc(rectF, 270, Float.parseFloat(localInt + ""), false, p);
             }
         }
     }

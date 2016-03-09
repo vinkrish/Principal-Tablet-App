@@ -36,7 +36,6 @@ import android.widget.ExpandableListView.OnGroupClickListener;
  * Created by vinkrish.
  * I would write this class a better way if i've to start over again, optimize it if you can.
  */
-
 @SuppressLint("InflateParams")
 public class CoScholastic extends Fragment {
 

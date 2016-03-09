@@ -9,7 +9,7 @@ public class Temp {
     private String sectionName;
     private String className;
     private int teacherId;
-    private int studentId;
+    private long studentId;
     private int subjectId;
     private long examId;
     private long examId2;
@@ -21,6 +21,14 @@ public class Temp {
     private String otherDate;
     private String syncTime;
     private int isSync;
+
+    public long getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(long studentId) {
+        this.studentId = studentId;
+    }
 
     public long getExamId() {
         return examId;
@@ -172,14 +180,6 @@ public class Temp {
 
     public void setOtherDate(String otherDate) {
         this.otherDate = otherDate;
-    }
-
-    public int getStudentId() {
-        return studentId;
-    }
-
-    public void setStudentId(int studentId) {
-        this.studentId = studentId;
     }
 
 }

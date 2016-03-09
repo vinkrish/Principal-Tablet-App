@@ -28,7 +28,9 @@
         android:layout_weight="0.6"
         android:focusable="false"
         android:paddingEnd="0dp"
-        android:paddingStart="10dp" />
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="0dp"/>
 
     <TextView
         android:id="@+id/percent"
@@ -36,6 +38,7 @@
         android:layout_height="20dp"
         android:layout_gravity="center"
         android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:layout_weight="0.13"
         android:background="@color/dark_black"
         android:gravity="center"

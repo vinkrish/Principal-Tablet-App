@@ -6,8 +6,7 @@ import java.util.List;
 import in.principal.activity.R;
 import in.principal.dao.ExamsDao;
 import in.principal.dao.TempDao;
-import in.principal.examfragment.SeExam;
-import in.principal.examfragment.SeExamSub;
+import in.principal.examfragment.SeClassSec;
 import in.principal.sqlite.Temp;
 import in.principal.util.AppGlobal;
 import in.principal.util.ReplaceFragment;
@@ -69,7 +68,7 @@ public class ReportGeneration extends Fragment {
         classButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ReplaceFragment.replace(new SeExam(), getFragmentManager());
+                ReplaceFragment.replace(new SeClassSec(), getFragmentManager());
             }
         });
         Button secButton = (Button) view.findViewById(R.id.seSec);
@@ -77,7 +76,7 @@ public class ReportGeneration extends Fragment {
         secButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ReplaceFragment.replace(new SeExamSub(), getFragmentManager());
+                //ReplaceFragment.replace(new SeExamSub(), getFragmentManager());
             }
         });
         Button examButton = (Button) view.findViewById(R.id.exam);

@@ -26,7 +26,7 @@ public class TempDao {
 			t.setSectionId(c.getInt(c.getColumnIndex("SectionId")));
 			t.setSectionName(c.getString(c.getColumnIndex("SectionName")));
 			t.setTeacherId(c.getInt(c.getColumnIndex("TeacherId")));
-			t.setStudentId(c.getInt(c.getColumnIndex("StudentId")));
+			t.setStudentId(c.getLong(c.getColumnIndex("StudentId")));
 			t.setSubjectId(c.getInt(c.getColumnIndex("SubjectId")));
 			t.setExamId(c.getInt(c.getColumnIndex("ExamId")));
 			t.setExamId2(c.getInt(c.getColumnIndex("ExamId2")));
@@ -80,7 +80,7 @@ public class TempDao {
 		sqliteDatabase.update("temp", cv, "id=1", null);
 	}
 
-	public static void updateStudentId(int studentId, SQLiteDatabase sqliteDatabase){
+	public static void updateStudentId(long studentId, SQLiteDatabase sqliteDatabase){
 		ContentValues cv = new ContentValues();
 		cv.put("StudentId", studentId);
 		sqliteDatabase.update("temp", cv, "id=1", null);

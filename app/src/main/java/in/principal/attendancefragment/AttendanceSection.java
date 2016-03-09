@@ -58,9 +58,9 @@ public class AttendanceSection extends Fragment {
     private List<String> secNameList = new ArrayList<>();
     private int index;
     private String[] items;
-    private List<Integer> absentList = new ArrayList<>();
+    private List<Long> absentList = new ArrayList<>();
     private List<Integer> studentIdList = new ArrayList<>();
-    private List<Integer> studIDList = new ArrayList<>();
+    private List<Long> studIDList = new ArrayList<>();
     private List<String> studentNameList = new ArrayList<>();
 
     @Override

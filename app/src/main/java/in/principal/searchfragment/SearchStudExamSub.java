@@ -42,7 +42,8 @@ import in.principal.util.ReplaceFragment;
  */
 public class SearchStudExamSub extends Fragment {
     private Context context;
-    private int studentId, sectionId, classId;
+    private int sectionId, classId;
+    private long studentId;
     private long examId;
     private String studentName, className, secName, examName;
     private SQLiteDatabase sqliteDatabase;
@@ -207,7 +208,7 @@ public class SearchStudExamSub extends Fragment {
                             progressList1.add(getMarkTo(cursor1.getString(cursor1.getColumnIndex("Grade"))));
                             cursor1.moveToNext();
                         }
-                        progressList2.add(MarksDao.getSectionAvg(classId, sub, examId, sqliteDatabase));
+                        progressList2.add(MarksDao.getSectionAvg(classId, sectionId, sub, examId, sqliteDatabase));
                     } else {
                         progressList1.add(0);
                         scoreList.add("-");

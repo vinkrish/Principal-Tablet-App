@@ -58,6 +58,8 @@
         android:gravity="start|center_vertical"
         android:paddingEnd="0dp"
         android:paddingStart="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="0dp"
         android:text="@string/homework"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -87,6 +89,8 @@
                 android:layout_gravity="center"
                 android:paddingEnd="0dp"
                 android:paddingStart="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="0dp"
                 android:textSize="22sp" />
 
             <ImageView
@@ -94,6 +98,7 @@
                 android:layout_height="15dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="-20dp"
+                android:layout_marginLeft="-20dp"
                 android:background="@drawable/downarrow"
                 android:contentDescription="@string/cc" />
         </LinearLayout>
@@ -116,6 +121,8 @@
                 android:layout_gravity="center"
                 android:paddingEnd="0dp"
                 android:paddingStart="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="0dp"
                 android:text="@string/clas"
                 android:textSize="22sp" />
 
@@ -124,6 +131,7 @@
                 android:layout_height="15dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="-20dp"
+                android:layout_marginLeft="-20dp"
                 android:background="@drawable/downarrow"
                 android:contentDescription="@string/cc" />
         </LinearLayout>
@@ -146,6 +154,8 @@
                 android:layout_gravity="center"
                 android:paddingEnd="0dp"
                 android:paddingStart="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="0dp"
                 android:text="@string/section"
                 android:textSize="22sp" />
 
@@ -154,6 +164,7 @@
                 android:layout_height="15dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="-20dp"
+                android:layout_marginLeft="-20dp"
                 android:background="@drawable/downarrow"
                 android:contentDescription="@string/cc" />
         </LinearLayout>
@@ -168,6 +179,8 @@
         android:gravity="start"
         android:paddingEnd="0dp"
         android:paddingStart="15dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="0dp"
         android:text="@string/homeworknot"
         android:textSize="20sp" />
 
@@ -216,6 +229,8 @@
                 android:gravity="start"
                 android:paddingEnd="0dp"
                 android:paddingStart="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="0dp"
                 android:text="@string/classteacher"
                 android:textColor="@color/light_black"
                 android:textSize="18sp"

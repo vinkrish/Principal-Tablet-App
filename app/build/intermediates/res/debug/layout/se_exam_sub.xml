@@ -87,7 +87,9 @@
         android:baselineAligned="false"
         android:orientation="horizontal"
         android:paddingEnd="0dp"
-        android:paddingStart="10dp">
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="0dp">
 
         <TextView
             android:id="@+id/exminfo"
@@ -98,6 +100,8 @@
             android:gravity="start"
             android:paddingEnd="0dp"
             android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="0dp"
             android:textSize="21sp" />
 
         <ProgressBar
@@ -115,6 +119,7 @@
             android:layout_height="20dp"
             android:layout_gravity="center"
             android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="0.07"
             android:background="@color/dark_black"
             android:gravity="center"
@@ -156,6 +161,7 @@
             android:layout_height="40dp"
             android:layout_gravity="start"
             android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
             android:background="@drawable/button_selector_blue"
             android:gravity="center"
             android:text="@string/report"
@@ -167,6 +173,7 @@
             android:layout_width="148dp"
             android:layout_height="40dp"
             android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
             android:background="@drawable/button_selector_blue"
             android:gravity="center"
             android:text="@string/compare"
@@ -195,6 +202,8 @@
             android:layout_weight="0.3"
             android:paddingEnd="0dp"
             android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="0dp"
             android:text="@string/subject"
             android:textColor="@color/light_black"
             android:textSize="19sp"
@@ -212,6 +221,8 @@
             android:layout_weight="0.45"
             android:paddingEnd="0dp"
             android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="0dp"
             android:text="@string/teacher"
             android:textColor="@color/light_black"
             android:textSize="18sp"
@@ -227,9 +238,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="0.4"
             android:paddingEnd="0dp"
             android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="0dp"
             android:text="@string/average"
             android:textColor="@color/light_black"
             android:textSize="18sp"

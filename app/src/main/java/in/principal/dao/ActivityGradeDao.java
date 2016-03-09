@@ -29,18 +29,18 @@ public class ActivityGradeDao {
         Collections.sort(gradesClassWiseList, new GradeClassWiseSort());
         int avg = 0;
         Cursor c = sqliteDatabase.rawQuery("select Grade from activitygrade where ActivityId=" + activityId, null);
-        if (c.getCount() > 0){
+        if (c.getCount() > 0) {
             c.moveToFirst();
             while (!c.isAfterLast()) {
                 avg += getMarkTo(c.getString(c.getColumnIndex("Grade")));
                 c.moveToNext();
             }
             c.close();
-            return avg/c.getCount();
+            return avg / c.getCount();
         } else return 0;
     }
 
-    public static String getActivityGrade(long actId, int studentId, int subjectId, SQLiteDatabase sqLiteDatabase) {
+    public static String getActivityGrade(long actId, long studentId, int subjectId, SQLiteDatabase sqLiteDatabase) {
         String grade = "";
         Cursor c = sqLiteDatabase.rawQuery("select Grade from activitygrade " +
                 "where StudentId = " + studentId + " and ActivityId = " + actId + " and SubjectId = " + subjectId, null);
@@ -63,9 +63,9 @@ public class ActivityGradeDao {
         return isThere;
     }
 
-    public static List<String> selectActivityGrade(long activityId, List<Integer> studentId, SQLiteDatabase sqliteDatabase) {
+    public static List<String> selectActivityGrade(long activityId, List<Long> studentId, SQLiteDatabase sqliteDatabase) {
         List<String> mList = new ArrayList<>();
-        for (Integer i : studentId) {
+        for (Long i : studentId) {
             Cursor c = sqliteDatabase.rawQuery("select Grade from activitygrade where ActivityId=" + activityId + " and StudentId=" + i, null);
             c.moveToFirst();
             if (c.getCount() > 0) {

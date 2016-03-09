@@ -35,10 +35,6 @@ public class SubActivityProgress {
         protected String doInBackground(String... params) {
             sqliteDatabase = AppGlobal.getSqliteDatabase();
 
-            SubActivityDao.updateSubActivityAvg(sqliteDatabase);
-            //  SubActivityDao.checkSubActivityIsMark(sqliteDatabase);
-            //	SubActivityDao.checkSubActivityMarkEmpty(sqliteDatabase);
-
             return null;
         }
 

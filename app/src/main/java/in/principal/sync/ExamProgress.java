@@ -35,10 +35,6 @@ public class ExamProgress {
         protected String doInBackground(String... params) {
             sqliteDatabase = AppGlobal.getSqliteDatabase();
 
-            ExmAvgDao.insertExmAvg(sqliteDatabase);
-            ExmAvgDao.insertExmActAvg(sqliteDatabase);
-            ExmAvgDao.insertExmSubActAvg(sqliteDatabase);
-
             return null;
         }
 

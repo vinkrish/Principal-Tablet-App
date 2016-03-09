@@ -91,7 +91,7 @@ public class TextSms extends Fragment implements StringConstant {
     private ArrayList<Section> secList;
     private ArrayList<Integer> classIdList;
     private ArrayList<Integer> secIdList;
-    private ArrayList<Integer> studIdList;
+    private ArrayList<Long> studIdList;
     private ArrayList<String> classNameList;
     private ArrayList<String> secNameList;
     private ArrayList<String> studNameList;

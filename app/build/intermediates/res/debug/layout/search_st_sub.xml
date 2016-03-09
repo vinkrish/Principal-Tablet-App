@@ -70,7 +70,9 @@
         android:baselineAligned="false"
         android:orientation="horizontal"
         android:paddingEnd="0dp"
-        android:paddingStart="10dp">
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="0dp">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -104,6 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
             android:layout_weight="0.21">
 
             <ProgressBar
@@ -231,6 +234,8 @@
             android:layout_weight="0.8"
             android:paddingEnd="0dp"
             android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="0dp"
             android:text="@string/portions"
             android:textColor="@color/light_black"
             android:textSize="18sp"

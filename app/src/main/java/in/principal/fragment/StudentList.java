@@ -56,8 +56,7 @@ public class StudentList extends Fragment {
 
         clasList = ClasDao.selectClas(sqliteDatabase);
         for (Clas c : clasList) {
-            int avg = ExmAvgDao.seClassAvg(c.getClassId(), sqliteDatabase);
-            circleArrayGrid.add(new CircleObject(avg, PKGenerator.trim(0, 6, c.getClassName())));
+            circleArrayGrid.add(new CircleObject(0, PKGenerator.trim(0, 6, c.getClassName())));
         }
         CircleAdapter cA = new CircleAdapter(context, R.layout.circle_grid, circleArrayGrid);
         gridView.setAdapter(cA);

@@ -114,7 +114,7 @@ public class AttendanceStudent extends Fragment {
         clearList();
 
         Temp t = TempDao.selectTemp(sqliteDatabase);
-        int studentId = t.getStudentId();
+        long studentId = t.getStudentId();
         int classId = t.getClassId();
         String className = t.getClassName();
         String sectionName = t.getSectionName();

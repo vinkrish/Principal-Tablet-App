@@ -56,7 +56,9 @@
         android:baselineAligned="false"
         android:orientation="horizontal"
         android:paddingEnd="0dp"
-        android:paddingStart="10dp">
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="0dp">
 
         <LinearLayout
             android:layout_width="0dp"

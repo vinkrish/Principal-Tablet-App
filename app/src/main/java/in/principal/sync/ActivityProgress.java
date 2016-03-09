@@ -35,9 +35,6 @@ public class ActivityProgress {
         protected String doInBackground(String... params) {
             sqliteDatabase = AppGlobal.getSqliteDatabase();
 
-            ActivitiDao.updateActivityAvg(sqliteDatabase);
-            ActivitiDao.updateSubactActAvg(sqliteDatabase);
-
             return null;
         }
 

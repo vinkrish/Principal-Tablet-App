@@ -51,7 +51,7 @@ public class StudentClassSec extends Fragment {
     private ArrayList<AdapterOverloaded> amrList = new ArrayList<>();
     private ArrayList<Circle> circleArrayGrid = new ArrayList<>();
     private List<Integer> studentIdList = new ArrayList<>();
-    private List<Integer> studIDList = new ArrayList<>();
+    private List<Long> studIDList = new ArrayList<>();
     private List<String> studentNameList = new ArrayList<>();
     private CircleAdapter cA;
 
@@ -113,12 +113,11 @@ public class StudentClassSec extends Fragment {
     private void updateView() {
         for (int loop = 0; loop < secList.size(); loop++) {
             Section s = secList.get(loop);
-            int per = ExmAvgDao.seSecAvg(s.getSectionId(), sqliteDatabase);
             if (sectionId == s.getSectionId()) {
-                Circle c = new Circle(per, secNameList.get(loop), true);
+                Circle c = new Circle(0, secNameList.get(loop), true);
                 circleArrayGrid.add(c);
             } else {
-                Circle c = new Circle(per, secNameList.get(loop), false);
+                Circle c = new Circle(0, secNameList.get(loop), false);
                 circleArrayGrid.add(c);
             }
             cA.notifyDataSetChanged();
@@ -226,14 +225,23 @@ public class StudentClassSec extends Fragment {
                 defaultPaint.setStyle(Paint.Style.STROKE);
                 defaultPaint.setStrokeWidth(6);
                 Resources res = getResources();
-                int defalt = res.getColor(R.color.universal);
+                int defalt = res.getColor(R.color.defalt);
                 defaultPaint.setColor(defalt);
                 rectF = new RectF(10, 15, 80, 85);
+                p = new Paint();
+                p.setAntiAlias(true);
+                p.setStyle(Paint.Style.STROKE);
+                p.setStrokeWidth(6);
             }
 
             @Override
             protected void onDraw(Canvas canvas) {
-                canvas.drawArc(rectF, 0, 360, false, defaultPaint);
+                if (selected) {
+                    p.setColor(getResources().getColor(R.color.universal));
+                    canvas.drawArc(rectF, 0, 360, false, p);
+                } else {
+                    canvas.drawArc(rectF, 0, 360, false, defaultPaint);
+                }
             }
         }
     }

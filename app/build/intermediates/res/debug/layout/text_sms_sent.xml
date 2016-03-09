@@ -79,6 +79,8 @@
             android:gravity="start|center"
             android:paddingStart="10dp"
             android:paddingEnd="0dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="0dp"
             android:text="@string/message"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/light_black" />

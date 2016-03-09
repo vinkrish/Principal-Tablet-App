@@ -118,6 +118,8 @@
             android:gravity="start|center"
             android:paddingEnd="0dp"
             android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="0dp"
             android:text="@string/idxcolumn"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/light_black" />
@@ -135,6 +137,8 @@
             android:gravity="start|center"
             android:paddingEnd="0dp"
             android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="0dp"
             android:text="@string/studentname"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/light_black" />
@@ -152,6 +156,8 @@
             android:gravity="start|center"
             android:paddingEnd="0dp"
             android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="0dp"
             android:text="@string/remark"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/light_black" />
@@ -169,6 +175,8 @@
             android:gravity="start|center"
             android:paddingEnd="0dp"
             android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="0dp"
             android:text="@string/grade"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/light_black" />

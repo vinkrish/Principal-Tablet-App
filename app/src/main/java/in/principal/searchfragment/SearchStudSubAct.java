@@ -44,8 +44,8 @@ import in.principal.util.ReplaceFragment;
  */
 public class SearchStudSubAct extends Fragment {
     private Context context;
-    private int studentId, subjectId, classId;
-    private long examId, activityId;
+    private int subjectId, classId;
+    private long examId, activityId, studentId;
     private String studentName, className, secName, examName, subjectName, activityName;
     private SQLiteDatabase sqliteDatabase;
     private List<Long> subActIdList = new ArrayList<>();
@@ -208,9 +208,9 @@ public class SearchStudSubAct extends Fragment {
                         while (!cursor1.isAfterLast()) {
                             scoreList.add(cursor1.getString(cursor1.getColumnIndex("Grade")));
                             avgList1.add(getMarkTo(cursor1.getString(cursor1.getColumnIndex("Grade"))));
-                            avgList2.add(SubActivityGradeDao.getSectionAvg(classId, subact.getSubActivityId(), sqliteDatabase));
                             cursor1.moveToNext();
                         }
+                        avgList2.add(SubActivityGradeDao.getSectionAvg(classId, subact.getSubActivityId(), sqliteDatabase));
                     } else {
                         avgList1.add(0);
                         scoreList.add("-");

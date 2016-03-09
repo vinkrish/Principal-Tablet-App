@@ -61,7 +61,7 @@ public class MonthlyReportSection extends Fragment {
     private List<Integer> secIdList = new ArrayList<>();
     private List<String> secNameList = new ArrayList<>();
     private List<Integer> studentIdList = new ArrayList<>();
-    private List<Integer> studIDList = new ArrayList<>();
+    private List<Long> studIDList = new ArrayList<>();
     private List<String> studentNameList = new ArrayList<>();
     private List<String> daysList = new ArrayList<>();
     private String[] item;
@@ -268,9 +268,9 @@ public class MonthlyReportSection extends Fragment {
         }
     }
 
-    private List<Integer> studMonthly(String startDate, String endDate, List<Integer> studIdList, int noOfDays) {
+    private List<Integer> studMonthly(String startDate, String endDate, List<Long> studIdList, int noOfDays) {
         List<Integer> progress = new ArrayList<>();
-        for (Integer studId : studIdList) {
+        for (Long studId : studIdList) {
             double absCnt = StudentAttendanceDao.studMontAbsCnt(startDate, endDate, studId, sqliteDatabase);
             double avg = ((noOfDays - absCnt) / noOfDays) * 100;
             progress.add((int) avg);
@@ -278,9 +278,9 @@ public class MonthlyReportSection extends Fragment {
         return progress;
     }
 
-    private List<String> studMonthlyDays(String startDate, String endDate, List<Integer> studIdList, int noOfDays) {
+    private List<String> studMonthlyDays(String startDate, String endDate, List<Long> studIdList, int noOfDays) {
         List<String> daysList = new ArrayList<>();
-        for (Integer studId : studIdList) {
+        for (Long studId : studIdList) {
             daysList.add((noOfDays - StudentAttendanceDao.studMontAbsCnt(startDate, endDate, studId, sqliteDatabase)) + "");
         }
         return daysList;

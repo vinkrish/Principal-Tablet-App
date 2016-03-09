@@ -45,7 +45,7 @@ public class PerfStStud extends Fragment {
         int schoolId = t.getSchoolId();
         int subjectId = t.getSubjectId();
         int sectionId = t.getSectionId();
-        int studentId = t.getStudentId();
+        long studentId = t.getStudentId();
         String className = t.getClassName();
         String secName = t.getSectionName();
         int teacherId = t.getTeacherId();

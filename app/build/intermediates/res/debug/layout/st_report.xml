@@ -102,6 +102,8 @@
                 android:layout_gravity="center"
                 android:paddingEnd="0dp"
                 android:paddingStart="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="0dp"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <ImageView
@@ -109,6 +111,7 @@
                 android:layout_height="15dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="-20dp"
+                android:layout_marginLeft="-20dp"
                 android:background="@drawable/downarrow"
                 android:contentDescription="@string/cc" />
         </LinearLayout>
@@ -130,6 +133,8 @@
                 android:layout_gravity="center"
                 android:paddingEnd="0dp"
                 android:paddingStart="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="0dp"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <ImageView
@@ -137,6 +142,7 @@
                 android:layout_height="15dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="-20dp"
+                android:layout_marginLeft="-20dp"
                 android:background="@drawable/downarrow"
                 android:contentDescription="@string/cc" />
         </LinearLayout>
@@ -159,6 +165,8 @@
                 android:layout_gravity="center"
                 android:paddingEnd="0dp"
                 android:paddingStart="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="0dp"
                 android:text="@string/clas"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -167,6 +175,7 @@
                 android:layout_height="15dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="-20dp"
+                android:layout_marginLeft="-20dp"
                 android:background="@drawable/downarrow"
                 android:contentDescription="@string/cc" />
         </LinearLayout>
@@ -189,6 +198,8 @@
                 android:layout_gravity="center"
                 android:paddingEnd="0dp"
                 android:paddingStart="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="0dp"
                 android:text="@string/section"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -197,6 +208,7 @@
                 android:layout_height="15dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="-20dp"
+                android:layout_marginLeft="-20dp"
                 android:background="@drawable/downarrow"
                 android:contentDescription="@string/cc" />
         </LinearLayout>
@@ -217,6 +229,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
             android:text="@string/creation"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -266,6 +279,8 @@
             android:layout_weight="0.3"
             android:paddingEnd="0dp"
             android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="0dp"
             android:text="@string/subject"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/light_black"
@@ -300,6 +315,8 @@
             android:layout_weight="0.55"
             android:paddingEnd="0dp"
             android:paddingStart="15dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="0dp"
             android:text="@string/portions"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/light_black"

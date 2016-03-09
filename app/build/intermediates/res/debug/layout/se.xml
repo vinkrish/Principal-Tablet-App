@@ -51,6 +51,8 @@
         android:gravity="start|center_vertical"
         android:paddingEnd="0dp"
         android:paddingStart="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="0dp"
         android:text="@string/se"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 

@@ -61,6 +61,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="-5dp"
+            android:layout_marginLeft="-5dp"
             android:layout_weight="1"
             android:background="@drawable/button_selector_blue"
             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -83,7 +84,9 @@
         android:baselineAligned="false"
         android:orientation="horizontal"
         android:paddingEnd="0dp"
-        android:paddingStart="10dp">
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="0dp">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -113,12 +116,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="0.3"
             android:background="#FFFFFF"
             android:gravity="center"
             android:orientation="horizontal"
             android:paddingEnd="5dp"
-            android:paddingStart="0dp">
+            android:paddingStart="0dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="5dp">
 
             <TextView
                 android:id="@+id/monthly"
@@ -128,12 +134,15 @@
                 android:gravity="center_vertical"
                 android:paddingEnd="0dp"
                 android:paddingStart="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="0dp"
                 android:textSize="20sp" />
 
             <ImageView
                 android:layout_width="15dp"
                 android:layout_height="15dp"
                 android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:background="@drawable/downarrow"
                 android:contentDescription="@string/cc" />
@@ -174,6 +183,8 @@
                 android:contentDescription="@string/cc"
                 android:paddingEnd="5dp"
                 android:paddingStart="0dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="5dp"
                 android:src="@drawable/downarrow" />
         </LinearLayout>
 
@@ -187,6 +198,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
             android:gravity="end"
             android:orientation="horizontal">
 
@@ -204,6 +216,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
                 android:focusable="false" />
 
             <TextView
@@ -261,6 +274,8 @@
                 android:layout_weight="0.75"
                 android:paddingEnd="0dp"
                 android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="0dp"
                 android:text="@string/studentname"
                 android:textColor="@color/light_black"
                 android:textSize="18sp"
@@ -279,6 +294,8 @@
                 android:layout_weight="0.25"
                 android:paddingEnd="0dp"
                 android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="0dp"
                 android:textColor="@color/light_black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -293,9 +310,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="0.6"
                 android:paddingEnd="0dp"
                 android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="0dp"
                 android:text="@string/studentaverage"
                 android:textColor="@color/light_black"
                 android:textSize="18sp"

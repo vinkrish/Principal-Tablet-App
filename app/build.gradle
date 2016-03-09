@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "in.principal.activity"
-        minSdkVersion 17
+        minSdkVersion 14
         targetSdkVersion 23
     }
 

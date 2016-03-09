@@ -69,6 +69,8 @@
         android:gravity="start|center_vertical"
         android:paddingEnd="0dp"
         android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="0dp"
         android:text="@string/attendoverview"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -112,6 +114,8 @@
             android:gravity="start|center_vertical"
             android:paddingEnd="0dp"
             android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="0dp"
             android:text="@string/att_per"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textStyle="bold" />
@@ -130,6 +134,8 @@
             android:gravity="start|center_vertical"
             android:paddingEnd="0dp"
             android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="0dp"
             android:text="@string/loa"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textStyle="bold" />
@@ -177,6 +183,8 @@
                 android:gravity="start|center_vertical"
                 android:paddingEnd="0dp"
                 android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="0dp"
                 android:text="@string/percentage"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -214,6 +222,8 @@
                 android:gravity="start|center_vertical"
                 android:paddingEnd="0dp"
                 android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="0dp"
                 android:text="@string/studentname"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -241,7 +251,9 @@
             android:layout_weight="0.5"
             android:paddingBottom="1dp"
             android:paddingEnd="0dp"
-            android:paddingStart="1dp" />
+            android:paddingStart="1dp"
+            android:paddingLeft="1dp"
+            android:paddingRight="0dp"/>
 
         <ListView
             android:id="@+id/list2"
@@ -250,7 +262,9 @@
             android:layout_weight="0.5"
             android:paddingBottom="1dp"
             android:paddingEnd="1dp"
-            android:paddingStart="0dp" />
+            android:paddingStart="0dp"
+            android:paddingLeft="1dp"
+            android:paddingRight="0dp"/>
     </LinearLayout>
 
 </RelativeLayout><!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/layout/dashbord.xml -->

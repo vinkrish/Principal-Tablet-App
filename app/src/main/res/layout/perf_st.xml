@@ -100,7 +100,9 @@
         android:baselineAligned="false"
         android:orientation="horizontal"
         android:paddingEnd="0dp"
-        android:paddingStart="10dp">
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="0dp">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -138,6 +140,7 @@
             android:layout_height="20dp"
             android:layout_gravity="center"
             android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="0.05"
             android:background="@color/dark_black"
             android:gravity="center"
@@ -206,6 +209,8 @@
                 android:gravity="center"
                 android:paddingEnd="0dp"
                 android:paddingStart="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="0dp"
                 android:text="@string/slno"
                 android:textColor="@color/light_black"
                 android:textSize="18sp"
@@ -237,6 +242,8 @@
                 android:gravity="center"
                 android:paddingEnd="0dp"
                 android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="0dp"
                 android:text="@string/studentname"
                 android:textColor="@color/light_black"
                 android:textSize="18sp"
@@ -269,6 +276,8 @@
                 android:gravity="center"
                 android:paddingEnd="0dp"
                 android:paddingStart="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="0dp"
                 android:textColor="@color/light_black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -291,6 +300,7 @@
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="0.4">
 
             <TextView
@@ -301,6 +311,8 @@
                 android:gravity="center"
                 android:paddingEnd="0dp"
                 android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="0dp"
                 android:text="@string/average"
                 android:textColor="@color/light_black"
                 android:textSize="18sp"
