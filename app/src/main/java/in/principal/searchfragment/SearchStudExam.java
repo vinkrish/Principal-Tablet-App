@@ -5,10 +5,6 @@ import java.util.List;
 
 import in.principal.activity.R;
 import in.principal.adapter.StudExamAdapter;
-import in.principal.dao.ActivitiDao;
-import in.principal.dao.ActivityMarkDao;
-import in.principal.dao.ExmAvgDao;
-import in.principal.dao.MarksDao;
 import in.principal.dao.TempDao;
 import in.principal.fragment.StudentProfile;
 import in.principal.sqlite.AdapterOverloaded;
@@ -36,7 +32,6 @@ import android.widget.AdapterView.OnItemClickListener;
  * My lawyer told me not to reveal.
  */
 public class SearchStudExam extends Fragment {
-    private Context context;
     private int sectionId, classId;
     private long studentId;
     private String studentName, className, secName;
@@ -53,7 +48,7 @@ public class SearchStudExam extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.search_se_exam, container, false);
 
-        context = AppGlobal.getContext();
+        Context context = AppGlobal.getContext();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
         pDialog = new ProgressDialog(this.getActivity());
 

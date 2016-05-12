@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
 public class SchoolDao {
 
 	public static ArrayList<School> selectSchool(SQLiteDatabase sqliteDatabase){
-		ArrayList<School> schoolList = new ArrayList<School>();
+		ArrayList<School> schoolList = new ArrayList<>();
 		Cursor c= sqliteDatabase.rawQuery("select * from school", null);
 		c.moveToFirst();
 		while(!c.isAfterLast()){

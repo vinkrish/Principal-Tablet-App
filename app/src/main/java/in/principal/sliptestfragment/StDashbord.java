@@ -54,8 +54,6 @@ import android.widget.AdapterView.OnItemClickListener;
  * Looks like this need to be optimized, good luck with that.
  */
 public class StDashbord extends Fragment {
-    private Context context;
-    private Activity act;
     private int index;
     private String dateSelected, yesterday;
     private TextView dateTV, clasTV, secTV;
@@ -84,8 +82,7 @@ public class StDashbord extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.st_dashbord, container, false);
-        act = AppGlobal.getActivity();
-        context = AppGlobal.getContext();
+        Context context = AppGlobal.getContext();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
         ListView lv = (ListView) view.findViewById(R.id.list);
 
@@ -135,7 +132,7 @@ public class StDashbord extends Fragment {
             @Override
             public void onClick(View v) {
                 if (classIdList.size() > 0) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(act);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                     builder.setTitle("Select class");
                     builder.setSingleChoiceItems(items, -1, new DialogInterface.OnClickListener() {
                         @Override
@@ -163,7 +160,7 @@ public class StDashbord extends Fragment {
                     alertDialog = builder.create();
                     alertDialog.show();
                 } else {
-                    CommonDialogUtils.displayAlertWhiteDialog(act, "No sliptest for this class on this day.");
+                    CommonDialogUtils.displayAlertWhiteDialog(getActivity(), "No sliptest for this class on this day.");
                 }
             }
         });
@@ -174,7 +171,7 @@ public class StDashbord extends Fragment {
             @Override
             public void onClick(View v) {
                 if (secIdList.size() > 0 && !clasTV.getText().equals("Class")) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(act);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                     builder.setTitle("Select section");
                     builder.setSingleChoiceItems(items2, -1, new DialogInterface.OnClickListener() {
                         @Override
@@ -192,9 +189,9 @@ public class StDashbord extends Fragment {
                     alertDialog = builder.create();
                     alertDialog.show();
                 } else if (clasTV.getText().equals("Class")) {
-                    CommonDialogUtils.displayAlertWhiteDialog(act, "Please select class first");
+                    CommonDialogUtils.displayAlertWhiteDialog(getActivity(), "Please select class first");
                 } else {
-                    CommonDialogUtils.displayAlertWhiteDialog(act, "No sliptest for this section on this day");
+                    CommonDialogUtils.displayAlertWhiteDialog(getActivity(), "No sliptest for this section on this day");
                 }
             }
         });
@@ -427,14 +424,16 @@ public class StDashbord extends Fragment {
                 cal.set(year, month, day);
                 Date d = cal.getTime();
                 if (GregorianCalendar.getInstance().get(Calendar.YEAR) < cal.get(Calendar.YEAR)) {
-                    CommonDialogUtils.displayAlertWhiteDialog(act, "Selected future date !");
-                } else if (GregorianCalendar.getInstance().get(Calendar.MONTH) < cal.get(Calendar.MONTH) && GregorianCalendar.getInstance().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
-                    CommonDialogUtils.displayAlertWhiteDialog(act, "Selected future date !");
+                    CommonDialogUtils.displayAlertWhiteDialog(getActivity(), "Selected future date !");
+                } else if (GregorianCalendar.getInstance().get(Calendar.MONTH) < cal.get(Calendar.MONTH) &&
+                        GregorianCalendar.getInstance().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
+                    CommonDialogUtils.displayAlertWhiteDialog(getActivity(), "Selected future date !");
                 } else if (GregorianCalendar.getInstance().get(Calendar.DAY_OF_MONTH) < cal.get(Calendar.DAY_OF_MONTH) &&
-                        GregorianCalendar.getInstance().get(Calendar.MONTH) <= cal.get(Calendar.MONTH) && GregorianCalendar.getInstance().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
-                    CommonDialogUtils.displayAlertWhiteDialog(act, "Selected future date !");
+                        GregorianCalendar.getInstance().get(Calendar.MONTH) <= cal.get(Calendar.MONTH) &&
+                        GregorianCalendar.getInstance().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
+                    CommonDialogUtils.displayAlertWhiteDialog(getActivity(), "Selected future date !");
                 } else if (Calendar.SUNDAY == cal.get(Calendar.DAY_OF_WEEK)) {
-                    CommonDialogUtils.displayAlertWhiteDialog(act, "Sundays are not working days");
+                    CommonDialogUtils.displayAlertWhiteDialog(getActivity(), "Sundays are not working days");
                 } else {
                     dateSelected = dateFormat.format(d);
                     TempDao.updateSelectedDate(dateSelected, sqliteDatabase);

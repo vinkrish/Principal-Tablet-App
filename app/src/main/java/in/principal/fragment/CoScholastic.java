@@ -43,7 +43,6 @@ public class CoScholastic extends Fragment {
     private ExpandListAdapter ExpAdapter;
     private ArrayList<ExpGroup> ExpListItems;
     private ExpandableListView ExpandList;
-    private String className, secName;
     @SuppressWarnings("unused")
     private int childPos, termWise = 0, Term, SecHeadingId, TopicId, AspectId, CoScholasticId, classId;
     private ArrayList<Integer> termList = new ArrayList<>();
@@ -64,7 +63,6 @@ public class CoScholastic extends Fragment {
     private SparseArray<ArrayList<String>> termMaps = new SparseArray<>();
     private SparseArray<ArrayList<String>> secMaps = new SparseArray<>();
     private SparseArray<ArrayList<String>> topicMaps = new SparseArray<>();
-    private ArrayList<Integer> termComplete = new ArrayList<>();
     private ArrayList<Integer> secComplete = new ArrayList<>();
     private ArrayList<Integer> topicComplete = new ArrayList<>();
     private SparseIntArray termCompleteMap = new SparseIntArray();
@@ -82,8 +80,8 @@ public class CoScholastic extends Fragment {
 
         Temp t = TempDao.selectTemp(sqliteDatabase);
         classId = t.getClassId();
-        className = t.getClassName();
-        secName = t.getSectionName();
+        String className = t.getClassName();
+        String secName = t.getSectionName();
 
         Button perfClas = (Button) view.findViewById(R.id.seClass);
         perfClas.setText("Class " + className);
@@ -750,14 +748,9 @@ public class CoScholastic extends Fragment {
                 int termComp = 0;
                 termMap.put(t, secHeadingList);
                 termMaps.put(t, secNameList);
-                if (secComplete.contains(0)) {
-                    termComplete.add(0);
-                } else {
-                    termComp = 1;
-                    termComplete.add(1);
-                }
+
+                if (!secComplete.contains(0)) termComp = 1;
                 termCompleteMap.put(t, termComp);
-                termComplete.add(termComp);
             }
 
             return null;

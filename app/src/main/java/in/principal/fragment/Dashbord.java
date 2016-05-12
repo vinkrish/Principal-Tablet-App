@@ -61,25 +61,16 @@ import android.widget.TextView;
 public class Dashbord extends Fragment {
     private Context context;
     private Activity act;
-    private ListView lv1, lv2;
     private String lastDate;
-    private static int totalStrength, presentStrength, totalPresent, totalAbsent;
     private DashAdapt1 dashAdapt1;
     private DashAdapt2 dashAdapt2;
     private ArrayList<AdapterOverloaded> amrList1 = new ArrayList<>(), amrList2 = new ArrayList<>();
     private List<Clas> clasList = new ArrayList<>();
     private List<Integer> classIdList = new ArrayList<>();
     private List<String> classNameList = new ArrayList<>();
-    private List<Integer> absentDaysList = new ArrayList<>();
-    private List<Integer> progressList = new ArrayList<>();
     private List<String> absenteeNameList = new ArrayList<>();
-    private ArrayList<String> absNameList = new ArrayList<>();
     private static SQLiteDatabase sqliteDatabase;
-    private List<Integer> lis1 = new ArrayList<>();
-    private List<String> lis2 = new ArrayList<>();
-    FrameLayout.LayoutParams layoutParams;
     private ArrayList<DashObject> dashArrayGrid = new ArrayList<>();
-    private CircleAdapter cA;
     GridView gridView;
     private ProgressDialog pDialog;
 
@@ -92,12 +83,12 @@ public class Dashbord extends Fragment {
         sqliteDatabase = AppGlobal.getSqliteDatabase();
 
         gridView = (GridView) view.findViewById(R.id.gridView);
-        cA = new CircleAdapter(context, R.layout.dash_grid, dashArrayGrid);
+        CircleAdapter cA = new CircleAdapter(context, R.layout.dash_grid, dashArrayGrid);
         pDialog = new ProgressDialog(act);
 
         clearList();
-        lv1 = (ListView) view.findViewById(R.id.list1);
-        lv2 = (ListView) view.findViewById(R.id.list2);
+        ListView lv1 = (ListView) view.findViewById(R.id.list1);
+        ListView lv2 = (ListView) view.findViewById(R.id.list2);
 
         lastDate = getToday();
 
@@ -181,11 +172,11 @@ public class Dashbord extends Fragment {
         }
         c.close();
 
-        presentStrength = DateTrackerModel.getTotalStudents(context, secIdList);
-        totalStrength = DateTrackerModel.getTotalStudents(context);
+        int presentStrength = DateTrackerModel.getTotalStudents(context, secIdList);
+        int totalStrength = DateTrackerModel.getTotalStudents(context);
         if (secIdList.size() > 0) {
-            totalAbsent = DateTrackerModel.getAbsentCount(context, getToday());
-            totalPresent = presentStrength - totalAbsent;
+            int totalAbsent = DateTrackerModel.getAbsentCount(context, getToday());
+            int totalPresent = presentStrength - totalAbsent;
             int presentPercent = (int) (((double) totalPresent / (double) totalStrength) * 3.6 * 100);
             dashArrayGrid.add(new DashObject(presentPercent, totalPresent + "/" + totalStrength, "Present"));
         } else {
@@ -207,8 +198,6 @@ public class Dashbord extends Fragment {
 
         @Override
         protected String doInBackground(String... params) {
-            //	updateView();
-            //	progressList = PerMonthlyAttendance.classDaily(context, lastDate, classIdList, 1);
             populateList1();
             populateList2();
             return null;
@@ -236,14 +225,10 @@ public class Dashbord extends Fragment {
         classIdList.clear();
         classNameList.clear();
         absenteeNameList.clear();
-        absentDaysList.clear();
-        absNameList.clear();
-        lis1.clear();
-        lis2.clear();
     }
 
     private void populateList1() {
-        progressList = findClasssAttendance(classIdList, lastDate);
+        List<Integer> progressList = findClasssAttendance(classIdList, lastDate);
         amrList1.clear();
         for (int i = 0; i < clasList.size(); i++) {
             amrList1.add(new AdapterOverloaded(PKGenerator.trim(0, 9, classNameList.get(i)), progressList.get(i)));

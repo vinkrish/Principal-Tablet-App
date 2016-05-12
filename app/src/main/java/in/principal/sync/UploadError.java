@@ -3,6 +3,7 @@ package in.principal.sync;
 import in.principal.dao.TempDao;
 import in.principal.sqlite.SqlDbHelper;
 import in.principal.sqlite.Temp;
+import in.principal.util.AppGlobal;
 
 import java.net.SocketException;
 import java.text.SimpleDateFormat;
@@ -22,19 +23,12 @@ import android.util.Log;
  * Created by vinkrish.
  */
 public class UploadError implements StringConstant {
-    private SqlDbHelper sqlHandler;
     private SQLiteDatabase sqliteDatabase;
-    private Context appContext;
-    private String deviceId;
-    private int schoolId;
     private String errorReport;
-    private int uploadSuccess;
 
-    public UploadError(Activity context, String error) {
+    public UploadError(String error) {
         errorReport = error;
-        appContext = context.getApplicationContext();
-        sqlHandler = SqlDbHelper.getInstance(appContext);
-        sqliteDatabase = sqlHandler.getWritableDatabase();
+        sqliteDatabase = AppGlobal.getSqliteDatabase();
     }
 
     class CalledUploadError extends AsyncTask<String, String, String> {
@@ -44,8 +38,8 @@ public class UploadError implements StringConstant {
         protected String doInBackground(String... arg0) {
             JSONObject json = new JSONObject();
             Temp t = TempDao.selectTemp(sqliteDatabase);
-            deviceId = t.getDeviceId();
-            schoolId = t.getSchoolId();
+            String deviceId = t.getDeviceId();
+            int schoolId = t.getSchoolId();
             try {
                 json.put("school", schoolId);
                 json.put("tab_id", deviceId);
@@ -57,9 +51,7 @@ public class UploadError implements StringConstant {
 
             try {
                 jsonReceived = new JSONObject(RequestResponseHandler.reachServer(logged, json));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            } catch (NullPointerException e) {
+            } catch (JSONException | NullPointerException e) {
                 e.printStackTrace();
             }
 

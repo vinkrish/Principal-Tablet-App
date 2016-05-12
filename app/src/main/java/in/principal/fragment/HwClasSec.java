@@ -52,10 +52,8 @@ public class HwClasSec extends Fragment {
     private Context context;
     private Activity act;
     private String dateSelected;
-    private int classId, index;
+    private int index;
     private int sectionId;
-    private String className, sectionName;
-    private List<Homework> listHW;
     private ListView lv;
     private List<Integer> subIdList = new ArrayList<>();
     private List<String> subNameList = new ArrayList<>();
@@ -84,10 +82,10 @@ public class HwClasSec extends Fragment {
 
         Temp t = TempDao.selectTemp(sqliteDatabase);
         dateSelected = t.getSelectedDate();
-        classId = t.getClassId();
-        className = t.getClassName();
+        int classId = t.getClassId();
+        String className = t.getClassName();
         sectionId = t.getSectionId();
-        sectionName = t.getSectionName();
+        String sectionName = t.getSectionName();
 
         clasDash = (TextView) view.findViewById(R.id.hwclasButton);
         clasDash.setText("Class " + className);
@@ -212,7 +210,7 @@ public class HwClasSec extends Fragment {
     }
 
     public void updateView() {
-        listHW = HomeworkDao.selectHomework(sectionId, dateSelected, sqliteDatabase);
+        List<Homework> listHW = HomeworkDao.selectHomework(sectionId, dateSelected, sqliteDatabase);
         if (listHW.size() != 0) {
             clearList();
             for (Homework hw : listHW) {

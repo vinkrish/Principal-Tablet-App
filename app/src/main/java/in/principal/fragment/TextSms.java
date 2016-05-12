@@ -106,7 +106,6 @@ public class TextSms extends Fragment implements StringConstant {
     private ProgressDialog progressBar;
 
     private Context appContext;
-    private TransferManager mTransferManager;
     private boolean uploadComplete, exception;
 
     @Override
@@ -643,7 +642,7 @@ public class TextSms extends Fragment implements StringConstant {
 		}*/
 
         protected String doInBackground(String... arg0) {
-            mTransferManager = new TransferManager(Util.getCredProvider(appContext));
+            TransferManager mTransferManager = new TransferManager(Util.getCredProvider(appContext));
             uploadComplete = false;
             exception = false;
             prepareIds();

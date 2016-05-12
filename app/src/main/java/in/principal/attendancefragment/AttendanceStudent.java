@@ -29,6 +29,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.Paint.Align;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,8 +44,6 @@ import android.widget.TextView;
  * I would write this class a better way if i've to start over again, optimize it if you can.
  */
 public class AttendanceStudent extends Fragment {
-    private Context context;
-    private SQLiteDatabase sqliteDatabase;
     private int classStrength;
     private List<String> startDateList = new ArrayList<>();
     private List<String> endDateList = new ArrayList<>();
@@ -108,8 +107,8 @@ public class AttendanceStudent extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.attendance_student, container, false);
-        context = AppGlobal.getContext();
-        sqliteDatabase = AppGlobal.getSqliteDatabase();
+        Context context = AppGlobal.getContext();
+        SQLiteDatabase sqliteDatabase = AppGlobal.getSqliteDatabase();
 
         clearList();
 
@@ -254,11 +253,11 @@ public class AttendanceStudent extends Fragment {
         ProgressBar pb = (ProgressBar) view.findViewById(R.id.studentAttendanceAvg);
         double progress = ((noOfDays - absentCnt) / noOfDays) * 100;
         if (progress >= 75) {
-            pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_green));
+            pb.setProgressDrawable(ContextCompat.getDrawable(context, R.drawable.progress_green));
         } else if (progress >= 50) {
-            pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_orange));
+            pb.setProgressDrawable(ContextCompat.getDrawable(context, R.drawable.progress_orange));
         } else {
-            pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_red));
+            pb.setProgressDrawable(ContextCompat.getDrawable(context, R.drawable.progress_red));
         }
         //	pb.setBackgroundColor(context.getResources().getColor(R.color.bcblack));
         pb.setProgress((int) progress);

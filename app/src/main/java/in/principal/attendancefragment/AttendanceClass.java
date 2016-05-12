@@ -35,6 +35,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -184,7 +185,7 @@ public class AttendanceClass extends Fragment {
                 classNameList.add(c.getClassName());
             }
             items = classNameList.toArray(new String[classNameList.size()]);
-            classProgress = findClassAttendance(context, classId, dateSelected);
+            classProgress = findClassAttendance(classId, dateSelected);
             absCountList = findSecAbsCount(secIdList, dateSelected);
             populateList();
             return null;
@@ -216,7 +217,7 @@ public class AttendanceClass extends Fragment {
         return absDaysList;
     }
 
-    private int findClassAttendance(Context context, int classId, String date) {
+    private int findClassAttendance(int classId, String date) {
         int classProgress = 0;
         double absentCount = 0;
         double totalStrength = StudentsDao.clasTotalStrength(classId, sqliteDatabase);
@@ -367,11 +368,11 @@ public class AttendanceClass extends Fragment {
             holder.txt3.setText(listItem.getText3());
 
             if (listItem.getInt1() >= 75) {
-                holder.pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_green));
+                holder.pb.setProgressDrawable(ContextCompat.getDrawable(context, R.drawable.progress_green));
             } else if (listItem.getInt1() >= 50) {
-                holder.pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_orange));
+                holder.pb.setProgressDrawable(ContextCompat.getDrawable(context, R.drawable.progress_orange));
             } else {
-                holder.pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_red));
+                holder.pb.setProgressDrawable(ContextCompat.getDrawable(context, R.drawable.progress_red));
             }
             holder.pb.setProgress(listItem.getInt1());
             holder.percentage.setText(String.valueOf(listItem.getInt1() + "%"));

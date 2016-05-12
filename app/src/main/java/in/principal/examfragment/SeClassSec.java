@@ -2,7 +2,6 @@ package in.principal.examfragment;
 
 import in.principal.activity.R;
 import in.principal.adapter.AmrAdapter;
-import in.principal.dao.ExmAvgDao;
 import in.principal.dao.SectionDao;
 import in.principal.dao.TempDao;
 import in.principal.fragment.CoScholastic;
@@ -46,7 +45,6 @@ import android.widget.AdapterView.OnItemClickListener;
  * Looks like this need to be optimized, good luck with that.
  */
 public class SeClassSec extends Fragment {
-    private Context context;
     private int sectionId;
     private List<Section> secList = new ArrayList<>();
     private List<Integer> secIdList = new ArrayList<>();
@@ -67,7 +65,7 @@ public class SeClassSec extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.se_class, container, false);
 
-        context = AppGlobal.getContext();
+        Context context = AppGlobal.getContext();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
 
         clearList();

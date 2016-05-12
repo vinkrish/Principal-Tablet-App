@@ -30,6 +30,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -48,7 +49,6 @@ import android.widget.AdapterView.OnItemClickListener;
  */
 public class MonthlyReport extends Fragment {
     private AlertDialog alertDialog;
-    private Context context;
     private Activity act;
     private SqlDbHelper sqlHandler;
     private MonthlyAdapter amrAdapter;
@@ -70,7 +70,7 @@ public class MonthlyReport extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.monthly_report, container, false);
         act = AppGlobal.getActivity();
-        context = AppGlobal.getContext();
+        Context context = AppGlobal.getContext();
         sqlHandler = AppGlobal.getSqlDbHelper();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
         pDialog = new ProgressDialog(act);
@@ -272,11 +272,11 @@ public class MonthlyReport extends Fragment {
             holder.txtAbsentee.setText(listItem.getText3());
 
             if (listItem.getInt2() >= 75) {
-                holder.pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_green));
+                holder.pb.setProgressDrawable(ContextCompat.getDrawable(context, R.drawable.progress_green));
             } else if (listItem.getInt2() >= 50) {
-                holder.pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_orange));
+                holder.pb.setProgressDrawable(ContextCompat.getDrawable(context, R.drawable.progress_orange));
             } else {
-                holder.pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_red));
+                holder.pb.setProgressDrawable(ContextCompat.getDrawable(context, R.drawable.progress_red));
             }
             holder.pb.setProgress(listItem.getInt2());
             holder.percentage.setText(String.valueOf(listItem.getInt2() + "%"));
@@ -300,8 +300,6 @@ public class MonthlyReport extends Fragment {
                 String s = "";
                 boolean flag = false;
                 boolean flg = false;
-                flag = false;
-                flg = false;
                 String sql = "SELECT StudentId,(count(*)/" + noOfDays + ".0)*100 as perCount,count(*) as count FROM studentattendance where DateAttendance<='" + lastDate + "' and " +
                         "DateAttendance>='" + firstDate + "' and ClassId=" + classId + " and TypeOfLeave!='NA' group by StudentId order by 2 desc";
                 Cursor c = sqliteDatabase.rawQuery(sql, null);

@@ -51,7 +51,6 @@ public class SeSubStud extends Fragment {
     private SQLiteDatabase sqliteDatabase;
     private TextView rollNoTv, nameTv, scoreTv, avgTv;
     private ListView lv;
-    private List<Integer> studIdList = new ArrayList<>();
     private List<Integer> rollNoList = new ArrayList<>();
     private List<String> nameList = new ArrayList<>();
     private List<Integer> progressList = new ArrayList<>();
@@ -206,7 +205,6 @@ public class SeSubStud extends Fragment {
     public void clearList() {
         dashArrayGrid1.clear();
         dashArrayGrid2.clear();
-        studIdList.clear();
         amrList.clear();
         rollNoList.clear();
         nameList.clear();
@@ -225,7 +223,6 @@ public class SeSubStud extends Fragment {
         c.moveToFirst();
         while (!c.isAfterLast()) {
             maximumMark = c.getInt(c.getColumnIndex("MaximumMark"));
-            studIdList.add(c.getInt(c.getColumnIndex("StudentId")));
             rollNoList.add(c.getInt(c.getColumnIndex("RollNoInClass")));
             nameList.add(c.getString(c.getColumnIndex("Name")));
             markMaxList.add(c.getString(c.getColumnIndex("Mark")) + "");
@@ -264,7 +261,6 @@ public class SeSubStud extends Fragment {
                 " order by A.RollNoInClass", null);
         c1.moveToFirst();
         while (!c1.isAfterLast()) {
-            studIdList.add(c1.getInt(c1.getColumnIndex("StudentId")));
             rollNoList.add(c1.getInt(c1.getColumnIndex("RollNoInClass")));
             nameList.add(c1.getString(c1.getColumnIndex("Name")));
             markMaxList.add(c1.getString(c1.getColumnIndex("Mark")) + "");
@@ -285,7 +281,6 @@ public class SeSubStud extends Fragment {
                 " order by A.Name", null);
         c1.moveToFirst();
         while (!c1.isAfterLast()) {
-            studIdList.add(c1.getInt(c1.getColumnIndex("StudentId")));
             rollNoList.add(c1.getInt(c1.getColumnIndex("RollNoInClass")));
             nameList.add(c1.getString(c1.getColumnIndex("Name")));
             markMaxList.add(c1.getString(c1.getColumnIndex("Mark")) + "");
@@ -317,7 +312,6 @@ public class SeSubStud extends Fragment {
 
         c.moveToFirst();
         while (!c.isAfterLast()) {
-            studIdList.add(c.getInt(c.getColumnIndex("StudentId")));
             rollNoList.add(c.getInt(c.getColumnIndex("RollNoInClass")));
             nameList.add(c.getString(c.getColumnIndex("Name")));
             markMaxList.add(c.getString(c.getColumnIndex("Mark")) + "");

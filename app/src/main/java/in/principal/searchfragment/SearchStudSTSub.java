@@ -34,7 +34,6 @@ import android.widget.TextView;
  * My lawyer told me not to reveal.
  */
 public class SearchStudSTSub extends Fragment {
-    private Activity act;
     private Context context;
     private int schoolId, subjectId, progres;
     private long studentId;
@@ -55,10 +54,9 @@ public class SearchStudSTSub extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.search_st_sub, container, false);
 
-        act = AppGlobal.getActivity();
         context = AppGlobal.getContext();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
-        pDialog = new ProgressDialog(act);
+        pDialog = new ProgressDialog(getActivity());
 
         clearList();
 

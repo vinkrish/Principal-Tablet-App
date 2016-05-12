@@ -49,14 +49,11 @@ import android.widget.AdapterView.OnItemClickListener;
 public class PerfST extends Fragment {
     private Context context;
     private SQLiteDatabase sqliteDatabase;
-    private List<LayoutParams> lp;
     private ListView lv;
     private long slipTestId;
-    private int classId, sectionId, subjectId, good, averag, improve, maximumMark, schoolId, teacherId;
-    private String className, secName, sliptestName;
+    private int good, averag, improve, maximumMark, schoolId, teacherId;
     private PerfStAdapter amrAdapter;
-    private TextView rollNoTv, nameTv, scoreTv, avgTv;
-    private List<Integer> studIdList = new ArrayList<>();
+    private TextView scoreTv;
     private List<Integer> rollNoList = new ArrayList<>();
     private List<String> nameList = new ArrayList<>();
     private List<Integer> progressList = new ArrayList<>();
@@ -85,10 +82,10 @@ public class PerfST extends Fragment {
 
         clearList();
 
-        rollNoTv = (TextView) view.findViewById(R.id.rollNoSort);
-        nameTv = (TextView) view.findViewById(R.id.nameSort);
+        TextView rollNoTv = (TextView) view.findViewById(R.id.rollNoSort);
+        TextView nameTv = (TextView) view.findViewById(R.id.nameSort);
         scoreTv = (TextView) view.findViewById(R.id.scoreSort);
-        avgTv = (TextView) view.findViewById(R.id.avgSort);
+        TextView avgTv = (TextView) view.findViewById(R.id.avgSort);
         lv = (ListView) view.findViewById(R.id.list);
 
         rollFlag = (ImageView) view.findViewById(R.id.rollFlag);
@@ -114,11 +111,11 @@ public class PerfST extends Fragment {
         slipTestId = t.getSlipTestId();
 
         SlipTestt st = SlipTesttDao.selectSlipTest(slipTestId, sqliteDatabase);
-        classId = st.getClassId();
-        sectionId = st.getSectionId();
-        subjectId = st.getSubjectId();
-        className = ClasDao.getClassName(classId, sqliteDatabase);
-        secName = SectionDao.getSecName(sectionId, sqliteDatabase);
+        int classId = st.getClassId();
+        int sectionId = st.getSectionId();
+        int subjectId = st.getSubjectId();
+        String className = ClasDao.getClassName(classId, sqliteDatabase);
+        String secName = SectionDao.getSecName(sectionId, sqliteDatabase);
 
         TempDao.updateSubjectId(subjectId, sqliteDatabase);
         Temp t1 = new Temp();
@@ -145,7 +142,7 @@ public class PerfST extends Fragment {
         Button perfSe = (Button) view.findViewById(R.id.perfSec);
         perfSe.setText("Section " + secName);
 
-        sliptestName = Capitalize.capitalThis(SlipTesttDao.selectSlipTestName(slipTestId, sqliteDatabase));
+        String sliptestName = Capitalize.capitalThis(SlipTesttDao.selectSlipTestName(slipTestId, sqliteDatabase));
         TextView stInfo = (TextView) view.findViewById(R.id.stinfo);
         if (sliptestName.length() > 43) {
             StringBuilder sb = new StringBuilder(sliptestName.substring(0, 40));
@@ -167,7 +164,7 @@ public class PerfST extends Fragment {
         TextView pecent = (TextView) view.findViewById(R.id.percent);
         pecent.setText(progres + "%");
 
-        lp = new ArrayList<>();
+        List<LayoutParams> lp = new ArrayList<>();
         for (int i = 0; i < 3; i++)
             lp.add(new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 
@@ -227,7 +224,6 @@ public class PerfST extends Fragment {
     private void clearList() {
         dashArrayGrid1.clear();
         dashArrayGrid2.clear();
-        studIdList.clear();
         amrList.clear();
         rollNoList.clear();
         nameList.clear();
@@ -245,7 +241,6 @@ public class PerfST extends Fragment {
         c.moveToFirst();
         while (!c.isAfterLast()) {
             maximumMark = c.getInt(c.getColumnIndex("MaximumMark"));
-            studIdList.add(c.getInt(c.getColumnIndex("StudentId")));
             rollNoList.add(c.getInt(c.getColumnIndex("RollNoInClass")));
             nameList.add(c.getString(c.getColumnIndex("Name")));
             markMaxList.add(c.getInt(c.getColumnIndex("Mark")) + "");
@@ -282,7 +277,6 @@ public class PerfST extends Fragment {
                 " and C.SlipTestId=" + slipTestId + " and A.StudentId=B.StudentId order by A.RollNoInClass", null);
         c1.moveToFirst();
         while (!c1.isAfterLast()) {
-            studIdList.add(c1.getInt(c1.getColumnIndex("StudentId")));
             rollNoList.add(c1.getInt(c1.getColumnIndex("RollNoInClass")));
             nameList.add(c1.getString(c1.getColumnIndex("Name")));
             markMaxList.add(c1.getInt(c1.getColumnIndex("Mark")) + "");
@@ -302,7 +296,6 @@ public class PerfST extends Fragment {
                 " and C.SlipTestId=" + slipTestId + " and A.StudentId=B.StudentId order by A.Name", null);
         c1.moveToFirst();
         while (!c1.isAfterLast()) {
-            studIdList.add(c1.getInt(c1.getColumnIndex("StudentId")));
             rollNoList.add(c1.getInt(c1.getColumnIndex("RollNoInClass")));
             nameList.add(c1.getString(c1.getColumnIndex("Name")));
             markMaxList.add(c1.getInt(c1.getColumnIndex("Mark")) + "");
@@ -332,7 +325,6 @@ public class PerfST extends Fragment {
 
         c.moveToFirst();
         while (!c.isAfterLast()) {
-            studIdList.add(c.getInt(c.getColumnIndex("StudentId")));
             rollNoList.add(c.getInt(c.getColumnIndex("RollNoInClass")));
             nameList.add(c.getString(c.getColumnIndex("Name")));
             markMaxList.add(c.getInt(c.getColumnIndex("Mark")) + "");

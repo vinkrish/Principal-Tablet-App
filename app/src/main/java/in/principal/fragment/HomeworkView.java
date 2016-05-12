@@ -237,10 +237,12 @@ public class HomeworkView extends Fragment {
 
                 if (GregorianCalendar.getInstance().get(Calendar.YEAR) < cal.get(Calendar.YEAR)) {
                     CommonDialogUtils.displayAlertWhiteDialog(act, "Selected future date !");
-                } else if (GregorianCalendar.getInstance().get(Calendar.MONTH) < cal.get(Calendar.MONTH) && GregorianCalendar.getInstance().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
+                } else if (GregorianCalendar.getInstance().get(Calendar.MONTH) < cal.get(Calendar.MONTH) &&
+                        GregorianCalendar.getInstance().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
                     CommonDialogUtils.displayAlertWhiteDialog(act, "Selected future date !");
                 } else if (GregorianCalendar.getInstance().get(Calendar.DAY_OF_MONTH) < cal.get(Calendar.DAY_OF_MONTH) &&
-                        GregorianCalendar.getInstance().get(Calendar.MONTH) <= cal.get(Calendar.MONTH) && GregorianCalendar.getInstance().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
+                        GregorianCalendar.getInstance().get(Calendar.MONTH) <= cal.get(Calendar.MONTH) &&
+                        GregorianCalendar.getInstance().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
                     CommonDialogUtils.displayAlertWhiteDialog(act, "Selected future date !");
                 } else if (Calendar.SUNDAY == cal.get(Calendar.DAY_OF_WEEK)) {
                     CommonDialogUtils.displayAlertWhiteDialog(act, "Sundays are not working days");

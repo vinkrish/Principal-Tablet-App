@@ -13,7 +13,6 @@ import android.widget.Button;
  * Created by vinkrish.
  */
 public class ServerBlock extends BaseActivity {
-    private Button butResolve;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +22,7 @@ public class ServerBlock extends BaseActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        butResolve = (Button) findViewById(R.id.butResolve);
+        Button butResolve = (Button) findViewById(R.id.butResolve);
         resolveClicked(butResolve);
     }
 

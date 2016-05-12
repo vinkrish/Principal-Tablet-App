@@ -1,6 +1,5 @@
 package in.principal.sync;
 
-import in.principal.dao.ExmAvgDao;
 import in.principal.util.AppGlobal;
 
 import android.app.ProgressDialog;

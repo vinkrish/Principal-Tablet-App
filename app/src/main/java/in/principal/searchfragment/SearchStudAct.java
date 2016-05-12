@@ -43,7 +43,6 @@ import in.principal.util.ReplaceFragment;
  * My lawyer told me not to reveal.
  */
 public class SearchStudAct extends Fragment {
-    private Context context;
     private int sectionId, subjectId, classId;
     private long examId, studentId;
     private String studentName, className, secName, examName, subjectName;
@@ -65,7 +64,7 @@ public class SearchStudAct extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.search_se_act, container, false);
-        context = AppGlobal.getContext();
+        Context context = AppGlobal.getContext();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
         pDialog = new ProgressDialog(this.getActivity());
 

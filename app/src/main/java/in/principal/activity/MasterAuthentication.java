@@ -181,7 +181,6 @@ public class MasterAuthentication extends BaseActivity {
     private void authSuccess() {
         if (NetworkUtils.isNetworkConnected(context)) {
             setContentView(R.layout.sync);
-            SharedPreferences sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putInt("first_sync", 1);
             editor.apply();

@@ -47,7 +47,6 @@ import android.widget.AdapterView.OnItemClickListener;
  * Don't expect comments explaining every piece of code, class and function names are self explanatory.
  */
 public class Attendance extends Fragment {
-    private Context context;
     private Activity act;
     private String dateSelected;
     private ArrayList<AdapterOverloaded> amrList = new ArrayList<>();
@@ -66,7 +65,7 @@ public class Attendance extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.attendance, container, false);
         act = AppGlobal.getActivity();
-        context = AppGlobal.getContext();
+        Context context = AppGlobal.getContext();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
         pDialog = new ProgressDialog(act);
 
@@ -246,10 +245,12 @@ public class Attendance extends Fragment {
                 cal.set(year, month, day);
                 if (GregorianCalendar.getInstance().get(Calendar.YEAR) < cal.get(Calendar.YEAR)) {
                     CommonDialogUtils.displayAlertWhiteDialog(act, "Selected future date !");
-                } else if (GregorianCalendar.getInstance().get(Calendar.MONTH) < cal.get(Calendar.MONTH) && GregorianCalendar.getInstance().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
+                } else if (GregorianCalendar.getInstance().get(Calendar.MONTH) < cal.get(Calendar.MONTH) &&
+                        GregorianCalendar.getInstance().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
                     CommonDialogUtils.displayAlertWhiteDialog(act, "Selected future date !");
                 } else if (GregorianCalendar.getInstance().get(Calendar.DAY_OF_MONTH) < cal.get(Calendar.DAY_OF_MONTH) &&
-                        GregorianCalendar.getInstance().get(Calendar.MONTH) <= cal.get(Calendar.MONTH) && GregorianCalendar.getInstance().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
+                        GregorianCalendar.getInstance().get(Calendar.MONTH) <= cal.get(Calendar.MONTH) &&
+                        GregorianCalendar.getInstance().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
                     CommonDialogUtils.displayAlertWhiteDialog(act, "Selected future date !");
                 } else if (Calendar.SUNDAY == cal.get(Calendar.DAY_OF_WEEK)) {
                     CommonDialogUtils.displayAlertWhiteDialog(act, "Sundays are not working days.");

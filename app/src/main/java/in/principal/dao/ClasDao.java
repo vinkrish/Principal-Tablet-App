@@ -31,24 +31,5 @@ public class ClasDao {
 		c.close();
 		return cList;
 	}
-	
-	public static int clasPresentStrength(int classId, String date, SQLiteDatabase sqliteDatabase){
-		int i=0;
-		Cursor c = sqliteDatabase.rawQuery("select SectionId from section where ClassId="+classId, null);
-		c.moveToFirst();
-		while(!c.isAfterLast()){
-			int secId = c.getInt(c.getColumnIndex("SectionId"));
-			Cursor c2 = sqliteDatabase.rawQuery("select count(*) as count from students where SectionId="+secId+" and SectionId in (select distinct SectionId from studentattendance where dateattendance='"+date+"')", null);
-			c2.moveToFirst();
-			while(!c2.isAfterLast()){
-				i += c2.getInt(c2.getColumnIndex("count"));
-				c2.moveToNext();
-			}
-			c2.close();
-			c.moveToNext();
-		}
-		c.close();
-		return i;
-	}
 
 }

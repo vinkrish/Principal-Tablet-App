@@ -41,7 +41,6 @@ import in.principal.util.ReplaceFragment;
  * My lawyer told me not to reveal.
  */
 public class SearchStudExamSub extends Fragment {
-    private Context context;
     private int sectionId, classId;
     private long studentId;
     private long examId;
@@ -49,7 +48,6 @@ public class SearchStudExamSub extends Fragment {
     private SQLiteDatabase sqliteDatabase;
     private ArrayList<AdapterOverloaded> amrList = new ArrayList<>();
     private StudExamSubAdapter adapter;
-    private List<Activiti> activitiList = new ArrayList<>();
     private ProgressDialog pDialog;
     private TextView studTV, clasSecTV;
     private List<Integer> subIdList = new ArrayList<>();
@@ -61,7 +59,7 @@ public class SearchStudExamSub extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.search_se_exam_sub, container, false);
-        context = AppGlobal.getContext();
+        Context context = AppGlobal.getContext();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
         pDialog = new ProgressDialog(this.getActivity());
 
@@ -96,7 +94,6 @@ public class SearchStudExamSub extends Fragment {
 
     private void clearList() {
         amrList.clear();
-        activitiList.clear();
         subIdList.clear();
         scoreList.clear();
     }
@@ -169,7 +166,6 @@ public class SearchStudExamSub extends Fragment {
             gradesClassWiseList = GradesClassWiseDao.getGradeClassWise(classId, sqliteDatabase);
             Collections.sort(gradesClassWiseList, new GradeClassWiseSort());
 
-            final List<Integer> teacherIdList = new ArrayList<>();
             List<String> subNameList = new ArrayList<>();
             List<String> teacherNameList = new ArrayList<>();
             List<Integer> progressList1 = new ArrayList<>();
@@ -180,7 +176,6 @@ public class SearchStudExamSub extends Fragment {
             c2.moveToFirst();
             while (!c2.isAfterLast()) {
                 subIdList.add(c2.getInt(c2.getColumnIndex("SubjectId")));
-                teacherIdList.add(c2.getInt(c2.getColumnIndex("TeacherId")));
                 subNameList.add(c2.getString(c2.getColumnIndex("SubjectName")));
                 teacherNameList.add(c2.getString(c2.getColumnIndex("Name")));
                 c2.moveToNext();

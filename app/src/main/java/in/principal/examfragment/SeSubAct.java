@@ -232,7 +232,9 @@ public class SeSubAct extends Fragment {
             if (gradeEntry == 1) mi2.put(at.getActivityId(), true);
         }
 
-        progres = averag / activitiList.size();
+        if (activitiList.size() > 0) {
+            progres = averag / activitiList.size();
+        }
 
         for (int i = 0; i < actIdList.size(); i++) {
             try {

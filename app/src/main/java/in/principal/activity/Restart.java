@@ -33,7 +33,7 @@ public class Restart extends BaseActivity {
 
 
         if (NetworkUtils.isNetworkConnected(this)) {
-            new UploadError(this, s).upError();
+            new UploadError(s).upError();
         } else {
             CommonDialogUtils.displayAlertWhiteDialog(this, "Please be in WiFi zone or check the status of WiFi");
         }

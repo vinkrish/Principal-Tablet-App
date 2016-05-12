@@ -22,7 +22,6 @@ import java.util.List;
 
 import in.principal.activity.R;
 import in.principal.dao.ClasDao;
-import in.principal.dao.ExmAvgDao;
 import in.principal.dao.SectionDao;
 import in.principal.dao.TempDao;
 import in.principal.sqlite.CircleObject;
@@ -38,7 +37,6 @@ import in.principal.util.ReplaceFragment;
  * Don't expect comments explaining every piece of code, class and function names are self explanatory.
  */
 public class StudentList extends Fragment {
-    private Context context;
     private SQLiteDatabase sqliteDatabase;
     private List<Clas> clasList = new ArrayList<>();
     private ArrayList<CircleObject> circleArrayGrid = new ArrayList<>();
@@ -48,7 +46,7 @@ public class StudentList extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.student_list, container, false);
 
-        context = AppGlobal.getContext();
+        Context context = AppGlobal.getContext();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
         GridView gridView = (GridView) view.findViewById(R.id.gridView);
 

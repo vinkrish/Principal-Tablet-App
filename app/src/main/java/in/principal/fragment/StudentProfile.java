@@ -24,8 +24,6 @@ import in.principal.util.ReplaceFragment;
  * Don't expect comments explaining every piece of code, class and function names are self explanatory.
  */
 public class StudentProfile extends Fragment{
-    private SQLiteDatabase sqliteDatabase;
-    private long studentId;
     private TextView studTV, clasSecTV;
     private EditText rollNo, admissionNo, dob, fatherName, motherName, gender, mobile1, mobile2, address, pincode;
 
@@ -62,10 +60,10 @@ public class StudentProfile extends Fragment{
     }
 
     private void init(){
-        sqliteDatabase = AppGlobal.getSqliteDatabase();
+        SQLiteDatabase sqliteDatabase = AppGlobal.getSqliteDatabase();
 
         Temp t = TempDao.selectTemp(sqliteDatabase);
-        studentId = t.getStudentId();
+        long studentId = t.getStudentId();
 
         String studName = "";
         String clasName = "";

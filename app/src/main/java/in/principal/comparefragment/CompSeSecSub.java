@@ -30,7 +30,6 @@ import java.util.List;
 import in.principal.activity.R;
 import in.principal.adapter.CompList1;
 import in.principal.adapter.CompList2;
-import in.principal.dao.ExmAvgDao;
 import in.principal.dao.MarksDao;
 import in.principal.dao.SectionDao;
 import in.principal.dao.SubjectsDao;

@@ -37,7 +37,6 @@ import in.principal.adapter.Capitalize;
 import in.principal.adapter.SssAdapter;
 import in.principal.comparefragment.CompSeSecSub;
 import in.principal.dao.ActivitiDao;
-import in.principal.dao.ExmAvgDao;
 import in.principal.dao.MarksDao;
 import in.principal.dao.SectionDao;
 import in.principal.dao.SubjectsDao;

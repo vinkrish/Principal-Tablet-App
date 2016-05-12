@@ -45,14 +45,11 @@ import android.widget.AdapterView.OnItemClickListener;
  * Don't expect comments explaining every piece of code, class and function names are self explanatory.
  */
 public class PerfClass extends Fragment {
-    private Context context;
-    private int classId, sectionId;
-    private String className;
+    private int sectionId;
     private List<Section> secList = new ArrayList<>();
     private static List<Integer> secIdList = new ArrayList<>();
     private List<String> secNameList = new ArrayList<>();
     private SQLiteDatabase sqliteDatabase;
-    private ListView lv;
     private ArrayList<AdapterOverloaded> amrList = new ArrayList<>();
     private AmrAdapter amrAdapter;
 
@@ -69,21 +66,21 @@ public class PerfClass extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.perf_class, container, false);
 
-        context = AppGlobal.getContext();
+        Context context = AppGlobal.getContext();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
 
         clearList();
 
         Temp t = TempDao.selectTemp(sqliteDatabase);
-        classId = t.getClassId();
-        className = t.getClassName();
+        int classId = t.getClassId();
+        String className = t.getClassName();
         sectionId = t.getSectionId();
 
         GridView gridView = (GridView) view.findViewById(R.id.gridView);
         cA = new CircleAdapter(context, R.layout.section_grid, circleArrayGrid);
         gridView.setAdapter(cA);
 
-        lv = (ListView) view.findViewById(R.id.list);
+        ListView lv = (ListView) view.findViewById(R.id.list);
         amrAdapter = new AmrAdapter(context, R.layout.pc_list, amrList);
         lv.setAdapter(amrAdapter);
 

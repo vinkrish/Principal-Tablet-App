@@ -34,7 +34,6 @@ public class LockActivity extends BaseActivity implements StringConstant {
     private SQLiteDatabase sqliteDatabase;
     private String deviceId, fileName, stackTrace;
     private Temp t;
-    private JSONObject jsonReceived;
     private int lineNumber, syncSent, isSent, schoolId;
 
     @Override
@@ -90,6 +89,8 @@ public class LockActivity extends BaseActivity implements StringConstant {
     }
 
     class SendLocked extends AsyncTask<String, String, String> {
+        private JSONObject jsonReceived;
+
         protected void onPreExecute() {
             super.onPreExecute();
             pDialog.setMessage("Sending crash report...");

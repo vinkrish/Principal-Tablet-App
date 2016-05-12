@@ -39,43 +39,4 @@ public class SubActivityGradeDao {
             return avg/c.getCount();
         } else return 0;
     }
-
-    public static String getSubActivityGrade(long subActId, long studentId, int subjectId, SQLiteDatabase sqLiteDatabase) {
-        String grade = "";
-        Cursor c = sqLiteDatabase.rawQuery("select Grade from subactivitygrade " +
-                "where StudentId = " + studentId + " and SubActivityId = " + subActId + " and SubjectId = " + subjectId, null);
-        c.moveToFirst();
-        while (!c.isAfterLast()) {
-            grade = c.getString(c.getColumnIndex("Grade"));
-            c.moveToNext();
-        }
-        c.close();
-        return grade;
-    }
-
-    public static int isThereSubActGrade(long subActId, int subjectId, SQLiteDatabase sqliteDatabase) {
-        int isThere = 0;
-        Cursor c = sqliteDatabase.rawQuery("select * from subactivitygrade where SubActivityId=" + subActId + " and SubjectId=" + subjectId + " LIMIT 1", null);
-        if (c.getCount() > 0) {
-            isThere = 1;
-        }
-        c.close();
-        return isThere;
-    }
-
-    public static List<String> selectSubActivityGrade(long subActivityId, List<Long> studentId, SQLiteDatabase sqliteDatabase) {
-        List<String> aList = new ArrayList<>();
-        for (Long i : studentId) {
-            Cursor c = sqliteDatabase.rawQuery("select Grade from subactivitygrade where SubActivityId=" + subActivityId + " and StudentId=" + i, null);
-            c.moveToFirst();
-            if (c.getCount() > 0) {
-                aList.add(c.getString(c.getColumnIndex("Grade")));
-            } else {
-                aList.add("");
-            }
-            c.close();
-        }
-        return aList;
-    }
-
 }

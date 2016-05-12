@@ -34,7 +34,6 @@ import android.widget.AdapterView.OnItemClickListener;
  * My lawyer told me not to reveal.
  */
 public class SearchStudST extends Fragment {
-    private Activity act;
     private Context context;
     private int schoolId, sectionId;
     private long studentId;
@@ -56,10 +55,9 @@ public class SearchStudST extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.search_st, container, false);
 
-        act = AppGlobal.getActivity();
         context = AppGlobal.getContext();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
-        pDialog = new ProgressDialog(act);
+        pDialog = new ProgressDialog(getActivity());
 
         clearList();
 

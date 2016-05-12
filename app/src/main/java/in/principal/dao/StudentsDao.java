@@ -49,7 +49,7 @@ public class StudentsDao {
 			c.moveToFirst();
 			while(!c.isAfterLast()){
 				Students stud = new Students();
-				stud.setStudentId(c.getInt(c.getColumnIndex("StudentId")));
+				stud.setStudentId(c.getLong(c.getColumnIndex("StudentId")));
 				stud.setClassId(c.getInt(c.getColumnIndex("ClassId")));
 				stud.setSectionId(c.getInt(c.getColumnIndex("SectionId")));
 				stud.setRollNoInClass(c.getInt(c.getColumnIndex("RollNoInClass")));

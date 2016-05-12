@@ -37,9 +37,8 @@ import android.widget.AdapterView.OnItemClickListener;
  * Don't expect comments explaining every piece of code, class and function names are self explanatory.
  */
 public class PerfSecSub extends Fragment {
-    private Context context;
     private SQLiteDatabase sqliteDatabase;
-    private int subjectId, sectionId, teacherId;
+    private int subjectId, sectionId;
     private List<Long> stIdList = new ArrayList<>();
     private List<String> portionIdList = new ArrayList<>();
     private List<String> portionNameList = new ArrayList<>();
@@ -53,14 +52,14 @@ public class PerfSecSub extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.perf_sec_sub, container, false);
-        context = AppGlobal.getContext();
+        Context context = AppGlobal.getContext();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
 
         Temp t = TempDao.selectTemp(sqliteDatabase);
         subjectId = t.getSubjectId();
         sectionId = t.getSectionId();
         String className = t.getClassName();
-        teacherId = t.getTeacherId();
+        int teacherId = t.getTeacherId();
 
         String secName = SectionDao.getSecName(sectionId, sqliteDatabase);
 

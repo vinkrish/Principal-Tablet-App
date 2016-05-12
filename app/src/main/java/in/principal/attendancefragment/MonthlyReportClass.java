@@ -32,6 +32,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -349,11 +350,11 @@ public class MonthlyReportClass extends Fragment {
             holder.txtAbsentee.setText(listItem.getText3());
 
             if (listItem.getInt2() >= 75) {
-                holder.pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_green));
+                holder.pb.setProgressDrawable(ContextCompat.getDrawable(context, R.drawable.progress_green));
             } else if (listItem.getInt2() >= 50) {
-                holder.pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_orange));
+                holder.pb.setProgressDrawable(ContextCompat.getDrawable(context, R.drawable.progress_orange));
             } else {
-                holder.pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_red));
+                holder.pb.setProgressDrawable(ContextCompat.getDrawable(context, R.drawable.progress_red));
             }
             holder.pb.setProgress(listItem.getInt2());
             holder.percentage.setText(String.valueOf(listItem.getInt2() + "%"));
@@ -377,8 +378,6 @@ public class MonthlyReportClass extends Fragment {
                 String s = "";
                 boolean flag = false;
                 boolean flg = false;
-                flag = false;
-                flg = false;
                 studIdList.clear();
                 perCountList.clear();
                 countList.clear();

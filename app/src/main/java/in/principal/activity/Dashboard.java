@@ -65,9 +65,7 @@ import android.widget.AutoCompleteTextView;
 @SuppressLint("InflateParams")
 @SuppressWarnings("deprecation")
 public class Dashboard extends BaseActivity {
-    private Toolbar toolbar;
     private Activity activity;
-    private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     private SqlDbHelper sqlHandler;
     private Context context;
@@ -89,10 +87,10 @@ public class Dashboard extends BaseActivity {
         sqlHandler = AppGlobal.getSqlDbHelper();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 
             // This method will trigger on item Click of navigation menu
@@ -149,7 +147,6 @@ public class Dashboard extends BaseActivity {
             }
         });
 
-        // Initializing Drawer Layout and ActionBarToggle
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         android.support.v7.app.ActionBarDrawerToggle actionBarDrawerToggle = new android.support.v7.app.ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.openDrawer, R.string.closeDrawer) {
 
@@ -162,7 +159,6 @@ public class Dashboard extends BaseActivity {
             @Override
             public void onDrawerOpened(View drawerView) {
                 // Code here will be triggered once the drawer open as we dont want anything to happen so we leave this blank
-
                 super.onDrawerOpened(drawerView);
             }
         };
@@ -293,10 +289,9 @@ public class Dashboard extends BaseActivity {
                 AlertDialog dialog = builder.create();
                 dialog.getWindow().setGravity(Gravity.TOP);
                 WindowManager.LayoutParams layoutParams = dialog.getWindow().getAttributes();
-                layoutParams.y = 100; // top margin
+                layoutParams.y = 10; // top margin
                 dialog.getWindow().setAttributes(layoutParams);
                 dialog.show();
-
                 // builder.show();
                 return true;
             case R.id.action_logout:

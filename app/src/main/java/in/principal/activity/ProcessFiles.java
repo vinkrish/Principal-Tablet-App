@@ -25,11 +25,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-import in.principal.dao.ActivitiDao;
-import in.principal.dao.ExmAvgDao;
 import in.principal.dao.SlipTesttDao;
 import in.principal.dao.StAvgDao;
-import in.principal.dao.SubActivityDao;
 import in.principal.dao.TempDao;
 import in.principal.sqlite.SqlDbHelper;
 import in.principal.sqlite.Temp;

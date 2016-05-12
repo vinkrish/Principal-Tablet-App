@@ -48,7 +48,6 @@ import android.widget.TextView;
  */
 public class MonthlyReportStud extends Fragment {
     private Context context;
-    private Activity act;
     private SQLiteDatabase sqliteDatabase;
     private JSONObject monObject;
     private JSONObject monthObject;
@@ -116,12 +115,11 @@ public class MonthlyReportStud extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.monthly_report_stud, container, false);
-        act = AppGlobal.getActivity();
         context = AppGlobal.getContext();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
 
         amrList = new ArrayList<>();
-        pDialog = new ProgressDialog(act);
+        pDialog = new ProgressDialog(getActivity());
         lv = (ListView) view.findViewById(R.id.list);
         daysPresent = (TextView) view.findViewById(R.id.studentAttendTotal);
         pb = (ProgressBar) view.findViewById(R.id.studentAttendanceAvg);

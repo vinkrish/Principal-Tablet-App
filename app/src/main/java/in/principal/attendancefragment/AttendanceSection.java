@@ -29,6 +29,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +48,6 @@ import android.widget.AdapterView.OnItemClickListener;
  * Don't expect comments explaining every piece of code, class and function names are self explanatory.
  */
 public class AttendanceSection extends Fragment {
-    private static Context context;
     private static Activity act;
     private static SQLiteDatabase sqliteDatabase;
     private AlertDialog alertDialog;
@@ -68,7 +68,7 @@ public class AttendanceSection extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.attendance_section, container, false);
         act = AppGlobal.getActivity();
-        context = AppGlobal.getContext();
+        Context context = AppGlobal.getContext();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
 
         clearList();
@@ -131,14 +131,14 @@ public class AttendanceSection extends Fragment {
         TextView clasSecNam = (TextView) view.findViewById(R.id.clasecName);
         clasSecNam.setText(className + " - " + sectionName);
 
-        int sectionProgress = findSectionAttendance(context, sectionId, dateSelected);
+        int sectionProgress = findSectionAttendance(sectionId, dateSelected);
         ProgressBar pb = (ProgressBar) view.findViewById(R.id.secAvgProgress);
         if (sectionProgress >= 75) {
-            pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_green));
+            pb.setProgressDrawable(ContextCompat.getDrawable(context, R.drawable.progress_green));
         } else if (sectionProgress >= 50) {
-            pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_orange));
+            pb.setProgressDrawable(ContextCompat.getDrawable(context, R.drawable.progress_orange));
         } else {
-            pb.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_red));
+            pb.setProgressDrawable(ContextCompat.getDrawable(context, R.drawable.progress_red));
         }
         pb.setProgress(sectionProgress);
 
@@ -169,7 +169,7 @@ public class AttendanceSection extends Fragment {
         return view;
     }
 
-    private int findSectionAttendance(Context context, int sectionId, String date) {
+    private int findSectionAttendance(int sectionId, String date) {
         int sectionProgress = 0;
         double absentCount = 0;
         double totalStrength = StudentsDao.secTotalStrength(sectionId, sqliteDatabase);
@@ -222,7 +222,8 @@ public class AttendanceSection extends Fragment {
                 if (GregorianCalendar.getInstance().get(Calendar.YEAR) < cal.get(Calendar.YEAR)) {
                     CommonDialogUtils.displayAlertWhiteDialog(act, "Selected future date !");
                 } else if (GregorianCalendar.getInstance().get(Calendar.DAY_OF_MONTH) < cal.get(Calendar.DAY_OF_MONTH) &&
-                        GregorianCalendar.getInstance().get(Calendar.MONTH) <= cal.get(Calendar.MONTH) && GregorianCalendar.getInstance().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
+                        GregorianCalendar.getInstance().get(Calendar.MONTH) <= cal.get(Calendar.MONTH) &&
+                        GregorianCalendar.getInstance().get(Calendar.YEAR) == cal.get(Calendar.YEAR)) {
                     CommonDialogUtils.displayAlertWhiteDialog(act, "Selected future date !");
                 } else if (Calendar.SUNDAY == cal.get(Calendar.DAY_OF_WEEK)) {
                     CommonDialogUtils.displayAlertWhiteDialog(act, "Sundays are not working days");

@@ -2,7 +2,6 @@ package in.principal.examfragment;
 
 import in.principal.activity.R;
 import in.principal.dao.ClasDao;
-import in.principal.dao.ExmAvgDao;
 import in.principal.dao.SectionDao;
 import in.principal.dao.TempDao;
 import in.principal.sqlite.CircleObject;

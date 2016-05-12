@@ -73,9 +73,7 @@ public class UploadVoiceSms extends Fragment implements StringConstant {
     private String fileName, zipName;
     private ProgressDialog progressBar;
     private SQLiteDatabase sqliteDatabase;
-
     private Context appContext;
-    private TransferManager mTransferManager;
     private boolean uploadComplete, exception;
 
     @Override
@@ -360,7 +358,7 @@ public class UploadVoiceSms extends Fragment implements StringConstant {
         }
 
         protected String doInBackground(String... arg0) {
-            mTransferManager = new TransferManager(Util.getCredProvider(appContext));
+            TransferManager mTransferManager = new TransferManager(Util.getCredProvider(appContext));
             uploadComplete = false;
             exception = false;
             s3Count = 1;

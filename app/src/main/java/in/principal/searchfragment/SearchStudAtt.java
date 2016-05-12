@@ -48,7 +48,6 @@ import android.widget.TextView;
  * I would write this class a better way if i've to start over again, optimize it if you can.
  */
 public class SearchStudAtt extends Fragment {
-    private Activity act;
     private Context context;
     private int classId, classStrength;
     private long studentId;
@@ -118,12 +117,11 @@ public class SearchStudAtt extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.search_att, container, false);
 
-        act = AppGlobal.getActivity();
         context = AppGlobal.getContext();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
 
         amrList = new ArrayList<>();
-        pDialog = new ProgressDialog(act);
+        pDialog = new ProgressDialog(getActivity());
 
         clearList();
 

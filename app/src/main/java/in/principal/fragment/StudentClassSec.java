@@ -25,7 +25,6 @@ import java.util.List;
 
 import in.principal.activity.R;
 import in.principal.adapter.AsecAdapter;
-import in.principal.dao.ExmAvgDao;
 import in.principal.dao.SectionDao;
 import in.principal.dao.StudentsDao;
 import in.principal.dao.TempDao;
@@ -42,7 +41,6 @@ import in.principal.util.ReplaceFragment;
  * Don't expect comments explaining every piece of code, class and function names are self explanatory.
  */
 public class StudentClassSec extends Fragment {
-    private Context context;
     private int sectionId;
     private List<Section> secList = new ArrayList<>();
     private List<Integer> secIdList = new ArrayList<>();
@@ -60,7 +58,7 @@ public class StudentClassSec extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.stud_clas_sec, container, false);
 
-        context = AppGlobal.getContext();
+        Context context = AppGlobal.getContext();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
 
         clearList();

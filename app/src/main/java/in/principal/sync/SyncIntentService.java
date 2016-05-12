@@ -67,13 +67,13 @@ public class SyncIntentService extends IntentService implements StringConstant {
         sharedPref = context.getSharedPreferences("db_access", Context.MODE_PRIVATE);
         IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
         Intent batteryStatus = context.getApplicationContext().registerReceiver(null, ifilter);
-        int batteryLevel = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
 
         JSONObject ack_json = new JSONObject();
         Temp t = TempDao.selectTemp(sqliteDatabase);
         schoolId = t.getSchoolId();
         deviceId = t.getDeviceId();
         try {
+            int batteryLevel = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
             ack_json.put("school", schoolId);
             ack_json.put("tab_id", deviceId);
             ack_json.put("battery_status", batteryLevel);
@@ -99,7 +99,6 @@ public class SyncIntentService extends IntentService implements StringConstant {
 
     private void decideDownload() {
         if (block != 2 && zipFile != "") {
-            Log.d("downloadFile", "uh");
             String fileName = "download/" + schoolId + "/zipped_folder/" + zipFile;
             TransferManager mTransferManager = new TransferManager(Util.getCredProvider(context));
             DownloadModel model = new DownloadModel(context, fileName, mTransferManager);
@@ -239,7 +238,6 @@ public class SyncIntentService extends IntentService implements StringConstant {
     }
 
     private void finishSync() {
-        Log.d("finishSync", "uh");
         KeyguardManager km = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
         boolean screenLocked = km.inKeyguardRestrictedInputMode();
 
@@ -253,7 +251,6 @@ public class SyncIntentService extends IntentService implements StringConstant {
     }
 
     private void exitSync() {
-        Log.d("exitSync", "uh");
         SharedPreferences.Editor editor = sharedPref.edit();
         KeyguardManager km = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
         boolean screenLocked = km.inKeyguardRestrictedInputMode();

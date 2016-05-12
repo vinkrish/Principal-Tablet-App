@@ -33,20 +33,11 @@ import android.widget.TextView;
  * Created by vinkrish.
  * Don't expect comments explaining every piece of code, class and function names are self explanatory.
  */
-
 public class ViewCCSGrade extends Fragment {
-    private Context context;
     private SQLiteDatabase sqliteDatabase;
-    private ListView lv;
     private int term, topicId, aspectId, sectionId;
-    private String className, secName;
     private CoSchAdapter coSchAdapter;
     private ArrayList<CoSch> coSchList = new ArrayList<>();
-    private List<Students> studentsArray = new ArrayList<>();
-    private ArrayList<String> gradList = new ArrayList<>();
-    private ArrayList<Integer> valueList = new ArrayList<>();
-    private ArrayList<String> inGradList = new ArrayList<>();
-    private HashMap<String, Integer> map = new HashMap<>();
     private SparseArray<String> map2 = new SparseArray<>();
     private List<Integer> intGradeList = new ArrayList<>();
     private List<String> remarkList = new ArrayList<>();
@@ -60,17 +51,17 @@ public class ViewCCSGrade extends Fragment {
         topicId = b.getInt("TopicId");
         aspectId = b.getInt("AspectId");
 
-        context = AppGlobal.getContext();
+        Context context = AppGlobal.getContext();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
 
         Temp t = TempDao.selectTemp(sqliteDatabase);
         //	schoolId = t.getSchoolId();
         //	classId = t.getClassId();
         sectionId = t.getSectionId();
-        className = t.getClassName();
-        secName = t.getSectionName();
+        String className = t.getClassName();
+        String secName = t.getSectionName();
 
-        lv = (ListView) view.findViewById(R.id.list);
+        ListView lv = (ListView) view.findViewById(R.id.list);
         coSchAdapter = new CoSchAdapter(context, R.layout.co_sch_list, coSchList);
         lv.setAdapter(coSchAdapter);
 
@@ -90,22 +81,16 @@ public class ViewCCSGrade extends Fragment {
     }
 
     public void createListView() {
-        gradList.add("");
-        valueList.add(0);
-        map.put("", 0);
         map2.put(0, "");
         Cursor c = sqliteDatabase.rawQuery("select * from ccetopicgrade where TopicId=" + topicId, null);
         c.moveToFirst();
         while (!c.isAfterLast()) {
-            gradList.add(c.getString(c.getColumnIndex("Grade")));
-            valueList.add(c.getInt(c.getColumnIndex("Value")));
-            map.put(c.getString(c.getColumnIndex("Grade")), c.getInt(c.getColumnIndex("Value")));
             map2.put(c.getInt(c.getColumnIndex("Value")), c.getString(c.getColumnIndex("Grade")));
             c.moveToNext();
         }
         c.close();
 
-        studentsArray = StudentsDao.selectStudents(sectionId, sqliteDatabase);
+        List<Students> studentsArray = StudentsDao.selectStudents(sectionId, sqliteDatabase);
 
         Cursor c1 = sqliteDatabase.rawQuery("select Grade,Description from ccecoscholasticgrade where AspectId=" + aspectId + " and Term=" + term + " and StudentId in " +
                 "(select StudentId from students where SectionId=" + sectionId + " order by RollNoInClass)", null);
@@ -116,10 +101,6 @@ public class ViewCCSGrade extends Fragment {
             c1.moveToNext();
         }
         c1.close();
-
-        for (Integer i : intGradeList) {
-            inGradList.add(map2.get(i));
-        }
 
         if (studentsArray.size() == remarkList.size()) {
             int outLoop = 0;

@@ -63,7 +63,7 @@ public class SlipTesttDao {
 
     public static List<Integer> avgSlipTest(int sectionId, int subjectId, SQLiteDatabase sqliteDatabase) {
         Cursor c = sqliteDatabase.rawQuery("select * from sliptest where SectionId=" + sectionId + " and SubjectId=" + subjectId, null);
-        List<Integer> stList = new ArrayList<Integer>();
+        List<Integer> stList = new ArrayList<>();
         c.moveToFirst();
         while (!c.isAfterLast()) {
             stList.add(c.getInt(c.getColumnIndex("SlipTestId")));
@@ -75,7 +75,7 @@ public class SlipTesttDao {
 
     public static List<SlipTestt> selectSlipTest(SQLiteDatabase sqliteDatabase) {
         Cursor c = sqliteDatabase.rawQuery("SELECT * FROM sliptest ORDER BY SlipTestId ASC LIMIT 1", null);
-        List<SlipTestt> stList = new ArrayList<SlipTestt>();
+        List<SlipTestt> stList = new ArrayList<>();
         c.moveToFirst();
         SlipTestt st = new SlipTestt();
         st.setMaximumMark(c.getInt(c.getColumnIndex("MaximumMark")));

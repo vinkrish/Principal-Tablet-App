@@ -35,7 +35,6 @@ public class SeSubActStudGrade extends Fragment {
     private Context context;
     private long subActivityId;
     private SQLiteDatabase sqliteDatabase;
-    private GradeAdapter gradeAdapter;
     private ArrayList<AdapterOverloaded> amrList = new ArrayList<>();
     private List<Integer> rollNoList = new ArrayList<>();
     private List<String> nameList = new ArrayList<>();
@@ -106,7 +105,7 @@ public class SeSubActStudGrade extends Fragment {
         for (int i = 0, j = rollNoList.size(); i < j; i++) {
             amrList.add(new AdapterOverloaded(rollNoList.get(i) + "", nameList.get(i), gradeList.get(i)));
         }
-        gradeAdapter = new GradeAdapter(context, R.layout.exam_grade_item, amrList);
+        GradeAdapter gradeAdapter = new GradeAdapter(context, R.layout.exam_grade_item, amrList);
         lv.setAdapter(gradeAdapter);
     }
 }

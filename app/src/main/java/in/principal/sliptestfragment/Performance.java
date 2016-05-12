@@ -42,34 +42,29 @@ import android.widget.TextView;
  * Don't expect comments explaining every piece of code, class and function names are self explanatory.
  */
 public class Performance extends Fragment {
-    private Context context;
     private SQLiteDatabase sqliteDatabase;
     private List<Clas> clasList = new ArrayList<>();
-    private static List<Integer> classIdList = new ArrayList<>();
-    private List<String> classNameList = new ArrayList<>();
     List<LayoutParams> lp = new ArrayList<>();
-    final Map<Object, Object> m = new HashMap<>();
     private ArrayList<CircleObject> circleArrayGrid = new ArrayList<>();
-    private CircleAdapter cA;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.performance, container, false);
-        context = AppGlobal.getContext();
+        Context context = AppGlobal.getContext();
         sqliteDatabase = AppGlobal.getSqliteDatabase();
+
         GridView gridView = (GridView) view.findViewById(R.id.gridView);
 
         clearList();
 
         clasList = ClasDao.selectClas(sqliteDatabase);
         for (Clas c : clasList) {
-            classIdList.add(c.getClassId());
-            classNameList.add(c.getClassName());
             int avg = StAvgDao.stClassAvg(c.getClassId(), sqliteDatabase);
             circleArrayGrid.add(new CircleObject(avg, PKGenerator.trim(0, 6, c.getClassName())));
         }
-        cA = new CircleAdapter(context, R.layout.circle_grid, circleArrayGrid);
+
+        CircleAdapter cA = new CircleAdapter(context, R.layout.circle_grid, circleArrayGrid);
         gridView.setAdapter(cA);
 
         return view;
@@ -78,8 +73,6 @@ public class Performance extends Fragment {
     private void clearList() {
         circleArrayGrid.clear();
         clasList.clear();
-        classIdList.clear();
-        classNameList.clear();
         lp.clear();
     }
 

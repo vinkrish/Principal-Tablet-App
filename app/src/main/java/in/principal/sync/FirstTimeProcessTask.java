@@ -37,7 +37,6 @@ import android.util.Log;
 public class FirstTimeProcessTask extends AsyncTask<String, String, String> implements StringConstant {
     private Context context;
     private ProgressDialog pDialog;
-    private JSONObject jsonReceived;
     private String zipFile;
 
     public FirstTimeProcessTask(Context context, String fileName) {
@@ -94,10 +93,7 @@ public class FirstTimeProcessTask extends AsyncTask<String, String, String> impl
                 jsonObject.put("school", schoolId);
                 jsonObject.put("tab_id", deviceId);
                 jsonObject.put("file_name", "'" + f + "'");
-                jsonReceived = new JSONObject(RequestResponseHandler.reachServer(update_downloaded_file, jsonObject));
-                if (jsonReceived.getInt(TAG_SUCCESS) == 1) {
-
-                }
+                JSONObject jsonReceived = new JSONObject(RequestResponseHandler.reachServer(update_downloaded_file, jsonObject));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -169,7 +165,7 @@ public class FirstTimeProcessTask extends AsyncTask<String, String, String> impl
                     jsonObject.put("tab_id", deviceId);
                     jsonObject.put("file_name", "'" + s + "'");
                     jsonObject.put("version", savedVersion);
-                    jsonReceived = new JSONObject(RequestResponseHandler.reachServer(update_processed_file, jsonObject));
+                    JSONObject jsonReceived = new JSONObject(RequestResponseHandler.reachServer(update_processed_file, jsonObject));
                     if (jsonReceived.getInt(TAG_SUCCESS) == 1) {
                         sqliteDatabase.execSQL("update downloadedfile set isack=1 where processed=1 and filename='" + s + "'");
                     }

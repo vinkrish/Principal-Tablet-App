@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:state_pressed="true" android:drawable="@color/universal"></item>
-    <item android:drawable="@color/rep_pre_nxt"></item>
-
-</selector>
-<!-- From: file:/Users/vinkrish/StudioProjects/Principal-Tablet-App/app/src/main/res/drawable/rep_prev_next_selector.xml -->
