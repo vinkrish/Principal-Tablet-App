@@ -38,7 +38,7 @@ public class SearchStudExam extends Fragment {
     private SQLiteDatabase sqliteDatabase;
     private ArrayList<AdapterOverloaded> amrList = new ArrayList<>();
     private StudExamAdapter adapter;
-    private List<Integer> examIdList = new ArrayList<>();
+    private List<Long> examIdList = new ArrayList<>();
     private List<String> examNameList = new ArrayList<>();
     private ProgressDialog pDialog;
     private TextView studTV, clasSecTV;
@@ -142,7 +142,7 @@ public class SearchStudExam extends Fragment {
             Cursor c2 = sqliteDatabase.rawQuery("select ExamId,ExamName from exams where ClassId=" + classId, null);
             c2.moveToFirst();
             while (!c2.isAfterLast()) {
-                examIdList.add(c2.getInt(c2.getColumnIndex("ExamId")));
+                examIdList.add(c2.getLong(c2.getColumnIndex("ExamId")));
                 examNameList.add(c2.getString(c2.getColumnIndex("ExamName")));
                 c2.moveToNext();
             }

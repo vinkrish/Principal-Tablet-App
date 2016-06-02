@@ -52,7 +52,6 @@ import in.principal.util.ReplaceFragment;
 
 /**
  * Created by vinkrish.
- * Looks like this need to be optimized, good luck with that.
  */
 public class SeSecSub extends Fragment {
     private Context context;
@@ -60,7 +59,7 @@ public class SeSecSub extends Fragment {
     private List<Section> secList = new ArrayList<>();
     private static List<Integer> secIdList = new ArrayList<>();
     private List<String> secNameList = new ArrayList<>();
-    private List<Integer> examIdList = new ArrayList<>();
+    private List<Long> examIdList = new ArrayList<>();
     private List<String> examNameList = new ArrayList<>();
     private List<Integer> avgList = new ArrayList<>();
     private List<Activiti> activitiList = new ArrayList<>();
@@ -190,14 +189,14 @@ public class SeSecSub extends Fragment {
         Cursor c = sqliteDatabase.rawQuery("select ExamId,ExamName from exams where ClassId=" + classId, null);
         c.moveToFirst();
         while (!c.isAfterLast()) {
-            examIdList.add(c.getInt(c.getColumnIndex("ExamId")));
+            examIdList.add(c.getLong(c.getColumnIndex("ExamId")));
             examNameList.add(c.getString(c.getColumnIndex("ExamName")));
             c.moveToNext();
         }
         c.close();
 
         int averag = 0;
-        for (Integer id : examIdList) {
+        for (long id : examIdList) {
             //avgList.add(ExmAvgDao.getSeSecSubAvg(id, sectionId, subjectId, sqliteDatabase));
             int exmAvg = getExamAvg(id, subjectId);
             avgList.add(exmAvg);

@@ -101,7 +101,7 @@ public class MarksDao {
     public static int isThereExamMark(long examId, int sectionId, int subjectId, SQLiteDatabase sqliteDatabase) {
         int isThere = 0;
         Cursor c = sqliteDatabase.rawQuery("SELECT A.Mark from marks A, students B where A.ExamId=" + examId + " and A.StudentId=B.StudentId and B.SectionId=" + sectionId
-                + " and A.SubjectId=" + subjectId + " and A.Mark!=0", null);
+                + " and A.SubjectId=" + subjectId, null);
         if (c.getCount() > 0) {
             isThere = 1;
         }

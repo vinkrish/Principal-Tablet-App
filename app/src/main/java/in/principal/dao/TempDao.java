@@ -122,7 +122,7 @@ public class TempDao {
 		sqliteDatabase.update("temp", cv, "id=1", null);
 	}
 	
-	public static void updateExamId(int id, SQLiteDatabase sqliteDatabase){
+	public static void updateExamId(long id, SQLiteDatabase sqliteDatabase){
 		ContentValues cv = new ContentValues();
 		cv.put("ExamId", id);
 		sqliteDatabase.update("temp", cv, "id=1", null);

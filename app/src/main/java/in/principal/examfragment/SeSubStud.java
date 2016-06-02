@@ -42,11 +42,10 @@ import android.widget.AdapterView.OnItemClickListener;
 
 /**
  * Created by vinkrish.
- * Looks like this need to be optimized, good luck with that.
  */
 public class SeSubStud extends Fragment {
     private Context context;
-    private int subjectId, sectionId, teacherId, good, averag, improve, maximumMark;
+    private int subjectId, sectionId, teacherId, good, averag, improve, maximumMark, progres;
     private long examId;
     private SQLiteDatabase sqliteDatabase;
     private TextView rollNoTv, nameTv, scoreTv, avgTv;
@@ -128,7 +127,6 @@ public class SeSubStud extends Fragment {
         TextView teacher = (TextView) view.findViewById(R.id.teacherinfo);
         teacher.setText(Capitalize.capitalThis(TeacherDao.getTeacherName(teacherId, sqliteDatabase)));
 
-        int progres = 0;
         Cursor c = sqliteDatabase.rawQuery("select (ExamAvg/360.00)*100.00 as avg from exmavg where ExamId=" + examId + " and SubjectId=" + subjectId + " and SectionId=" + sectionId, null);
         c.moveToFirst();
         while (!c.isAfterLast()) {
@@ -136,6 +134,8 @@ public class SeSubStud extends Fragment {
             c.moveToNext();
         }
         c.close();
+
+        populateListView();
 
         ProgressBar pb = (ProgressBar) view.findViewById(R.id.subAvgProgress);
         if (progres >= 75) {
@@ -148,8 +148,6 @@ public class SeSubStud extends Fragment {
         pb.setProgress(progres);
         TextView pecent = (TextView) view.findViewById(R.id.percent);
         pecent.setText(progres + "%");
-
-        populateListView();
 
         scoreTv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -232,11 +230,14 @@ public class SeSubStud extends Fragment {
         c.close();
         scoreTv.setText("Score (" + maximumMark + ")");
 
+        int progresAdd = 0;
         for (Integer i : progressList) {
+            progresAdd += i;
             if (i >= 75) good += 1;
             else if (i >= 50) averag += 1;
             else improve += 1;
         }
+        progres = progresAdd / progressList.size();
 
         dashArrayGrid1.add(new DashObject(0, "", ""));
         dashArrayGrid1.add(new DashObject(0, "", ""));

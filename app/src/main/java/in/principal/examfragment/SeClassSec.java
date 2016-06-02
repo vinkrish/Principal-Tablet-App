@@ -2,6 +2,7 @@ package in.principal.examfragment;
 
 import in.principal.activity.R;
 import in.principal.adapter.AmrAdapter;
+import in.principal.adapter.SeClassSecAdapter;
 import in.principal.dao.SectionDao;
 import in.principal.dao.TempDao;
 import in.principal.fragment.CoScholastic;
@@ -42,7 +43,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 /**
  * Created by vinkrish.
- * Looks like this need to be optimized, good luck with that.
+ * Removed consolidation
  */
 public class SeClassSec extends Fragment {
     private int sectionId;
@@ -51,7 +52,7 @@ public class SeClassSec extends Fragment {
     private List<String> secNameList = new ArrayList<>();
     private SQLiteDatabase sqliteDatabase;
     private ArrayList<AdapterOverloaded> amrList = new ArrayList<>();
-    private AmrAdapter amrAdapter;
+    private SeClassSecAdapter amrAdapter;
     private List<Integer> subIdList = new ArrayList<>();
     private List<Integer> teacherIdList = new ArrayList<>();
     private List<String> subNameList = new ArrayList<>();
@@ -80,7 +81,7 @@ public class SeClassSec extends Fragment {
         gridView.setAdapter(cA);
 
         ListView lv = (ListView) view.findViewById(R.id.list);
-        amrAdapter = new AmrAdapter(context, R.layout.pc_list, amrList);
+        amrAdapter = new SeClassSecAdapter(context, R.layout.se_class_sec_list, amrList);
         lv.setAdapter(amrAdapter);
 
         Button perfClas = (Button) view.findViewById(R.id.seClass);
@@ -194,7 +195,7 @@ public class SeClassSec extends Fragment {
         }
 
         for (int i = 0; i < subIdList.size(); i++) {
-            amrList.add(new AdapterOverloaded(subNameList.get(i), teacherNameList.get(i), progressList.get(i)));
+            amrList.add(new AdapterOverloaded(subNameList.get(i), teacherNameList.get(i)));
         }
         amrAdapter.notifyDataSetChanged();
     }

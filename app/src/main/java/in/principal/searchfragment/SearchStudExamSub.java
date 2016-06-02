@@ -197,17 +197,24 @@ public class SearchStudExamSub extends Fragment {
                 } else {
                     Cursor cursor1 = sqliteDatabase.rawQuery("select Grade from marks where ExamId=" + examId + " and SubjectId=" + sub + " and StudentId=" + studentId, null);
                     cursor1.moveToFirst();
-                    if (cursor1.getCount() > 0 && !cursor1.getString(cursor1.getColumnIndex("Grade")).equals("")) {
-                        while (!cursor1.isAfterLast()) {
-                            scoreList.add(cursor1.getString(cursor1.getColumnIndex("Grade")));
-                            progressList1.add(getMarkTo(cursor1.getString(cursor1.getColumnIndex("Grade"))));
-                            cursor1.moveToNext();
+                    try {
+                        if (cursor1.getCount() > 0 && !cursor1.getString(cursor1.getColumnIndex("Grade")).equals("")) {
+                            while (!cursor1.isAfterLast()) {
+                                scoreList.add(cursor1.getString(cursor1.getColumnIndex("Grade")));
+                                progressList1.add(getMarkTo(cursor1.getString(cursor1.getColumnIndex("Grade"))));
+                                cursor1.moveToNext();
+                            }
+                        } else{
+                            progressList1.add(0);
+                            scoreList.add("-");
+                            progressList2.add(0);
                         }
                         progressList2.add(MarksDao.getSectionAvg(classId, sectionId, sub, examId, sqliteDatabase));
-                    } else {
+                    } catch (NullPointerException e) {
                         progressList1.add(0);
                         scoreList.add("-");
-                        progressList2.add(0);
+                        progressList2.add(MarksDao.getSectionAvg(classId, sectionId, sub, examId, sqliteDatabase));
+                        e.printStackTrace();
                     }
                     cursor1.close();
                 }
